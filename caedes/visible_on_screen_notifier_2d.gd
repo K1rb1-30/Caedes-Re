@@ -1,1 +1,0 @@
-extends VisibleOnScreenNotifier2D
