@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddq2b7cwhifa6"]
+[gd_scene load_steps=6 format=3 uid="uid://7akjkqwhrjrq"]
 
-[ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_8j744"]
+[ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_w078n"]
 
 [sub_resource type="GDScript" id="GDScript_2tqkp"]
 resource_name = "CharacterMove"
@@ -13,7 +13,7 @@ func _physics_process(delta):
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j744"]
-atlas = ExtResource("1_8j744")
+atlas = ExtResource("1_w078n")
 region = Rect2(0, 0, 64, 63)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2tqkp"]

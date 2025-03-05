@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://fcdcsllauhnm"]
+
+[ext_resource type="Texture2D" uid="uid://ddg71h6d87alh" path="res://assets/enemies/jefe1.png" id="1_3epn5"]
+
+[sub_resource type="GDScript" id="GDScript_3epn5"]
+resource_name = "enemyAI"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rf5tu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3epn5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10gli"]
+radius = 16.0
+height = 78.0
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(254, 278)
+script = SubResource("GDScript_3epn5")
+
+[node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.400002, 0.319998)
+sprite_frames = SubResource("SpriteFrames_rf5tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_10gli")

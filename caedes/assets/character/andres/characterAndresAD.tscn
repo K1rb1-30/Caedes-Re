@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddq2b7cwhifa6"]
+
+[ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_8j744"]
+
+[sub_resource type="GDScript" id="GDScript_2tqkp"]
+resource_name = "CharacterMove"
+script/source = "extends CharacterBody2D
+
+func _physics_process(delta):
+	var direccion = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	velocity = direccion * 200
+	move_and_slide()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j744"]
+atlas = ExtResource("1_8j744")
+region = Rect2(0, 0, 64, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tqkp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j744")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
+height = 58.0
+
+[node name="AndresWASD" type="CharacterBody2D"]
+position = Vector2(558, 305)
+script = SubResource("GDScript_2tqkp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2tqkp")
+frame_progress = 0.138072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CapsuleShape2D_8j744")
