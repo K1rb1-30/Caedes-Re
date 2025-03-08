@@ -14,6 +14,12 @@ config/name="Caedes"
 run/main_scene="uid://ddq2b7cwhifa6"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [input]
 
 left={

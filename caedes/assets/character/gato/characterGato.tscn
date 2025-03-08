@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://dphapf0frxtul"]
+
+[ext_resource type="Texture2D" uid="uid://dm61sablpx0yv" path="res://assets/character/gato/Cat Sprite Sheet.png" id="1_fm0n7"]
+[ext_resource type="Script" uid="uid://3ln0g4qq1kdj" path="res://assets/character/gato/character_gato.gd" id="1_s76xb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kktsn"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17eg1"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcm6y"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsiru"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye2r4"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(128, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqfuu"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(160, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydg3u"]
+atlas = ExtResource("1_fm0n7")
+region = Rect2(192, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ok4ha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kktsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17eg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcm6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsiru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye2r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqfuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydg3u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s76xb"]
+
+[node name="CharacterGato" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_s76xb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
+position = Vector2(1, 0)
+scale = Vector2(2.4, 2.04)
+sprite_frames = SubResource("SpriteFrames_ok4ha")
+frame_progress = 0.576794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(0, 13)
+scale = Vector2(1.98941, 1.99416)
+shape = SubResource("RectangleShape2D_s76xb")

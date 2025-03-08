@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bguovkomp3uqn"]
+
+[ext_resource type="Texture2D" uid="uid://co318l4ba2iw6" path="res://Fondos/PasilloConExit.png" id="1_p6pa3"]
+[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresAD.tscn" id="2_x77hp"]
+[ext_resource type="PackedScene" uid="uid://dphapf0frxtul" path="res://assets/character/gato/characterGato.tscn" id="3_x77hp"]
+
+[node name="Node2D" type="Node2D" groups=["gato", "player"]]
+
+[node name="PasilloConExit" type="Sprite2D" parent="." groups=["gato", "player"]]
+position = Vector2(801, 337)
+scale = Vector2(0.834375, 0.864815)
+texture = ExtResource("1_p6pa3")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="AndresAD" parent="." groups=["player"] instance=ExtResource("2_x77hp")]
+
+[node name="CharacterGato" parent="." groups=["gato"] instance=ExtResource("3_x77hp")]
+position = Vector2(345, 338)
