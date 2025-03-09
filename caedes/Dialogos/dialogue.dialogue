@@ -1,11 +1,17 @@
-~ start
+~ prueba
 Gabriel: [[Otra vez te lo tengo que explicar?|Hola Alex|Tio que]], estoy implementando el sistema de dialogo esto es una prueba.
 Gabriel: Mira incluso puedes poner opciones.
 - Aristeo pagame lo que me debes
 	Gabriel: You picked the first one.
 - Bombardeen marruecos
 	Gabriel: You picked the second one.
-- Illo que no me he enterao => start
+- Illo que no me he enterao => prueba
 - Callate => END
 Gabriel: For more information see the online documentation.
+
+~ start
+Pepe: Buenas noches
+
+
 => END            
+
