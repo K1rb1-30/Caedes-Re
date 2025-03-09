@@ -145,5 +145,14 @@ response_template = NodePath("ResponseExample")
 layout_mode = 2
 text = "Response example"
 
+[node name="Character" type="MarginContainer" parent="Balloon"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 245.0
+offset_right = 281.0
+offset_bottom = 471.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/Character"]
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
