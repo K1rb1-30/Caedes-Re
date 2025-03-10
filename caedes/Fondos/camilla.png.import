@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://co318l4ba2iw6"
-=======
-uid="uid://cooixdslf33p8"
->>>>>>> Stashed changes
-path="res://.godot/imported/PasilloConExit.png-40f45455a405d11428ad389778f31a1f.ctex"
+uid="uid://fmmwgn17jue5"
+path="res://.godot/imported/camilla.png-10adf6bbd5584404df2f414b27703bc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fondos/PasilloConExit.png"
-dest_files=["res://.godot/imported/PasilloConExit.png-40f45455a405d11428ad389778f31a1f.ctex"]
+source_file="res://Fondos/camilla.png"
+dest_files=["res://.godot/imported/camilla.png-10adf6bbd5584404df2f414b27703bc4.ctex"]
 
 [params]
 
