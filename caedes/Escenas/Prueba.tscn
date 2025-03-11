@@ -1,34 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://byp0gmsnjwfk2"]
+[gd_scene load_steps=4 format=3 uid="uid://bguovkomp3uqn"]
 
-[ext_resource type="PackedScene" uid="uid://ddq2b7cwhifa6" path="res://assets/character/andres/characterAndresAD.tscn" id="1_n0gku"]
-[ext_resource type="Texture2D" uid="uid://cooixdslf33p8" path="res://Fondos/PasilloConExit.png" id="2_7k6qf"]
+[ext_resource type="Texture2D" uid="uid://co318l4ba2iw6" path="res://Fondos/PasilloConExit.png" id="1_p6pa3"]
+[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresAD.tscn" id="2_x77hp"]
+[ext_resource type="PackedScene" uid="uid://dphapf0frxtul" path="res://assets/character/gato/characterGato.tscn" id="3_x77hp"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n0gku"]
+[node name="Node2D" type="Node2D" groups=["gato", "player"]]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_n0gku"]
-a = Vector2(0, -18.1187)
-b = Vector2(2, 50.0631)
+[node name="PasilloConExit" type="Sprite2D" parent="." groups=["gato", "player"]]
+position = Vector2(801, 337)
+scale = Vector2(0.834375, 0.864815)
+texture = ExtResource("1_p6pa3")
+region_rect = Rect2(0, 0, 1920, 1080)
 
-[node name="Prueba" type="Node2D"]
+[node name="AndresAD" parent="." groups=["player"] instance=ExtResource("2_x77hp")]
 
-[node name="AndresAD" parent="." instance=ExtResource("1_n0gku")]
-position = Vector2(564, 204)
-
-[node name="Borders" type="StaticBody2D" parent="."]
-position = Vector2(560, 204)
-physics_material_override = SubResource("PhysicsMaterial_n0gku")
-
-[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
-position = Vector2(-552, -204)
-scale = Vector2(1, 15.84)
-shape = SubResource("SegmentShape2D_n0gku")
-
-[node name="RightBorder" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1356, -203)
-scale = Vector2(1, 15.84)
-shape = SubResource("SegmentShape2D_n0gku")
-
-[node name="PasilloConExit" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(964, 284)
-texture = ExtResource("2_7k6qf")
+[node name="CharacterGato" parent="." groups=["gato"] instance=ExtResource("3_x77hp")]
+position = Vector2(345, 338)
