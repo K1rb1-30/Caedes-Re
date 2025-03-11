@@ -36,11 +36,10 @@ shape = SubResource("RectangleShape2D_f2b3h")
 
 [node name="Andres" parent="." instance=ExtResource("2_w8r5c")]
 visible = false
-position = Vector2(723, 360)
+position = Vector2(640, 360)
 collision_layer = 2
 
 [node name="Enemy" parent="." instance=ExtResource("5_85384")]
-visible = false
 position = Vector2(585, 325)
 
 [editable path="Andres"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=7 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_w078n"]
@@ -19,10 +19,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
-radius = 15.0
-height = 106.0
+radius = 8.0
+height = 76.0
 
-[node name="Andres" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oxup"]
+radius = 29.0
+height = 122.0
+
+[node name="Andres" type="CharacterBody2D" groups=["andres"]]
 position = Vector2(558, 305)
 script = ExtResource("1_8oxup")
 
@@ -37,3 +41,19 @@ shape = SubResource("CapsuleShape2D_8j744")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
+
+[node name="andres_Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="andres_Hitbox" groups=["andres"]]
+shape = SubResource("CapsuleShape2D_8oxup")
+
+[node name="attackCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="dealAttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
+[connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
+[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="dealAttackTimer" to="." method="_on_dealt_attack_timer_timeout"]
