@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwgvihhcx4cm2"]
+[gd_scene load_steps=12 format=3 uid="uid://bwgvihhcx4cm2"]
 
 [ext_resource type="Script" path="res://Dialogos/CajaDeDialogos/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://cyqi8ohu0yunx" path="res://Tipografias/Principal/guardener.ttf" id="2_pwla5"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="Script" path="res://Dialogos/CajaDeDialogos/character.gd" id="5_pwla5"]
+[ext_resource type="Script" uid="uid://brkdapu5mwxx2" path="res://Dialogos/CajaDeDialogos/character.gd" id="5_pwla5"]
+[ext_resource type="Texture2D" uid="uid://bbi28dnbhpif" path="res://assets/PerDialogos/Catlos/catlos abierto.png" id="6_2x8ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -158,7 +159,23 @@ offset_right = 253.0
 offset_bottom = 449.0
 script = ExtResource("5_pwla5")
 
+[node name="TextureRect" type="TextureRect" parent="Balloon/Character"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -5.0
+offset_right = 28.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_2x8ys")
+expand_mode = 1
+stretch_mode = 6
+
 [node name="ColorRect" type="ColorRect" parent="Balloon/Character"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
