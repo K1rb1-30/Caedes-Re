@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1wbmb6868jqh"]
+
+[ext_resource type="Texture2D" uid="uid://bdi35gtpuhe15" path="res://Fondos/Intro.png" id="1_f2b3h"]
+[ext_resource type="Script" uid="uid://dyywik072xrmg" path="res://Escenas/intro.gd" id="1_w8r5c"]
+[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="2_w8r5c"]
+[ext_resource type="Texture2D" uid="uid://dg0jub2a0px0f" path="res://Fondos/IntroSin.png" id="4_bkn7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2b3h"]
+size = Vector2(68, 534)
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_w8r5c")
+
+[node name="Intro" type="Sprite2D" parent="."]
+position = Vector2(637, 357.5)
+scale = Vector2(1.50463, 1.32778)
+texture = ExtResource("1_f2b3h")
+
+[node name="IntroSin" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(637, 358)
+scale = Vector2(1.505, 1.328)
+texture = ExtResource("4_bkn7a")
+
+[node name="Bordes" type="StaticBody2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(532, -31)
+shape = SubResource("RectangleShape2D_f2b3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(-537, -35)
+shape = SubResource("RectangleShape2D_f2b3h")
+
+[node name="Andres" parent="." instance=ExtResource("2_w8r5c")]
+visible = false
+position = Vector2(640, 360)
+
+[editable path="Andres"]

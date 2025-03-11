@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bguovkomp3uqn"]
 
-[ext_resource type="Texture2D" uid="uid://co318l4ba2iw6" path="res://Fondos/PasilloConExit.png" id="1_p6pa3"]
-[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresAD.tscn" id="2_x77hp"]
+[ext_resource type="Texture2D" uid="uid://dopl45b0y8xf7" path="res://Fondos/PasilloConExit.png" id="1_p6pa3"]
+[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="2_x77hp"]
 [ext_resource type="PackedScene" uid="uid://dphapf0frxtul" path="res://assets/character/gato/characterGato.tscn" id="3_x77hp"]
 
 [node name="Node2D" type="Node2D" groups=["gato", "player"]]
