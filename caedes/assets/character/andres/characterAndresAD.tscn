@@ -7,8 +7,18 @@ resource_name = "CharacterMove"
 script/source = "extends CharacterBody2D
 
 func _physics_process(delta):
+<<<<<<< HEAD
 	var direccion = Input.get_axis(\"left\", \"right\")
 	velocity.x = direccion * 200
+=======
+<<<<<<< Updated upstream
+	var direccion = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	velocity = direccion * 200
+=======
+	var direccion = Input.get_axis(\"left\", \"right\")
+	velocity.x = direccion * 150
+>>>>>>> Stashed changes
+>>>>>>> origin/devAlex
 	move_and_slide()
 "
 
@@ -30,14 +40,49 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
 height = 58.0
 
+<<<<<<< HEAD
 [node name="AndresAD" type="CharacterBody2D"]
+=======
+<<<<<<< Updated upstream
+[node name="AndresWASD" type="CharacterBody2D"]
+>>>>>>> origin/devAlex
 position = Vector2(558, 305)
+=======
+[node name="AndresAD" type="CharacterBody2D" groups=["gato"]]
+>>>>>>> Stashed changes
 script = SubResource("GDScript_2tqkp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+<<<<<<< Updated upstream
+position = Vector2(640.238, 326.016)
+scale = Vector2(3.50745, 2.88939)
+=======
+position = Vector2(98, 55)
+scale = Vector2(6.53745, 3.84147)
+>>>>>>> Stashed changes
 sprite_frames = SubResource("SpriteFrames_2tqkp")
 frame_progress = 0.138072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
+<<<<<<< Updated upstream
+position = Vector2(640.238, 326.016)
+scale = Vector2(3.50745, 2.88939)
 shape = SubResource("CapsuleShape2D_8j744")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+limit_left = 0
+limit_right = 1602
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_drag_margin = true
+=======
+position = Vector2(82, 55)
+scale = Vector2(5.05745, 4.00147)
+shape = SubResource("CapsuleShape2D_8j744")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(82, 55)
+limit_left = 0
+limit_right = 1924
+>>>>>>> Stashed changes
