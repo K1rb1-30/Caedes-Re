@@ -1,0 +1,58 @@
+~ tutocat
+Catlos: [[Hey|Hola|Miau]], ¿todo bien?.
+Catlos: Parece que estás atrapado aquí, curioso, ¿no?.
+Catlos: No te preocupes, yo te ayudaré a salir.
+Catlos: Para salir de ahi pulsa la tecla "E" y para moverte pulsa las teclas "A" "D". => END
+
+~ tutocat2
+#Cuando salga y se mueva un poco le saldra este dialogo
+
+- ¿Dónde estamos?
+	Catlos: Bueno… este lugar es extraño.
+	Catlos: [[Un lugar entre lugares|Un sueño dentro de otro|La casa de alguien más, creo]].
+	Catlos: No es tan malo si no piensas mucho en ello.
+	 
+	- ¿Por qué estás aquí?
+		Catlos: Oh, llevo [[siglos|días|una eternidad]] aquí. O eso creo.
+		Catlos: A veces el tiempo no tiene sentido.
+		Catlos: A veces, [[tampoco lo tengo yo…|la realidad se dobla|las sombras susurran]].
+
+	- Esto se siente extraño.
+    	Catlos: Oh, sí… pasa a veces.
+    	Catlos: [[Como si algo nos observara|Como si no existiéramos del todo|Como si algo olvidara escribirnos]].
+    	Catlos: Pero seguro es solo imaginación, ¿verdad?
+
+Catlos: En fin, si quieres salir, puedo indicarte el camino.
+Catlos: [[A menos que ya lo hayas olvidado…|A menos que el camino haya desaparecido|A menos que tú hayas desaparecido]].
+Catlos: Oh, ¿qué decía? Ah, sí, ven por aquí. => END
+
+~ tutocombate
+
+Catlos: Shh… [[escucha|espera|detente]].  
+Catlos: Hay alguien adelante. No nos ha visto todavía.  
+Catlos: Si quieres seguir, tendrás que [[ser más astuto|moverte con cuidado|convertirte en una sombra]].  
+
+- ¿Qué hago?  
+	Catlos: Fácil. Acércate sin hacer ruido y cuando estés lo suficientemente cerca… pulsa la tecla "F".  
+	Catlos: [[Como si nunca hubiera estado aquí|Como si la realidad lo olvidara…]].
+
+	- ¿Seguro que esto es necesario?  
+		Catlos: *Sonríe levemente* Todo aquí es necesario. Todo aquí tiene un propósito.  
+		Catlos: Y a veces, [[ese propósito desaparece|ese propósito debe ser corregido|las sombras lo absorben]]. => END
+	- Vale
+		=> END
+
+~ tutocombate2
+*Andrés elimina al enemigo* *poner variable de que el enemigo a sido eliminado* 
+
+Catlos: [[Bien.|Perfecto.|Eso fue… interesante.]]  
+Catlos: Felicidades, Andrés. Lo hiciste bien.  
+Catlos: Tan bien que [[podrías hacerlo otra vez |sería un problema si te gustara demasiado…]]. 
+
+- ¿Perdón?  
+	Catlos: Oh, nada, nada. Sigamos.  
+
+=> END
+
+
+
