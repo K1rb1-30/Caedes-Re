@@ -19,15 +19,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
-radius = 8.0
-height = 76.0
+radius = 16.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oxup"]
-radius = 29.0
-height = 122.0
+radius = 17.0
+height = 132.0
 
-[node name="Andres" type="CharacterBody2D" groups=["andres"]]
+[node name="Andres" type="CharacterBody2D" groups=["andres", "enemy"]]
 position = Vector2(558, 305)
+collision_layer = 2
 script = ExtResource("1_8oxup")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -37,23 +38,41 @@ sprite_frames = SubResource("SpriteFrames_2tqkp")
 frame_progress = 0.138072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-21, 4)
+rotation = 0.118543
 shape = SubResource("CapsuleShape2D_8j744")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 
-[node name="andres_Hitbox" type="Area2D" parent="."]
+[node name="andres_Hitbox" type="Area2D" parent="." groups=["andres", "enemy"]]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="andres_Hitbox" groups=["andres"]]
 shape = SubResource("CapsuleShape2D_8oxup")
 
-[node name="attackCooldown" type="Timer" parent="."]
+[node name="attackCooldown" type="Timer" parent="." groups=["andres", "enemy"]]
 wait_time = 0.5
+one_shot = true
 
 [node name="dealAttackTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 5.0
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.843137, 0.054902, 1)
+offset_left = -30.0
+offset_top = 59.0
+offset_right = 92.0
+offset_bottom = 79.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="reginTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="dealAttackTimer" to="." method="_on_dealt_attack_timer_timeout"]
+[connection signal="timeout" from="reginTimer" to="." method="_on_regin_timer_timeout"]

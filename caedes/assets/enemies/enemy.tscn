@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3epn5"]
-radius = 136.0
+radius = 154.003
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3epn5"]
 size = Vector2(23, 78)
@@ -23,8 +23,9 @@ size = Vector2(23, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf5tu"]
 size = Vector2(23, 78)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["andres", "enemy"]]
 position = Vector2(254, 278)
+collision_layer = 2
 script = ExtResource("1_rf5tu")
 
 [node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
@@ -42,12 +43,28 @@ shape = SubResource("CircleShape2D_3epn5")
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_3epn5")
 
-[node name="enemyHitbox" type="Area2D" parent="."]
+[node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
 shape = SubResource("RectangleShape2D_rf5tu")
+
+[node name="damageCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.843137, 0.054902, 1)
+offset_left = -30.0
+offset_top = 41.0
+offset_right = 92.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]

@@ -9,10 +9,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2b3h"]
 size = Vector2(68, 534)
 
-[node name="Intro" type="Node2D"]
+[node name="Intro" type="Node2D" groups=["andres", "enemy"]]
 script = ExtResource("1_w8r5c")
 
-[node name="Intro" type="Sprite2D" parent="."]
+[node name="Intro" type="Sprite2D" parent="." groups=["andres"]]
 position = Vector2(637, 357.5)
 scale = Vector2(1.50463, 1.32778)
 texture = ExtResource("1_f2b3h")
@@ -37,7 +37,6 @@ shape = SubResource("RectangleShape2D_f2b3h")
 [node name="Andres" parent="." instance=ExtResource("2_w8r5c")]
 visible = false
 position = Vector2(723, 360)
-collision_layer = 2
 
 [node name="Enemy" parent="." instance=ExtResource("5_85384")]
 visible = false
