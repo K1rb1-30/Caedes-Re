@@ -7,7 +7,6 @@ var andresVivo = true
 
 var ataque = false
 
-
 func _physics_process(delta):
 	var direccion = Input.get_vector("left", "right", "up", "down")
 	velocity = direccion * 150
@@ -21,9 +20,6 @@ func _physics_process(delta):
 		health = 0
 		self.queue_free()
 		print("andres muerto")
-
-func player():
-	pass
 
 func _on_andres_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
@@ -47,7 +43,7 @@ func enemy_Attack():
 		print(health)
 		
 func attack():
-	if Input.is_action_pressed("attack") and global.andresInattackZone:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and global.andresInattackZone:
 		global.andresCurrentAttack = true
 		$dealAttackTimer.start()
 		

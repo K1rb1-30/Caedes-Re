@@ -26,10 +26,6 @@ func _on_detection_area_body_exited(body):
 	playerChase = false
 	print("area fuera")
 	
-func enemy():
-	pass
-
-
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("andres"):
 		global.andresInattackZone = true

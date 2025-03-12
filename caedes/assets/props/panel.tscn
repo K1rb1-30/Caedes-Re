@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dta0t061akuuo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 480.0
+offset_top = 213.0
+offset_right = 520.0
+offset_bottom = 253.0
+scale = Vector2(8.4, 6.52)
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1.78571
+offset_top = 1.68712
+offset_right = 9.78571
+offset_bottom = 9.68712
+scale = Vector2(0.236291, 0.223836)
+text = "ج"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 7.73809
+offset_top = 2.30061
+offset_right = 25.7381
+offset_bottom = 33.3006
+scale = Vector2(0.236291, 0.223836)
+text = "ج"

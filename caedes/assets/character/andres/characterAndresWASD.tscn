@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=8 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_w078n"]
+[ext_resource type="PackedScene" uid="uid://cuijvwtxjtemf" path="res://assets/props/flashlight.tscn" id="3_swgxf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j744"]
 atlas = ExtResource("1_w078n")
@@ -70,6 +71,9 @@ show_percentage = false
 [node name="reginTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="flashlight" parent="." instance=ExtResource("3_swgxf")]
+position = Vector2(-96, -26)
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
