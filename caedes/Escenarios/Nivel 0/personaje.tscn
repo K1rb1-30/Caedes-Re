@@ -193,8 +193,8 @@ script = ExtResource("1_3rmki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ndcqv")
-animation = &"static"
-frame_progress = 0.846276
+animation = &"punch"
+frame_progress = 0.217149
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bqjpy")

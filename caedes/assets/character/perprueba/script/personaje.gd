@@ -5,46 +5,27 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	
-	velocity = Vector2()
+	velocity = Vector2.ZERO
 	var speed:int = 200
-		
+	
+	
 	if Input.is_action_pressed("right"):
-		velocity.x = speed
+		velocity += Vector2(1, 0)
 		$AnimatedSprite2D.play("walk")
-		move_and_slide()
+		
 	elif Input.is_action_pressed("left"):
-		velocity.x = -speed
+		velocity += Vector2(-1, 0)
 		$AnimatedSprite2D.play("walkleft")
-		move_and_slide()
-	elif Input.is_action_pressed("up"):
-		velocity.y = -speed
+		
+	if Input.is_action_pressed("up"):
+		velocity += Vector2(0, -1)
 		$AnimatedSprite2D.play("walk")
-		move_and_slide()
+		
 	elif Input.is_action_pressed("down"):
-		velocity.y = speed
+		velocity += Vector2(0, 1)
 		$AnimatedSprite2D.play("walkleft")
-		move_and_slide()
-	elif Input.is_action_pressed("up") and Input.is_action_pressed("right"):
-		velocity.y = -speed
-		velocity.x = speed
-		$AnimatedSprite2D.play("walk")
-		move_and_slide()
-	elif Input.is_action_pressed("up") and Input.is_action_pressed("left"):
-		velocity.y = -speed
-		velocity.x = -speed
-		$AnimatedSprite2D.play("walkleft")
-		move_and_slide()
-	elif Input.is_action_pressed("down") and Input.is_action_pressed("right"):
-		velocity.y = speed
-		velocity.x = speed
-		$AnimatedSprite2D.play("walk")
-		move_and_slide()
-	elif Input.is_action_pressed("down") and Input.is_action_pressed("left"):
-		velocity.y = speed
-		velocity.x = -speed
-		$AnimatedSprite2D.play("walkleft")
-		move_and_slide()
-	else:
-		$AnimatedSprite2D.play("static")
-		velocity.y = 0
+	
+	velocity = velocity.normalized() * speed
+		
+	move_and_slide()
 		
