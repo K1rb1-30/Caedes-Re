@@ -188,13 +188,13 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqjpy"]
 radius = 7.0
 
-[node name="JugadorPRUEBA" type="CharacterBody2D"]
+[node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_3rmki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ndcqv")
 animation = &"punch"
-frame_progress = 0.217149
+frame_progress = 0.162167
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_bqjpy")
