@@ -4,7 +4,7 @@ extends Area2D
 var ya_aparecio = false  # Variable para controlar si ya ha aparecido
 
 func _on_body_entered(body: Node2D) -> void:
-	if !ya_aparecio:
+	if !ya_aparecio :
 		# Primer evento: habilitar y mostrar el CollisionShape2D
 		$CollisionShape2D.show()
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat")

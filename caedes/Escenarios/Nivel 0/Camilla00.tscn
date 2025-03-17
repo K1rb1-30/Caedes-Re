@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bd1spm7npl25w" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-close-trees.png" id="4_2n6ll"]
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://cm5hnplvopfth" path="res://assets/Decorations/A4.png" id="6_t8hbr"]
-[ext_resource type="PackedScene" uid="uid://dj2we43ddiofo" path="res://Escenarios/Nivel 0/personaje.tscn" id="7_6ncjs"]
+[ext_resource type="PackedScene" uid="uid://dj2we43ddiofo" path="res://assets/character/perprueba/personaje.tscn" id="7_6ncjs"]
 [ext_resource type="PackedScene" uid="uid://cfqqd0tgvuoaq" path="res://Dialogos/AreaDeTutoriales/area_2d.tscn" id="8_8vg2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5p3b"]

@@ -8,7 +8,6 @@ func _physics_process(delta):
 	velocity = Vector2.ZERO
 	var speed:int = 200
 	
-	
 	if Input.is_action_pressed("right"):
 		velocity += Vector2(1, 0)
 		$AnimatedSprite2D.play("walk")
@@ -24,8 +23,10 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("down"):
 		velocity += Vector2(0, 1)
 		$AnimatedSprite2D.play("walkleft")
-	
+		
 	velocity = velocity.normalized() * speed
 		
 	move_and_slide()
+	
+	
 		
