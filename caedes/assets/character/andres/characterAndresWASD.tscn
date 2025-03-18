@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_w078n"]
-[ext_resource type="PackedScene" uid="uid://cuijvwtxjtemf" path="res://assets/props/flashlight.tscn" id="3_swgxf"]
+[ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="4_6mtlq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j744"]
 atlas = ExtResource("1_w078n")
@@ -72,8 +72,12 @@ show_percentage = false
 wait_time = 5.0
 autostart = true
 
-[node name="flashlight" parent="." instance=ExtResource("3_swgxf")]
-position = Vector2(-96, -26)
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.52588e-05, -1.52588e-05)
+scale = Vector2(1.35156, 1.35156)
+texture = ExtResource("4_6mtlq")
+texture_scale = 2.16
+height = 202.0
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]

@@ -14,9 +14,13 @@ extends Node2D
 @onready var andresScript: Script = load("res://assets/character/andres/characterAndresWASD.gd")
 @onready var enemyScript: Script = load("res://assets/enemies/enemy.gd")
 
+var scriptActive = false
+
 func _ready():
 	andres.set_script(null)
 	enemy.set_script(null)
+	
+	
 	
 
 func _physics_process(delta):
@@ -28,25 +32,25 @@ func _physics_process(delta):
 		andres.set_script(andresScript)
 		enemy.set_script(enemyScript)
 		intro_sin.visible = true
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if Input.is_action_pressed("interactuar"):
-		colisionPuerta.show()
-		doorPad.visible = true
+		
+	if global.cerrarPad == true and !scriptActive:
+		andres.set_script(andresScript)
+		scriptActive = true
+	elif global.cerrarPad == false and scriptActive:
 		andres.set_script(null)
+		scriptActive = false
+	
+
+	
 		
-		if global.labelOK == true:
-			puertaCerrada.visible = true
-			puertaAbierta.visible = false
-		else:
-			puertaCerrada.visible = false
-			puertaAbierta.visible = true
-		
-		if global.cerrarPad == true:
-			andres.set_script(andresScript)
-		else:
-			andres.set_script(null)
-		
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	andres = body
+	print("andres ha entrado")
+	doorPad.visible = true			
+	if global.labelOK == true:
+		puertaCerrada.visible = false
+		puertaAbierta.visible = true
+		doorPad.visible = false
 	
 
 	
