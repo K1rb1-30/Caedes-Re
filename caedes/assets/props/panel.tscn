@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://dta0t061akuuo"]
+
+[ext_resource type="Script" uid="uid://dxehlmq1mehpt" path="res://assets/props/panel.gd" id="1_rsbe3"]
+
+[sub_resource type="Theme" id="Theme_rsbe3"]
+Button/colors/font_color = Color(0.668477, 0.176936, 0, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(1, 0.0711538, 0.162695, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/font_outline_color = Color(0.389381, 0.481419, 0.464144, 1)
+Button/colors/font_pressed_color = Color(0.607785, 0.0600224, 1.44392e-07, 1)
+Button/fonts/font = null
+
+[sub_resource type="LabelSettings" id="LabelSettings_hq6e7"]
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Keypad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rsbe3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 299.0
+offset_right = 628.0
+offset_bottom = 427.0
+scale = Vector2(1.36452, 1.35177)
+theme = SubResource("Theme_rsbe3")
+
+[node name="cerrarPAD" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "X"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_hq6e7")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Button 1" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Γ"
+
+[node name="Button 2" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Δ"
+
+[node name="Button 3" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Α"
+
+[node name="Button 4" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Κ"
+
+[node name="Button 5" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Σ"
+
+[node name="Button 6" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "Η"
+
+[node name="Button 7" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "π"
+
+[node name="Button C" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "C"
+
+[node name="Button OK" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 3
+text = "OK"
+
+[connection signal="pressed" from="VBoxContainer/cerrarPAD" to="." method="_on_cerrar_pad_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button 7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button C" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Button OK" to="." method="_on_button_9_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byhl417b770xl"
-path="res://.godot/imported/camillaSinPersonaje.png-4ec7225df2c385953c2db495c2b2a968.ctex"
+uid="uid://c3yl6vf2kric8"
+path="res://.godot/imported/linterna.png-385c51da62e478c62e415fdf838575e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fondos/camillaSinPersonaje.png"
-dest_files=["res://.godot/imported/camillaSinPersonaje.png-4ec7225df2c385953c2db495c2b2a968.ctex"]
+source_file="res://assets/character/andres/linterna.png"
+dest_files=["res://.godot/imported/linterna.png-385c51da62e478c62e415fdf838575e6.ctex"]
 
 [params]
 

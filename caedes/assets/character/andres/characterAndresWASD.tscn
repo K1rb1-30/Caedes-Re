@@ -1,16 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=8 format=3 uid="uid://rr4fy21rdnkn"]
 
+[ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cpxm0prnby7vp" path="res://assets/character/andres/SpriteAndres100.png" id="1_w078n"]
-
-[sub_resource type="GDScript" id="GDScript_2tqkp"]
-resource_name = "CharacterMove"
-script/source = "extends CharacterBody2D
-
-func _physics_process(delta):
-	var direccion = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
-	velocity = direccion * 200
-	move_and_slide()
-"
+[ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="4_6mtlq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j744"]
 atlas = ExtResource("1_w078n")
@@ -28,16 +20,67 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
-height = 58.0
+radius = 16.0
+height = 32.0
 
-[node name="AndresWASD" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oxup"]
+radius = 17.0
+height = 132.0
+
+[node name="Andres" type="CharacterBody2D" groups=["andres", "enemy"]]
 position = Vector2(558, 305)
-script = SubResource("GDScript_2tqkp")
+collision_layer = 2
+script = ExtResource("1_8oxup")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5.00001, 0.999998)
+scale = Vector2(1.84375, 1.83333)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
 frame_progress = 0.138072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
+position = Vector2(-21, 4)
+rotation = 0.118543
 shape = SubResource("CapsuleShape2D_8j744")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+
+[node name="andres_Hitbox" type="Area2D" parent="." groups=["andres", "enemy"]]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="andres_Hitbox" groups=["andres"]]
+shape = SubResource("CapsuleShape2D_8oxup")
+
+[node name="attackCooldown" type="Timer" parent="." groups=["andres", "enemy"]]
+wait_time = 0.5
+one_shot = true
+
+[node name="dealAttackTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.843137, 0.054902, 1)
+offset_left = -30.0
+offset_top = 59.0
+offset_right = 92.0
+offset_bottom = 79.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="reginTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.52588e-05, -1.52588e-05)
+scale = Vector2(1.35156, 1.35156)
+texture = ExtResource("4_6mtlq")
+texture_scale = 2.16
+height = 202.0
+
+[connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
+[connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
+[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="dealAttackTimer" to="." method="_on_dealt_attack_timer_timeout"]
+[connection signal="timeout" from="reginTimer" to="." method="_on_regin_timer_timeout"]

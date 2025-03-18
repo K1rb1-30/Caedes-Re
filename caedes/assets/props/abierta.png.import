@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dopl45b0y8xf7"
-path="res://.godot/imported/PasilloConExit.png-40f45455a405d11428ad389778f31a1f.ctex"
+uid="uid://2jtxclh8dwi4"
+path="res://.godot/imported/abierta.png-7243f891241ee074a13b19b68db85c70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fondos/PasilloConExit.png"
-dest_files=["res://.godot/imported/PasilloConExit.png-40f45455a405d11428ad389778f31a1f.ctex"]
+source_file="res://assets/props/abierta.png"
+dest_files=["res://.godot/imported/abierta.png-7243f891241ee074a13b19b68db85c70.ctex"]
 
 [params]
 

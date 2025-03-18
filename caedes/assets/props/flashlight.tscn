@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuijvwtxjtemf"]
+
+[ext_resource type="Texture2D" uid="uid://c3yl6vf2kric8" path="res://assets/character/andres/linterna.png" id="1_anaad"]
+[ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="2_jiq74"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1v3w"]
+radius = 13.0
+height = 66.0
+
+[node name="flashlight" type="Area2D"]
+
+[node name="Linterna" type="Sprite2D" parent="."]
+position = Vector2(62.9962, 33.25)
+scale = Vector2(0.0833333, 0.0833333)
+texture = ExtResource("1_anaad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(62, 33)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v1v3w")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(5, 30)
+texture = ExtResource("2_jiq74")
