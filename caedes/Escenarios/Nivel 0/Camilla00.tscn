@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://cm5hnplvopfth" path="res://assets/Decorations/A4.png" id="6_t8hbr"]
 [ext_resource type="Texture2D" uid="uid://gx5xq2pc46xb" path="res://assets/Decorations/inside/shop-and-hospital (1).png" id="7_2n6ll"]
-[ext_resource type="PackedScene" uid="uid://dj2we43ddiofo" path="res://assets/character/perprueba/personaje.tscn" id="7_6ncjs"]
 [ext_resource type="PackedScene" uid="uid://cfqqd0tgvuoaq" path="res://Dialogos/AreaDeTutoriales/area_2d.tscn" id="8_8vg2w"]
 [ext_resource type="Texture2D" uid="uid://dkrke57ufydeo" path="res://assets/Decorations/A5.png" id="8_ps0kv"]
+[ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="10_ps0kv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5p3b"]
 texture = ExtResource("5_ps0kv")
@@ -5925,8 +5925,8 @@ tile_set = SubResource("TileSet_yahq2")
 tile_map_data = PackedByteArray("AAAFAAcAAQAEAAAAAAAFAAgAAQAEAAEAAAAFAAkAAQAEAAIAAAAFAAoAAQAEAAMAAAAGAAcAAQAFAAAAAAAGAAgAAQAFAAEAAAAGAAkAAQAFAAIAAAAGAAoAAQAFAAMAAAACAAUAAQAKAAAAAAACAAYAAQAKAAEAAAACAAcAAQAKAAIAAAACAAgAAQAKAAMAAAADAAUAAQALAAAAAAADAAcAAQALAAIAAAADAAgAAQALAAMAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
-[node name="JugadorPRUEBA" parent="." instance=ExtResource("7_6ncjs")]
-position = Vector2(97, 139)
-
 [node name="Area2D" parent="." instance=ExtResource("8_8vg2w")]
 position = Vector2(-57, -309)
+
+[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+scale = Vector2(0.3, 0.3)
