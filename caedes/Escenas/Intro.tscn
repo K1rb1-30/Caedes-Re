@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1wbmb6868jqh"]
+[gd_scene load_steps=12 format=3 uid="uid://j03sxrab6ikd"]
 
 [ext_resource type="Texture2D" uid="uid://bdi35gtpuhe15" path="res://Fondos/Intro.png" id="1_f2b3h"]
 [ext_resource type="Script" uid="uid://dyywik072xrmg" path="res://Escenas/intro.gd" id="1_w8r5c"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="2_w8r5c"]
 [ext_resource type="Texture2D" uid="uid://dg0jub2a0px0f" path="res://Fondos/IntroSin.png" id="4_bkn7a"]
 [ext_resource type="PackedScene" uid="uid://fcdcsllauhnm" path="res://assets/enemies/enemy.tscn" id="5_85384"]
-[ext_resource type="PackedScene" uid="uid://b6j64g6uawhkl" path="res://Escenas/encontrarLinterna.tscn" id="6_qemv1"]
+[ext_resource type="PackedScene" path="res://Escenas/encontrarLinterna.tscn" id="6_qemv1"]
 [ext_resource type="PackedScene" uid="uid://dta0t061akuuo" path="res://assets/props/panel.tscn" id="7_6pxc3"]
 [ext_resource type="Texture2D" uid="uid://dnbpud5hyn3wk" path="res://assets/props/cerrada.png" id="7_8xosh"]
 [ext_resource type="Texture2D" uid="uid://2jtxclh8dwi4" path="res://assets/props/abierta.png" id="8_6pxc3"]
