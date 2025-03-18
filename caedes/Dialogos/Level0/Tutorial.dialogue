@@ -1,58 +1,60 @@
 ~ tutocat
-Catlos: [[Hey|Hola|Miau]], ¿todo bien?.
-Catlos: Parece que estás atrapado aquí, curioso, ¿no?.
+Catlos: [[Buenas|Hola|Miau]], ¿todo bien?.
+Catlos: Parece que estás atrapado aquí.
 Catlos: No te preocupes, yo te ayudaré a salir.
-Catlos: Para salir de ahi pulsa la tecla "E" y para moverte pulsa las teclas "A" "D". => END
+Catlos: Primero quítate eso del brazo (pulsa “E” para interactuar) y mueve el culo hacia aquí (Pulsa “A” y “D” para moverte). => END
 
 ~ tutocat2
 #Cuando salga y se mueva un poco le saldra este dialogo
 
-- ¿Dónde estamos?
-	Catlos: Bueno… este lugar es extraño.
-	Catlos: [[Un lugar entre lugares|Un sueño dentro de otro|La casa de alguien más, creo]].
+- ¿Dónde estoy?
+	Catlos: Bueno… yo tampoco lo sé.
+	Catlos: Un lugar entre lugares.
 	Catlos: No es tan malo si no piensas mucho en ello.
 	 
-	- ¿Por qué estás aquí?
-		Catlos: Oh, llevo [[siglos|días|una eternidad]] aquí. O eso creo.
-		Catlos: A veces el tiempo no tiene sentido.
-		Catlos: A veces, [[tampoco lo tengo yo…|la realidad se dobla|las sombras susurran]].
+	- ¿Cuánto tiempo llevas aquí?
+		Catlos: Oh, llevaré [[siglos|días|una eternidad]] aquí. O eso creo.
+		Catlos: Aquí el tiempo no hace justicia.
+		Catlos: A veces, [[aqui el mundo no gira…|la realidad se corrompe|las sombras te hablan]].
 
-	- Esto se siente extraño.
+	- Siento una sensación extraña.
     	Catlos: Oh, sí… pasa a veces.
-    	Catlos: [[Como si algo nos observara|Como si no existiéramos del todo|Como si algo olvidara escribirnos]].
-    	Catlos: Pero seguro es solo imaginación, ¿verdad?
+    	Catlos: [[Como si algo nos observara|Como si no existiéramos del todo|Como si el mundo se olvidara de nosotros]].
+    	Catlos: Pero seguro es solo tu imaginación, ¿no?
 
 Catlos: En fin, si quieres salir, puedo indicarte el camino.
-Catlos: [[A menos que ya lo hayas olvidado…|A menos que el camino haya desaparecido|A menos que tú hayas desaparecido]].
+Catlos: [[A menos que tengas otra idea…|A menos que no recuerde el camino|A menos que este sitio tenga otros planes para nosotros]].
 Catlos: Oh, ¿qué decía? Ah, sí, ven por aquí. => END
 
 ~ tutocombate
 
-Catlos: Shh… [[escucha|espera|detente]].  
-Catlos: Hay alguien adelante. No nos ha visto todavía.  
-Catlos: Si quieres seguir, tendrás que [[ser más astuto|moverte con cuidado|convertirte en una sombra]].  
+Catlos: Shh… [[calla|silencio|espera]].  
+Catlos: Hay alguien delante. Creo que no nos ha visto.  
+Catlos: Si quieres seguir, tendrás que [[tener más cuidado|moverte con cuidado|ser cuidadoso]].  
 
 - ¿Qué hago?  
-	Catlos: Fácil. Acércate sin hacer ruido y cuando estés lo suficientemente cerca… pulsa la tecla "F".  
-	Catlos: [[Como si nunca hubiera estado aquí|Como si la realidad lo olvidara…]].
+	Catlos: Búscate la vida. Pero yo si fuera tú me acercaría en silencio y acabaría con él (Pulsa “F” para realizar un ataque sigiloso).  
+	Catlos: [[Nunca te acostumbrarás a este sitio…|Nunca puedes sentirte seguro en este sitio…]].
 
-	- ¿Seguro que esto es necesario?  
-		Catlos: *Sonríe levemente* Todo aquí es necesario. Todo aquí tiene un propósito.  
-		Catlos: Y a veces, [[ese propósito desaparece|ese propósito debe ser corregido|las sombras lo absorben]]. => END
+	
+- ¿Seguro que no hay una salida más sencilla?  
+		Catlos: Nada aquí es sencillo. Si estás aquí es por un propósito, buscarlo es tu misión ahora.  
+		Catlos: Y a veces, [[ese propósito desaparece|ese propósito te puede nublar|ese propósito es más duro de lo que crees]]. => END
 	- Vale
 		=> END
 
 ~ tutocombate2
-*Andrés elimina al enemigo* *poner variable de que el enemigo a sido eliminado* 
+*Andrés elimina al enemigo* *poner variable de que el enemigo ha sido eliminado* 
 
-Catlos: [[Bien.|Perfecto.|Eso fue… interesante.]]  
-Catlos: Felicidades, Andrés. Lo hiciste bien.  
-Catlos: Tan bien que [[podrías hacerlo otra vez |sería un problema si te gustara demasiado…]]. 
+Catlos: [[Bien.|Perfecto.|Me impresionas.]]  
+Catlos: Felicidades, Andrés. Lo has hecho bien.  
+Catlos: Tan bien que [[podrías acostumbrarte a esto|podrías dedicarte a esto]]. 
 
-- ¿Perdón?  
-	Catlos: Oh, nada, nada. Sigamos.  
+- ¿Como?  
+	Catlos: Nada. Sigamos.  
 
 => END
+
 
 
 
