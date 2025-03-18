@@ -8,9 +8,35 @@ var andresVivo = true
 var ataque = false
 
 func _physics_process(delta):
-	var direccion = Input.get_vector("left", "right", "up", "down")
-	velocity = direccion * 150
+	#var direccion = Input.get_vector("left", "right", "up", "down")
+	#velocity = direccion * 150
+	#move_and_slide()
+	velocity = Vector2.ZERO
+	var speed:int = 100
+	
+	if Input.is_action_pressed("right"):
+		velocity += Vector2(1, 0)
+		$Sprite2D.play("walk")
+		
+	elif Input.is_action_pressed("left"):
+		velocity += Vector2(-1, 0)
+		$Sprite2D.play("walk")
+		
+		
+	if Input.is_action_pressed("up"):
+		velocity += Vector2(0, -1)
+		$Sprite2D.play("walk")
+	elif Input.is_action_pressed("down"):
+		velocity += Vector2(0, 1)
+		$Sprite2D.play("walk")
+	
+		
+	velocity = velocity.normalized() * speed
+		
 	move_and_slide()
+	
+	
+	
 	enemy_Attack()
 	attack()
 	update_health()
