@@ -37,7 +37,7 @@ func _physics_process(delta):
 	
 	
 	
-	enemy_Attack()
+	#enemy_Attack()
 	attack()
 	update_health()
 	

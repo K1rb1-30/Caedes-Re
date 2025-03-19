@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=24 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Texture2D" uid="uid://co60xxyfgu6qp" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-bg.png" id="1_rt8nf"]
 [ext_resource type="Texture2D" uid="uid://bi5kqh0nv5oc5" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-mid-trees.png" id="2_6ncjs"]
 [ext_resource type="Texture2D" uid="uid://c65yf4ubimt2p" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-far-trees.png" id="3_8vg2w"]
 [ext_resource type="Texture2D" uid="uid://bd1spm7npl25w" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-close-trees.png" id="4_2n6ll"]
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_ps0kv"]
+[ext_resource type="PackedScene" uid="uid://fcdcsllauhnm" path="res://assets/enemies/enemy.tscn" id="5_t8hbr"]
 [ext_resource type="Texture2D" uid="uid://cm5hnplvopfth" path="res://assets/Decorations/A4.png" id="6_t8hbr"]
 [ext_resource type="Texture2D" uid="uid://gx5xq2pc46xb" path="res://assets/Decorations/inside/shop-and-hospital (1).png" id="7_2n6ll"]
 [ext_resource type="PackedScene" uid="uid://cfqqd0tgvuoaq" path="res://Dialogos/AreaDeTutoriales/area_2d.tscn" id="8_8vg2w"]
@@ -5930,3 +5931,6 @@ position = Vector2(-57, -309)
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
 scale = Vector2(0.3, 0.3)
+
+[node name="Enemy" parent="." instance=ExtResource("5_t8hbr")]
+position = Vector2(1783, -228)
