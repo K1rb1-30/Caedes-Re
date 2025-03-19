@@ -164,6 +164,7 @@ rotation = 0.118543
 shape = SubResource("CapsuleShape2D_8j744")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 limit_left = 0
 
 [node name="andres_Hitbox" type="Area2D" parent="." groups=["andres", "enemy"]]
