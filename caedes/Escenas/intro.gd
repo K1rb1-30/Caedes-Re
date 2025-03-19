@@ -39,6 +39,11 @@ func _physics_process(delta):
 	elif global.cerrarPad == false and scriptActive:
 		andres.set_script(null)
 		scriptActive = false
+		
+	if global.labelOK == true:
+		puertaCerrada.visible = false
+		puertaAbierta.visible = true
+		doorPad.visible = false
 	
 
 	
@@ -47,10 +52,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	andres = body
 	print("andres ha entrado")
 	doorPad.visible = true			
-	if global.labelOK == true:
-		puertaCerrada.visible = false
-		puertaAbierta.visible = true
-		doorPad.visible = false
+
 	
 
 	
