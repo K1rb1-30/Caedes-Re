@@ -5934,3 +5934,10 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Enemy" parent="." instance=ExtResource("5_t8hbr")]
 position = Vector2(1783, -228)
+
+[node name="TimerDialogo" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="TimerDialogo" to="Area2D" method="_on_timer_dialogo_timeout"]
