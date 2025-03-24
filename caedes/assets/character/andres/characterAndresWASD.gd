@@ -4,7 +4,7 @@ var enemyAttackRange = false
 var enemyAttackCooldown = true
 var health = 100
 var andresVivo = true
-
+@onready var sprite2d: AnimatedSprite2D = $Sprite2D
 var ataque = false
 
 func _physics_process(delta):
@@ -17,11 +17,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		velocity += Vector2(1, 0)
 		$Sprite2D.play("walk")
-		
+		#sprite2d.flip_h = false
 	elif Input.is_action_pressed("left"):
 		velocity += Vector2(-1, 0)
 		$Sprite2D.play("walk")
-		
+		#sprite2d.flip_h = true
 		
 	if Input.is_action_pressed("up"):
 		velocity += Vector2(0, -1)
