@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=26 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://b5g2ew04ayppg" path="res://assets/character/perprueba/sprites/death.png" id="2_mr8cp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7367k2getleb" path="res://assets/character/perprueba/sprites/static/Layer-1.png" id="4_0yq87"]
 [ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="4_6mtlq"]
 [ext_resource type="Texture2D" uid="uid://bbf2px2bga8t1" path="res://assets/character/perprueba/sprites/walk.png" id="5_r0ao0"]
+[ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="6_0lqos"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wxxd"]
 atlas = ExtResource("2_mr8cp")
@@ -179,14 +180,7 @@ one_shot = true
 [node name="dealAttackTimer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(0, 0.843137, 0.054902, 1)
-offset_left = -30.0
-offset_top = 59.0
-offset_right = 92.0
-offset_bottom = 79.0
-scale = Vector2(0.5, 0.5)
-show_percentage = false
+[node name="healthbar" parent="." instance=ExtResource("6_0lqos")]
 
 [node name="reginTimer" type="Timer" parent="."]
 wait_time = 5.0

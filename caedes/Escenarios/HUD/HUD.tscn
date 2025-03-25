@@ -1,0 +1,161 @@
+[gd_scene load_steps=27 format=3 uid="uid://ccdrxspa8n2o2"]
+
+[ext_resource type="Script" uid="uid://bmlahpp3dxjpg" path="res://Escenarios/HUD/hud.gd" id="1_88kyl"]
+[ext_resource type="Texture2D" uid="uid://w03heew0rlsd" path="res://assets/HUD/AndresHUD/AndresHUD1.png" id="1_j275x"]
+[ext_resource type="Texture2D" uid="uid://tqri0df4ste1" path="res://assets/HUD/AndresHUD/AndresHUD2.png" id="2_88kyl"]
+[ext_resource type="Texture2D" uid="uid://dd8vljsvqfe73" path="res://assets/HUD/AndresHUD/AndresHUD3.png" id="3_1r18p"]
+[ext_resource type="Texture2D" uid="uid://d1jwj0klrtysp" path="res://assets/HUD/AndresHUD/AndresHUD4.png" id="4_1m7tk"]
+[ext_resource type="Texture2D" uid="uid://cyspmdckndt8g" path="res://assets/HUD/AndresHUD/AndresHUD5.png" id="5_rryy6"]
+[ext_resource type="Texture2D" uid="uid://bbmnb2ahyg872" path="res://assets/HUD/AndresHUD/AndresHUD7.png" id="6_x08bo"]
+[ext_resource type="Texture2D" uid="uid://d2e0aac362awa" path="res://assets/HUD/AndresHUD/AndresHUD6.png" id="7_2xful"]
+[ext_resource type="Texture2D" uid="uid://bf0pao54ohgxv" path="res://assets/HUD/AndresHUD/AndresHUD8.png" id="8_aant6"]
+[ext_resource type="Texture2D" uid="uid://6x7kpkuvyvht" path="res://assets/HUD/AndresHUD/AndresHUD12.png" id="9_ym6sg"]
+[ext_resource type="Texture2D" uid="uid://dtqyv0ua248m5" path="res://assets/HUD/AndresHUD/AndresHUD11.png" id="10_lhsnj"]
+[ext_resource type="Texture2D" uid="uid://b2eywv3he0sf2" path="res://assets/HUD/AndresHUD/AndresHUD10.png" id="11_c1417"]
+[ext_resource type="Texture2D" uid="uid://braxjj243lm2y" path="res://assets/HUD/AndresHUD/AndresHUD13.png" id="12_d2qae"]
+[ext_resource type="Texture2D" uid="uid://k0gjr4xpatx4" path="res://assets/HUD/AndresHUD/AndresHUD9.png" id="13_p00t3"]
+[ext_resource type="Texture2D" uid="uid://txax3yvm5p1g" path="res://assets/HUD/AndresHUD/AndresHUD14.png" id="14_0ckq7"]
+[ext_resource type="Texture2D" uid="uid://blveil7fx4kbx" path="res://assets/HUD/AndresHUD/AndresHUD17.png" id="15_rfetd"]
+[ext_resource type="Texture2D" uid="uid://cgfygajm2cmo4" path="res://assets/HUD/AndresHUD/AndresHUD16.png" id="16_es07j"]
+[ext_resource type="Texture2D" uid="uid://cfrr05m00f11k" path="res://assets/HUD/AndresHUD/AndresHUD15.png" id="17_gol4g"]
+[ext_resource type="Texture2D" uid="uid://7u3e5w8jmap0" path="res://assets/HUD/AndresHUD/AndresHUD19.png" id="18_7u83s"]
+[ext_resource type="Texture2D" uid="uid://ccdtdj2lubypm" path="res://assets/HUD/AndresHUD/AndresHUD18.png" id="19_v7ujq"]
+[ext_resource type="Texture2D" uid="uid://dwkk20gp4tagp" path="res://assets/HUD/AndresHUD/AndresHUD20.png" id="20_ilbkt"]
+[ext_resource type="Texture2D" uid="uid://elcaey0tl60f" path="res://assets/HUD/AndresHUD/AndresHUD23.png" id="21_45yx4"]
+[ext_resource type="Texture2D" uid="uid://lfmvopd0mq7v" path="res://assets/HUD/AndresHUD/AndresHUD22.png" id="22_rtq04"]
+[ext_resource type="Texture2D" uid="uid://ch3nvbjumveyc" path="res://assets/HUD/AndresHUD/AndresHUD21.png" id="23_mrk6w"]
+[ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="25_1r18p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcu47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j275x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_88kyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1r18p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1m7tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rryy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x08bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2xful")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aant6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ym6sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lhsnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c1417")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d2qae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p00t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0ckq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rfetd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_es07j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gol4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7u83s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v7ujq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ilbkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_45yx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rtq04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mrk6w")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 7.0
+}]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("NumeroVida", "NumeroEstado")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_88kyl")
+NumeroVida = NodePath("HBoxContainer/VBoxContainer/VidaHUD/NumeroVida")
+NumeroEstado = NodePath("HBoxContainer/VBoxContainer/EstadoHUD/NumeroEstado")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 29.0
+offset_right = 266.0
+offset_bottom = 264.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(74, 137)
+scale = Vector2(0.222917, 0.222917)
+sprite_frames = SubResource("SpriteFrames_qcu47")
+animation = &"Default"
+frame_progress = 0.339754
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VidaHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="healthbar" parent="HBoxContainer/VBoxContainer/VidaHUD" instance=ExtResource("25_1r18p")]
+layout_mode = 2
+
+[node name="Vida2" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
+visible = false
+layout_mode = 2
+text = "Vida:"
+
+[node name="NumeroVida" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="EstadoHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Estado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+layout_mode = 2
+text = "Estado:"
+
+[node name="NumeroEstado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+layout_mode = 2
+text = "0"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
