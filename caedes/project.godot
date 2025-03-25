@@ -38,6 +38,8 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 andres=""
 enemy=""
+anim_antorcha=""
+anim_candelario=""
 
 [input]
 
