@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://d12vovu4d14gw"]
+[gd_scene load_steps=11 format=4 uid="uid://d12vovu4d14gw"]
 
 [ext_resource type="Texture2D" uid="uid://co60xxyfgu6qp" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-bg.png" id="1_kbohv"]
 [ext_resource type="Texture2D" uid="uid://c65yf4ubimt2p" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-far-trees.png" id="2_kq8x6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bd1spm7npl25w" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-close-trees.png" id="4_kpabu"]
 [ext_resource type="PackedScene" uid="uid://dj2we43ddiofo" path="res://assets/character/perprueba/personaje.tscn" id="5_kbohv"]
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_kq8x6"]
+[ext_resource type="Script" uid="uid://de8ti5nvntw50" path="res://Escenarios/PasilloRecuerdos/areaGato0.gd" id="7_kpabu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlrlw"]
 texture = ExtResource("5_kq8x6")
@@ -1426,6 +1427,9 @@ texture = ExtResource("5_kq8x6")
 [sub_resource type="TileSet" id="TileSet_kpabu"]
 sources/0 = SubResource("TileSetAtlasSource_tlrlw")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpabu"]
+height = 168.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -1475,7 +1479,16 @@ tile_map_data = PackedByteArray("AAD8/wwAAAAYACkAAAD8/w0AAAAYACoAAAD9/wwAAAAZACk
 tile_set = SubResource("TileSet_kpabu")
 
 [node name="Jugador" parent="." instance=ExtResource("5_kbohv")]
-position = Vector2(407, 235)
+position = Vector2(243, 248)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(406, 295)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_kpabu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(431, 208)
+shape = SubResource("CapsuleShape2D_kpabu")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
