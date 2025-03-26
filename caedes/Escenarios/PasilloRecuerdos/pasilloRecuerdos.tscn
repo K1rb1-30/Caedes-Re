@@ -1480,7 +1480,7 @@ tile_map_data = PackedByteArray("AAD8/wwAAAAYACkAAAD8/w0AAAAYACoAAAD9/wwAAAAZACk
 tile_set = SubResource("TileSet_kpabu")
 
 [node name="Jugador" parent="." instance=ExtResource("5_kbohv")]
-position = Vector2(243, 248)
+position = Vector2(168, 265)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(406, 295)
@@ -1495,5 +1495,6 @@ shape = SubResource("CapsuleShape2D_kpabu")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("8_kpabu")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
