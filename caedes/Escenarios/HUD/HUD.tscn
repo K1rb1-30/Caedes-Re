@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccdrxspa8n2o2"]
+[gd_scene load_steps=28 format=3 uid="uid://ccdrxspa8n2o2"]
 
 [ext_resource type="Script" uid="uid://bmlahpp3dxjpg" path="res://Escenarios/HUD/hud.gd" id="1_88kyl"]
 [ext_resource type="Texture2D" uid="uid://w03heew0rlsd" path="res://assets/HUD/AndresHUD/AndresHUD1.png" id="1_j275x"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://lfmvopd0mq7v" path="res://assets/HUD/AndresHUD/AndresHUD22.png" id="22_rtq04"]
 [ext_resource type="Texture2D" uid="uid://ch3nvbjumveyc" path="res://assets/HUD/AndresHUD/AndresHUD21.png" id="23_mrk6w"]
 [ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="25_1r18p"]
+[ext_resource type="PackedScene" uid="uid://dahvuchfa3ofw" path="res://Escenarios/HUD/Cordura.tscn" id="26_1m7tk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qcu47"]
 animations = [{
@@ -138,23 +139,28 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Vida2" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
-visible = false
 layout_mode = 2
 text = "Vida:"
 
 [node name="NumeroVida" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
-visible = false
 layout_mode = 2
 text = "0"
 
 [node name="EstadoHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD" instance=ExtResource("26_1m7tk")]
+offset = Vector2(0, 28)
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 0, 28)
+
 [node name="Estado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+visible = false
 layout_mode = 2
 text = "Estado:"
 
 [node name="NumeroEstado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+visible = false
 layout_mode = 2
 text = "0"
 
