@@ -86,7 +86,7 @@ interactuarF={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/dialogue.dialogue", "res://Dialogos/Level0/Level0Principal.dialogue", "res://Dialogos/Level0/Tutorial.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/dialogue.dialogue", "res://Dialogos/Level0/Level0Principal.dialogue", "res://Dialogos/Level0/Tutorial.dialogue", "res://untitled.dialogue", "res://Dialogos/PasilloRecuerdos/Pasillo0.dialogue")
 
 [rendering]
 

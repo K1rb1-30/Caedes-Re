@@ -22,7 +22,8 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("down"):
 		velocity += Vector2(0, 1)
 		$AnimatedSprite2D.play("walkleft")
-	
+	if velocity == Vector2(0, 0) :
+		$AnimatedSprite2D.play("static")
 		
 	velocity = velocity.normalized() * speed
 		
