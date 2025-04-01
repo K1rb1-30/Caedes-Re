@@ -17,24 +17,24 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("right"):
 		velocity += Vector2(1, 0)
-		sprite2d.play("walk")
-		sprite2d.flip_h = false
+		sprite2d.play("Izquierda")
+		sprite2d.flip_h = true
 		
 	elif Input.is_action_pressed("left"):
 		velocity += Vector2(-1, 0)
-		sprite2d.play("walk")
-		sprite2d.flip_h = true
+		sprite2d.play("Izquierda")
+		sprite2d.flip_h = false
 		
-	if Input.is_action_pressed("up"):
+	elif Input.is_action_pressed("up"):
 		velocity += Vector2(0, -1)
-		sprite2d.play("walk")
+		sprite2d.play("DeAtras")
 		sprite2d.flip_h = false
 	elif Input.is_action_pressed("down"):
 		velocity += Vector2(0, 1)
-		sprite2d.play("walk")
+		sprite2d.play("DeFrente")
 		sprite2d.flip_h = false
 	if velocity == Vector2(0, 0) :
-		sprite2d.play("static")
+		sprite2d.play("StaticAbuelo")
 		
 	velocity = velocity.normalized() * speed
 		
