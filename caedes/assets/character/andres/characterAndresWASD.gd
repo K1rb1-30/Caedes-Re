@@ -8,6 +8,7 @@ var andresVivo = true
 
 var ataque = false
 
+
 func _physics_process(delta):
 	#var direccion = Input.get_vector("left", "right", "up", "down")
 	#velocity = direccion * 150
@@ -37,12 +38,7 @@ func _physics_process(delta):
 		sprite2d.play("StaticAbuelo")
 		
 	velocity = velocity.normalized() * speed
-		
 	move_and_slide()
-	
-	
-	
-	#enemy_Attack()
 	attack()
 	update_health()
 	
@@ -55,32 +51,39 @@ func _physics_process(delta):
 func _on_andres_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemyAttackRange = true
+		$attackCooldown.start()
 		
-
-
+		
 func _on_andres_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemyAttackRange = false
+		#$attackCooldown.stop()
 		
 
 func _on_attack_cooldown_timeout() -> void:
-	enemyAttackCooldown = true
+	if enemyAttackRange:
+		enemy_Attack()
+		
+		$attackCooldown.start()
+		
+		
 
 func enemy_Attack():
-	if enemyAttackRange and enemyAttackCooldown:
-		health = health - 20
-		enemyAttackCooldown = false
-		$attackCooldown.start()
-		print(health)
+	#if enemyAttackRange and enemyAttackCooldown:
+	health = health - 20
+	print(health)
+		
+		#enemyAttackCooldown = false
+		#$attackCooldown.start()
 		
 func attack():
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and global.andresInattackZone:
-		global.andresCurrentAttack = true
-		$dealAttackTimer.start()
-		
 
+	if Input.is_action_just_pressed("attack") and global.andresInattackZone:
+			global.andresCurrentAttack = true
+			#$dealAttackTimer.start()
+			ataque = true
+			
 func _on_deal_attack_timer_timeout() -> void:
-	$dealAttackTimer.stop()
 	global.andresCurrentAttack = false
 	ataque = false
 
@@ -92,11 +95,3 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-
-func _on_regin_timer_timeout() -> void:
-	if health < 100:
-		health = health + 20
-		if health > 100:
-			health = 100
-	if health <= 0:
-		health = 0

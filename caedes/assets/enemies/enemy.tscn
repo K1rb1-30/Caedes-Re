@@ -23,7 +23,7 @@ size = Vector2(23, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf5tu"]
 size = Vector2(23, 78)
 
-[node name="Enemy" type="CharacterBody2D" groups=["andres", "enemy"]]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(254, 278)
 collision_layer = 2
 script = ExtResource("1_rf5tu")
@@ -47,7 +47,8 @@ shape = SubResource("RectangleShape2D_3epn5")
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox" groups=["andres", "enemy"]]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_rf5tu")
 
 [node name="damageCooldown" type="Timer" parent="."]

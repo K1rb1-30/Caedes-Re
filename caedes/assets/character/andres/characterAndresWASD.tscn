@@ -278,12 +278,13 @@ height = 32.0
 radius = 17.0
 height = 132.0
 
-[node name="Andres" type="CharacterBody2D" groups=["andres", "enemy"]]
+[node name="Andres" type="CharacterBody2D" groups=["andres"]]
 position = Vector2(558, 305)
 collision_layer = 2
 script = ExtResource("1_8oxup")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(8.97, 0)
 scale = Vector2(4.28906, 4.26482)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
@@ -308,11 +309,12 @@ collision_mask = 2
 shape = SubResource("CapsuleShape2D_8oxup")
 
 [node name="attackCooldown" type="Timer" parent="." groups=["andres", "enemy"]]
-wait_time = 0.5
 one_shot = true
+autostart = true
 
-[node name="dealAttackTimer" type="Timer" parent="."]
+[node name="dealAttackTimer" type="Timer" parent="." groups=["enemy"]]
 wait_time = 5.0
+one_shot = true
 
 [node name="healthbar" parent="." instance=ExtResource("6_0lqos")]
 
