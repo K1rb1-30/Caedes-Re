@@ -3,9 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://tbbxdko0602x" path="res://assets/HUD/BarraCordura/cordurebarbor.png" id="1_78wug"]
 [ext_resource type="Texture2D" uid="uid://sy6jn07nkvto" path="res://assets/HUD/BarraCordura/cordurebarbg.png" id="2_2p0q3"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Cordura" type="CanvasLayer"]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 value = 100.0

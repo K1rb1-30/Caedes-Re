@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+#Cordura añadir al viejo
+var cordure : int = 100
+
+
 func _ready() -> void:
 	pass
 	
