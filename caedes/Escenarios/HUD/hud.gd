@@ -1,6 +1,6 @@
 extends Control
 class_name HUD
-@onready var sprite: AnimatedSprite2D = $HBoxContainer/AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $HBoxContainer/VBoxContainer/EstadoHUD/AnimatedSprite2D
 
 @export var NumeroVida : Label
 @export var NumeroEstado : Label

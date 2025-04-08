@@ -3,6 +3,7 @@ extends CharacterBody2D
 var enemyAttackRange = false
 var enemyAttackCooldown = true
 var health = 100
+var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 

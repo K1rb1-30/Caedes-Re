@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccdrxspa8n2o2"]
+[gd_scene load_steps=28 format=3 uid="uid://ccdrxspa8n2o2"]
 
 [ext_resource type="Script" uid="uid://bmlahpp3dxjpg" path="res://Escenarios/HUD/hud.gd" id="1_88kyl"]
 [ext_resource type="Texture2D" uid="uid://w03heew0rlsd" path="res://assets/HUD/AndresHUD/AndresHUD1.png" id="1_j275x"]
+[ext_resource type="PackedScene" path="res://Escenarios/HUD/Vida.tscn" id="2_1m7tk"]
 [ext_resource type="Texture2D" uid="uid://tqri0df4ste1" path="res://assets/HUD/AndresHUD/AndresHUD2.png" id="2_88kyl"]
 [ext_resource type="Texture2D" uid="uid://dd8vljsvqfe73" path="res://assets/HUD/AndresHUD/AndresHUD3.png" id="3_1r18p"]
 [ext_resource type="Texture2D" uid="uid://d1jwj0klrtysp" path="res://assets/HUD/AndresHUD/AndresHUD4.png" id="4_1m7tk"]
@@ -24,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://elcaey0tl60f" path="res://assets/HUD/AndresHUD/AndresHUD23.png" id="21_45yx4"]
 [ext_resource type="Texture2D" uid="uid://lfmvopd0mq7v" path="res://assets/HUD/AndresHUD/AndresHUD22.png" id="22_rtq04"]
 [ext_resource type="Texture2D" uid="uid://ch3nvbjumveyc" path="res://assets/HUD/AndresHUD/AndresHUD21.png" id="23_mrk6w"]
-[ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="25_1r18p"]
+[ext_resource type="PackedScene" path="res://Escenarios/HUD/Cordura.tscn" id="26_1m7tk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qcu47"]
 animations = [{
@@ -100,10 +101,10 @@ animations = [{
 }],
 "loop": true,
 "name": &"Default",
-"speed": 7.0
+"speed": 5.0
 }]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("NumeroVida", "NumeroEstado")]
+[node name="HUD" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,8 +112,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_88kyl")
-NumeroVida = NodePath("HBoxContainer/VBoxContainer/VidaHUD/NumeroVida")
-NumeroEstado = NodePath("HBoxContainer/VBoxContainer/EstadoHUD/NumeroEstado")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -121,41 +120,30 @@ offset_top = 29.0
 offset_right = 266.0
 offset_bottom = 264.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer"]
-position = Vector2(74, 137)
-scale = Vector2(0.222917, 0.222917)
-sprite_frames = SubResource("SpriteFrames_qcu47")
-animation = &"Default"
-frame_progress = 0.365014
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
 [node name="VidaHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="healthbar" parent="HBoxContainer/VBoxContainer/VidaHUD" instance=ExtResource("25_1r18p")]
-layout_mode = 2
-
-[node name="Vida2" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
-visible = false
-layout_mode = 2
-text = "Vida:"
-
-[node name="NumeroVida" type="Label" parent="HBoxContainer/VBoxContainer/VidaHUD"]
-visible = false
-layout_mode = 2
-text = "0"
+[node name="Vida" parent="HBoxContainer/VBoxContainer/VidaHUD" instance=ExtResource("2_1m7tk")]
+offset = Vector2(16, 10)
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 16, 10)
 
 [node name="EstadoHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Estado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
-layout_mode = 2
-text = "Estado:"
+[node name="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD" instance=ExtResource("26_1m7tk")]
+offset = Vector2(56, 37)
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 56, 37)
 
-[node name="NumeroEstado" type="Label" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
-layout_mode = 2
-text = "0"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+position = Vector2(69.8749, 142.875)
+scale = Vector2(0.225347, 0.225347)
+sprite_frames = SubResource("SpriteFrames_qcu47")
+animation = &"Default"
+frame_progress = 0.365014
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

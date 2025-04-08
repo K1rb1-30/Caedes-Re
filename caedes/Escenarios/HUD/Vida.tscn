@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb8604ekndhl2"]
+
+[ext_resource type="Script" path="res://Escenarios/HUD/vidaScript.gd" id="1_rdtdf"]
+[ext_resource type="Texture2D" uid="uid://bqkvolukw25yd" path="res://assets/HUD/BarraVida/BarrVacia.png" id="1_sjqei"]
+[ext_resource type="Texture2D" uid="uid://dgk6w6hym6aj0" path="res://assets/HUD/BarraVida/BarrLleno.png" id="2_rdtdf"]
+
+[node name="Vida" type="CanvasLayer"]
+script = ExtResource("1_rdtdf")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 1.0
+offset_right = 77.0
+offset_bottom = 20.0
+value = 100.0
+texture_over = ExtResource("1_sjqei")
+texture_progress = ExtResource("2_rdtdf")

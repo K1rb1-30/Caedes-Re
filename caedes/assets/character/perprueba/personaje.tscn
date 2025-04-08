@@ -192,6 +192,7 @@ radius = 7.0
 script = ExtResource("1_3rmki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ndcqv")
 animation = &"walk"
 
