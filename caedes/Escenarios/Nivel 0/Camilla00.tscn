@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=67 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -11,13 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://bxe0ipjfgj1oh" path="res://assets/Decorations/candleA_01.png" id="9_5iaui"]
 [ext_resource type="Texture2D" uid="uid://duarc68m3xcyp" path="res://assets/Decorations/torch_1.png" id="9_c5p3b"]
 [ext_resource type="Texture2D" uid="uid://bqp72yfr1oe13" path="res://assets/Decorations/candleA_02.png" id="10_1dte4"]
-[ext_resource type="Texture2D" uid="uid://b3q2yhbividkr" path="res://assets/Decorations/torch_2.png" id="10_5iaui"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="10_ps0kv"]
-[ext_resource type="Texture2D" uid="uid://c10kdoprbu1eh" path="res://assets/Decorations/torch_3.png" id="11_1dte4"]
+[ext_resource type="Texture2D" uid="uid://b8opimxy1vx0u" path="res://assets/Decorations/antor0.png" id="11_1j7p3"]
 [ext_resource type="Texture2D" uid="uid://1pd5btjdbuto" path="res://assets/Decorations/candleA_03.png" id="11_yahq2"]
+[ext_resource type="Texture2D" uid="uid://dlbgshc6jrovp" path="res://assets/Decorations/antor1.png" id="12_e5phj"]
 [ext_resource type="Texture2D" uid="uid://qcfanv65k6br" path="res://assets/Decorations/candleA_04.png" id="12_usl1r"]
-[ext_resource type="Texture2D" uid="uid://dx2oawucxwke4" path="res://assets/Decorations/torch_4.png" id="12_yahq2"]
 [ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="13_cmsiv"]
+[ext_resource type="Texture2D" uid="uid://bfcfh2bm1rayv" path="res://assets/Decorations/antor2.png" id="13_v1t8p"]
+[ext_resource type="Texture2D" uid="uid://dgpxt63xrirty" path="res://assets/Decorations/antor3.png" id="14_x05nm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vg2w"]
 size = Vector2(202.5, 80)
@@ -10347,20 +10348,20 @@ sources/0 = SubResource("TileSetAtlasSource_wla3d")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_c5p3b")
+"texture": ExtResource("11_1j7p3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_5iaui")
+"texture": ExtResource("12_e5phj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_1dte4")
+"texture": ExtResource("13_v1t8p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_yahq2")
+"texture": ExtResource("14_x05nm")
 }],
 "loop": true,
 "name": &"antorcha",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -10384,12 +10385,12 @@ animations = [{
 script = ExtResource("1_1mms0")
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(1001, 199)
+position = Vector2(577, 135)
 scale = Vector2(0.3, 0.3)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
 color = Color(0, 0, 0, 1)
-energy = 0.9
+energy = 0.8
 blend_mode = 2
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -10813,7 +10814,6 @@ show_behind_parent = true
 position = Vector2(671, 47)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
-frame_progress = 0.334131
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha9"]
 position = Vector2(9.53674e-07, -1.99998)
@@ -10869,8 +10869,8 @@ texture_scale = 1.47
 show_behind_parent = true
 position = Vector2(97, 50)
 sprite_frames = SubResource("SpriteFrames_usl1r")
-animation = &"antorcha"
-frame_progress = 0.334131
+animation = &"candelario"
+frame = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha3"]
 position = Vector2(9.53674e-07, -1.99998)

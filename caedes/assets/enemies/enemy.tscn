@@ -18,13 +18,12 @@ animations = [{
 radius = 154.003
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3epn5"]
-size = Vector2(23, 78)
+size = Vector2(36, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf5tu"]
-size = Vector2(23, 78)
+size = Vector2(59, 113)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
-position = Vector2(254, 278)
 collision_layer = 2
 script = ExtResource("1_rf5tu")
 
@@ -39,16 +38,14 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
 shape = SubResource("CircleShape2D_3epn5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["andres"]]
-position = Vector2(0.5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3epn5")
 
 [node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox" groups=["andres", "enemy"]]
-position = Vector2(0.5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox" groups=["enemy"]]
 shape = SubResource("RectangleShape2D_rf5tu")
 
 [node name="damageCooldown" type="Timer" parent="."]

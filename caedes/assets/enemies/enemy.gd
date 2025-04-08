@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var velocida = 70
+@export var velocida = 70
 var playerChase = false
 var Andres = null
 
-var healthEnemy= 100
+@export var healthEnemy = 100
 var canTakeDamage = true
 
 func _physics_process(delta):

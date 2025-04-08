@@ -63,7 +63,6 @@ func _on_andres_hitbox_body_exited(body: Node2D) -> void:
 func _on_attack_cooldown_timeout() -> void:
 	if enemyAttackRange:
 		enemy_Attack()
-		
 		$attackCooldown.start()
 		
 		
