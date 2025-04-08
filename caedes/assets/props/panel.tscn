@@ -25,7 +25,7 @@ layout_mode = 0
 offset_left = 539.0
 offset_top = 299.0
 offset_right = 628.0
-offset_bottom = 427.0
+offset_bottom = 462.0
 scale = Vector2(1.36452, 1.35177)
 theme = SubResource("Theme_rsbe3")
 
