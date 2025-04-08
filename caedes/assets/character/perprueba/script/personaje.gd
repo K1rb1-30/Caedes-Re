@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 #Cordura añadir al viejo
 var cordure : int = 100
+var vida2 : int = 100
+#----------------------
+func cordure_time(heal):
+	cordure += heal
+	
 
 
 func _ready() -> void:

@@ -101,7 +101,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Default",
-"speed": 7.0
+"speed": 5.0
 }]
 
 [node name="HUD" type="Control"]
