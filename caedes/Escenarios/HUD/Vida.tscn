@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxttuxtlc7xub"]
+[gd_scene load_steps=4 format=3 uid="uid://bb8604ekndhl2"]
 
-[ext_resource type="Script" uid="uid://dauu42cgtjiv7" path="res://Escenarios/HUD/vidaScript.gd" id="1_rdtdf"]
+[ext_resource type="Script" path="res://Escenarios/HUD/vidaScript.gd" id="1_rdtdf"]
 [ext_resource type="Texture2D" uid="uid://bqkvolukw25yd" path="res://assets/HUD/BarraVida/BarrVacia.png" id="1_sjqei"]
 [ext_resource type="Texture2D" uid="uid://dgk6w6hym6aj0" path="res://assets/HUD/BarraVida/BarrLleno.png" id="2_rdtdf"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dahvuchfa3ofw"]
+[gd_scene load_steps=3 format=3 uid="uid://cc6oskrmbhnjq"]
 
 [ext_resource type="Texture2D" uid="uid://tbbxdko0602x" path="res://assets/HUD/BarraCordura/cordurebarbor.png" id="1_78wug"]
 [ext_resource type="Texture2D" uid="uid://sy6jn07nkvto" path="res://assets/HUD/BarraCordura/cordurebarbg.png" id="2_2p0q3"]
