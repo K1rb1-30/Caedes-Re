@@ -1,11 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://ccdrxspa8n2o2"]
+[gd_scene load_steps=35 format=3 uid="uid://ccdrxspa8n2o2"]
 
 [ext_resource type="Script" uid="uid://bmlahpp3dxjpg" path="res://Escenarios/HUD/hud.gd" id="1_88kyl"]
 [ext_resource type="Texture2D" uid="uid://w03heew0rlsd" path="res://assets/HUD/AndresHUD/AndresHUD1.png" id="1_j275x"]
-[ext_resource type="PackedScene" path="res://Escenarios/HUD/Vida.tscn" id="2_1m7tk"]
 [ext_resource type="Texture2D" uid="uid://tqri0df4ste1" path="res://assets/HUD/AndresHUD/AndresHUD2.png" id="2_88kyl"]
+[ext_resource type="Texture2D" uid="uid://bqkvolukw25yd" path="res://assets/HUD/BarraVida/BarrVacia.png" id="2_lhsnj"]
 [ext_resource type="Texture2D" uid="uid://dd8vljsvqfe73" path="res://assets/HUD/AndresHUD/AndresHUD3.png" id="3_1r18p"]
+[ext_resource type="Texture2D" uid="uid://dgk6w6hym6aj0" path="res://assets/HUD/BarraVida/BarrLleno.png" id="3_c1417"]
 [ext_resource type="Texture2D" uid="uid://d1jwj0klrtysp" path="res://assets/HUD/AndresHUD/AndresHUD4.png" id="4_1m7tk"]
+[ext_resource type="Texture2D" uid="uid://tbbxdko0602x" path="res://assets/HUD/BarraCordura/cordurebarbor.png" id="4_d2qae"]
+[ext_resource type="Shader" uid="uid://cykckdrsy4ulo" path="res://Escenarios/HUD/shaderRedondo.gdshader" id="4_rryy6"]
+[ext_resource type="Texture2D" uid="uid://sy6jn07nkvto" path="res://assets/HUD/BarraCordura/cordurebarbg.png" id="5_p00t3"]
 [ext_resource type="Texture2D" uid="uid://cyspmdckndt8g" path="res://assets/HUD/AndresHUD/AndresHUD5.png" id="5_rryy6"]
 [ext_resource type="Texture2D" uid="uid://bbmnb2ahyg872" path="res://assets/HUD/AndresHUD/AndresHUD7.png" id="6_x08bo"]
 [ext_resource type="Texture2D" uid="uid://d2e0aac362awa" path="res://assets/HUD/AndresHUD/AndresHUD6.png" id="7_2xful"]
@@ -25,7 +29,12 @@
 [ext_resource type="Texture2D" uid="uid://elcaey0tl60f" path="res://assets/HUD/AndresHUD/AndresHUD23.png" id="21_45yx4"]
 [ext_resource type="Texture2D" uid="uid://lfmvopd0mq7v" path="res://assets/HUD/AndresHUD/AndresHUD22.png" id="22_rtq04"]
 [ext_resource type="Texture2D" uid="uid://ch3nvbjumveyc" path="res://assets/HUD/AndresHUD/AndresHUD21.png" id="23_mrk6w"]
-[ext_resource type="PackedScene" path="res://Escenarios/HUD/Cordura.tscn" id="26_1m7tk"]
+[ext_resource type="Texture2D" uid="uid://dsc316fdl1thc" path="res://assets/HUD/AndresHUD/andresRealista/MANOLO1 (1).png" id="28_aant6"]
+[ext_resource type="Texture2D" uid="uid://nqken6k48s0l" path="res://assets/HUD/AndresHUD/andresRealista/MANOLO3.png" id="28_x08bo"]
+[ext_resource type="Texture2D" uid="uid://dx8g1murwrigc" path="res://assets/HUD/AndresHUD/andresRealista/MANOLO3 (1).png" id="30_ym6sg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x08bo"]
+shader = ExtResource("4_rryy6")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qcu47"]
 animations = [{
@@ -102,6 +111,20 @@ animations = [{
 "loop": true,
 "name": &"Default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_aant6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_x08bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ym6sg")
+}],
+"loop": true,
+"name": &"Realista",
+"speed": 3.0
 }]
 
 [node name="HUD" type="Control"]
@@ -126,24 +149,41 @@ layout_mode = 2
 [node name="VidaHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Vida" parent="HBoxContainer/VBoxContainer/VidaHUD" instance=ExtResource("2_1m7tk")]
-offset = Vector2(16, 10)
+[node name="VIDA" type="CanvasLayer" parent="HBoxContainer/VBoxContainer/VidaHUD"]
+offset = Vector2(188, 10)
 scale = Vector2(3.5, 3.5)
-transform = Transform2D(3.5, 0, 0, 3.5, 16, 10)
+transform = Transform2D(3.5, 0, 0, 3.5, 188, 10)
+
+[node name="BarraVida" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer/VidaHUD/VIDA"]
+texture_filter = 1
+offset_left = 1.0
+offset_right = 77.0
+offset_bottom = 20.0
+value = 100.0
+texture_over = ExtResource("2_lhsnj")
+texture_progress = ExtResource("3_c1417")
 
 [node name="EstadoHUD" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD" instance=ExtResource("26_1m7tk")]
-offset = Vector2(56, 37)
+[node name="CORDURA" type="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+offset = Vector2(229, 37)
 scale = Vector2(3.5, 3.5)
-transform = Transform2D(3.5, 0, 0, 3.5, 56, 37)
+transform = Transform2D(3.5, 0, 0, 3.5, 229, 37)
+
+[node name="BarraCordura" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer/EstadoHUD/CORDURA"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_over = ExtResource("4_d2qae")
+texture_progress = ExtResource("5_p00t3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
-position = Vector2(69.8749, 142.875)
-scale = Vector2(0.225347, 0.225347)
+material = SubResource("ShaderMaterial_x08bo")
+position = Vector2(67, 59)
+scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_qcu47")
 animation = &"Default"
-frame_progress = 0.365014
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

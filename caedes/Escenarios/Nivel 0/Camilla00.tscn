@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=68 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="13_cmsiv"]
 [ext_resource type="Texture2D" uid="uid://bfcfh2bm1rayv" path="res://assets/Decorations/antor2.png" id="13_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://dgpxt63xrirty" path="res://assets/Decorations/antor3.png" id="14_x05nm"]
+[ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="20_e5phj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vg2w"]
 size = Vector2(202.5, 80)
@@ -10878,3 +10879,6 @@ scale = Vector2(0.188477, 0.164062)
 color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
+
+[node name="HUD" parent="." instance=ExtResource("20_e5phj")]
+top_level = true

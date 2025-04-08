@@ -1,15 +1,21 @@
 extends Control
 class_name HUD
 @onready var sprite: AnimatedSprite2D = $HBoxContainer/VBoxContainer/EstadoHUD/AnimatedSprite2D
+@onready var BarraVida: TextureProgressBar = $HBoxContainer/VBoxContainer/VidaHUD/VIDA/BarraVida
+@onready var BarraCordura: TextureProgressBar = $HBoxContainer/VBoxContainer/EstadoHUD/CORDURA/BarraCordura
 
-@export var NumeroVida : Label
-@export var NumeroEstado : Label
+@export var Vida : Node
+@export var Estado : Node
+
+func _process(delta: float) -> void:
+	BarraVida.value -= 1
+	BarraCordura.value -= 1
 
 func update_vida(number : int):
-	NumeroVida.text = "x" + str(number)
+	Vida.text = "x" + str(number)
 	
 func update_paniquea(number : int):
-	NumeroEstado.text = "Estas Paniqueando"
+	Estado.text = "Estas Paniqueando"
 
 func _ready() -> void:
 	sprite.play("Default")
