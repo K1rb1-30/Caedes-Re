@@ -8,17 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://cm5hnplvopfth" path="res://assets/Decorations/A4.png" id="6_t8hbr"]
 [ext_resource type="Texture2D" uid="uid://gx5xq2pc46xb" path="res://assets/Decorations/inside/shop-and-hospital (1).png" id="7_2n6ll"]
 [ext_resource type="Texture2D" uid="uid://dkrke57ufydeo" path="res://assets/Decorations/A5.png" id="8_ps0kv"]
-[ext_resource type="Texture2D" uid="uid://bxe0ipjfgj1oh" path="res://assets/Decorations/candleA_01.png" id="9_5iaui"]
 [ext_resource type="Texture2D" uid="uid://duarc68m3xcyp" path="res://assets/Decorations/torch_1.png" id="9_c5p3b"]
-[ext_resource type="Texture2D" uid="uid://bqp72yfr1oe13" path="res://assets/Decorations/candleA_02.png" id="10_1dte4"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="10_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://b8opimxy1vx0u" path="res://assets/Decorations/antor0.png" id="11_1j7p3"]
-[ext_resource type="Texture2D" uid="uid://1pd5btjdbuto" path="res://assets/Decorations/candleA_03.png" id="11_yahq2"]
 [ext_resource type="Texture2D" uid="uid://dlbgshc6jrovp" path="res://assets/Decorations/antor1.png" id="12_e5phj"]
-[ext_resource type="Texture2D" uid="uid://qcfanv65k6br" path="res://assets/Decorations/candleA_04.png" id="12_usl1r"]
 [ext_resource type="Texture2D" uid="uid://bw6nvga0pc1io" path="res://assets/props/ligh_flashlight.png" id="13_cmsiv"]
 [ext_resource type="Texture2D" uid="uid://bfcfh2bm1rayv" path="res://assets/Decorations/antor2.png" id="13_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://dgpxt63xrirty" path="res://assets/Decorations/antor3.png" id="14_x05nm"]
+[ext_resource type="Texture2D" uid="uid://w2anbjxf1w1l" path="res://assets/Decorations/candleA0.png" id="15_1j7p3"]
+[ext_resource type="Texture2D" uid="uid://c8d4ir6mxgk6s" path="res://assets/Decorations/candleA1.png" id="16_e5phj"]
+[ext_resource type="Texture2D" uid="uid://1xvmn584sssl" path="res://assets/Decorations/candleA2.png" id="17_v1t8p"]
+[ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vg2w"]
 size = Vector2(202.5, 80)
@@ -10365,16 +10365,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_5iaui")
+"texture": ExtResource("15_1j7p3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_1dte4")
+"texture": ExtResource("16_e5phj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_yahq2")
+"texture": ExtResource("17_v1t8p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_usl1r")
+"texture": ExtResource("18_x05nm")
 }],
 "loop": true,
 "name": &"candelario",
@@ -10870,7 +10870,6 @@ show_behind_parent = true
 position = Vector2(97, 50)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
-frame = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha3"]
 position = Vector2(9.53674e-07, -1.99998)

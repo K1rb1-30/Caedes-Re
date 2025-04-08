@@ -21,7 +21,7 @@ func _on_detection_area_body_entered(body):
 		print("area dentro")
 
 
-func _on_detection_area_body_exited(body):
+func _on_detection_area_body_exited():
 	Andres = null
 	playerChase = false
 	print("area fuera")
