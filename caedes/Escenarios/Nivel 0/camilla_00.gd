@@ -7,7 +7,7 @@ extends Node2D
 var scriptActive = false
 
 func _ready():
-		playAnimationCandelario("candelario")
+	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
 	
 
