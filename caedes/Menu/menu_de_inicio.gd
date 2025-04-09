@@ -30,9 +30,12 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 
 func _on_resolucion_item_selected(index: int) -> void:
+	print("Índice seleccionado: ", index)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	match index:
 		0:
 			DisplayServer.window_set_size(Vector2i(1920,1080))
+			print("Cambiando a 1920x1080")
 		1:
 			DisplayServer.window_set_size(Vector2i(1660,990))
 		2:

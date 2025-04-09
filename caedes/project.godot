@@ -28,7 +28,7 @@ runtime/balloon_path="res://Dialogos/CajaDeDialogos/balloon.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
