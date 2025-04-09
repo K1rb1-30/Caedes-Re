@@ -10882,3 +10882,5 @@ texture_scale = 1.47
 
 [node name="HUD" parent="." instance=ExtResource("20_e5phj")]
 top_level = true
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")

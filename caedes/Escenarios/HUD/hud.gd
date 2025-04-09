@@ -4,18 +4,17 @@ class_name HUD
 @onready var BarraVida: TextureProgressBar = $HBoxContainer/VBoxContainer/VidaHUD/VIDA/BarraVida
 @onready var BarraCordura: TextureProgressBar = $HBoxContainer/VBoxContainer/EstadoHUD/CORDURA/BarraCordura
 
-@export var Vida : Node
-@export var Estado : Node
+
+
+@export var Vida : NodePath
+@export var Cordura : NodePath
+
+@onready var restarVida = get_node(Vida)
+@onready var restarCordura = get_node(Cordura)
 
 func _process(delta: float) -> void:
-	BarraVida.value -= 1
-	BarraCordura.value -= 1
-
-func update_vida(number : int):
-	Vida.text = "x" + str(number)
-	
-func update_paniquea(number : int):
-	Estado.text = "Estas Paniqueando"
+	BarraVida.value = restarVida.health
+	#BarraCordura.value -= restarCordura
 
 func _ready() -> void:
 	sprite.play("Default")
