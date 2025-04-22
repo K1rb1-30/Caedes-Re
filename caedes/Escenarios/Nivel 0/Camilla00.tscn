@@ -10388,6 +10388,7 @@ script = ExtResource("1_1mms0")
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
 position = Vector2(577, 135)
 scale = Vector2(0.3, 0.3)
+CordureMode = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
 color = Color(0, 0, 0, 1)
@@ -10884,3 +10885,4 @@ texture_scale = 1.47
 top_level = true
 Vida = NodePath("../Andres")
 Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
