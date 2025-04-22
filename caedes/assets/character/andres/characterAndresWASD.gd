@@ -6,6 +6,8 @@ var health = 100
 var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
+@onready var enemy: CharacterBody2D = $"../Enemy"
+
 
 var ataque = false
 
@@ -72,6 +74,7 @@ func enemy_Attack():
 	#if enemyAttackRange and enemyAttackCooldown:
 	health = health - 20
 	print(health)
+	
 		
 		#enemyAttackCooldown = false
 		#$attackCooldown.start()

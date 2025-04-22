@@ -40,6 +40,7 @@ andres=""
 enemy=""
 anim_antorcha=""
 anim_candelario=""
+enemigoMinion=""
 
 [input]
 

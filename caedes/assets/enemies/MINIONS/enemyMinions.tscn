@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xqak2t1y74r0"]
+
+[ext_resource type="PackedScene" uid="uid://b1pefv578hdao" path="res://assets/enemies/MINIONS/enemy_minion.tscn" id="1_6ih7i"]
+
+[node name="EnemyMinions" type="Node2D" groups=["enemigoMinion"]]
+
+[node name="EnemyMinion" parent="." instance=ExtResource("1_6ih7i")]
