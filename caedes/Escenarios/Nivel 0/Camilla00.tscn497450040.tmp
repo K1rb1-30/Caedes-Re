@@ -10881,17 +10881,6 @@ texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
 
 [node name="EnemyMinion" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(570, 509)
-rotation = -1.5708
+position = Vector2(581, 324)
 
-[node name="EnemyMinion2" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(583, 462)
-rotation = -1.5708
-
-[node name="EnemyMinion3" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(627, 501)
-rotation = -1.5708
-
-[node name="EnemyMinion4" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(518, 465)
-rotation = -1.5708
+[editable path="EnemyMinion"]

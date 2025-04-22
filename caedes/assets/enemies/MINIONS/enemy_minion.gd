@@ -51,8 +51,6 @@ func dealWithDamage():
 		healthEnemy = healthEnemy - 20
 		print("enemy health = ", healthEnemy)
 		global.andresCurrentAttack = false
-		enemigoSprite.play("hit")
-		enemigoSprite.stop()
 		$damageCooldown.start()
 		if healthEnemy <= 0:
 			self.queue_free()

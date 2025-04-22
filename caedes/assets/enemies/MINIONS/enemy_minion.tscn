@@ -166,7 +166,7 @@ animations = [{
 size = Vector2(30.5, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc1lp"]
-radius = 40.3113
+radius = 26.0192
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e8x1"]
 size = Vector2(36, 24)
@@ -178,7 +178,8 @@ healthEnemy = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uux5i")
-animation = &"hit"
+animation = &"attack"
+frame_progress = 0.62206
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.75, 7.5)
