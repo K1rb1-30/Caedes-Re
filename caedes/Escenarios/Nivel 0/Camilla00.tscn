@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=67 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c8d4ir6mxgk6s" path="res://assets/Decorations/candleA1.png" id="16_e5phj"]
 [ext_resource type="Texture2D" uid="uid://1xvmn584sssl" path="res://assets/Decorations/candleA2.png" id="17_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
-[ext_resource type="PackedScene" uid="uid://b1pefv578hdao" path="res://assets/enemies/MINIONS/enemy_minion.tscn" id="20_e5phj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vg2w"]
 size = Vector2(202.5, 69)
@@ -10879,19 +10878,3 @@ scale = Vector2(0.188477, 0.164062)
 color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
-
-[node name="EnemyMinion" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(570, 509)
-rotation = -1.5708
-
-[node name="EnemyMinion2" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(583, 462)
-rotation = -1.5708
-
-[node name="EnemyMinion3" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(627, 501)
-rotation = -1.5708
-
-[node name="EnemyMinion4" parent="." instance=ExtResource("20_e5phj")]
-position = Vector2(518, 465)
-rotation = -1.5708

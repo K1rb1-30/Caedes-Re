@@ -163,15 +163,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6lwn"]
-radius = 6.5
-height = 25.5
+radius = 8.75
+height = 31.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc1lp"]
-radius = 26.0192
+radius = 19.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cabxe"]
-radius = 44.0
-height = 88.0
+radius = 46.0
+height = 94.0
 
 [node name="EnemyMinion" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -184,7 +184,7 @@ animation = &"attack"
 frame_progress = 0.62206
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.25, 10.5)
+position = Vector2(-0.25, 8.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_r6lwn")
 
@@ -193,7 +193,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-position = Vector2(1, 7)
+position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_fc1lp")
 
 [node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
@@ -201,7 +201,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox" groups=["enemy"]]
-position = Vector2(-2, 8)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_cabxe")
 
 [node name="damageCooldown" type="Timer" parent="."]

@@ -10,9 +10,6 @@ func _on_exit_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-<<<<<<< Updated upstream
-	pass # Replace with function body.
-=======
 	settings.visible = true
 	menu.visible = false
 
