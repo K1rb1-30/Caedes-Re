@@ -271,8 +271,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8j744"]
-radius = 16.0
-height = 32.0
+radius = 28.0
+height = 140.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oxup"]
 radius = 89.0
@@ -289,8 +289,6 @@ sprite_frames = SubResource("SpriteFrames_2tqkp")
 animation = &"StaticAbuelo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-21, 4)
-rotation = 0.118543
 shape = SubResource("CapsuleShape2D_8j744")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -312,7 +310,7 @@ one_shot = true
 autostart = true
 
 [node name="dealAttackTimer" type="Timer" parent="." groups=["enemy"]]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 
 [node name="healthbar" parent="." instance=ExtResource("6_0lqos")]

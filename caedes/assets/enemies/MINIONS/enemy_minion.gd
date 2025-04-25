@@ -26,13 +26,13 @@ func _on_detection_area_body_entered(body):
 		print("area dentro")
 
 
-func _on_detection_area_body_exited():
+func _on_detection_area_body_exited(body: CharacterBody2D) -> void:
 	Andres = null
 	playerChase = false
 	print("area fuera")
 	
 
-func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
+func _on_enemy_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("andres"):
 		global.andresInattackZone = true
 		print("Andrés entró en el rango de ataque")
@@ -48,12 +48,13 @@ func dealWithDamage():
 	if global.andresInattackZone and global.andresCurrentAttack and canTakeDamage:
 		print("CAN TAKE DAMAGE")
 		canTakeDamage = false
-		healthEnemy = healthEnemy - 20
+		healthEnemy -= 20
 		print("enemy health = ", healthEnemy)
 		global.andresCurrentAttack = false
 		$damageCooldown.start()
 		if healthEnemy <= 0:
 			self.queue_free()
+			print("enemigo minion muerto")
 			
 
 func _on_damage_cooldown_timeout() -> void:
