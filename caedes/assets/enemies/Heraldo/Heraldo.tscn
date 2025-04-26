@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2vxv12wedoco"]
+
+[ext_resource type="Script" uid="uid://cqlm1vxga3nm" path="res://assets/enemies/Heraldo/heraldo.gd" id="1_ftorw"]
+[ext_resource type="PackedScene" uid="uid://brqbxd4se7mao" path="res://assets/enemies/Heraldo/hijo.tscn" id="2_2x86f"]
+[ext_resource type="Texture2D" uid="uid://hrxy11sn46s2" path="res://assets/enemies/Heraldo/Golem_1_idle.png" id="2_ip0yr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x86f"]
+size = Vector2(40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7qbb"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(0, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofsak"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(90, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5tna"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(180, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1uow"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(270, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5gxa"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(360, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8uyg"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(450, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i32mh"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(540, 0, 90, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjvtx"]
+atlas = ExtResource("2_ip0yr")
+region = Rect2(630, 0, 90, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpah0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7qbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofsak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5tna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1uow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5gxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8uyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i32mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjvtx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Heraldo" type="Node2D"]
+script = ExtResource("1_ftorw")
+hijos_scene = ExtResource("2_2x86f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_2x86f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tpah0")
+frame_progress = 0.479599
