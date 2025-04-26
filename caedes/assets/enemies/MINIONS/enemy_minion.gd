@@ -6,12 +6,23 @@ var Andres = null
 @onready var enemigoSprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var healthEnemy = 100
 var canTakeDamage = true
+var andresInAttackZone = false
 
 func _physics_process(delta):
 	dealWithDamage()
 	
 	if playerChase:
 		var direccion = (Andres.position - position).normalized()
+		var separacion = Vector2.ZERO
+		for other in get_tree().get_nodes_in_group("enemy"):
+			if other != self and other is CharacterBody2D:
+				var distancia = position.distance_to(other.position)
+				if distancia < 50:
+					separacion += (position - other.position).normalized() / distancia
+		var offset_angulo = (position - Andres.position).orthogonal().normalized() * 0.5
+		direccion += separacion * 1.5  # fuerza de separación
+		direccion += offset_angulo * 0.8 # fuerza para rodear
+
 		velocity = direccion * velocida
 		move_and_slide()
 		enemigoSprite.play("walk")
@@ -34,18 +45,18 @@ func _on_detection_area_body_exited(body: CharacterBody2D) -> void:
 
 func _on_enemy_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("andres"):
-		global.andresInattackZone = true
+		andresInAttackZone = true
 		print("Andrés entró en el rango de ataque")
 
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("andres"):
-		global.andresInattackZone = false
+		andresInAttackZone = false
 		print("Andrés salió del rango de ataque")
 
 		
 func dealWithDamage():
-	if global.andresInattackZone and global.andresCurrentAttack and canTakeDamage:
+	if andresInAttackZone and global.andresCurrentAttack and canTakeDamage:
 		print("CAN TAKE DAMAGE")
 		canTakeDamage = false
 		healthEnemy -= 20

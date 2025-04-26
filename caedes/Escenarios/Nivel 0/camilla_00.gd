@@ -1,9 +1,18 @@
 extends Node2D
 
 @export var enemigo_escena: PackedScene = preload("res://assets/enemies/MINIONS/enemy_minion.tscn")
-
+var Andres = null
 @export var cantidad = 5
+@onready var puertas: TileMapLayer = $Suelo/Puertas
+@onready var puerta_colision: StaticBody2D = $puertaColision
 
+var posicion_enemigos = [
+	Vector2(831,511),
+	Vector2(661, 688),
+	Vector2(904, 690),
+	Vector2(586, 530),
+	Vector2(688, 587)
+]
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -24,7 +33,14 @@ func playAnimationAntorcha(antorcha: String):
 func _ready() -> void:
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
-	for i in cantidad:
-		spawn_enemigo(Vector2(500 + i * 100, 500)) # ejemplo con posiciones separadas
+	for posicion in posicion_enemigos:
+		spawn_enemigo(posicion)
 
-	
+
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	if body.is_in_group("andres"):
+		Andres = body
+		puertas.visible = true
+		puerta_colision.collision_mask = 1
+		puerta_colision.collision_layer = 1
+		

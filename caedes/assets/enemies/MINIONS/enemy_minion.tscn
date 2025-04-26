@@ -163,11 +163,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6lwn"]
-radius = 8.75
-height = 31.5
+radius = 8.50001
+height = 23.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc1lp"]
-radius = 19.0
+radius = 119.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cabxe"]
 radius = 46.0
@@ -179,29 +179,33 @@ script = ExtResource("1_sb4vp")
 healthEnemy = 60
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_uux5i")
 animation = &"attack"
 frame_progress = 0.62206
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, 8.5)
+top_level = true
+position = Vector2(-1.25, -0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_r6lwn")
 
 [node name="detectionArea" type="Area2D" parent="."]
+position = Vector2(2, -11)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-position = Vector2(0, 9)
+position = Vector2(-3, 11)
 shape = SubResource("CircleShape2D_fc1lp")
 
 [node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
+position = Vector2(2, -11)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox" groups=["enemy"]]
-position = Vector2(0, 9)
+position = Vector2(-3, 11)
 shape = SubResource("CapsuleShape2D_cabxe")
 
 [node name="damageCooldown" type="Timer" parent="."]

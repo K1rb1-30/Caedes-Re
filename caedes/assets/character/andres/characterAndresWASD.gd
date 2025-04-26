@@ -75,8 +75,7 @@ func enemy_Attack():
 	
 
 func attack():
-
-	if Input.is_action_just_pressed("attack") and global.andresInattackZone:
+	if Input.is_action_just_pressed("attack"):
 			global.andresCurrentAttack = true
 			#$dealAttackTimer.start()
 			ataque = true
