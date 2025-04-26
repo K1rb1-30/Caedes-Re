@@ -9,7 +9,6 @@ var andresVivo = true
 
 var ataque = false
 
-
 func _physics_process(delta):
 	#var direccion = Input.get_vector("left", "right", "up", "down")
 	#velocity = direccion * 150
