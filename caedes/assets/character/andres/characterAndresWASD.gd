@@ -37,6 +37,10 @@ func _physics_process(delta):
 		sprite2d.flip_h = false
 	if velocity == Vector2(0, 0) :
 		sprite2d.play("StaticAbuelo")
+		sprite2d.flip_h = false
+	
+		
+		
 		
 	velocity = velocity.normalized() * speed
 	move_and_slide()

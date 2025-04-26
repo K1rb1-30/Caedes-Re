@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ciuqmxed62ye4"]
 
-[ext_resource type="Texture2D" uid="uid://it75al2ye6pt" path="res://Fondos/PortadaTitulo.png" id="1_2750c"]
 [ext_resource type="Script" uid="uid://bf4rs8bqkauij" path="res://Menu/menu_de_inicio.gd" id="1_q3t5o"]
+[ext_resource type="Texture2D" uid="uid://c76n7lgbm84ks" path="res://Menu/Còpia de portada sin titulo.png" id="2_q3t5o"]
 
 [node name="MenuDeInicio" type="Control"]
 layout_mode = 3
@@ -29,36 +29,81 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2750c")
+texture = ExtResource("2_q3t5o")
 expand_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 107.0
+offset_top = 146.0
+offset_right = 677.0
+offset_bottom = 610.0
+
+[node name="Volume" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Volume"
+
+[node name="VolumenNum" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Mute" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Mute"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer2"]
+layout_mode = 2
+text = "
+"
+
+[node name="Resolucion" type="OptionButton" parent="VBoxContainer2"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1660 x 990"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+
+[node name="save" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Guardar y salir"
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.138889
-anchor_top = 0.765432
-anchor_right = 0.46441
-anchor_bottom = 0.873457
+anchor_left = 0.139062
+anchor_top = 0.354167
+anchor_right = 0.428906
+anchor_bottom = 0.4625
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 21
 metadata/_edit_use_anchors_ = true
-
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "OPTIONS"
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "JUGAR"
 
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPTIONS"
+
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SALIR"
 
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="value_changed" from="VBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="VBoxContainer2/Resolucion" to="." method="_on_resolucion_item_selected"]
+[connection signal="pressed" from="VBoxContainer2/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

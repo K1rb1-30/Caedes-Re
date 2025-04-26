@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @export var enemigo_escena: PackedScene = preload("res://assets/enemies/MINIONS/enemy_minion.tscn")
 var Andres = null
 @export var cantidad = 5
@@ -18,6 +19,7 @@ func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
 	enemigo.position = posicion
 	add_child(enemigo)
+	
 
 func playAnimationCandelario(candelario: String):
 	var spritesCandelario = get_tree().get_nodes_in_group("anim_candelario")
