@@ -2,12 +2,11 @@ extends CharacterBody2D
 
 @export var nietos_scene: PackedScene
 @export var cantidad_nietos: int = 2
-@export var vida: int = 50
 @export var velocida = 70
 var playerChase = false
 var Andres = null
 @onready var enemigoSprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var healthEnemy = 100
+@export var healthEnemy: int = 50
 var canTakeDamage = true
 var andresInAttackZone = false
 
@@ -16,6 +15,8 @@ func _physics_process(delta):
 	
 	if playerChase:
 		var direccion = (Andres.position - position).normalized()
+		
+		# Esto es la separación entre cada enemigo
 		var separacion = Vector2.ZERO
 		for other in get_tree().get_nodes_in_group("enemy"):
 			if other != self and other is CharacterBody2D:
@@ -29,6 +30,12 @@ func _physics_process(delta):
 		velocity = direccion * velocida
 		move_and_slide()
 		enemigoSprite.play("walk")
+		
+		if direccion.x < 0:
+			enemigoSprite.flip_h = true
+		elif direccion.x > 0:
+			enemigoSprite.flip_h = false
+		
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -67,19 +74,13 @@ func dealWithDamage():
 		global.andresCurrentAttack = false
 		$damageCooldown.start()
 		if healthEnemy <= 0:
-			self.queue_free()
 			print("enemigo minion muerto")
+			morir()
 			
 
 func _on_damage_cooldown_timeout() -> void:
 	print("ON DAMAGE COOLDOWN TIMEOUT")
 	canTakeDamage = true
-
-
-func recibir_dano(dano):
-	vida -= dano
-	if vida <= 0:
-		morir()
 
 func morir():
 	for i in cantidad_nietos:

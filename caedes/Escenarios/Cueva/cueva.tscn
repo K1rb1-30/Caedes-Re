@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=21 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
 [ext_resource type="Texture2D" uid="uid://bmm77fx80y6kk" path="res://assets/Decorations/Cueva/MainLev2.0.png" id="2_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="3_i7hvv"]
+[ext_resource type="PackedScene" uid="uid://b2vxv12wedoco" path="res://assets/enemies/Heraldo/Heraldo.tscn" id="5_xbw54"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -39903,6 +39904,9 @@ tile_set = SubResource("TileSet_ywmg2")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAgAAgAAQAOACwAAAAgAAkAAQAOAC0AAAAgAAoAAQAOAC4AAAAgAAsAAQAOAC8AAAAgAAwAAQAOADAAAAAgAA0AAQAOADEAAAAgAA4AAQAOADIAAAAgAA8AAQAOADMAAAAhAAgAAQAPACwAAAAhAAkAAQAPAC0AAAAhAAoAAQAPAC4AAAAhAAsAAQAPAC8AAAAhAAwAAQAPADAAAAAhAA0AAQAPADEAAAAhAA4AAQAPADIAAAAiAAgAAQAQACwAAAAiAAkAAQAQAC0AAAAiAAoAAQAQAC4AAAAiAAsAAQAQAC8AAAAiAAwAAQAQADAAAAAiAA0AAQAQADEAAAAiAA4AAQAQADIAAAAjAAgAAQARACwAAAAjAAkAAQARAC0AAAAjAAoAAQARAC4AAAAjAAsAAQARAC8AAAAjAAwAAQARADAAAAAjAA0AAQARADEAAAAjAA4AAQARADIAAAAkAAgAAQASACwAAAAkAAkAAQASAC0AAAAkAAoAAQASAC4AAAAkAAsAAQASAC8AAAAkAAwAAQASADAAAAAkAA0AAQASADEAAAAkAA4AAQASADIAAAAlAAgAAQATACwAAAAlAAkAAQATAC0AAAAlAAoAAQATAC4AAAAlAAsAAQATAC8AAAAlAAwAAQATADAAAAAlAA0AAQATADEAAAAlAA4AAQATADIAAAAlAA8AAQATADMAAAA=")
 tile_set = SubResource("TileSet_ve75j")
+
+[node name="Heraldo" parent="Suelo" instance=ExtResource("5_xbw54")]
+position = Vector2(494, 314)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1328, 925)

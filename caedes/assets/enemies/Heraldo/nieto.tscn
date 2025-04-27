@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://lcbcgucybats"]
+[gd_scene load_steps=16 format=3 uid="uid://lcbcgucybats"]
 
 [ext_resource type="Script" uid="uid://3rbpbf8wti7e" path="res://assets/enemies/Heraldo/nieto.gd" id="1_h4qm0"]
 [ext_resource type="Texture2D" uid="uid://dhwdhvclgim7q" path="res://assets/enemies/Heraldo/Slime_Spiked_Idle.png" id="1_t5t0n"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h4qm0"]
-radius = 12.0416
+[ext_resource type="Texture2D" uid="uid://c0ynvnh8c6bls" path="res://assets/enemies/Heraldo/Slime_Spiked_Run.png" id="3_egjlu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egjlu"]
 atlas = ExtResource("1_t5t0n")
@@ -20,6 +18,22 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wjn8"]
 atlas = ExtResource("1_t5t0n")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lysy"]
+atlas = ExtResource("3_egjlu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x03ap"]
+atlas = ExtResource("3_egjlu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_632rx"]
+atlas = ExtResource("3_egjlu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5u2j"]
+atlas = ExtResource("3_egjlu")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8lysy"]
@@ -38,18 +52,69 @@ animations = [{
 "texture": SubResource("AtlasTexture_2wjn8")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lysy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x03ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_632rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5u2j")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
-[node name="Nieto" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4qm0"]
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egjlu"]
+radius = 61.0328
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_88lm8"]
+radius = 24.0832
+
+[node name="Nieto" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_h4qm0")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 9)
-shape = SubResource("CircleShape2D_h4qm0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lysy")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_h4qm0")
+
+[node name="detectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_egjlu")
+
+[node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+position = Vector2(-1, 9)
+shape = SubResource("CircleShape2D_88lm8")
+
+[node name="damageCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]

@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://brqbxd4se7mao"]
+[gd_scene load_steps=17 format=3 uid="uid://brqbxd4se7mao"]
 
 [ext_resource type="Script" uid="uid://bepxqap7wpgv7" path="res://assets/enemies/Heraldo/hijo.gd" id="1_3hkxy"]
 [ext_resource type="Texture2D" uid="uid://ii3sc24vx06e" path="res://assets/enemies/Heraldo/Golem_Armor_Idle.png" id="1_viteg"]
 [ext_resource type="PackedScene" uid="uid://lcbcgucybats" path="res://assets/enemies/Heraldo/nieto.tscn" id="2_iull6"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hkxy"]
-radius = 14.0
-height = 36.0
+[ext_resource type="Texture2D" uid="uid://bqo7mhp73p1ok" path="res://assets/enemies/Heraldo/Golem_Armor_Run.png" id="4_q5svk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iull6"]
 atlas = ExtResource("1_viteg")
@@ -22,6 +19,22 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ryo7"]
 atlas = ExtResource("1_viteg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtbdi"]
+atlas = ExtResource("4_q5svk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68cla"]
+atlas = ExtResource("4_q5svk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di6dt"]
+atlas = ExtResource("4_q5svk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_any2b"]
+atlas = ExtResource("4_q5svk")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtbdi"]
@@ -40,20 +53,70 @@ animations = [{
 "texture": SubResource("AtlasTexture_3ryo7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtbdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68cla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di6dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_any2b")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
-[node name="Hijo" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hkxy"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iull6"]
+radius = 92.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5svk"]
+radius = 36.0139
+
+[node name="Hijo" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
 script = ExtResource("1_3hkxy")
 nietos_scene = ExtResource("2_iull6")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_3hkxy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qtbdi")
-frame_progress = 0.270599
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3hkxy")
+
+[node name="detectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+shape = SubResource("CircleShape2D_iull6")
+
+[node name="enemyHitbox" type="Area2D" parent="." groups=["andres"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyHitbox"]
+shape = SubResource("CircleShape2D_q5svk")
+
+[node name="damageCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]

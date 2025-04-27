@@ -2,35 +2,30 @@ extends CharacterBody2D
 
 @export var hijos_scene: PackedScene
 @export var cantidad_hijos: int = 3
-#@export var teleport_scene: String = "res://"
-@export var vida: int = 100
-
 @export var velocida = 70
 var playerChase = false
 var Andres = null
 @onready var enemigoSprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var healthEnemy = 100
+@export var healthEnemy: int = 100
 var canTakeDamage = true
 var andresInAttackZone = false
+
+var isAttacking = false
 
 func _physics_process(delta):
 	dealWithDamage()
 	
 	if playerChase:
 		var direccion = (Andres.position - position).normalized()
-		var separacion = Vector2.ZERO
-		for other in get_tree().get_nodes_in_group("enemy"):
-			if other != self and other is CharacterBody2D:
-				var distancia = position.distance_to(other.position)
-				if distancia < 50:
-					separacion += (position - other.position).normalized() / distancia
-		var offset_angulo = (position - Andres.position).orthogonal().normalized() * 0.5
-		direccion += separacion * 1.5  # fuerza de separación
-		direccion += offset_angulo * 0.8 # fuerza para rodear
-
 		velocity = direccion * velocida
 		move_and_slide()
 		enemigoSprite.play("walk")
+		
+		if direccion.x < 0:
+			enemigoSprite.flip_h = true
+		elif direccion.x > 0:
+			enemigoSprite.flip_h = false
+		
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -58,8 +53,7 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("andres"):
 		andresInAttackZone = false
 		print("Andrés salió del rango de ataque")
-
-		
+	
 func dealWithDamage():
 	if andresInAttackZone and global.andresCurrentAttack and canTakeDamage:
 		print("CAN TAKE DAMAGE")
@@ -69,23 +63,18 @@ func dealWithDamage():
 		global.andresCurrentAttack = false
 		$damageCooldown.start()
 		if healthEnemy <= 0:
-			self.queue_free()
 			print("enemigo minion muerto")
+			morir()
 			
 
 func _on_damage_cooldown_timeout() -> void:
 	print("ON DAMAGE COOLDOWN TIMEOUT")
 	canTakeDamage = true
 
-
-func recibir_dano(dano):
-	vida -= dano
-	if vida <= 0:
-		morir()
-
 func morir():
-	for i in cantidad_hijos:
+	for i in range (cantidad_hijos):
 		var hijo = hijos_scene.instantiate()
 		hijo.global_position = global_position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
 		get_parent().add_child(hijo)
+	enemigoSprite.play("die")
 	queue_free()

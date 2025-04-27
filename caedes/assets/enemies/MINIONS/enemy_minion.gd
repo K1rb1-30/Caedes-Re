@@ -26,6 +26,12 @@ func _physics_process(delta):
 		velocity = direccion * velocida
 		move_and_slide()
 		enemigoSprite.play("walk")
+		
+		if direccion.x < 0:
+			enemigoSprite.flip_h = true
+		elif direccion.x > 0:
+			enemigoSprite.flip_h = false
+			
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
