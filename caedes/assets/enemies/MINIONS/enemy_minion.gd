@@ -14,14 +14,14 @@ func _physics_process(delta):
 	if playerChase:
 		var direccion = (Andres.position - position).normalized()
 		var separacion = Vector2.ZERO
-		for other in get_tree().get_nodes_in_group("enemy"):
-			if other != self and other is CharacterBody2D:
-				var distancia = position.distance_to(other.position)
+		for otros in get_tree().get_nodes_in_group("enemy"):
+			if otros != self and otros is CharacterBody2D:
+				var distancia = position.distance_to(otros.position)
 				if distancia < 50:
-					separacion += (position - other.position).normalized() / distancia
-		var offset_angulo = (position - Andres.position).orthogonal().normalized() * 0.5
+					separacion += (position - otros.position).normalized() / distancia
+		var angulo = (position - Andres.position).orthogonal().normalized() * 0.5
 		direccion += separacion * 1.5  # fuerza de separación
-		direccion += offset_angulo * 0.8 # fuerza para rodear
+		direccion += angulo * 0.8 # fuerza para rodear
 
 		velocity = direccion * velocida
 		move_and_slide()

@@ -74,7 +74,9 @@ func _on_damage_cooldown_timeout() -> void:
 func morir():
 	for i in range (cantidad_hijos):
 		var hijo = hijos_scene.instantiate()
+		# Coloca a cada hijo en una posición cercana al enemigo muerto, dentro de un rango aleatorio de -30 a 30 px
 		hijo.global_position = global_position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
+		# Agrega cada hijo como hijo del padre de este enemigo 
 		get_parent().add_child(hijo)
 	enemigoSprite.play("die")
 	queue_free()

@@ -7,12 +7,7 @@ var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 
-func _physics_process(delta):
-	#var direccion = Input.get_vector("left", "right", "up", "down")
-	#velocity = direccion * 150
-	#move_and_slide()
-		
-	
+func _physics_process(delta):	
 	velocity = Vector2.ZERO
 	var speed:int = 100
 	if global.puedeMoverse:

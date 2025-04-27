@@ -18,14 +18,19 @@ func _physics_process(delta):
 		
 		# Esto es la separación entre cada enemigo
 		var separacion = Vector2.ZERO
+		# Recorre todos los nodos que estan en el grupo "enemy"
 		for other in get_tree().get_nodes_in_group("enemy"):
+			# Asegura que el other no sea el mismo que este enemigo (self) y que sea un tipo characterbody2d
+			# El self es para verificar que no sea el mismo nodo
+			# porque si no se hace calcularia su distancia consigo mismo, que sería 0
 			if other != self and other is CharacterBody2D:
 				var distancia = position.distance_to(other.position)
 				if distancia < 50:
 					separacion += (position - other.position).normalized() / distancia
+		# Calcula un vector ortogonal a la dirección del jugador.
 		var offset_angulo = (position - Andres.position).orthogonal().normalized() * 0.5
-		direccion += separacion * 1.5  # fuerza de separación
-		direccion += offset_angulo * 0.8 # fuerza para rodear
+		direccion += separacion * 1.5  # fuerza separación
+		direccion += offset_angulo * 0.8 # fuerza para rodear al jugador
 
 		velocity = direccion * velocida
 		move_and_slide()
@@ -85,6 +90,8 @@ func _on_damage_cooldown_timeout() -> void:
 func morir():
 	for i in cantidad_nietos:
 		var nieto = nietos_scene.instantiate()
+		# Coloca a cada hijo en una posición cercana al enemigo muerto, dentro de un rango aleatorio de -30 a 30 px
 		nieto.global_position = global_position + Vector2(randf_range(-20, 20), randf_range(-20, 20))
+		# Agrega cada hijo como hijo del padre de este enemigo
 		get_parent().add_child(nieto)
 	queue_free()
