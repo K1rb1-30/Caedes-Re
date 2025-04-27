@@ -6,6 +6,7 @@ var Andres = null
 @export var cantidad = 5
 @onready var puertas: TileMapLayer = $Suelo/Puertas
 @onready var puerta_colision: StaticBody2D = $puertaColision
+@onready var camera_2d: Camera2D = $Andres/Camera2D
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -14,6 +15,17 @@ var posicion_enemigos = [
 	Vector2(586, 530),
 	Vector2(688, 587)
 ]
+
+func _ready() -> void:
+	global.puedeMoverse = false
+	playAnimationCandelario("candelario")
+	playAnimationAntorcha("antorcha")
+	#for posicion in posicion_enemigos:
+		#spawn_enemigo(posicion)
+		
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("presionarE"):
+		global.puedeMoverse = true
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -32,11 +44,6 @@ func playAnimationAntorcha(antorcha: String):
 		if spriteAn is AnimatedSprite2D:
 			spriteAn.play(antorcha)
 	
-func _ready() -> void:
-	playAnimationCandelario("candelario")
-	playAnimationAntorcha("antorcha")
-	for posicion in posicion_enemigos:
-		spawn_enemigo(posicion)
 
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:

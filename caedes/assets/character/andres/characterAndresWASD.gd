@@ -7,40 +7,39 @@ var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 
-var ataque = false
-
 func _physics_process(delta):
 	#var direccion = Input.get_vector("left", "right", "up", "down")
 	#velocity = direccion * 150
 	#move_and_slide()
+		
+	
 	velocity = Vector2.ZERO
 	var speed:int = 100
+	if global.puedeMoverse:
+		if Input.is_action_pressed("right"):
+			velocity += Vector2(1, 0)
+			sprite2d.play("Izquierda")
+			sprite2d.flip_h = true
+			
+		elif Input.is_action_pressed("left"):
+			velocity += Vector2(-1, 0)
+			sprite2d.play("Izquierda")
+			sprite2d.flip_h = false
+			
+		elif Input.is_action_pressed("up"):
+			velocity += Vector2(0, -1)
+			sprite2d.play("DeAtras")
+			sprite2d.flip_h = false
+		elif Input.is_action_pressed("down"):
+			velocity += Vector2(0, 1)
+			sprite2d.play("DeFrente")
+			sprite2d.flip_h = false
+		if velocity == Vector2(0, 0) :
+			sprite2d.play("StaticAbuelo")
+			sprite2d.flip_h = false
 	
-	if Input.is_action_pressed("right"):
-		velocity += Vector2(1, 0)
-		sprite2d.play("Izquierda")
-		sprite2d.flip_h = true
 		
-	elif Input.is_action_pressed("left"):
-		velocity += Vector2(-1, 0)
-		sprite2d.play("Izquierda")
-		sprite2d.flip_h = false
-		
-	elif Input.is_action_pressed("up"):
-		velocity += Vector2(0, -1)
-		sprite2d.play("DeAtras")
-		sprite2d.flip_h = false
-	elif Input.is_action_pressed("down"):
-		velocity += Vector2(0, 1)
-		sprite2d.play("DeFrente")
-		sprite2d.flip_h = false
-	if velocity == Vector2(0, 0) :
-		sprite2d.play("StaticAbuelo")
-		sprite2d.flip_h = false
-	
-		
-		
-		
+
 	velocity = velocity.normalized() * speed
 	move_and_slide()
 	attack()
@@ -81,11 +80,10 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 			global.andresCurrentAttack = true
 			#$dealAttackTimer.start()
-			ataque = true
 			
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
-	ataque = false
+
 
 func update_health():
 	var healthbar = $healthbar

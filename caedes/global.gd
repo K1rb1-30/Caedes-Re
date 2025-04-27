@@ -6,3 +6,5 @@ var andresInattackZone = false
 
 var labelOK = false
 var cerrarPad = false
+
+var puedeMoverse = true
