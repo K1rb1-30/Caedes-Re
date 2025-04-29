@@ -30,12 +30,20 @@ func _process(delta: float) -> void:
 	var flash = flashVida.flash
 	if flash:
 		flash_screen()
-	# VOY POR AQUI if BarraCordura.value < 50:
-		
+	# VOY POR AQUI
+	if BarraCordura.value < 50 and BarraCordura.value > 20:
+		cordura_ojos()
+	elif BarraCordura.value < 20:
+		cordura_luna()
 
 func flash_screen():
 	$AnimationPlayer.play("flash")
 
-
+func cordura_ojos():
+	$AnimationPlayer.play("Ojos")
+	
+func cordura_luna():
+	$AnimationPlayer.play("Luna")
+	
 func _ready() -> void:
 	sprite.play("Default")
