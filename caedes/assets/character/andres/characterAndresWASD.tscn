@@ -326,7 +326,8 @@ texture = ExtResource("4_6mtlq")
 texture_scale = 2.16
 height = 202.0
 
-[node name="Label" type="Label" parent="."]
+[node name="PresionaF" type="Label" parent="."]
+visible = false
 offset_left = -139.0
 offset_top = 85.0
 offset_right = 139.0

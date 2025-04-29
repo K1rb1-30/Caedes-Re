@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=79 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -98,7 +98,16 @@ size = Vector2(202, 60)
 size = Vector2(29, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4m0f7"]
-size = Vector2(1306, 26)
+size = Vector2(1305, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq41l"]
+size = Vector2(9, 810)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li0qb"]
+size = Vector2(1305, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj5s3"]
+size = Vector2(10, 818)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1adow"]
 size = Vector2(112, 38)
@@ -11569,8 +11578,20 @@ position = Vector2(621.5, 649)
 shape = SubResource("RectangleShape2D_id2ar")
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(643, -12)
+position = Vector2(642.5, -5)
 shape = SubResource("RectangleShape2D_4m0f7")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(-5.5, 395)
+shape = SubResource("RectangleShape2D_sq41l")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(642.5, 804)
+shape = SubResource("RectangleShape2D_li0qb")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(1300, 400)
+shape = SubResource("RectangleShape2D_yj5s3")
 
 [node name="ObjetosCollision" type="StaticBody2D" parent="."]
 
