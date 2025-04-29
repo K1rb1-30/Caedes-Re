@@ -43,7 +43,7 @@ func _physics_process(delta):
 	if health <= 0:
 		andresVivo = false
 		health = 0
-		self.queue_free()
+		global.puedeMoverse = false
 		print("andres muerto")
 
 func _on_andres_hitbox_body_entered(body: Node2D) -> void:

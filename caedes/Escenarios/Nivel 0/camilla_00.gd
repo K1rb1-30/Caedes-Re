@@ -20,8 +20,8 @@ func _ready() -> void:
 	global.puedeMoverse = false
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
-	#for posicion in posicion_enemigos:
-		#spawn_enemigo(posicion)
+	for posicion in posicion_enemigos:
+		spawn_enemigo(posicion)
 		
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"):

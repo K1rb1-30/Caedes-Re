@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fcdcsllauhnm"]
+[gd_scene load_steps=9 format=3 uid="uid://fcdcsllauhnm"]
 
 [ext_resource type="Texture2D" uid="uid://ddg71h6d87alh" path="res://assets/enemies/jefe1.png" id="1_3epn5"]
+[ext_resource type="Shader" uid="uid://b8wimymnalj0x" path="res://assets/enemies/enemy.gdshader" id="1_10gli"]
 [ext_resource type="Script" uid="uid://cqutbq4vjoatk" path="res://assets/enemies/enemy.gd" id="1_rf5tu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3veb7"]
+shader = ExtResource("1_10gli")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rf5tu"]
 animations = [{
@@ -24,6 +28,7 @@ size = Vector2(26, 51)
 size = Vector2(37, 65)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+material = SubResource("ShaderMaterial_3veb7")
 collision_layer = 2
 script = ExtResource("1_rf5tu")
 
