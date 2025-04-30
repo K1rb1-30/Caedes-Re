@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=80 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -11442,6 +11442,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jja6"]
+size = Vector2(63.5, 80)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
@@ -11450,6 +11453,7 @@ position = Vector2(49, 158)
 scale = Vector2(0.3, 0.3)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
+visible = false
 color = Color(0, 0, 0, 1)
 energy = 0.8
 blend_mode = 2
@@ -12010,4 +12014,15 @@ color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
 
+[node name="areaPresionar" type="Area2D" parent="."]
+position = Vector2(525, 504)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaPresionar"]
+position = Vector2(7.25, -10)
+shape = SubResource("RectangleShape2D_0jja6")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
+[connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]

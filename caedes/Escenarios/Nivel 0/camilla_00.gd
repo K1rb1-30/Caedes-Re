@@ -2,11 +2,14 @@ extends Node2D
 
 
 @export var enemigo_escena: PackedScene = preload("res://assets/enemies/MINIONS/enemy_minion.tscn")
+var cambiarEscena = preload("res://Escenarios/PasilloRecuerdos/pasilloRecuerdos.tscn")
 var Andres = null
 @export var cantidad = 5
 @onready var puertas: TileMapLayer = $Suelo/Puertas
 @onready var puerta_colision: StaticBody2D = $puertaColision
 @onready var camera_2d: Camera2D = $Andres/Camera2D
+@onready var presiona_f: Label = $Andres/PresionaF
+var puede_interactuar = false
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -26,6 +29,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"):
 		global.puedeMoverse = true
+	if puede_interactuar and Input.is_action_pressed("interactuarF"):
+		get_tree().change_scene_to_packed(cambiarEscena)
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -53,3 +58,11 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 		puerta_colision.collision_mask = 1
 		puerta_colision.collision_layer = 1
 		
+
+
+func _on_area_presionar_body_entered(body: Node2D) -> void:
+	puede_interactuar = true
+
+
+func _on_area_presionar_body_exited(body: Node2D) -> void:
+	puede_interactuar = false

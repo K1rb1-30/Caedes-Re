@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=45 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cqc17nd5w6ui3" path="res://assets/character/andres/Sprites/DeAtrasAbuelo.png" id="2_4wxxd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://gq2bqnarj2t2" path="res://assets/character/andres/Sprites/IzquierdaAbuelo.png" id="4_6w2lv"]
 [ext_resource type="Texture2D" uid="uid://bbf2px2bga8t1" path="res://assets/character/perprueba/sprites/walk.png" id="5_r0ao0"]
 [ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="6_0lqos"]
+[ext_resource type="Script" uid="uid://dbb0yuumsvtrd" path="res://assets/character/andres/camera_2d.gd" id="9_x3gpa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqhot"]
 atlas = ExtResource("2_4wxxd")
@@ -297,6 +298,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1296
 limit_bottom = 800
+script = ExtResource("9_x3gpa")
 
 [node name="andres_Hitbox" type="Area2D" parent="." groups=["andres", "enemy"]]
 collision_mask = 2
