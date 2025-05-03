@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4xgy4v4855n"]
+
+[ext_resource type="Script" uid="uid://8btl0dw4scgb" path="res://Escenarios/glitch_transicion.gd" id="1_uhfsq"]
+[ext_resource type="Shader" uid="uid://b3cnga7r2aiwl" path="res://Escenarios/GlitchTransicion.gdshader" id="2_crqi2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ji0hn"]
+shader = ExtResource("2_crqi2")
+shader_parameter/time = 0.0
+shader_parameter/glitch_strength = 0.03
+
+[node name="GlitchTransicion" type="Node2D"]
+script = ExtResource("1_uhfsq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ji0hn")
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

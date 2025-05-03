@@ -11449,7 +11449,7 @@ size = Vector2(63.5, 80)
 script = ExtResource("1_1mms0")
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(49, 158)
+position = Vector2(606, 499)
 scale = Vector2(0.3, 0.3)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]

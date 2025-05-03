@@ -2,7 +2,6 @@ extends Node2D
 
 
 @export var enemigo_escena: PackedScene = preload("res://assets/enemies/MINIONS/enemy_minion.tscn")
-var cambiarEscena = preload("res://Escenarios/PasilloRecuerdos/pasilloRecuerdos.tscn")
 var Andres = null
 @export var cantidad = 5
 @onready var puertas: TileMapLayer = $Suelo/Puertas
@@ -10,6 +9,7 @@ var Andres = null
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
 var puede_interactuar = false
+
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -23,20 +23,23 @@ func _ready() -> void:
 	global.puedeMoverse = false
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
-	for posicion in posicion_enemigos:
-		spawn_enemigo(posicion)
+	#for posicion in posicion_enemigos:
+	#	spawn_enemigo(posicion)
 		
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("presionarE"):
+	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
 	if puede_interactuar and Input.is_action_pressed("interactuarF"):
-		get_tree().change_scene_to_packed(cambiarEscena)
+		var fade = load("res://Escenarios/TransicionCueva.tscn").instantiate()
+		fade.escena = "res://Escenarios/Cueva/cueva.tscn"
+		get_tree().current_scene.add_child(fade)
+		fade.start()
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
 	enemigo.position = posicion
 	add_child(enemigo)
-	
+
 
 func playAnimationCandelario(candelario: String):
 	var spritesCandelario = get_tree().get_nodes_in_group("anim_candelario")
@@ -61,8 +64,10 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 
 
 func _on_area_presionar_body_entered(body: Node2D) -> void:
+	presiona_f.visible = true
 	puede_interactuar = true
 
 
 func _on_area_presionar_body_exited(body: Node2D) -> void:
+	presiona_f.visible = false
 	puede_interactuar = false
