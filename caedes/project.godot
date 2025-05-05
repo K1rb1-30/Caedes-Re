@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 global="*res://global.gd"
+trans="*res://Escenarios/transicion.tscn"
 
 [dialogue_manager]
 

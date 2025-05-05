@@ -29,11 +29,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
-	if puede_interactuar and Input.is_action_pressed("interactuarF"):
-		var fade = load("res://Escenarios/TransicionCueva.tscn").instantiate()
-		fade.escena = "res://Escenarios/Cueva/cueva.tscn"
-		get_tree().current_scene.add_child(fade)
-		fade.start()
+	if puede_interactuar and Input.is_action_just_pressed("interactuarF"):
+		trans.cambiarEscena("res://Escenarios/Cueva/cueva.tscn")
+		
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
