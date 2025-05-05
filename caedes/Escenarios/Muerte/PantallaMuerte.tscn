@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cwrf4mpiyt8j8"]
+[gd_scene load_steps=3 format=3 uid="uid://cwrf4mpiyt8j8"]
+
+[ext_resource type="Script" uid="uid://nfreadmjuk27" path="res://Escenarios/Muerte/pantalla_muerteScript.gd" id="1_h6a03"]
+[ext_resource type="VideoStream" path="res://Escenarios/Muerte/video/pantallaMuerteVer3.ogv" id="1_th331"]
 
 [node name="PantallaMuerte" type="Control"]
 layout_mode = 3
@@ -7,9 +10,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h6a03")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1281.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 1285.0
+offset_bottom = 723.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.665, 0.665)
+stream = ExtResource("1_th331")
+autoplay = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.5
+offset_top = 140.0
+offset_right = 98.5
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Reintentar...
+"
+
+[connection signal="finished" from="CanvasLayer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
