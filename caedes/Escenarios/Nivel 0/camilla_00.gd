@@ -8,6 +8,7 @@ var Andres = null
 @onready var puerta_colision: StaticBody2D = $puertaColision
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
+@onready var keypad: Control = $Keypad
 var puede_interactuar = false
 
 
@@ -29,9 +30,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
-	if puede_interactuar and Input.is_action_just_pressed("interactuarF"):
+	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
 		trans.cambiarEscena("res://Escenarios/Cueva/cueva.tscn")
-		
+	if global.labelOK == true:
+		keypad.visible = false
+	else:
+		keypad.visible = true
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -64,8 +68,10 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 func _on_area_presionar_body_entered(body: Node2D) -> void:
 	presiona_f.visible = true
 	puede_interactuar = true
+	
 
 
 func _on_area_presionar_body_exited(body: Node2D) -> void:
 	presiona_f.visible = false
 	puede_interactuar = false
+	keypad.visible = false

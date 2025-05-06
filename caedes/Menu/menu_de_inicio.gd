@@ -1,14 +1,31 @@
 extends Control
 
 var cambiarEscena = preload("res://Escenarios/Nivel 0/Camilla00.tscn")
-@onready var volumen_num: Label = $VBoxContainer2/VolumenNum
 @onready var settings: VBoxContainer = $VBoxContainer2
 @onready var menu: HBoxContainer = $VBoxContainer
+@onready var volumenMusica: HSlider = $VBoxContainer2/VMusica
+@onready var audioMenu: AudioStreamPlayer = $AudioMenu
+
+var busIndexM : int
+var busIndexE : int
+
+func _ready() -> void:
+	busIndexM = AudioServer.get_bus_index("Musica")
+	volumenMusica.value_changed.connect(_on_h_slider_value_changed)
+	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexM))
+	
+	busIndexE = AudioServer.get_bus_index("Efectos de sonido")
+	volumenMusica.value_changed.connect(_on_h_slider_value_changed)
+	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexE))
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(busIndexM, linear_to_db(value))
+
+func _on_v_efectos_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(busIndexE, linear_to_db(value))
 
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_packed(cambiarEscena)
-
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
@@ -17,11 +34,6 @@ func _on_exit_pressed() -> void:
 func _on_options_pressed() -> void:
 	settings.visible = true
 	menu.visible = false
-
-
-func _on_h_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0, value)
-	volumen_num.text = str(value)
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0,toggled_on)

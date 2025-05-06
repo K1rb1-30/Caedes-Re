@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=91 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gx5xq2pc46xb" path="res://assets/Decorations/inside/shop-and-hospital (1).png" id="7_2n6ll"]
 [ext_resource type="Texture2D" uid="uid://dkrke57ufydeo" path="res://assets/Decorations/A5.png" id="8_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://duarc68m3xcyp" path="res://assets/Decorations/torch_1.png" id="9_c5p3b"]
+[ext_resource type="PackedScene" uid="uid://dta0t061akuuo" path="res://assets/props/panel.tscn" id="10_e5phj"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="10_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://b8opimxy1vx0u" path="res://assets/Decorations/antor0.png" id="11_1j7p3"]
 [ext_resource type="Texture2D" uid="uid://dlbgshc6jrovp" path="res://assets/Decorations/antor1.png" id="12_e5phj"]
@@ -12111,6 +12112,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areaPresionar"]
 position = Vector2(7.25, -10)
 shape = SubResource("RectangleShape2D_0jja6")
+
+[node name="Keypad" parent="." instance=ExtResource("10_e5phj")]
+visible = false
+top_level = true
+offset_left = 568.0
+offset_top = 458.0
+offset_right = 568.0
+offset_bottom = 458.0
+scale = Vector2(0.4, 0.4)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]

@@ -1,6 +1,6 @@
 extends Control
 
-const password = "ΚΑΗΔΗΣ"
+var password = "ΚΑΗΔΗΣ"
 
 @onready var label = $VBoxContainer/MarginContainer/Label
 

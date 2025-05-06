@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciuqmxed62ye4"]
+[gd_scene load_steps=4 format=3 uid="uid://ciuqmxed62ye4"]
 
 [ext_resource type="Script" uid="uid://bf4rs8bqkauij" path="res://Menu/menu_de_inicio.gd" id="1_q3t5o"]
 [ext_resource type="Texture2D" uid="uid://c76n7lgbm84ks" path="res://Menu/Còpia de portada sin titulo.png" id="2_q3t5o"]
+[ext_resource type="AudioStream" uid="uid://b5rm8vwmt3qkc" path="res://Musica/Haunted forest.mp3" id="3_0gkyp"]
 
 [node name="MenuDeInicio" type="Control"]
 layout_mode = 3
@@ -33,7 +34,6 @@ texture = ExtResource("2_q3t5o")
 expand_mode = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 offset_left = 107.0
 offset_top = 146.0
@@ -42,13 +42,21 @@ offset_bottom = 610.0
 
 [node name="Volume" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
-text = "Volume"
+text = "Musica"
 
-[node name="VolumenNum" type="Label" parent="VBoxContainer2"]
+[node name="VMusica" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+max_value = 2.0
+step = 0.1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer2"]
+[node name="Efectos" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
+text = "Efectos"
+
+[node name="VEfectos" type="HSlider" parent="VBoxContainer2"]
+layout_mode = 2
+max_value = 2.0
+step = 0.1
 
 [node name="Mute" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
@@ -74,6 +82,7 @@ layout_mode = 2
 text = "Guardar y salir"
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.139062
@@ -100,7 +109,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SALIR"
 
-[connection signal="value_changed" from="VBoxContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[node name="AudioMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0gkyp")
+autoplay = true
+bus = &"Musica"
+
+[connection signal="value_changed" from="VBoxContainer2/VMusica" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/VEfectos" to="." method="_on_v_efectos_value_changed"]
 [connection signal="toggled" from="VBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="item_selected" from="VBoxContainer2/Resolucion" to="." method="_on_resolucion_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/save" to="." method="_on_save_pressed"]
