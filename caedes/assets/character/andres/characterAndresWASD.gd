@@ -56,11 +56,20 @@ func _physics_process(delta):
 			update_cordure()
 			print(cordure)
 	
+	#Si esta muelto
 	if health <= 0:
 		andresVivo = false
 		health = 0
 		self.queue_free()
 		print("andres muerto")
+		mostrar_muerte()
+		
+		
+
+func mostrar_muerte():
+	var escena_muerte = preload("res://Escenarios/Muerte/PantallaMuerte.tscn").instantiate()
+	get_tree().current_scene.add_child(escena_muerte)
+	escena_muerte.mostrar()
 
 # FUNCIONALIDAD -- CORDURA
 
@@ -107,11 +116,6 @@ func enemy_Attack():
 	restar_cordura(10)#Resta 10 de cordura
 	await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
 	flash = false
-	
-	
-	
-	
-	
 		
 		#enemyAttackCooldown = false
 		#$attackCooldown.start()
