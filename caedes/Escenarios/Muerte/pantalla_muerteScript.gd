@@ -8,20 +8,23 @@ extends Control
 func _ready() -> void:
 	Continuar.visible = false #Poner que el boton sea invisible
 	Salir.visible = false
-	hide()  # Ocultar al inicio
-	var pause_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir interacción cuando el juego esté en pausa
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
 	Video.play()
+	
 	
 func _on_video_stream_player_finished() -> void:
 	Continuar.visible = true #Poner que el boton sea invisible
 	Salir.visible = true
 	SonidoVHS.play()
+	
 
 func mostrar():
-	show()
-	get_tree().paused = true
-	set_process_input(true)  # Asegura que el input sea procesado
-	set_process(true)  # Asegura que el nodo pueda procesar los frames
+	get_tree().paused = true  # Pausar el juego
+	set_process(true)  # Asegura que el nodo de la escena (la UI) procese frames
+	
+	# Desactivar la pausa en el VideoStreamPlayer para que siga reproduciéndose
+	Video.set_process(true)  # Hacer que el video siga reproduciéndose mientras el juego está en pausa
+	Video.set_process_input(true)  # Asegurarse de que el video siga recibiendo input si es necesario
 
 """
 En mi vida fuistes turista

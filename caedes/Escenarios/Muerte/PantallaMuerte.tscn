@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cu2351lgiakyr" path="res://Escenarios/Muerte/sonido/614359__zimflash7774474__vhs-humstatic.wav" id="3_jykht"]
 
 [node name="PantallaMuerte" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
