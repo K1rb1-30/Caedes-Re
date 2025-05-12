@@ -10,7 +10,7 @@ var Andres = null
 @onready var presiona_f: Label = $Andres/PresionaF
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
-
+@onready var musica: AudioStreamPlayer = $Musica
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		await get_tree().process_frame
 		await get_tree().create_timer(0.5).timeout
 		trans.cambiarEscena("res://Escenarios/Cueva/cueva.tscn")
+		musica.stop()
 	if global.labelOK == true:
 		keypad.visible = false
 

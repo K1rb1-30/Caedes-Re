@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=92 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c8d4ir6mxgk6s" path="res://assets/Decorations/candleA1.png" id="16_e5phj"]
 [ext_resource type="Texture2D" uid="uid://1xvmn584sssl" path="res://assets/Decorations/candleA2.png" id="17_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
+[ext_resource type="AudioStream" uid="uid://bixu4agk365ms" path="res://Musica/MusicaCatac.mp3" id="21_v1t8p"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -12121,7 +12122,8 @@ offset_right = 568.0
 offset_bottom = 458.0
 scale = Vector2(0.4, 0.4)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_v1t8p")
 volume_db = 24.0
 autoplay = true
 bus = &"Musica"
