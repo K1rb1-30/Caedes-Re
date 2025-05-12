@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dmchyv64map82"]
 
 [ext_resource type="Script" uid="uid://0p5ufcwa30ma" path="res://Escenarios/transicion.gd" id="1_jqn7t"]
-[ext_resource type="AudioStream" uid="uid://c46745q5dhjk2" path="res://assets/sonidoPasosmp3.mp3" id="2_3r8bn"]
+[ext_resource type="AudioStream" uid="uid://c46745q5dhjk2" path="res://Musica/sonidoPasosmp3.mp3" id="2_3r8bn"]
 
 [sub_resource type="Animation" id="Animation_jqn7t"]
 length = 0.001
@@ -46,6 +46,7 @@ script = ExtResource("1_jqn7t")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -58,3 +59,5 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_3r8bn")
 bus = &"Efectos de sonido"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

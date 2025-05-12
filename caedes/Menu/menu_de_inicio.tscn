@@ -1,74 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciuqmxed62ye4"]
+[gd_scene load_steps=6 format=3 uid="uid://ciuqmxed62ye4"]
 
 [ext_resource type="Script" uid="uid://bf4rs8bqkauij" path="res://Menu/menu_de_inicio.gd" id="1_q3t5o"]
-[ext_resource type="Texture2D" uid="uid://c76n7lgbm84ks" path="res://Menu/Còpia de portada sin titulo.png" id="2_q3t5o"]
 [ext_resource type="AudioStream" uid="uid://b5rm8vwmt3qkc" path="res://Musica/Haunted forest.mp3" id="3_0gkyp"]
+[ext_resource type="FontFile" uid="uid://ct07ujmb7q02r" path="res://Tipografias/Keypad/Cinzel-VariableFont_wght.ttf" id="3_g5xyd"]
+[ext_resource type="Texture2D" uid="uid://cubopdqc11ew5" path="res://Menu/Fondo.png" id="5_y74wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y74wr"]
 
 [node name="MenuDeInicio" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q3t5o")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.568973, 0.568973, 0.568973, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_q3t5o")
-expand_mode = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="MenuOpciones" type="MenuBar" parent="."]
+top_level = true
 layout_mode = 2
-offset_left = 107.0
-offset_top = 146.0
-offset_right = 677.0
-offset_bottom = 610.0
+offset_left = 37.0
+offset_top = 263.0
+offset_right = 607.0
+offset_bottom = 727.0
 
-[node name="Volume" type="Label" parent="VBoxContainer2"]
+[node name="Volume" type="Label" parent="MenuOpciones"]
 layout_mode = 2
+offset_right = 570.0
+offset_bottom = 23.0
 text = "Musica"
 
-[node name="VMusica" type="HSlider" parent="VBoxContainer2"]
+[node name="VMusica" type="HSlider" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 27.0
+offset_right = 570.0
+offset_bottom = 43.0
 max_value = 2.0
 step = 0.1
+value = 1.0
 
-[node name="Efectos" type="Label" parent="VBoxContainer2"]
+[node name="Efectos" type="Label" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 47.0
+offset_right = 570.0
+offset_bottom = 70.0
 text = "Efectos"
 
-[node name="VEfectos" type="HSlider" parent="VBoxContainer2"]
+[node name="VEfectos" type="HSlider" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 74.0
+offset_right = 570.0
+offset_bottom = 90.0
 max_value = 2.0
 step = 0.1
+value = 1.0
 
-[node name="Mute" type="Label" parent="VBoxContainer2"]
+[node name="Mute" type="Label" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 94.0
+offset_right = 570.0
+offset_bottom = 117.0
 text = "Mute"
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer2"]
+[node name="CheckBox" type="CheckButton" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 121.0
+offset_right = 44.0
+offset_bottom = 152.0
 text = "
 "
 
-[node name="Resolucion" type="OptionButton" parent="VBoxContainer2"]
+[node name="Resolucion" type="OptionButton" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 156.0
+offset_right = 570.0
+offset_bottom = 187.0
 item_count = 3
 popup/item_0/text = "1920 x 1080"
 popup/item_0/id = 0
@@ -77,48 +84,67 @@ popup/item_1/id = 1
 popup/item_2/text = "1280 x 720"
 popup/item_2/id = 2
 
-[node name="save" type="Button" parent="VBoxContainer2"]
+[node name="save" type="Button" parent="MenuOpciones"]
 layout_mode = 2
+offset_top = 191.0
+offset_right = 570.0
+offset_bottom = 222.0
 text = "Guardar y salir"
-
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.139062
-anchor_top = 0.354167
-anchor_right = 0.428906
-anchor_bottom = 0.4625
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 21
-metadata/_edit_use_anchors_ = true
-
-[node name="Play" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "JUGAR"
-
-[node name="Options" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "OPTIONS"
-
-[node name="Exit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "SALIR"
 
 [node name="AudioMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0gkyp")
 autoplay = true
 bus = &"Musica"
 
-[connection signal="value_changed" from="VBoxContainer2/VMusica" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer2/VEfectos" to="." method="_on_v_efectos_value_changed"]
-[connection signal="toggled" from="VBoxContainer2/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="item_selected" from="VBoxContainer2/Resolucion" to="." method="_on_resolucion_item_selected"]
-[connection signal="pressed" from="VBoxContainer2/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(642, 413)
+scale = Vector2(0.83138, 0.806641)
+texture = ExtResource("5_y74wr")
+
+[node name="Menu" type="MenuBar" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 636.0
+offset_bottom = 823.0
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 2
+offset_left = 150.0
+offset_top = 381.0
+offset_right = 405.0
+offset_bottom = 463.0
+theme_override_fonts/font = ExtResource("3_g5xyd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y74wr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y74wr")
+
+[node name="Options" type="Button" parent="Menu"]
+layout_mode = 2
+offset_left = 150.0
+offset_top = 493.0
+offset_right = 405.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("3_g5xyd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y74wr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y74wr")
+
+[node name="Exit" type="Button" parent="Menu"]
+layout_mode = 2
+offset_left = 150.0
+offset_top = 606.0
+offset_right = 405.0
+offset_bottom = 689.0
+theme_override_fonts/font = ExtResource("3_g5xyd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_y74wr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y74wr")
+
+[connection signal="value_changed" from="MenuOpciones/VMusica" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="MenuOpciones/VEfectos" to="." method="_on_v_efectos_value_changed"]
+[connection signal="toggled" from="MenuOpciones/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="MenuOpciones/Resolucion" to="." method="_on_resolucion_item_selected"]
+[connection signal="pressed" from="MenuOpciones/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]

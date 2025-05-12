@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 

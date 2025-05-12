@@ -1,115 +1,216 @@
-[gd_scene load_steps=4 format=3 uid="uid://dta0t061akuuo"]
+[gd_scene load_steps=8 format=3 uid="uid://dta0t061akuuo"]
 
 [ext_resource type="Script" uid="uid://dxehlmq1mehpt" path="res://assets/props/panel.gd" id="1_rsbe3"]
+[ext_resource type="Texture2D" uid="uid://cb7t5ovbndop6" path="res://assets/props/keypad.png" id="2_hq6e7"]
+[ext_resource type="FontFile" uid="uid://ct07ujmb7q02r" path="res://Tipografias/Keypad/Cinzel-VariableFont_wght.ttf" id="2_x2gay"]
+[ext_resource type="Texture2D" uid="uid://b1tnv1beu3u43" path="res://assets/props/keypad2.png" id="3_6i1wa"]
 
-[sub_resource type="Theme" id="Theme_rsbe3"]
-Button/colors/font_color = Color(0.668477, 0.176936, 0, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(1, 0.0711538, 0.162695, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 0)
-Button/colors/font_outline_color = Color(0.389381, 0.481419, 0.464144, 1)
-Button/colors/font_pressed_color = Color(0.607785, 0.0600224, 1.44392e-07, 1)
-Button/fonts/font = null
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hq6e7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6i1wa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hq6e7"]
-outline_color = Color(0, 0, 0, 1)
+line_spacing = 6.0
+paragraph_spacing = 1.0
+font = ExtResource("2_x2gay")
+font_size = 19
+font_color = Color(0.439216, 0.168627, 0.0941176, 1)
+outline_size = 1
+outline_color = Color(0.427451, 0.196078, 0.0862745, 1)
 
 [node name="Keypad" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_rsbe3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 89.0
+[node name="Button 1" type="Button" parent="."]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 60.0
+offset_right = 57.0
+offset_bottom = 91.0
+scale = Vector2(1.45283, 1.02839)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hq6e7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hq6e7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hq6e7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hq6e7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hq6e7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hq6e7")
+text = "
+"
+
+[node name="Button 2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 61.0
+offset_right = 101.0
+offset_bottom = 92.0
+scale = Vector2(1.52, 1)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+text = "
+"
+
+[node name="Button 3" type="Button" parent="."]
+layout_mode = 2
+offset_left = 120.0
+offset_top = 60.0
+offset_right = 151.0
+offset_bottom = 91.0
+scale = Vector2(1.28, 1.04)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+
+[node name="Button 4" type="Button" parent="."]
+layout_mode = 2
+offset_left = 31.0
+offset_top = 96.0
+offset_right = 56.0
+offset_bottom = 127.0
+scale = Vector2(1.57674, 1.02337)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+
+[node name="Button 5" type="Button" parent="."]
+layout_mode = 2
+offset_left = 75.0
+offset_top = 96.0
+offset_right = 100.0
+offset_bottom = 127.0
+scale = Vector2(1.57752, 1.02533)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+
+[node name="Button 6" type="Button" parent="."]
+layout_mode = 2
+offset_left = 120.0
+offset_top = 96.0
+offset_right = 151.0
+offset_bottom = 127.0
+scale = Vector2(1.28, 1.04)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+text = "
+"
+
+[node name="Button 7" type="Button" parent="."]
+layout_mode = 2
+offset_left = 31.0
+offset_top = 132.0
+offset_right = 56.0
 offset_bottom = 163.0
-scale = Vector2(1.36452, 1.35177)
-theme = SubResource("Theme_rsbe3")
+scale = Vector2(1.6, 1.04)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="Button C" type="Button" parent="."]
 layout_mode = 2
+offset_left = 75.0
+offset_top = 132.0
+offset_right = 100.0
+offset_bottom = 163.0
+scale = Vector2(1.6, 1.04)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+[node name="Button OK" type="Button" parent="."]
 layout_mode = 2
+offset_left = 120.0
+offset_top = 132.0
+offset_right = 151.0
+offset_bottom = 163.0
+scale = Vector2(1.28, 1.04)
+size_flags_horizontal = 7
+size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 12.0
+offset_right = 104.0
+offset_bottom = 37.0
+scale = Vector2(1.04, 1.48)
+theme_override_colors/font_color = Color(0.443137, 0.188235, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("2_x2gay")
 label_settings = SubResource("LabelSettings_hq6e7")
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MarginContainer"]
-show_behind_parent = true
+[node name="cerrarPAD" type="Button" parent="."]
 layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="cerrarPAD" type="Button" parent="VBoxContainer/MarginContainer"]
-layout_mode = 2
+offset_left = 120.0
+offset_top = 16.0
+offset_right = 139.0
+offset_bottom = 47.0
+scale = Vector2(1.47688, 1.01112)
 size_flags_horizontal = 8
 size_flags_vertical = 10
-text = "X"
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-layout_mode = 2
-columns = 3
+[node name="Keypad" type="Sprite2D" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2(95, 94)
+scale = Vector2(0.183594, 0.183594)
+texture = ExtResource("2_hq6e7")
 
-[node name="Button 1" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Γ"
+[node name="Keypad2" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(95, 85)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("3_6i1wa")
 
-[node name="Button 2" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Δ"
-
-[node name="Button 3" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Α"
-
-[node name="Button 4" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Κ"
-
-[node name="Button 5" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Σ"
-
-[node name="Button 6" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "Η"
-
-[node name="Button 7" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "π"
-
-[node name="Button C" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "C"
-
-[node name="Button OK" type="Button" parent="VBoxContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 7
-size_flags_vertical = 3
-text = "OK"
-
-[connection signal="pressed" from="VBoxContainer/MarginContainer/cerrarPAD" to="." method="_on_cerrar_pad_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button 7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button C" to="." method="_on_button_8_pressed"]
-[connection signal="pressed" from="VBoxContainer/GridContainer/Button OK" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button 1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button 3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button 4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button 5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button 6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button 7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button C" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button OK" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="cerrarPAD" to="." method="_on_cerrar_pad_pressed"]

@@ -21,6 +21,7 @@ var posicion_enemigos = [
 ]
 
 func _ready() -> void:
+	keypad.visible = false
 	global.puedeMoverse = false
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
@@ -31,11 +32,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
 	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
+		await get_tree().process_frame
+		await get_tree().create_timer(0.5).timeout
 		trans.cambiarEscena("res://Escenarios/Cueva/cueva.tscn")
 	if global.labelOK == true:
 		keypad.visible = false
-	else:
-		keypad.visible = true
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -68,6 +69,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 func _on_area_presionar_body_entered(body: Node2D) -> void:
 	presiona_f.visible = true
 	puede_interactuar = true
+	keypad.visible = true
 	
 
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bmm77fx80y6kk" path="res://assets/Decorations/Cueva/MainLev2.0.png" id="2_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="3_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://b2vxv12wedoco" path="res://assets/enemies/Heraldo/Heraldo.tscn" id="5_xbw54"]
+[ext_resource type="AudioStream" uid="uid://cjm7l4f7ihfv5" path="res://Musica/Sonido de Derrumbe.mp3" id="6_kf17q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -39869,8 +39870,6 @@ sources/1 = SubResource("TileSetAtlasSource_jdd1b")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbw54"]
 size = Vector2(91, 52)
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_xbw54"]
-
 [node name="Cueva" type="Node2D"]
 script = ExtResource("1_t6p21")
 
@@ -39924,10 +39923,21 @@ collision_mask = 2
 position = Vector2(1136.5, 972)
 shape = SubResource("RectangleShape2D_xbw54")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = SubResource("VideoStreamTheora_xbw54")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kf17q")
+bus = &"Efectos de sonido"
+
+[node name="FinColor" type="ColorRect" parent="."]
+visible = false
+offset_left = 596.0
+offset_top = 678.0
+offset_right = 1364.0
+offset_bottom = 1261.0
+color = Color(0, 0, 0, 1)
+
+[node name="TimerFin" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="TimerFin" to="." method="_on_timer_fin_timeout"]

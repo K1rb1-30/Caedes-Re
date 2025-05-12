@@ -1,9 +1,9 @@
 extends Control
 
 var cambiarEscena = preload("res://Escenarios/Nivel 0/Camilla00.tscn")
-@onready var settings: VBoxContainer = $VBoxContainer2
-@onready var menu: HBoxContainer = $VBoxContainer
-@onready var volumenMusica: HSlider = $VBoxContainer2/VMusica
+@onready var settings: MenuBar = $MenuOpciones
+@onready var menu: MenuBar = $Menu
+@onready var volumenMusica: HSlider = $MenuOpciones/VMusica
 @onready var audioMenu: AudioStreamPlayer = $AudioMenu
 
 var busIndexM : int

@@ -2,7 +2,7 @@ extends Control
 
 var password = "ΚΑΗΔΗΣ"
 
-@onready var label = $VBoxContainer/MarginContainer/Label
+@onready var label: Label = $Label
 
 
 func key_press(digit):
@@ -53,5 +53,5 @@ func _on_button_9_pressed() -> void:
 
 
 func _on_cerrar_pad_pressed() -> void:
-	$VBoxContainer.visible = false
+	$".".visible = false
 	global.cerrarPad = true
