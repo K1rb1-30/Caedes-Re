@@ -67,6 +67,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 
 
 func _on_area_presionar_body_entered(body: Node2D) -> void:
+	body = $Andres
 	presiona_f.visible = true
 	puede_interactuar = true
 	keypad.visible = true
@@ -74,6 +75,7 @@ func _on_area_presionar_body_entered(body: Node2D) -> void:
 
 
 func _on_area_presionar_body_exited(body: Node2D) -> void:
+	body = $Andres
 	presiona_f.visible = false
 	puede_interactuar = false
 	keypad.visible = false

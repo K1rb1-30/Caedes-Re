@@ -34,6 +34,7 @@ func _on_exit_pressed() -> void:
 func _on_options_pressed() -> void:
 	settings.visible = true
 	menu.visible = false
+	$Opciones.visible = true
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0,toggled_on)
@@ -54,3 +55,5 @@ func _on_resolucion_item_selected(index: int) -> void:
 func _on_save_pressed() -> void:
 	settings.visible = false
 	menu.visible = true
+	$Opciones.visible = false
+	
