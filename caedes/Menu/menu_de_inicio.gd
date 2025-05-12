@@ -11,11 +11,11 @@ var busIndexE : int
 
 func _ready() -> void:
 	busIndexM = AudioServer.get_bus_index("Musica")
-	volumenMusica.value_changed.connect(_on_h_slider_value_changed)
+	
 	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexM))
 	
 	busIndexE = AudioServer.get_bus_index("Efectos de sonido")
-	volumenMusica.value_changed.connect(_on_h_slider_value_changed)
+	
 	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexE))
 func _on_h_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(busIndexM, linear_to_db(value))

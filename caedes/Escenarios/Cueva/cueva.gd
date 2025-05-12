@@ -30,17 +30,18 @@ func _physics_process(delta: float) -> void:
 		global.puedeMoverse = false
 		$TimerFin.start()
 		
-		
-
 func _on_timer_fin_timeout() -> void:
 	$FinColor.visible = true
 	$Andres.z_index = -1
+	$TimerSelva.start()
+	await get_tree().create_timer(5.0)
+	$Selva.play()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	body = $Andres
 	presiona_f.visible = true
 	puede_interactuar = true
-
+	
 
 @warning_ignore("unused_parameter")
 func _on_area_2d_body_exited(body: Node2D) -> void:

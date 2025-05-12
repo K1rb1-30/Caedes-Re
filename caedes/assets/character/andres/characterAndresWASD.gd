@@ -6,7 +6,8 @@ var health = 100
 var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
-@onready var menu_de_inicio: Control = $MenuDeInicio
+@onready var menu_pausa: Control = $MenuPausa
+
 
 func _physics_process(delta):	
 	velocity = Vector2.ZERO
@@ -33,8 +34,9 @@ func _physics_process(delta):
 		if velocity == Vector2(0, 0) :
 			sprite2d.play("StaticAbuelo")
 			sprite2d.flip_h = false
-	if Input.is_action_just_pressed("escape"):
-		menu_de_inicio.visible = true
+	if Input.is_action_just_released("escape"):
+		menu_pausa.visible = true
+		print("menu visible")
 		
 
 	velocity = velocity.normalized() * speed
@@ -57,26 +59,20 @@ func _on_andres_hitbox_body_entered(body: Node2D) -> void:
 func _on_andres_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		enemyAttackRange = false
-		#$attackCooldown.stop()
 		
 
 func _on_attack_cooldown_timeout() -> void:
 	if enemyAttackRange:
 		enemy_Attack()
 		$attackCooldown.start()
-		
-		
 
 func enemy_Attack():
-	#if enemyAttackRange and enemyAttackCooldown:
 	health = health - 20
 	print(health)
-	
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
 			global.andresCurrentAttack = true
-			#$dealAttackTimer.start()
 			
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false

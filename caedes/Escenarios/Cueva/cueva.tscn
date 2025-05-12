@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=24 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="3_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://b2vxv12wedoco" path="res://assets/enemies/Heraldo/Heraldo.tscn" id="5_xbw54"]
 [ext_resource type="AudioStream" uid="uid://cjm7l4f7ihfv5" path="res://Musica/Sonido de Derrumbe.mp3" id="6_kf17q"]
+[ext_resource type="AudioStream" uid="uid://cd0u61kjvhjpm" path="res://Musica/Sonido Selva.mp3" id="7_n3xil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -39875,7 +39876,7 @@ script = ExtResource("1_t6p21")
 
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
-position = Vector2(654, 964)
+position = Vector2(665, 994)
 scale = Vector2(0.320858, 0.300417)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -39937,7 +39938,16 @@ color = Color(0, 0, 0, 1)
 
 [node name="TimerFin" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
+
+[node name="Selva" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_n3xil")
+
+[node name="TimerSelva" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="TimerFin" to="." method="_on_timer_fin_timeout"]
+[connection signal="timeout" from="TimerSelva" to="." method="_on_timer_selva_timeout"]

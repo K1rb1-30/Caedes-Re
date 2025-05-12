@@ -338,10 +338,6 @@ offset_bottom = 108.0
 text = "Presiona \"F\" para entrar en la cueva"
 
 [node name="MenuPausa" parent="." instance=ExtResource("12_6w2lv")]
-offset_left = -594.0
-offset_top = -301.0
-offset_right = -594.0
-offset_bottom = -301.0
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
