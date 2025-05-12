@@ -6,6 +6,7 @@ var health = 100
 var cordure = 100
 var andresVivo = true
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
+@onready var menu_de_inicio: Control = $MenuDeInicio
 
 func _physics_process(delta):	
 	velocity = Vector2.ZERO
@@ -32,7 +33,8 @@ func _physics_process(delta):
 		if velocity == Vector2(0, 0) :
 			sprite2d.play("StaticAbuelo")
 			sprite2d.flip_h = false
-	
+	if Input.is_action_just_pressed("escape"):
+		menu_de_inicio.visible = true
 		
 
 	velocity = velocity.normalized() * speed

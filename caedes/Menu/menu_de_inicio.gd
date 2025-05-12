@@ -57,3 +57,5 @@ func _on_save_pressed() -> void:
 	menu.visible = true
 	$Opciones.visible = false
 	
+func _on_salir_pressed() -> void:
+	get_tree().quit()
