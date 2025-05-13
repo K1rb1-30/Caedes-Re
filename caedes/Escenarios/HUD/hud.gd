@@ -26,14 +26,14 @@ Siempre le llego cuando dice "Ven"
 
 func _process(delta: float) -> void:
 	BarraVida.value = restarVida.health #Actualiza la barra de vida a la del jugador
-	BarraCordura.value = restarCordura.cordure #Actualiza la barra de cordura a la del jugador
-	var flash = flashVida.flash
+	BarraCordura.value = restarVida.cordure #Actualiza la barra de cordura a la del jugador
+	var flash = restarVida.flash
 	if flash:
 		flash_screen()
 	# VOY POR AQUI
 	if BarraCordura.value < 50 and BarraCordura.value > 20:
 		cordura_ojos()
-	elif BarraCordura.value < 20:
+	elif restarVida.value < 20:
 		cordura_luna()
 
 func flash_screen():

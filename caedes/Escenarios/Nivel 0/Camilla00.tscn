@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=93 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1xvmn584sssl" path="res://assets/Decorations/candleA2.png" id="17_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
 [ext_resource type="AudioStream" uid="uid://bixu4agk365ms" path="res://Musica/MusicaCatac.mp3" id="21_v1t8p"]
+[ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="22_x05nm"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -11480,7 +11481,7 @@ size = Vector2(63.5, 80)
 script = ExtResource("1_1mms0")
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(708, 507)
+position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -12127,6 +12128,8 @@ stream = ExtResource("21_v1t8p")
 volume_db = 24.0
 autoplay = true
 bus = &"Musica"
+
+[node name="HUD" parent="." instance=ExtResource("22_x05nm")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]

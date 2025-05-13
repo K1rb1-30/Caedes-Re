@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var CordureMode : bool
+@export var CordureMode : bool = true
 
 var enemyAttackRange = false
 var enemyAttackCooldown = true
@@ -45,7 +45,7 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_slide()
 	attack()
-	update_health()
+	#update_health()
 	
 	# MODO DE CORDURA
 	if CordureMode:
@@ -55,7 +55,7 @@ func _physics_process(delta):
 			CordureMode = false
 		else:
 			update_cordure()
-			print(cordure)
+			#print(cordure)
 	
 	#Si esta muelto
 	if health <= 0:
@@ -64,7 +64,7 @@ func _physics_process(delta):
 		global.puedeMoverse = false
 		print("andres muerto")
 		mostrar_muerte()
-		
+		health = 100
 		
 
 func mostrar_muerte():
@@ -126,7 +126,7 @@ func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
 
 
-func update_health():
+"""func update_health():
 	var healthbar = $healthbar
 	healthbar.value = health
 	
@@ -134,3 +134,4 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
+"""
