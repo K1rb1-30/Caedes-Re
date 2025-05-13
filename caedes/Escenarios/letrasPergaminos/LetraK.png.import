@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nov470vb23wp"
-path="res://.godot/imported/youdied.png-f560f80385fb939c1fc5f35c4da4e129.ctex"
+uid="uid://bnmmkjuq3ugsw"
+path="res://.godot/imported/LetraK.png-f2ebc63c5d20be399e1299555ae495d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/andres/youdied.png"
-dest_files=["res://.godot/imported/youdied.png-f560f80385fb939c1fc5f35c4da4e129.ctex"]
+source_file="res://Escenarios/letrasPergaminos/LetraK.png"
+dest_files=["res://.godot/imported/LetraK.png-f2ebc63c5d20be399e1299555ae495d1.ctex"]
 
 [params]
 

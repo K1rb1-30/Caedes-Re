@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=96 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://1xvmn584sssl" path="res://assets/Decorations/candleA2.png" id="17_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
 [ext_resource type="AudioStream" uid="uid://bixu4agk365ms" path="res://Musica/MusicaCatac.mp3" id="21_v1t8p"]
+[ext_resource type="Texture2D" uid="uid://bnmmkjuq3ugsw" path="res://Escenarios/letrasPergaminos/LetraK.png" id="22_x05nm"]
+[ext_resource type="Texture2D" uid="uid://uwneuyh2rc7r" path="res://Escenarios/letrasPergaminos/LetraA.png" id="23_wla3d"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -11476,11 +11478,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jja6"]
 size = Vector2(63.5, 80)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxix"]
+size = Vector2(50, 71.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vphmf"]
+size = Vector2(30, 31)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(708, 507)
+position = Vector2(92, 335)
 scale = Vector2(0.3, 0.3)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -12022,20 +12030,6 @@ color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
 
-[node name="Antorcha8" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
-show_behind_parent = true
-position = Vector2(447, 47)
-sprite_frames = SubResource("SpriteFrames_usl1r")
-animation = &"antorcha"
-frame_progress = 0.334131
-
-[node name="PointLight2D" type="PointLight2D" parent="Antorcha8"]
-position = Vector2(9.53674e-07, -1.99998)
-scale = Vector2(0.188477, 0.164062)
-color = Color(1, 0.509804, 0.109804, 1)
-texture = ExtResource("13_cmsiv")
-texture_scale = 1.47
-
 [node name="Antorcha9" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
 position = Vector2(671, 47)
@@ -12051,7 +12045,7 @@ texture_scale = 1.47
 
 [node name="Antorcha5" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
-position = Vector2(192, 416)
+position = Vector2(447, 47)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
 frame_progress = 0.334131
@@ -12128,6 +12122,46 @@ volume_db = 24.0
 autoplay = true
 bus = &"Musica"
 
+[node name="letraK" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraK"]
+position = Vector2(25, 335.25)
+shape = SubResource("RectangleShape2D_mxxix")
+
+[node name="LetraK" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+position = Vector2(214, 340)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("22_x05nm")
+
+[node name="LetraA" type="Sprite2D" parent="."]
+position = Vector2(192, 418)
+scale = Vector2(0.0404412, 0.0404412)
+texture = ExtResource("23_wla3d")
+
+[node name="LetraAGrande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+position = Vector2(191, 459)
+scale = Vector2(0.303922, 0.318627)
+texture = ExtResource("23_wla3d")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-256, 381)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(447, 73.5)
+shape = SubResource("RectangleShape2D_vphmf")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
+[connection signal="body_entered" from="letraK" to="." method="_on_letra_k_body_entered"]
+[connection signal="body_exited" from="letraK" to="." method="_on_letra_k_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

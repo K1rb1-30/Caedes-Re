@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmaqqktmrijio"]
+
+[ext_resource type="Texture2D" uid="uid://byddi520sbx51" path="res://Escenarios/letrasPergaminos/letraTriangulo4.png" id="1_cyy2q"]
+[ext_resource type="Script" uid="uid://dkolr5iy8pail" path="res://Escenarios/letrasPergaminos/letra_triangulo_4.gd" id="1_nfu0e"]
+
+[node name="Triangulo4" type="Node2D"]
+script = ExtResource("1_nfu0e")
+
+[node name="LetraTriangulo4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(0.0195234, 0.0195234)
+texture = ExtResource("1_cyy2q")
+
+[node name="LetraTrianguloGrande" type="Sprite2D" parent="."]
+scale = Vector2(0.00507339, 0.0050734)
+texture = ExtResource("1_cyy2q")

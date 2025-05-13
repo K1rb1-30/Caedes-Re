@@ -8,6 +8,12 @@ var Andres = null
 @onready var puerta_colision: StaticBody2D = $puertaColision
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
+@onready var letrak: Sprite2D = $LetraK
+@onready var luzAndres: PointLight2D = $Andres/PointLight2D
+@onready var letraAgrande: Sprite2D = $LetraAGrande
+var interactuarClick = false
+
+
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
 @onready var musica: AudioStreamPlayer = $Musica
@@ -38,6 +44,10 @@ func _physics_process(delta: float) -> void:
 		musica.stop()
 	if global.labelOK == true:
 		keypad.visible = false
+	if interactuarClick and Input.is_action_pressed("attack"):
+		letraAgrande.visible = true
+	else:
+		letraAgrande.visible = false
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -80,3 +90,21 @@ func _on_area_presionar_body_exited(body: Node2D) -> void:
 	presiona_f.visible = false
 	puede_interactuar = false
 	keypad.visible = false
+
+
+func _on_letra_k_body_entered(body: Node2D) -> void:
+	body = $Andres
+	letrak.visible = true
+	luzAndres.visible = false
+
+func _on_letra_k_body_exited(body: Node2D) -> void:
+	body = $Andres
+	letrak.visible = false
+	luzAndres.visible = false
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	interactuarClick = true
+
+func _on_area_2d_2_body_exited(body: Node2D) -> void:
+	interactuarClick = false

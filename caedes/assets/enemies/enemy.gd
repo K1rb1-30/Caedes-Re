@@ -6,6 +6,7 @@ var Andres = null
 
 @export var healthEnemy = 100
 var canTakeDamage = true
+@export var cartel_escena: PackedScene
 
 func _physics_process(delta):
 	dealWithDamage()
@@ -52,6 +53,9 @@ func dealWithDamage():
 		$damageCooldown.start()
 		if healthEnemy <= 0:
 			self.queue_free()
+			var cartel = cartel_escena.instantiate()
+			get_tree().current_scene.add_child(cartel)
+			cartel.global_position = self.global_position
 			
 
 func _on_damage_cooldown_timeout() -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://fcdcsllauhnm"]
+[gd_scene load_steps=10 format=3 uid="uid://fcdcsllauhnm"]
 
 [ext_resource type="Texture2D" uid="uid://ddg71h6d87alh" path="res://assets/enemies/jefe1.png" id="1_3epn5"]
 [ext_resource type="Shader" uid="uid://b8wimymnalj0x" path="res://assets/enemies/enemy.gdshader" id="1_10gli"]
 [ext_resource type="Script" uid="uid://cqutbq4vjoatk" path="res://assets/enemies/enemy.gd" id="1_rf5tu"]
+[ext_resource type="PackedScene" uid="uid://cmaqqktmrijio" path="res://Escenarios/letrasPergaminos/letra_triangulo_4.tscn" id="3_3veb7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3veb7"]
 shader = ExtResource("1_10gli")
@@ -31,6 +32,7 @@ size = Vector2(37, 65)
 material = SubResource("ShaderMaterial_3veb7")
 collision_layer = 2
 script = ExtResource("1_rf5tu")
+cartel_escena = ExtResource("3_3veb7")
 
 [node name="EnemySprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 6.5)
