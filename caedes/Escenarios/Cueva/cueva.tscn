@@ -39876,7 +39876,7 @@ script = ExtResource("1_t6p21")
 
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
-position = Vector2(665, 994)
+position = Vector2(561, 203)
 scale = Vector2(0.320858, 0.300417)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
