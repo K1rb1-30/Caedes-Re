@@ -34,7 +34,8 @@ func _on_timer_fin_timeout() -> void:
 	$FinColor.visible = true
 	$Andres.z_index = -1
 	$TimerSelva.start()
-	await get_tree().create_timer(5.0)
+	
+func _on_timer_selva_timeout() -> void:
 	$Selva.play()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

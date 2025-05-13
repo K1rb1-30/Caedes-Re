@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://gq2bqnarj2t2" path="res://assets/character/andres/Sprites/IzquierdaAbuelo.png" id="4_6w2lv"]
 [ext_resource type="Texture2D" uid="uid://bbf2px2bga8t1" path="res://assets/character/perprueba/sprites/walk.png" id="5_r0ao0"]
 [ext_resource type="PackedScene" uid="uid://t2ugqc48o0ja" path="res://Escenarios/HUD/healthbar.tscn" id="6_0lqos"]
-[ext_resource type="Script" path="res://assets/character/andres/camera_2d.gd" id="9_x3gpa"]
-[ext_resource type="PackedScene" uid="uid://bom78vj8y0nyt" path="res://Escenarios/MenuPausa/MenuPausa.tscn" id="12_6w2lv"]
+[ext_resource type="Script" uid="uid://dbb0yuumsvtrd" path="res://assets/character/andres/camera_2d.gd" id="9_x3gpa"]
+[ext_resource type="PackedScene" uid="uid://b541u4g76emon" path="res://Escenarios/MenuPausa/MenuPausa.tscn" id="12_6w2lv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqhot"]
 atlas = ExtResource("2_4wxxd")
@@ -338,6 +338,7 @@ offset_bottom = 108.0
 text = "Presiona \"F\" para entrar en la cueva"
 
 [node name="MenuPausa" parent="." instance=ExtResource("12_6w2lv")]
+visible = false
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
