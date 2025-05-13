@@ -48,3 +48,4 @@ De mi corazón roto
 func _on_button_pressed() -> void: #Boton de reiniciar
 	get_tree().paused = false
 	get_tree().reload_current_scene() #Reinicia la Escena
+	global.health = 100

@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 var enemyAttackRange = false
 var enemyAttackCooldown = true
-var health = 100
 var cordure = 100
 var andresVivo = true
 var flash = false #Para que flashee la imagen
@@ -58,13 +57,13 @@ func _physics_process(delta):
 			#print(cordure)
 	
 	#Si esta muelto
-	if health <= 0:
+	if global.health <= 0:
 		andresVivo = false
-		health = 0
+		global.health = 0
 		global.puedeMoverse = false
 		print("andres muerto")
 		mostrar_muerte()
-		health = 100
+		global.health = 100
 		
 
 func mostrar_muerte():
@@ -107,8 +106,8 @@ func _on_attack_cooldown_timeout() -> void:
 		$attackCooldown.start()
 
 func enemy_Attack():
-	health = health - 20
-	print(health)
+	global.health = global.health - 20
+	print(global.health)
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
