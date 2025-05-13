@@ -283,6 +283,7 @@ height = 214.0
 [node name="Andres" type="CharacterBody2D" groups=["andres"]]
 collision_layer = 2
 script = ExtResource("1_8oxup")
+CordureMode = null
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

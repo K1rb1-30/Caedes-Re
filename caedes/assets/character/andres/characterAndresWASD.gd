@@ -112,17 +112,15 @@ func enemy_Attack():
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
-	flash = true
-	restar_cordura(10)#Resta 10 de cordura
-	await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
-	flash = false
+		flash = true
+		restar_cordura(10)#Resta 10 de cordura
+		await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
+		flash = false
+		global.andresCurrentAttack = true
 		
 		#enemyAttackCooldown = false
 		#$attackCooldown.start()
-		
-func attack():
-	if Input.is_action_just_pressed("attack") and global.andresInattackZone:
-			global.andresCurrentAttack = true
+
 			
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
