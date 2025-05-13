@@ -1,4 +1,5 @@
 [gd_scene load_steps=92 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=68 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -28,6 +29,7 @@ b = Vector2(0, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sug2o"]
 size = Vector2(37, 68)
+[ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="20_e5phj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vg2w"]
 size = Vector2(207.75, 54)
@@ -11482,6 +11484,7 @@ script = ExtResource("1_1mms0")
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
 position = Vector2(708, 507)
 scale = Vector2(0.3, 0.3)
+CordureMode = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
 visible = false
@@ -12131,3 +12134,8 @@ bus = &"Musica"
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
+[node name="HUD" parent="." instance=ExtResource("20_e5phj")]
+top_level = true
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
