@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bom78vj8y0nyt"]
+[gd_scene load_steps=13 format=3 uid="uid://b541u4g76emon"]
 
 [ext_resource type="Script" uid="uid://hpwlkgkxih1x" path="res://Escenarios/MenuPausa/menu_pausa.gd" id="1_4q078"]
-[ext_resource type="Texture2D" uid="uid://dn4jlavi0kxud" path="res://Escenarios/MenuPausa/escape.png" id="1_swr6d"]
+[ext_resource type="Texture2D" uid="uid://3yhbc501bddq" path="res://Escenarios/MenuPausa/MenuEscape.png" id="2_4q078"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spop6"]
 
@@ -28,41 +28,38 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_4q078")
 
-[node name="MenuOpciones" type="MenuBar" parent="."]
-top_level = true
-layout_mode = 0
-offset_left = -8.0
-offset_top = -7.0
-offset_right = -8.0
-offset_bottom = -7.0
+[node name="MenuEscape" type="Sprite2D" parent="."]
+position = Vector2(1.00001, 1.25001)
+scale = Vector2(0.439453, 0.451497)
+texture = ExtResource("2_4q078")
 
-[node name="VMusica" type="HSlider" parent="MenuOpciones"]
+[node name="VMusica" type="HSlider" parent="."]
 layout_mode = 2
-offset_left = -126.0
-offset_top = -98.0
-offset_right = 69.0
-offset_bottom = -82.0
+offset_left = -134.0
+offset_top = -105.0
+offset_right = 61.0
+offset_bottom = -89.0
 max_value = 2.0
 step = 0.1
 value = 1.0
 
-[node name="VEfectos" type="HSlider" parent="MenuOpciones"]
+[node name="VEfectos" type="HSlider" parent="."]
 layout_mode = 2
-offset_left = -125.0
-offset_top = -37.0
-offset_right = 69.0
-offset_bottom = -21.0
+offset_left = -133.0
+offset_top = -44.0
+offset_right = 61.0
+offset_bottom = -28.0
 scale = Vector2(1, 0.92001)
 max_value = 2.0
 step = 0.1
 value = 1.0
 
-[node name="CheckBox" type="CheckBox" parent="MenuOpciones"]
+[node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 2
-offset_left = -128.0
-offset_top = 3.0
-offset_right = -110.0
-offset_bottom = 28.0
+offset_left = -137.0
+offset_top = -4.0
+offset_right = -119.0
+offset_bottom = 21.0
 scale = Vector2(0.68, 0.6)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_spop6")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cbxpw")
@@ -78,31 +75,26 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_l60j5")
 text = "
 "
 
-[node name="save" type="Button" parent="MenuOpciones"]
+[node name="save" type="Button" parent="."]
 layout_mode = 2
-offset_left = -160.0
-offset_top = 77.0
-offset_right = 103.0
-offset_bottom = 138.0
+offset_left = -168.0
+offset_top = 70.0
+offset_right = 95.0
+offset_bottom = 131.0
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_o1yvx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_57cd1")
 
-[node name="salir" type="Button" parent="MenuOpciones"]
+[node name="salir" type="Button" parent="."]
 layout_mode = 0
-offset_left = -160.0
-offset_top = 144.0
-offset_right = 104.0
-offset_bottom = 205.0
+offset_left = -168.0
+offset_top = 137.0
+offset_right = 96.0
+offset_bottom = 198.0
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qvruk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ja277")
 
-[node name="Escape" type="Sprite2D" parent="."]
-position = Vector2(0.999998, 0.999996)
-scale = Vector2(0.438587, 0.450263)
-texture = ExtResource("1_swr6d")
-
-[connection signal="value_changed" from="MenuOpciones/VMusica" to="." method="_on_v_musica_value_changed"]
-[connection signal="value_changed" from="MenuOpciones/VEfectos" to="." method="_on_v_efectos_value_changed"]
-[connection signal="toggled" from="MenuOpciones/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="pressed" from="MenuOpciones/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="MenuOpciones/salir" to="." method="_on_salir_pressed"]
+[connection signal="value_changed" from="VMusica" to="." method="_on_v_musica_value_changed"]
+[connection signal="value_changed" from="VEfectos" to="." method="_on_v_efectos_value_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]

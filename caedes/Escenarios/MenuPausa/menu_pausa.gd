@@ -1,10 +1,10 @@
 extends Control
 
-@onready var volumenMusica: HSlider = $MenuOpciones/VMusica
-@onready var vefectos: HSlider = $MenuOpciones/VEfectos
+@onready var volumenMusica: HSlider = $VMusica
+@onready var vefectos: HSlider = $VEfectos
 
-var busIndexM : int
-var busIndexE : int
+var busIndexM : float
+var busIndexE : float
 
 func _ready() -> void:
 	busIndexM = AudioServer.get_bus_index("Musica")
