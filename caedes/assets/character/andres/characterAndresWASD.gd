@@ -5,6 +5,7 @@ extends CharacterBody2D
 var enemyAttackRange = false
 var enemyAttackCooldown = true
 var cordure = 100
+var health = 100
 var andresVivo = true
 var flash = false #Para que flashee la imagen
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
@@ -57,13 +58,12 @@ func _physics_process(delta):
 			#print(cordure)
 	
 	#Si esta muelto
-	if global.health <= 0:
+	if health <= 0:
 		andresVivo = false
-		global.health = 0
+		health = 0
 		global.puedeMoverse = false
 		print("andres muerto")
 		mostrar_muerte()
-		global.health = 100
 		
 
 func mostrar_muerte():
@@ -106,8 +106,8 @@ func _on_attack_cooldown_timeout() -> void:
 		$attackCooldown.start()
 
 func enemy_Attack():
-	global.health = global.health - 20
-	print(global.health)
+	health = health - 20
+	print(health)
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
@@ -125,7 +125,7 @@ func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
 
 
-"""func update_health():
+func update_health():
 	var healthbar = $healthbar
 	healthbar.value = health
 	
@@ -133,4 +133,3 @@ func _on_deal_attack_timer_timeout() -> void:
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-"""

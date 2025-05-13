@@ -7,7 +7,6 @@ extends Control
 
 func _ready() -> void:
 	Continuar.visible = false #Poner que el boton sea invisible
-	Salir.visible = false
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
 	Video.play()
 	

@@ -12130,6 +12130,9 @@ autoplay = true
 bus = &"Musica"
 
 [node name="HUD" parent="." instance=ExtResource("22_x05nm")]
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
