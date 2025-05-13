@@ -1,9 +1,34 @@
 extends Control
 
 var cambiarEscena = preload("res://Escenarios/Nivel 0/Camilla00.tscn")
+<<<<<<< Updated upstream
 @onready var volumen_num: Label = $VBoxContainer2/VolumenNum
 @onready var settings: VBoxContainer = $VBoxContainer2
 @onready var menu: HBoxContainer = $VBoxContainer
+=======
+@onready var settings: MenuBar = $MenuOpciones
+@onready var menu: MenuBar = $Menu
+@onready var volumenMusica: HSlider = $MenuOpciones/VMusica
+@onready var vefectos: HSlider = $MenuOpciones/VEfectos
+@onready var audioMenu: AudioStreamPlayer = $AudioMenu
+
+var busIndexM : float
+var busIndexE : float
+
+func _ready() -> void:
+	busIndexM = AudioServer.get_bus_index("Musica")
+	
+	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexM))
+	
+	busIndexE = AudioServer.get_bus_index("Efectos de sonido")
+	
+	vefectos.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexE))
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(busIndexM, linear_to_db(value))
+
+func _on_v_efectos_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(busIndexE, linear_to_db(value))
+>>>>>>> Stashed changes
 
 
 func _on_play_pressed() -> void:

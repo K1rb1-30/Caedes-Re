@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://bom78vj8y0nyt"]
+
+[ext_resource type="Script" uid="uid://hpwlkgkxih1x" path="res://Escenarios/MenuPausa/menu_pausa.gd" id="1_4q078"]
+[ext_resource type="Texture2D" uid="uid://bkddy24ld4bfo" path="res://Escenarios/MenuPausa/MenuEscape.png" id="2_4q078"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spop6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbxpw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mtlth"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1by78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_spf57"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l60j5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1yvx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57cd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qvruk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ja277"]
+
+[node name="MenuPausa" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4q078")
+
+[node name="MenuEscape" type="Sprite2D" parent="."]
+position = Vector2(0.625015, 0.437533)
+scale = Vector2(0.438232, 0.449951)
+texture = ExtResource("2_4q078")
+
+[node name="VMusica" type="HSlider" parent="."]
+offset_left = -135.0
+offset_top = -105.0
+offset_right = 60.0
+offset_bottom = -89.0
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="VEfectos" type="HSlider" parent="."]
+offset_left = -134.0
+offset_top = -44.0
+offset_right = 60.0
+offset_bottom = -28.0
+scale = Vector2(1, 0.92001)
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = -137.0
+offset_top = -5.0
+offset_right = -119.0
+offset_bottom = 20.0
+scale = Vector2(0.68, 0.6)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_spop6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cbxpw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_mtlth")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1by78")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_spf57")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l60j5")
+text = "
+"
+
+[node name="save" type="Button" parent="."]
+offset_left = -169.0
+offset_top = 69.0
+offset_right = 94.0
+offset_bottom = 130.0
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_o1yvx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_57cd1")
+
+[node name="salir" type="Button" parent="."]
+offset_left = -169.0
+offset_top = 136.0
+offset_right = 95.0
+offset_bottom = 197.0
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qvruk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ja277")
+
+[connection signal="value_changed" from="VMusica" to="." method="_on_v_musica_value_changed"]
+[connection signal="value_changed" from="VEfectos" to="." method="_on_v_efectos_value_changed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]

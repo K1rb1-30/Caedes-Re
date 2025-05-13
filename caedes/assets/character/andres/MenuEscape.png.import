@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgyl38t6ot2m3"
-path="res://.godot/imported/SpriteAndres100.png-699a7d3e0d1a8726123c5222d4a65081.ctex"
+uid="uid://dsuf6vpldnngf"
+path="res://.godot/imported/MenuEscape.png-9205122029fe9e835dbfbbc872099e16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/andres/SpriteAndres100.png"
-dest_files=["res://.godot/imported/SpriteAndres100.png-699a7d3e0d1a8726123c5222d4a65081.ctex"]
+source_file="res://assets/character/andres/MenuEscape.png"
+dest_files=["res://.godot/imported/MenuEscape.png-9205122029fe9e835dbfbbc872099e16.ctex"]
 
 [params]
 

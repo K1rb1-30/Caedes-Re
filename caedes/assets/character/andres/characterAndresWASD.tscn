@@ -326,6 +326,20 @@ texture = ExtResource("4_6mtlq")
 texture_scale = 2.16
 height = 202.0
 
+<<<<<<< Updated upstream
+=======
+[node name="PresionaF" type="Label" parent="."]
+visible = false
+offset_left = -139.0
+offset_top = 85.0
+offset_right = 139.0
+offset_bottom = 108.0
+text = "Presiona \"F\" para entrar en la cueva"
+
+[node name="MenuPausa" parent="." instance=ExtResource("12_6w2lv")]
+visible = false
+
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
