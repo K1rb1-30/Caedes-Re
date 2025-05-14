@@ -1,11 +1,22 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ PasilloRecuerdos1
+
+- ¿Qué es este lugar?
+	Catlos: Ni idea parece una especie de pasillo interminable
+	Catlos: ¿Aunque no te parece un poco familiar? => END
+
+~ PasilloRecuerdos2
+Catlos: Oye te encuentras bien? Te noto un poco mareado.
+- Tranquilo estoy bien.
+	Catlos: Vale, entonces sera cosa mia supongo.
+	Catlos: Continua y si te ocurre algo cuanto salgamos de aquí iremos al HoSpitAl.
+- No, la verdad que no me encuentro bien.
+	Catlos: Tranquilo en cuanto salgamos de aquí iremos al HoSpitAl.
+	Catlos: Tu continua siempre. => END
+
+~ PasilloRecuerdos3
+
+
+
+
+
 => END
