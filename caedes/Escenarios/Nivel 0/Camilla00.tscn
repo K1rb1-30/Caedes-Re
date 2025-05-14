@@ -72,7 +72,7 @@ size = Vector2(250, 60)
 size = Vector2(96, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pfvq"]
-size = Vector2(105, 50)
+size = Vector2(105, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33db2"]
 size = Vector2(505, 42)
@@ -11479,7 +11479,7 @@ animations = [{
 size = Vector2(63.5, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxix"]
-size = Vector2(50, 71.5)
+size = Vector2(24, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vphmf"]
 size = Vector2(30, 31)
@@ -11487,15 +11487,16 @@ size = Vector2(30, 31)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
-[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(92, 335)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(247, 754)
 scale = Vector2(0.3, 0.3)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
-visible = false
 color = Color(0, 0, 0, 1)
 energy = 0.8
 blend_mode = 2
+
+[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+position = Vector2(247, 754)
+scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(27, 226)
@@ -11581,7 +11582,7 @@ position = Vector2(368, 703)
 shape = SubResource("RectangleShape2D_qimlg")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(366.5, 735)
+position = Vector2(366.5, 729.5)
 shape = SubResource("RectangleShape2D_2pfvq")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Bordes"]
@@ -12127,14 +12128,20 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="letraK"]
-position = Vector2(25, 335.25)
+position = Vector2(351, 778)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_mxxix")
 
-[node name="LetraK" type="Sprite2D" parent="."]
+[node name="LetraKGrande" type="Sprite2D" parent="."]
 visible = false
 top_level = true
-position = Vector2(214, 340)
+position = Vector2(368, 680)
 scale = Vector2(0.32, 0.32)
+texture = ExtResource("22_x05nm")
+
+[node name="LetraK" type="Sprite2D" parent="."]
+position = Vector2(351, 778)
+scale = Vector2(0.0330882, 0.0330882)
 texture = ExtResource("22_x05nm")
 
 [node name="LetraA" type="Sprite2D" parent="."]
@@ -12149,12 +12156,12 @@ position = Vector2(191, 459)
 scale = Vector2(0.303922, 0.318627)
 texture = ExtResource("23_wla3d")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="letraA" type="Area2D" parent="."]
 position = Vector2(-256, 381)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraA"]
 position = Vector2(447, 73.5)
 shape = SubResource("RectangleShape2D_vphmf")
 
@@ -12163,5 +12170,5 @@ shape = SubResource("RectangleShape2D_vphmf")
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
 [connection signal="body_entered" from="letraK" to="." method="_on_letra_k_body_entered"]
 [connection signal="body_exited" from="letraK" to="." method="_on_letra_k_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="letraA" to="." method="_on_letra_a_body_entered"]
+[connection signal="body_exited" from="letraA" to="." method="_on_letra_a_body_exited"]

@@ -9,14 +9,13 @@ size = Vector2(32, 37)
 [node name="Triangulo4" type="Node2D"]
 script = ExtResource("1_nfu0e")
 
+[node name="LetraTrianguloGrande" type="Sprite2D" parent="."]
+scale = Vector2(0.121252, 0.121252)
+texture = ExtResource("1_cyy2q")
+
 [node name="LetraTriangulo4" type="Sprite2D" parent="."]
 position = Vector2(0, -1.19209e-07)
 scale = Vector2(0.0195234, 0.0195234)
-texture = ExtResource("1_cyy2q")
-
-[node name="LetraTrianguloGrande" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.121252, 0.121252)
 texture = ExtResource("1_cyy2q")
 
 [node name="Area2D" type="Area2D" parent="."]

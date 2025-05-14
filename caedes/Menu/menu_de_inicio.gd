@@ -8,8 +8,8 @@ var cambiarEscena = preload("res://Escenarios/Nivel 0/Camilla00.tscn")
 
 @onready var audioMenu: AudioStreamPlayer = $AudioMenu
 
-var busIndexM : float
-var busIndexE : float
+var busIndexM : int
+var busIndexE : int
 
 func _ready() -> void:
 	busIndexM = AudioServer.get_bus_index("Musica")

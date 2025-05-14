@@ -3,8 +3,8 @@ extends Control
 @onready var volumenMusica: HSlider = $VMusica
 @onready var vefectos: HSlider = $VEfectos
 
-var busIndexM : float
-var busIndexE : float
+var busIndexM : int
+var busIndexE : int
 
 func _ready() -> void:
 	busIndexM = AudioServer.get_bus_index("Musica")

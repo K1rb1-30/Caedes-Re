@@ -4,7 +4,7 @@ extends CharacterBody2D
 var playerChase = false
 var Andres = null
 
-@export var healthEnemy = 100
+@export var healthEnemy = 1
 var canTakeDamage = true
 @export var cartel_escena: PackedScene
 
