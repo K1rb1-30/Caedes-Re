@@ -107,14 +107,15 @@ func _on_attack_cooldown_timeout() -> void:
 
 func enemy_Attack():
 	health = health - 20
+	flash = true
+	restar_cordura(10)#Resta 10 de cordura
+	await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
+	flash = false
 	print(health)
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
-		flash = true
-		restar_cordura(10)#Resta 10 de cordura
-		await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
-		flash = false
+		sumar_cordura(10)
 		global.andresCurrentAttack = true
 		
 		#enemyAttackCooldown = false

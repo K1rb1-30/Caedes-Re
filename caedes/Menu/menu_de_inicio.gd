@@ -1,6 +1,6 @@
 extends Control
 
-var cambiarEscena = preload("res://Escenarios/Nivel 0/Camilla00.tscn")
+var cambiarEscena = preload("res://Escenarios/Consultas/Consulta0.tscn")
 @onready var settings: MenuBar = $MenuOpciones
 @onready var menu: MenuBar = $Menu
 @onready var volumenMusica: HSlider = $MenuOpciones/VMusica
