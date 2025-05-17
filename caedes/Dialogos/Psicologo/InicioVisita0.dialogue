@@ -123,11 +123,14 @@ Kurt: ¿De ti mismo o de la realidad?
 Kurt: Esta será nuestra última sesión por ahora.  
 Kurt: Pero antes dime…  
 Kurt: ¿Catlos sigue diciendo la verdad?  
-Andres: ¿O solo dice lo que quieres escuchar?
+Kurt: ¿O solo dice lo que quieres escuchar?
 
 *El reloj avanza tres segundos. Se escucha un maullido distante. Luz roja detrás de la puerta.*
 
-Kurt: Nos vemos pronto, Andrés. => END
+Kurt: Nos vemos pronto, Andrés. 
+do _on_dialogue_finished()
+=> END
+
 
 
 ~ despertarDistorsion
