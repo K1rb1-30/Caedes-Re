@@ -1430,7 +1430,7 @@ sources/0 = SubResource("TileSetAtlasSource_tlrlw")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpabu"]
 height = 168.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(1.22, 1.22)

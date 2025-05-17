@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		musica.stop()
 	if global.labelOK == true:
 		keypad.visible = false
+"""
 	if interactuarA and Input.is_action_pressed("attack"):
 		letraAgrande.visible = true
 	else:
@@ -67,7 +68,7 @@ func _physics_process(delta: float) -> void:
 		letrah5grande.visible = true
 	else:
 		letrah5grande.visible = false
-
+"""
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
 	enemigo.position = posicion
@@ -106,7 +107,7 @@ func _on_area_presionar_body_exited(body: Node2D) -> void:
 	puede_interactuar = false
 	keypad.visible = false
 
-
+"""
 func _on_letra_k_body_entered(body: Node2D) -> void:
 	body = $Andres
 	letrakGrande.visible = true
@@ -148,3 +149,4 @@ func _on_letra_e_body_entered(body: Node2D) -> void:
 func _on_letra_e_body_exited(body: Node2D) -> void:
 	body = $Andres
 	letraEgrande.visible = false
+"""
