@@ -1,22 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmaqqktmrijio"]
+[gd_scene load_steps=4 format=3 uid="uid://ctxj6fdj25k8a"]
 
-[ext_resource type="Texture2D" uid="uid://byddi520sbx51" path="res://Escenarios/letrasPergaminos/letraTriangulo4.png" id="1_cyy2q"]
-[ext_resource type="Script" uid="uid://dkolr5iy8pail" path="res://Escenarios/letrasPergaminos/letra_triangulo_4.gd" id="1_nfu0e"]
+[ext_resource type="Script" uid="uid://cgoccwt2lk47d" path="res://Escenarios/letrasPergaminos/letraTriangulo.gd" id="1_l5grr"]
+[ext_resource type="Texture2D" uid="uid://byddi520sbx51" path="res://Escenarios/letrasPergaminos/letraTriangulo4.png" id="2_6g2u0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfu0e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85rcn"]
 size = Vector2(32, 37)
 
-[node name="Triangulo4" type="Node2D"]
-script = ExtResource("1_nfu0e")
+[node name="LetraTrinagulo" type="Node2D"]
+script = ExtResource("1_l5grr")
 
 [node name="LetraTrianguloGrande" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.121252, 0.121252)
-texture = ExtResource("1_cyy2q")
+texture = ExtResource("2_6g2u0")
 
 [node name="LetraTriangulo4" type="Sprite2D" parent="."]
 position = Vector2(0, -1.19209e-07)
 scale = Vector2(0.0195234, 0.0195234)
-texture = ExtResource("1_cyy2q")
+texture = ExtResource("2_6g2u0")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -24,7 +25,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_nfu0e")
+shape = SubResource("RectangleShape2D_85rcn")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

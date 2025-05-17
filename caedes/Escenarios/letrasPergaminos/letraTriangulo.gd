@@ -9,13 +9,9 @@ func _physics_process(delta: float) -> void:
 		letraGrande.visible = true
 		letraPequeño.visible = false
 		letraGrande.z_index = 1
-		Andres.visible = false
-		global.puedeMoverse = false
 	else:
 		letraGrande.visible = false
 		letraPequeño.visible = true
-		Andres.visible = true
-		global.puedeMoverse = true
 
 
 func _on_area_2d_body_entered(body : Node2D) -> void:

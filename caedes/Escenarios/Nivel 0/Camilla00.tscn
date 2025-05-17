@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=102 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -22,6 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://ikhcoy171pbn" path="res://assets/Decorations/candleA3.png" id="18_x05nm"]
 [ext_resource type="AudioStream" uid="uid://bixu4agk365ms" path="res://Musica/MusicaCatac.mp3" id="21_v1t8p"]
 [ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="22_x05nm"]
+[ext_resource type="Texture2D" uid="uid://bnmmkjuq3ugsw" path="res://Escenarios/letrasPergaminos/LetraK.png" id="23_u4oj2"]
+[ext_resource type="Texture2D" uid="uid://uwneuyh2rc7r" path="res://Escenarios/letrasPergaminos/LetraA.png" id="24_qimlg"]
+[ext_resource type="Texture2D" uid="uid://47boay67e3u1" path="res://Escenarios/letrasPergaminos/letraH5.png" id="25_2pfvq"]
+[ext_resource type="Texture2D" uid="uid://b2u7yb6x8ksks" path="res://Escenarios/letrasPergaminos/LetraE.png" id="26_qimlg"]
+[ext_resource type="Texture2D" uid="uid://dooxw1ilk7dwk" path="res://Escenarios/letrasPergaminos/letraH5Grande.png" id="27_2pfvq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -59,7 +64,7 @@ height = 16.0
 size = Vector2(78, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla3d"]
-size = Vector2(130.486, 51.0932)
+size = Vector2(130.486, 39.6544)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ti0o0"]
 size = Vector2(36, 219)
@@ -71,7 +76,7 @@ size = Vector2(250, 60)
 size = Vector2(96, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pfvq"]
-size = Vector2(105, 50)
+size = Vector2(105, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33db2"]
 size = Vector2(505, 42)
@@ -11477,6 +11482,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jja6"]
 size = Vector2(63.5, 80)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxix"]
+size = Vector2(18, 26.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vphmf"]
+size = Vector2(19, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc8ww"]
+size = Vector2(18, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtd1k"]
+size = Vector2(15, 10.5)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
@@ -11556,7 +11573,7 @@ position = Vector2(30, 404.5)
 shape = SubResource("RectangleShape2D_x05nm")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(199, 404.5)
+position = Vector2(199, 397)
 rotation = -3.14159
 scale = Vector2(1.1802, -1.31133)
 shape = SubResource("RectangleShape2D_wla3d")
@@ -11574,7 +11591,7 @@ position = Vector2(368, 703)
 shape = SubResource("RectangleShape2D_qimlg")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(366.5, 735)
+position = Vector2(366.5, 729.5)
 shape = SubResource("RectangleShape2D_2pfvq")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Bordes"]
@@ -11788,7 +11805,6 @@ tile_set = SubResource("TileSet_u4oj2")
 
 [node name="Enemy" parent="." instance=ExtResource("5_t8hbr")]
 position = Vector2(456, 125)
-cartel_escena = null
 
 [node name="TimerDialogo" type="Timer" parent="."]
 wait_time = 5.0
@@ -12135,6 +12151,98 @@ Vida = NodePath("../Andres")
 Cordura = NodePath("../Andres")
 Flash = NodePath("../Andres")
 
+[node name="LetraK" type="Sprite2D" parent="."]
+position = Vector2(351, 775)
+scale = Vector2(0.0266543, 0.0266543)
+texture = ExtResource("23_u4oj2")
+
+[node name="LetraKGrande" type="Sprite2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2(362, 685)
+scale = Vector2(0.313725, 0.349673)
+texture = ExtResource("23_u4oj2")
+
+[node name="LetraA" type="Sprite2D" parent="."]
+position = Vector2(160, 417)
+scale = Vector2(0.0379902, 0.0379902)
+texture = ExtResource("24_qimlg")
+
+[node name="LetraAGrande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+light_mask = 2
+position = Vector2(207, 446)
+scale = Vector2(0.32598, 0.352124)
+texture = ExtResource("24_qimlg")
+
+[node name="LetraH5" type="Sprite2D" parent="."]
+position = Vector2(774, 426)
+scale = Vector2(0.0260938, 0.0260938)
+texture = ExtResource("25_2pfvq")
+
+[node name="LetraH5Grande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+light_mask = 2
+position = Vector2(778, 433)
+scale = Vector2(0.130066, 0.141134)
+texture = ExtResource("27_2pfvq")
+
+[node name="LetraE" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(1032, 138)
+scale = Vector2(0.01062, 0.01062)
+texture = ExtResource("26_qimlg")
+
+[node name="LetraEGrande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+light_mask = 2
+position = Vector2(1041.5, 138.223)
+scale = Vector2(0.132389, 0.140335)
+texture = ExtResource("26_qimlg")
+
+[node name="letrak" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letrak"]
+position = Vector2(351, 774)
+shape = SubResource("RectangleShape2D_mxxix")
+
+[node name="letraA" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraA"]
+position = Vector2(161.5, 444)
+shape = SubResource("RectangleShape2D_vphmf")
+
+[node name="letrah5" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letrah5"]
+position = Vector2(774, 442)
+shape = SubResource("RectangleShape2D_uc8ww")
+
+[node name="letraE" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraE"]
+position = Vector2(1031.5, 156.75)
+shape = SubResource("RectangleShape2D_xtd1k")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
+[connection signal="body_entered" from="letrak" to="." method="_on_letrak_body_entered"]
+[connection signal="body_exited" from="letrak" to="." method="_on_letrak_body_exited"]
+[connection signal="body_entered" from="letraA" to="." method="_on_letra_a_body_entered"]
+[connection signal="body_exited" from="letraA" to="." method="_on_letra_a_body_exited"]
+[connection signal="body_entered" from="letrah5" to="." method="_on_letrah_5_body_entered"]
+[connection signal="body_exited" from="letrah5" to="." method="_on_letrah_5_body_exited"]
+[connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
+[connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
