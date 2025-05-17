@@ -1,8 +1,13 @@
 ~ tutocat
-Catlos: [[Buenas|Hola|Miau]], ¿todo bien?.
-Catlos: Parece que estás atrapado aquí.
-Catlos: No te preocupes, yo te ayudaré a salir.
-Catlos: Primero quítate eso del brazo (pulsa “E” para interactuar) y mueve el culo hacia aquí (Pulsa “W, A, S, D” para moverte).  => END
+¿?: [[Buenas|Hola|Miau]], ¿todo bien?.
+¿?: Parece que estás atrapado aquí.
+Catlos: Porcierto me llamo Catlos, un placer ¿Cual es tu nombre?.
+Andres: eh... Me llamo Andrés.
+Catlos: Encantado Andrés, no te preocupes, yo te ayudaré a salir.
+Catlos: Primero quítate eso del brazo (pulsa “E” para interactuar) y mueve el culo hacia aquí (Pulsa “W, A, S, D” para moverte).
+Catlos: Mira he encontrado esto por el camino.
+Andres: ¿Que es esto?
+Catlos: Es un pergamino, nos sera útil despues asi que recuerda bien tanto la letra como el numero.  => END
 
 ~ tutocat2
 #Cuando salga y se mueva un poco le saldra este dialogo
@@ -11,7 +16,7 @@ Andres: ¿Dónde estoy?
 Catlos: Bueno… yo tampoco lo sé.
 Catlos: Un lugar entre lugares.
 Catlos: No es tan malo si no piensas mucho en ello.
-Andres: .
+Andres: ...
 - ¿Cuánto tiempo llevas aquí?
 	Catlos: Oh, llevaré [[siglos|días|una eternidad]] aquí. O eso creo.
 	Catlos: Aquí el tiempo no hace justicia.
