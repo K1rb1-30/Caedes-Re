@@ -45,7 +45,6 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_slide()
 	attack()
-	#update_health()
 	
 	# MODO DE CORDURA
 	if CordureMode:
@@ -57,7 +56,7 @@ func _physics_process(delta):
 			update_cordure()
 			#print(cordure)
 	
-	#Si esta muelto
+	#Si esta muerto
 	if health <= 0:
 		andresVivo = false
 		health = 0
@@ -124,13 +123,3 @@ func attack():
 			
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
-
-
-func update_health():
-	var healthbar = $healthbar
-	healthbar.value = health
-	
-	if health >= 100:
-		healthbar.visible = false
-	else:
-		healthbar.visible = true
