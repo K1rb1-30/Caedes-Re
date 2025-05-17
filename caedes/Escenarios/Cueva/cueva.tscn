@@ -40040,7 +40040,7 @@ script = ExtResource("1_t6p21")
 
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
-position = Vector2(477, 516)
+position = Vector2(556, 213)
 scale = Vector2(0.320858, 0.300417)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -40075,8 +40075,7 @@ tile_map_data = PackedByteArray("AAAgAAgAAQAOACwAAAAgAAkAAQAOAC0AAAAgAAoAAQAOAC4
 tile_set = SubResource("TileSet_ve75j")
 
 [node name="Heraldo" parent="Suelo" instance=ExtResource("5_xbw54")]
-visible = false
-position = Vector2(494, 314)
+position = Vector2(106, 924)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1328, 925)
@@ -40531,7 +40530,12 @@ shape = SubResource("RectangleShape2D_c004h")
 position = Vector2(1134.5, 937)
 shape = SubResource("RectangleShape2D_vqt3h")
 
+[node name="cambiarEscena" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="TimerFin" to="." method="_on_timer_fin_timeout"]
 [connection signal="timeout" from="TimerSelva" to="." method="_on_timer_selva_timeout"]
+[connection signal="timeout" from="cambiarEscena" to="." method="_on_cambiar_escena_timeout"]

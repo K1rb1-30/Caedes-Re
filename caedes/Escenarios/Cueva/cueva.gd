@@ -3,6 +3,9 @@ extends Node2D
 @onready var presiona_f: Label = $Andres/PresionaF
 var puede_interactuar = false
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+
+@onready var cambiarEscena = preload("res://Escenarios/Creditos/creditos.tscn")
+
 """
 
 Yo soy del sur
@@ -49,3 +52,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	body = $Andres
 	presiona_f.visible = false
 	puede_interactuar = false
+
+
+func _on_cambiar_escena_timeout() -> void:
+	get_tree().change_scene_to_packed(cambiarEscena)

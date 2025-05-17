@@ -57,6 +57,7 @@ text = "Reintentar
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 stream = ExtResource("3_jykht")
 autoplay = true
+bus = &"Efectos de sonido"
 
 [connection signal="finished" from="CanvasLayer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

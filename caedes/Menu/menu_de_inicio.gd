@@ -12,6 +12,8 @@ var busIndexM : int
 var busIndexE : int
 
 func _ready() -> void:
+	volumenMusica.value = 2
+	vefectos.value = 2
 	busIndexM = AudioServer.get_bus_index("Musica")
 	
 	volumenMusica.value = db_to_linear(AudioServer.get_bus_volume_db(busIndexM))
