@@ -59,6 +59,8 @@ Kurt: ¿O fuiste tú?
 *La luz parpadea. El reloj avanza un segundo. Se escucha algo rasgar la pared detrás de Kurt.*
 
 Kurt: Eso será todo por ahora. 
+do _on_dialogue_finished()
+ => END
 
 
 ~ consulta1
@@ -125,7 +127,53 @@ Andres: ¿O solo dice lo que quieres escuchar?
 
 *El reloj avanza tres segundos. Se escucha un maullido distante. Luz roja detrás de la puerta.*
 
-Kurt: Nos vemos pronto, Andrés.
+Kurt: Nos vemos pronto, Andrés. => END
+
+
+~ despertarDistorsion
+
+*Oscuridad. Sonido de estática. La habitación blanca ya no existe.*
+
+*Andrés despierta en el suelo, hay grietas en las paredes. La luz parpadea en rojo. Se escucha algo respirando al fondo.*
+
+Andrés: ¿Dónde… estoy otra vez?
+
+- Esto no es como antes…
+	Catlos: [[Miau.|Ah, despertaste.|Te extrañaba.]]  
+	Catlos: ¿Tuviste una linda charla con el doctor?  
+	Catlos: ¿Te dijo que yo no era real otra vez?
+
+- ¿Estás aquí?
+	Catlos: Siempre he estado. Aunque a veces... no como crees.  
+	Catlos: Las paredes se están cayendo, Andrés.  
+	Catlos: No solo en este lugar… también en ti.
+
+- Siento que todo es distinto…
+	Catlos: Porque algo cambió.  
+	Catlos: Recordar tiene un precio.  
+	Catlos: Y ahora, las cosas que estaban dormidas… están empezando a mirar.
+
+- ¿Qué cosas?
+	Catlos: Oh, ya las has visto.  
+	Catlos: En las esquinas. En el silencio.  
+	Catlos: Y si no las ves, pronto lo harás.
+
+Catlos: Debemos seguir.  
+Catlos: Pero a partir de ahora… todo será más inestable.  
+Catlos: Mantente cerca de la luz, Andrés.  
+Catlos: O mantente cerca de mí.
+
+- ¿Qué está pasando conmigo?
+	Catlos: Estás recordando.  
+	Catlos: Y eso duele.  
+	Catlos: Pero lo que duele… también cura.  
+
+Catlos: Adelante. El camino cambió, pero sigue allí.  
+Catlos: Si aún puedes verlo.
+
+*Una puerta se abre sola al fondo, emitiendo un zumbido. Todo parpadea una última vez.* => END
+
+
 
 
 => END

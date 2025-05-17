@@ -1511,7 +1511,6 @@ position = Vector2(1363, 207)
 shape = SubResource("CapsuleShape2D_kpabu")
 
 [node name="Andres" parent="." instance=ExtResource("7_ja0md")]
-visible = false
 position = Vector2(216, 231)
 scale = Vector2(0.25, 0.25)
 CordureMode = false
