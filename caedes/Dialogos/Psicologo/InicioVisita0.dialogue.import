@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dnnsxu45iimeo"
+path="res://.godot/imported/InicioVisita0.dialogue-46424be7061d096b693d7ea0fa850708.tres"
+
+[deps]
+
+source_file="res://Dialogos/Psicologo/InicioVisita0.dialogue"
+dest_files=["res://.godot/imported/InicioVisita0.dialogue-46424be7061d096b693d7ea0fa850708.tres"]
+
+[params]
+
+defaults=true

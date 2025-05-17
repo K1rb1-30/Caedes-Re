@@ -1,0 +1,180 @@
+~ consulta0
+
+... 3 dias despues del desastre ...
+
+*Habitación blanca. Silencio. Silla frente a silla. Un reloj que no avanza.*
+
+Kurt: Buenas tardes, Andrés.  
+Kurt: Me alegra que hoy hayas decidido hablar.  
+Kurt: Antes de empezar... ¿sabes por qué estás aquí?
+
+Andres: ¿Dónde estoy?
+
+Kurt: Aquí, donde siempre has estado.  
+Kurt: Aquí, donde finalmente tienes que recordar.  
+Kurt: No te preocupes… solo quiero ayudarte.
+
+Andres: ¿Qué quieres de mí?
+
+Kurt: Que recuerdes. Que seas honesto.  
+Kurt: Que mires de frente aquello que has estado evitando.  
+Kurt: Empecemos con algo simple… el accidente.
+
+Kurt: Andrés… ¿qué ocurrió aquel día?
+
+Andres: No lo sé… fue todo tan rápido.
+Kurt: ¿Seguro?  
+Kurt: Porque los informes dicen que hubo tiempo para frenar…  
+Kurt: Pero tú seguiste avanzando.  
+
+Andres: Fue un error.
+Kurt: ¿Un error?  
+Kurt: Algunos errores tienen un precio muy alto, Andrés.  
+Kurt: ¿Y si no fue un error? ¿Y si algo *quería* que ocurriera?
+
+Andres: ¿Qué estás insinuando?
+Kurt: Solo te muestro las piezas. Tú decides si forman un espejo…  
+Kurt: O una grieta.
+
+Kurt: Andrés… cuéntame tu historia. Desde el principio.  
+Kurt: ¿Qué viste antes de que todo se apagara?
+
+Andres: Había algo en la carretera...
+
+Kurt: ¿Una figura? ¿Una sombra?  
+Kurt: Muchos pacientes ven *sombras*.  
+Kurt: Y a veces, esas sombras no se van.
+
+Andres: Yo no estoy loco.
+
+Kurt: ¿Eso crees tú… o eso te repites para seguir cuerdo?  
+Kurt: La mente crea monstruos, Andrés.  
+Kurt: A veces, para protegernos… a veces, para castigarnos.
+
+Kurt: Última pregunta por hoy...  
+Kurt: Cuando despertaste después del accidente...  
+Kurt: ¿Fue este mundo el que cambió?  
+Kurt: ¿O fuiste tú?
+
+*La luz parpadea. El reloj avanza un segundo. Se escucha algo rasgar la pared detrás de Kurt.*
+
+Kurt: Eso será todo por ahora. 
+do _on_dialogue_finished()
+ => END
+
+
+~ consulta1
+
+... 1 semana despues del desastre ...
+
+*Habitación blanca. Silencio denso. Una silla frente a otra. El reloj sigue sin avanzar.*
+
+Kurt: Buenas tardes, Andrés.  
+Kurt: ¿Puedes decirme dónde estás?
+
+Andres: No lo sé.
+
+Kurt: Está bien. A veces, no saber es el primer paso.  
+Kurt: Pero cuéntame… ¿sigues viéndolo?
+
+Andres: ¿A quién?
+
+Kurt: Al gato. Al tal *Catlos*.  
+Kurt: ¿Te sigue hablando? ¿Te sigue guiando?
+
+Andres: Él me ayudó.
+
+Kurt: ¿Ayudarte? ¿O distraerte?  
+Kurt: Andrés, no todo lo que parece un guía está de tu lado.  
+Kurt: A veces, la mente inventa voces... para no enfrentarse a la verdad.
+
+Kurt: ¿Recuerdas el accidente?
+
+Andres: Un poco...
+
+Kurt: Andrés, lo has contado muchas veces.  
+Kurt: Primero dijiste que viste algo en la carretera.  
+Kurt: Luego, que todo se volvió oscuridad.  
+Kurt: Y ahora hablas con un gato que te da consejos.
+
+Andres: Catlos no es solo un gato.
+
+Kurt: ¿Ah, no?  
+Kurt: ¿Entonces qué es?  
+Kurt: ¿Una parte de ti que lucha por mantenerte cuerdo?
+
+Andres: Hay algo en ese lugar...
+Kurt: Sí. Lo llamas "entre lugares".  
+Kurt: Un espacio donde se pierde la cordura si no estás cerca de la luz.  
+Kurt: Andrés, eso no es real. Es un símbolo. Una metáfora.  
+Kurt: O... tal vez lo que *crees* que no es real… te está diciendo la verdad.
+
+Kurt: ¿Por qué crees que estás allí?
+
+Andres: Porque no puedo escapar.
+Kurt: Tal vez no tienes que escapar, Andrés.  
+Kurt: Tal vez tienes que recordar.  
+
+Kurt: ¿Qué ocurrió ese día?
+
+Andres: Yo… perdí el control.
+Kurt: ¿De ti mismo o de la realidad?  
+
+Kurt: Esta será nuestra última sesión por ahora.  
+Kurt: Pero antes dime…  
+Kurt: ¿Catlos sigue diciendo la verdad?  
+Andres: ¿O solo dice lo que quieres escuchar?
+
+*El reloj avanza tres segundos. Se escucha un maullido distante. Luz roja detrás de la puerta.*
+
+Kurt: Nos vemos pronto, Andrés. => END
+
+
+~ despertarDistorsion
+
+*Oscuridad. Sonido de estática. La habitación blanca ya no existe.*
+
+*Andrés despierta en el suelo, hay grietas en las paredes. La luz parpadea en rojo. Se escucha algo respirando al fondo.*
+
+Andrés: ¿Dónde… estoy otra vez?
+
+- Esto no es como antes…
+	Catlos: [[Miau.|Ah, despertaste.|Te extrañaba.]]  
+	Catlos: ¿Tuviste una linda charla con el doctor?  
+	Catlos: ¿Te dijo que yo no era real otra vez?
+
+- ¿Estás aquí?
+	Catlos: Siempre he estado. Aunque a veces... no como crees.  
+	Catlos: Las paredes se están cayendo, Andrés.  
+	Catlos: No solo en este lugar… también en ti.
+
+- Siento que todo es distinto…
+	Catlos: Porque algo cambió.  
+	Catlos: Recordar tiene un precio.  
+	Catlos: Y ahora, las cosas que estaban dormidas… están empezando a mirar.
+
+- ¿Qué cosas?
+	Catlos: Oh, ya las has visto.  
+	Catlos: En las esquinas. En el silencio.  
+	Catlos: Y si no las ves, pronto lo harás.
+
+Catlos: Debemos seguir.  
+Catlos: Pero a partir de ahora… todo será más inestable.  
+Catlos: Mantente cerca de la luz, Andrés.  
+Catlos: O mantente cerca de mí.
+
+- ¿Qué está pasando conmigo?
+	Catlos: Estás recordando.  
+	Catlos: Y eso duele.  
+	Catlos: Pero lo que duele… también cura.  
+
+Catlos: Adelante. El camino cambió, pero sigue allí.  
+Catlos: Si aún puedes verlo.
+
+*Una puerta se abre sola al fondo, emitiendo un zumbido. Todo parpadea una última vez.* => END
+
+
+
+
+=> END
+
