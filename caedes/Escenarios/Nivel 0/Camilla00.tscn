@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=104 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gx5xq2pc46xb" path="res://assets/Decorations/inside/shop-and-hospital (1).png" id="7_2n6ll"]
 [ext_resource type="Texture2D" uid="uid://dkrke57ufydeo" path="res://assets/Decorations/A5.png" id="8_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://duarc68m3xcyp" path="res://assets/Decorations/torch_1.png" id="9_c5p3b"]
+[ext_resource type="Texture2D" uid="uid://bqk3sge8ta5ym" path="res://assets/Decorations/decorative2.png" id="10_33db2"]
 [ext_resource type="PackedScene" uid="uid://dta0t061akuuo" path="res://assets/props/panel.tscn" id="10_e5phj"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="10_ps0kv"]
 [ext_resource type="Texture2D" uid="uid://b8opimxy1vx0u" path="res://assets/Decorations/antor0.png" id="11_1j7p3"]
@@ -9372,6 +9373,138 @@ texture = ExtResource("5_2n6ll")
 texture = ExtResource("9_c5p3b")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0exeh"]
+texture = ExtResource("10_33db2")
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+9:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_usl1r"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yahq2")
@@ -9381,6 +9514,7 @@ sources/3 = SubResource("TileSetAtlasSource_cmsiv")
 sources/4 = SubResource("TileSetAtlasSource_2n6ll")
 sources/5 = SubResource("TileSetAtlasSource_8vg2w")
 sources/6 = SubResource("TileSetAtlasSource_x05nm")
+sources/7 = SubResource("TileSetAtlasSource_0exeh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wla3d"]
 texture = ExtResource("5_2n6ll")
@@ -11497,15 +11631,17 @@ size = Vector2(15, 10.5)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
-[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
-visible = false
 color = Color(0, 0, 0, 1)
 energy = 0.8
 blend_mode = 2
+
+[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+position = Vector2(875, 270)
+scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(27, 226)
@@ -11591,7 +11727,7 @@ position = Vector2(368, 703)
 shape = SubResource("RectangleShape2D_qimlg")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(366.5, 729.5)
+position = Vector2(367.5, 729.5)
 shape = SubResource("RectangleShape2D_2pfvq")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Bordes"]
@@ -11753,26 +11889,26 @@ tile_set = SubResource("TileSet_yahq2")
 top_level = true
 texture_filter = 1
 position = Vector2(8, -4)
-tile_map_data = PackedByteArray("AAADAAMABAAIAAEAAAADAAQABAAIAAIAAAAEAAQABAANAAkAAAA=")
+tile_map_data = PackedByteArray("AAADAAQABAAIAAIAAAAEAAQABAANAAkAAAADAAMABAAIAAEAAAASAAUABAAJAAgAAAARAAYABAAKAAsAAAASAAYABAANAAsAAAASAAcABAANAAkAAAARAAcABAAIAAYAAAASAAQABAAJAAcAAAAQAAUABAAIAAYAAAAQAAYABAALAAkAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
 [node name="Elementosdelmapa5" type="TileMapLayer" parent="Suelo"]
 texture_filter = 1
 position = Vector2(8, -4)
-tile_map_data = PackedByteArray("AAAKACEABAADAAEAAAAKACIABAADAAIAAAAKACMABAADAAMAAAAJACIABAAGAAQAAAAJACQABAAGAAYAAAAfAB4ABAAJAAEAAAAfAB8ABAAJAAIAAAADAAMABAAEAAEAAAADAAQABAAEAAIAAAADAAUABAAEAAMAAAAIACIABAAFAAQAAAAHACEABAAEAAEAAAAHACIABAAEAAIAAAAHACMABAAEAAMAAAAXADAABAAMAAsAAAALACQABAADAAYAAAAMACQABAAEAAYAAAAMACIABAAEAAQAAAAMACMABAAEAAUAAAALACMABAADAAUAAAALACIABAADAAQAAAAIACMABAAFAAUAAAAIACQABAAFAAYAAAAJACMABAAGAAUAAAAIABsABAAJAAQAAAAIABwABAAJAAUAAAAAABsABAAJAAoAAAAAABwABAAJAAsAAAA=")
+tile_map_data = PackedByteArray("AAAKACEABAADAAEAAAAKACIABAADAAIAAAAKACMABAADAAMAAAAJACIABAAGAAQAAAAJACQABAAGAAYAAAAfAB4ABAAJAAEAAAAfAB8ABAAJAAIAAAADAAMABAAEAAEAAAADAAUABAAEAAMAAAAIACIABAAFAAQAAAAHACEABAAEAAEAAAAHACIABAAEAAIAAAAHACMABAAEAAMAAAAXADAABAAMAAsAAAALACQABAADAAYAAAAMACQABAAEAAYAAAAMACIABAAEAAQAAAAMACMABAAEAAUAAAALACMABAADAAUAAAALACIABAADAAQAAAAIACMABAAFAAUAAAAIACQABAAFAAYAAAAJACMABAAGAAUAAAAIABsABAAJAAQAAAAIABwABAAJAAUAAAAAABsABAAJAAoAAAAAABwABAAJAAsAAAADAAQABAAEAAIAAAAFAAMABAAEAAEAAAAFAAQABAAEAAIAAAAFAAUABAAEAAMAAAAHAAMABAAEAAEAAAAHAAUABAAEAAMAAAAJAAMABAAEAAEAAAAJAAQABAAEAAIAAAAJAAUABAAEAAMAAAAHAAQABAAEAAIAAAALAAMABwAEAAEAAAALAAQABwAEAAIAAAALAAUABwAEAAMAAAADAAkABwAEAAEAAAADAAoABwAEAAIAAAADAAsABwAEAAMAAAAFAAkABwAEAAEAAAAFAAoABwAEAAIAAAAFAAsABwAEAAMAAAAHAAkABwAEAAEAAAAHAAoABwAEAAIAAAAHAAsABwAEAAMAAAAJAAkABwAEAAEAAAAJAAoABwAEAAIAAAAJAAsABwAEAAMAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
 [node name="Elementosdelmapa" type="TileMapLayer" parent="Suelo"]
 top_level = true
 texture_filter = 1
 position = Vector2(0, -2)
-tile_map_data = PackedByteArray("AABGADAABAALAAEAAABJADAABAAMAAsAAAAwACQABAAGAAEAAAAwACUABAAGAAIAAAADADAABQAmABUAAAAHACkABQAoAAcAAAAEACkABQAoAAcAAAAEACoABQAoAAgAAABGAAYABAALAAEAAABHAAYABAAKAAsAAAAfAB4ABAAJAAEAAAAfAB8ABAAJAAIAAAAHACoABQAoAAgAAAAHACsABQAoAAsAAAAEACsABQAoAAsAAAA=")
+tile_map_data = PackedByteArray("AABGADAABAALAAEAAABJADAABAAMAAsAAAAwACQABAAGAAEAAAAwACUABAAGAAIAAAADADAABQAmABUAAAAHACkABQAoAAcAAAAEACkABQAoAAcAAAAEACoABQAoAAgAAABGAAYABAALAAEAAABHAAYABAAKAAsAAAAfAB4ABAAJAAEAAAAfAB8ABAAJAAIAAAAHACoABQAoAAgAAAAHACsABQAoAAsAAAAEACsABQAoAAsAAAAAAAsABAAJAAUAAAAAAAwABAAJAAUAAAABAAsABAAJAAUAAAABAAwABAAJAAUAAAAAAAoABAAJAAQAAAABAAoABAAJAAQAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
 [node name="Elementosdelmapa2" type="TileMapLayer" parent="Suelo"]
 texture_filter = 1
 position = Vector2(0, -2)
-tile_map_data = PackedByteArray("AAALABEABAAAAAEAAAALABIABAAAAAIAAAALABMABAAAAAMAAAAUADAABAALAAEAAAAsACYABQAmABAAAAAsACcABQAmABEAAAAsACgABQAlABIAAAAsACoABQAmABQAAAAtACYABQAnABAAAAAtACcABQAoABEAAAAtACgABQAoABIAAAAtACkABQAoABMAAAAtACoABQAoABQAAAAtACsABQAnABUAAAAuACYABQAsABIAAGAuACcABQApABEAAAAuACgABQApABIAAAAuACkABQApABMAAAAuACoABQApABQAAAAuACsABQAoABYAAAAvACYABQAsABMAAGAvACcABQAqABEAAAAvACgABQAqABIAAAAvACkABQAqABMAAAAvACoABQAqABQAAAAvACsABQApABYAAAAwACUABAAGAAEAAAAwACYABQAoABAAAAAwACcABQAnABEAAAAwACgABQAnABIAAAAwACkABQAdAAcAAAAwACoABQAdAAgAAAAwACsABQAdAAsAAAAxACYABQAsABIAAGAxACcABQAoABEAAAAxACgABQAoABIAAAAxACkABQAoABMAAAAxACoABQAoABQAAAAxACsABQAoABYAAAAyACYABQAsABMAAGAyACcABQApABEAAAAyACgABQApABIAAAAyACkABQApABMAAAAyACoABQApABQAAAAyACsABQApABYAAAAzACYABQApABAAAAAzACcABQAqABEAAAAzACgABQAqABIAAAAzACkABQAqABMAAAAzACsABQAqABUAAAA0ACYABQArABAAAAA0ACcABQArABEAAAA0ACgABQAsABIAAAA0ACkABQAsABMAAAA0ACoABQArABQAAAA0ACsABQArABUAAAA+AAgABQApABQAAAA+AAkABQAoABYAAAA/AAgABQAqABQAAAA/AAkABQApABYAAABAAAgABQAdAAgAAABAAAkABQAdAAsAAABBAAgABQAoABQAAABBAAkABQAoABYAAABCAAcABQApABMAAAAmABsABAAFAAcAAAAmABwABAAFAAgAAAAmAB0ABAAFAAkAAAAnABsABAAGAAcAAAAnABwABAAGAAgAAAAnAB0ABAAGAAkAAAApABsABAADAAQAAAApABwABAADAAUAAAApAB0ABAADAAYAAAAqABsABAAEAAQAAAAqABwABAAEAAUAAAAqAB0ABAAEAAYAAAArABsABAAIAAQAAAArABwABAAIAAUAAAAoABsABAAGAAEAAAAoABwABAAGAAIAAAAsABsABAAFAAQAAAAsABwABAAFAAUAAAAsAB0ABAAFAAYAAAAtABsABAAGAAQAAAAtABwABAAGAAUAAAAtAB0ABAAGAAYAAAA5ABsABAAJAAoAAAA5ABwABAAJAAsAAAA3ABwABAAMAAYAAAA4ABwABAANAAYAAAA4AB4ABAAMAAYAAAA5AB4ABAANAAYAAAA2AB0ABAAJAAwAAAA2ABoABAAFAAEAAAA2ABsABAAFAAIAAAAsACsABQAmABUAAAAzACoABQAqABQAAAAsACkABQAlABMAAABCAAkABQApABYAAABDAAcABQAqABMAAABCAAgABQApABQAAAA9AAUABQAoABEAAAA9AAYABQAoABIAAAA+AAUABQApABEAAAA+AAcABQApABMAAAA+AAYABQApABIAAAA/AAUABQAqABEAAAA/AAQABQAsABMAAGA/AAYABQAqABIAAAA/AAcABQAqABMAAABAAAcABQAdAAcAAABBAAcABQAoABMAAABCAAYABQApABIAAABDAAYABQAqABIAAABAAAQABAAGAAIAAABAAAYABQAnABIAAABBAAYABQAoABIAAABAAAMABAAGAAEAAABAAAUABQAnABEAAABCAAQABQAsABMAAGBCAAUABQApABEAAABBAAUABQAoABEAAABBAAQABQAsABIAAGBDAAUABQAqABEAAABEAAQABQArABAAAABDAAQABQApABAAAAA8AAQABQAmABAAAAA+AAQABQAsABIAAGA8AAUABQAmABEAAABEAAkABQArABUAAABDAAkABQAqABUAAAA8AAkABQAmABUAAAA9AAkABQAnABUAAAA8AAYABQAmABIAAABEAAUABQArABEAAABEAAYABQArABIAAABEAAcABQArABMAAABEAAgABQArABQAAAA8AAgABQAmABMAAAA9AAQABQAnABAAAAA8AAcABQAmABMAAAAfACAABQAtAAUAAAAfACEABQAtAAYAAAAgACAABQAuAAUAAAAgACEABQAuAAYAAAAhACAABQAvAAUAAAAhACEABQAvAAYAAAAiACAABQAwAAUAAAAgAB8ABQAuAAUAACAhAB8ABQAvAAUAACAgAB4ABQAuAAUAAAAhAB4ABQAvAAUAAAAiAB4ABQAwAAQAACAgAB0ABQAuAAQAAAAhAB0ABQAvAAQAAAAiAB0ABQAwAAUAACAfABwABQAtAAMAAAAfAB0ABQAtAAQAAAAgABwABQAuAAMAAAAhABwABQAvAAMAAAAfAB4ABQAtAAUAAAAfAB8ABQAtAAUAAAAiAB8ABQAwAAQAAAAAAAUABAAJAAUAAAABAAUABAAJAAUAAAAAAAQABAAJAAQAAAABAAQABAAJAAQAAAAAAAYABAAJAAkAAAADAAUABAAFAAQAAAADAAYABAAFAAUAAAAEAAUABAAGAAQAAAAEAAYABAAGAAUAAAADAAcABAAFAAYAAAAEAAcABAAGAAYAAAACAAQABAAMAAsAAAADACsABQAmABAAAAADAC0ABQAlABIAAAADAC4ABQAlABMAAAADAC8ABQAmABQAAAADADAABQAmABUAAAAEACsABQAnABAAAAAFACsABQAoABAAAAAGACsABQApABAAAAAHACsABQAqABAAAAAHADAABQAqABUAAAAIACsABQArABAAAAAIACwABQArABEAAAAIAC0ABQAsABIAAAAIAC4ABQAsABMAAAAIAC8ABQArABQAAAAEACwABQAnABEAAAAEAC0ABQAnABIAAAAEAC4ABQAnABMAAAAEAC8ABQAnABQAAAAEADAABQAnABUAAAAFACwABQAoABEAAAAFAC0ABQAoABIAAAAFAC4ABQAoABMAAAAFAC8ABQAoABQAAAAFADAABQAoABYAAAAGACwABQApABEAAAAGAC0ABQApABIAAAAGAC4ABQApABMAAAAGAC8ABQApABQAAAAGADAABQApABYAAAAHACwABQAqABEAAAAHAC0ABQAqABIAAAAHAC4ABQAqABMAAAAHAC8ABQAqABQAAAADACwABQAmABEAAAAIADAABQArABUAAAA=")
+tile_map_data = PackedByteArray("AAALABEABAAAAAEAAAALABIABAAAAAIAAAALABMABAAAAAMAAAAUADAABAALAAEAAAAsACYABQAmABAAAAAsACcABQAmABEAAAAsACgABQAlABIAAAAsACoABQAmABQAAAAtACYABQAnABAAAAAtACcABQAoABEAAAAtACgABQAoABIAAAAtACkABQAoABMAAAAtACoABQAoABQAAAAtACsABQAnABUAAAAuACYABQAsABIAAGAuACcABQApABEAAAAuACgABQApABIAAAAuACkABQApABMAAAAuACoABQApABQAAAAuACsABQAoABYAAAAvACYABQAsABMAAGAvACcABQAqABEAAAAvACgABQAqABIAAAAvACkABQAqABMAAAAvACoABQAqABQAAAAvACsABQApABYAAAAwACUABAAGAAEAAAAwACYABQAoABAAAAAwACcABQAnABEAAAAwACgABQAnABIAAAAwACkABQAdAAcAAAAwACoABQAdAAgAAAAwACsABQAdAAsAAAAxACYABQAsABIAAGAxACcABQAoABEAAAAxACgABQAoABIAAAAxACkABQAoABMAAAAxACoABQAoABQAAAAxACsABQAoABYAAAAyACYABQAsABMAAGAyACcABQApABEAAAAyACgABQApABIAAAAyACkABQApABMAAAAyACoABQApABQAAAAyACsABQApABYAAAAzACYABQApABAAAAAzACcABQAqABEAAAAzACgABQAqABIAAAAzACkABQAqABMAAAAzACsABQAqABUAAAA0ACYABQArABAAAAA0ACcABQArABEAAAA0ACgABQAsABIAAAA0ACkABQAsABMAAAA0ACoABQArABQAAAA0ACsABQArABUAAAA+AAgABQApABQAAAA+AAkABQAoABYAAAA/AAgABQAqABQAAAA/AAkABQApABYAAABAAAgABQAdAAgAAABAAAkABQAdAAsAAABBAAgABQAoABQAAABBAAkABQAoABYAAABCAAcABQApABMAAAAmABsABAAFAAcAAAAmABwABAAFAAgAAAAmAB0ABAAFAAkAAAAnABsABAAGAAcAAAAnABwABAAGAAgAAAAnAB0ABAAGAAkAAAApABsABAADAAQAAAApABwABAADAAUAAAApAB0ABAADAAYAAAAqABsABAAEAAQAAAAqABwABAAEAAUAAAAqAB0ABAAEAAYAAAArABsABAAIAAQAAAArABwABAAIAAUAAAAoABsABAAGAAEAAAAoABwABAAGAAIAAAAsABsABAAFAAQAAAAsABwABAAFAAUAAAAsAB0ABAAFAAYAAAAtABsABAAGAAQAAAAtABwABAAGAAUAAAAtAB0ABAAGAAYAAAA5ABsABAAJAAoAAAA5ABwABAAJAAsAAAA3ABwABAAMAAYAAAA4ABwABAANAAYAAAA4AB4ABAAMAAYAAAA5AB4ABAANAAYAAAA2AB0ABAAJAAwAAAA2ABoABAAFAAEAAAA2ABsABAAFAAIAAAAsACsABQAmABUAAAAzACoABQAqABQAAAAsACkABQAlABMAAABCAAkABQApABYAAABDAAcABQAqABMAAABCAAgABQApABQAAAA9AAUABQAoABEAAAA9AAYABQAoABIAAAA+AAUABQApABEAAAA+AAcABQApABMAAAA+AAYABQApABIAAAA/AAUABQAqABEAAAA/AAQABQAsABMAAGA/AAYABQAqABIAAAA/AAcABQAqABMAAABAAAcABQAdAAcAAABBAAcABQAoABMAAABCAAYABQApABIAAABDAAYABQAqABIAAABAAAQABAAGAAIAAABAAAYABQAnABIAAABBAAYABQAoABIAAABAAAMABAAGAAEAAABAAAUABQAnABEAAABCAAQABQAsABMAAGBCAAUABQApABEAAABBAAUABQAoABEAAABBAAQABQAsABIAAGBDAAUABQAqABEAAABEAAQABQArABAAAABDAAQABQApABAAAAA8AAQABQAmABAAAAA+AAQABQAsABIAAGA8AAUABQAmABEAAABEAAkABQArABUAAABDAAkABQAqABUAAAA8AAkABQAmABUAAAA9AAkABQAnABUAAAA8AAYABQAmABIAAABEAAUABQArABEAAABEAAYABQArABIAAABEAAcABQArABMAAABEAAgABQArABQAAAA8AAgABQAmABMAAAA9AAQABQAnABAAAAA8AAcABQAmABMAAAAfACAABQAtAAUAAAAfACEABQAtAAYAAAAgACAABQAuAAUAAAAgACEABQAuAAYAAAAhACAABQAvAAUAAAAhACEABQAvAAYAAAAiACAABQAwAAUAAAAgAB8ABQAuAAUAACAhAB8ABQAvAAUAACAgAB4ABQAuAAUAAAAhAB4ABQAvAAUAAAAiAB4ABQAwAAQAACAgAB0ABQAuAAQAAAAhAB0ABQAvAAQAAAAiAB0ABQAwAAUAACAfABwABQAtAAMAAAAfAB0ABQAtAAQAAAAgABwABQAuAAMAAAAhABwABQAvAAMAAAAfAB4ABQAtAAUAAAAfAB8ABQAtAAUAAAAiAB8ABQAwAAQAAAAAAAUABAAJAAUAAAABAAUABAAJAAUAAAAAAAQABAAJAAQAAAABAAQABAAJAAQAAAAAAAYABAAJAAkAAAADAAUABAAFAAQAAAAEAAUABAAGAAQAAAAEAAYABAAGAAUAAAADAAcABAAFAAYAAAAEAAcABAAGAAYAAAACAAQABAAMAAsAAAADACsABQAmABAAAAADAC0ABQAlABIAAAADAC4ABQAlABMAAAADAC8ABQAmABQAAAADADAABQAmABUAAAAEACsABQAnABAAAAAFACsABQAoABAAAAAGACsABQApABAAAAAHACsABQAqABAAAAAHADAABQAqABUAAAAIACsABQArABAAAAAIACwABQArABEAAAAIAC0ABQAsABIAAAAIAC4ABQAsABMAAAAIAC8ABQArABQAAAAEACwABQAnABEAAAAEAC0ABQAnABIAAAAEAC4ABQAnABMAAAAEAC8ABQAnABQAAAAEADAABQAnABUAAAAFACwABQAoABEAAAAFAC0ABQAoABIAAAAFAC4ABQAoABMAAAAFAC8ABQAoABQAAAAFADAABQAoABYAAAAGACwABQApABEAAAAGAC0ABQApABIAAAAGAC4ABQApABMAAAAGAC8ABQApABQAAAAGADAABQApABYAAAAHACwABQAqABEAAAAHAC0ABQAqABIAAAAHAC4ABQAqABMAAAAHAC8ABQAqABQAAAADACwABQAmABEAAAAIADAABQArABUAAAADAAYABAAFAAUAAAAHAAQABwAFAAkAAAAHAAUABwAFAAoAAAAHAAYABwAFAAsAAAAHAAcABwAFAAwAAAAHAAgABwAFAA0AAAAIAAQABwAGAAkAAAAIAAUABwAGAAoAAAAIAAYABwAGAAsAAAAIAAcABwAGAAwAAAAIAAgABwAGAA0AAAAFAAUABwADAAQAAAAFAAYABwADAAUAAAAFAAcABwADAAYAAAAGAAUABwAEAAQAAAAGAAYABwAEAAUAAAAGAAcABwAEAAYAAAAJAAUABwADAAQAAAAJAAYABwADAAUAAAAJAAcABwADAAYAAAAKAAUABwAEAAQAAAAKAAYABwAEAAUAAAAKAAcABwAEAAYAAAALAAUABwADAAQAAAALAAYABwADAAUAAAALAAcABwADAAYAAAAMAAUABwAEAAQAAAAMAAYABwAEAAUAAAAMAAcABwAEAAYAAAADAAoABwADAAQAAAADAAsABwADAAUAAAADAAwABwADAAYAAAAEAAoABwAEAAQAAAAEAAsABwAEAAUAAAAEAAwABwAEAAYAAAAFAAoABAAFAAQAAAAFAAsABAAFAAUAAAAGAAoABAAGAAQAAAAGAAsABAAGAAUAAAAGAAwABAAGAAYAAAAJAAoABwADAAQAAAAJAAsABwADAAUAAAAJAAwABwADAAYAAAAKAAoABwAEAAQAAAAKAAsABwAEAAUAAAAKAAwABwAEAAYAAAAHAAoABAAFAAQAAAAHAAsABAAFAAUAAAAHAAwABAAFAAYAAAAIAAoABAAGAAQAAAAIAAsABAAGAAUAAAAIAAwABAAGAAYAAAAFAAwABAAFAAYAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
 [node name="Elementosdelmapa3" type="TileMapLayer" parent="Suelo"]
@@ -11813,6 +11949,7 @@ autostart = true
 
 [node name="Candelario2" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(986, 160)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11826,6 +11963,7 @@ texture_scale = 1.47
 
 [node name="Candelario3" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(25, 67)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11839,6 +11977,7 @@ texture_scale = 1.47
 
 [node name="Candelario" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(1080, 66)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11852,6 +11991,7 @@ texture_scale = 1.47
 
 [node name="Candelario4" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(730, 701)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11865,6 +12005,7 @@ texture_scale = 1.47
 
 [node name="Candelario5" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(824, 610)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11879,6 +12020,7 @@ texture_scale = 1.47
 [node name="Candelario6" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(538, 453)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11893,6 +12035,7 @@ texture_scale = 1.47
 [node name="Candelario7" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(511, 528)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11907,6 +12050,7 @@ texture_scale = 1.47
 [node name="Candelario8" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(912, 476)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11921,6 +12065,7 @@ texture_scale = 1.47
 [node name="Candelario9" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(24, 550)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11935,6 +12080,7 @@ texture_scale = 1.47
 [node name="Candelario10" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(62, 765)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11948,6 +12094,7 @@ texture_scale = 1.47
 
 [node name="Candelario11" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(486, 165)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11961,6 +12108,7 @@ texture_scale = 1.47
 
 [node name="Candelario12" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(518, 197)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11974,6 +12122,7 @@ texture_scale = 1.47
 
 [node name="Candelario13" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(390, 181)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11987,6 +12136,7 @@ texture_scale = 1.47
 
 [node name="Candelario14" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(387, 85)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
@@ -11998,8 +12148,24 @@ color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
 
+[node name="Candelario15" type="AnimatedSprite2D" parent="." groups=["anim_candelario"]]
+show_behind_parent = true
+top_level = true
+texture_filter = 1
+position = Vector2(7, 166)
+sprite_frames = SubResource("SpriteFrames_usl1r")
+animation = &"candelario"
+
+[node name="PointLight2D" type="PointLight2D" parent="Candelario15"]
+position = Vector2(9.53674e-07, -1.99998)
+scale = Vector2(0.188477, 0.164062)
+color = Color(1, 0.509804, 0.109804, 1)
+texture = ExtResource("13_cmsiv")
+texture_scale = 1.47
+
 [node name="Antorcha" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(374, 740)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12014,6 +12180,7 @@ texture_scale = 1.47
 
 [node name="Antorcha4" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(1154, 740)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12028,10 +12195,11 @@ texture_scale = 1.47
 
 [node name="Antorcha2" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
-position = Vector2(193, 50)
+texture_filter = 1
+position = Vector2(192, 52)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
-frame_progress = 0.334131
+frame_progress = 0.573809
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha2"]
 position = Vector2(9.53674e-07, -1.99998)
@@ -12042,6 +12210,7 @@ texture_scale = 1.47
 
 [node name="Antorcha8" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(447, 47)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12056,6 +12225,7 @@ texture_scale = 1.47
 
 [node name="Antorcha9" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(671, 47)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12069,6 +12239,7 @@ texture_scale = 1.47
 
 [node name="Antorcha5" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(192, 416)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12083,6 +12254,7 @@ texture_scale = 1.47
 
 [node name="Antorcha6" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
+texture_filter = 1
 position = Vector2(34, 416)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12098,6 +12270,7 @@ texture_scale = 1.47
 [node name="Antorcha7" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
 top_level = true
+texture_filter = 1
 position = Vector2(97, 637)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
@@ -12112,9 +12285,11 @@ texture_scale = 1.47
 
 [node name="Antorcha3" type="AnimatedSprite2D" parent="." groups=["anim_antorcha"]]
 show_behind_parent = true
-position = Vector2(97, 50)
+top_level = true
+texture_filter = 1
+position = Vector2(96, 53)
 sprite_frames = SubResource("SpriteFrames_usl1r")
-animation = &"candelario"
+animation = &"antorcha"
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha3"]
 position = Vector2(9.53674e-07, -1.99998)

@@ -113,7 +113,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Default",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,9 +263,10 @@ transform = Transform2D(3.5, 0, 0, 3.5, 188, 10)
 
 [node name="BarraVida" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer/VidaHUD/VIDA"]
 texture_filter = 1
-offset_left = 1.0
-offset_right = 77.0
-offset_bottom = 20.0
+offset_left = -16.5714
+offset_top = 2.57143
+offset_right = 59.4286
+offset_bottom = 22.5714
 value = 100.0
 texture_over = ExtResource("2_lhsnj")
 texture_progress = ExtResource("3_c1417")
@@ -280,8 +281,10 @@ transform = Transform2D(3.5, 0, 0, 3.5, 229, 37)
 
 [node name="BarraCordura" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer/EstadoHUD/CORDURA"]
 texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -17.4286
+offset_top = 2.57143
+offset_right = 62.5714
+offset_bottom = 42.5714
 value = 100.0
 texture_over = ExtResource("4_d2qae")
 texture_progress = ExtResource("5_p00t3")
@@ -290,10 +293,11 @@ texture_progress = ExtResource("5_p00t3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/EstadoHUD/Sprite"]
 material = SubResource("ShaderMaterial_x08bo")
-position = Vector2(99, 92)
+position = Vector2(67, 69)
 scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_qcu47")
 animation = &"Default"
+frame_progress = 0.687958
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
