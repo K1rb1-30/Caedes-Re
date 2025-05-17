@@ -1,12 +1,15 @@
-[gd_scene load_steps=80 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=82 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
 [ext_resource type="Texture2D" uid="uid://bmm77fx80y6kk" path="res://assets/Decorations/Cueva/MainLev2.0.png" id="2_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="3_i7hvv"]
 [ext_resource type="PackedScene" uid="uid://b2vxv12wedoco" path="res://assets/enemies/Heraldo/Heraldo.tscn" id="5_xbw54"]
+[ext_resource type="Texture2D" uid="uid://bb4r6lu71saeo" path="res://Escenarios/Cueva/dinamita.png" id="6_0uqq2"]
 [ext_resource type="AudioStream" uid="uid://cjm7l4f7ihfv5" path="res://Musica/Sonido de Derrumbe.mp3" id="6_kf17q"]
 [ext_resource type="AudioStream" uid="uid://cd0u61kjvhjpm" path="res://Musica/Sonido Selva.mp3" id="7_n3xil"]
+[ext_resource type="AudioStream" uid="uid://bbbskrf37e3ts" path="res://Musica/sonidoExplosion.mp3" id="9_d7shg"]
+[ext_resource type="AudioStream" uid="uid://xxdyc2mdixub" path="res://Musica/cronometroExplosion.mp3" id="10_s5w5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -39903,7 +39906,7 @@ size = Vector2(379, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jtr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygqnp"]
-size = Vector2(92, 40)
+size = Vector2(92, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0huwh"]
 
@@ -39995,7 +39998,7 @@ size = Vector2(20, 57)
 size = Vector2(20, 40.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_claik"]
-size = Vector2(558, 20)
+size = Vector2(568, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e232f"]
 size = Vector2(184.5, 20)
@@ -40011,20 +40014,8 @@ size = Vector2(30, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukb8r"]
 size = Vector2(228, 16)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_n3xil"]
-b = Vector2(-116, 102)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0uqq2"]
-a = Vector2(-49, -43)
-b = Vector2(62, 61)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_d7shg"]
-a = Vector2(39, -14)
-b = Vector2(-72, 103)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_s5w5q"]
-a = Vector2(-52, 20)
-b = Vector2(63, 139)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nrvc"]
+size = Vector2(154.856, 156.271)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osdo1"]
 size = Vector2(176, 33)
@@ -40035,12 +40026,18 @@ size = Vector2(20, 86)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqt3h"]
 size = Vector2(63, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xqr2"]
+size = Vector2(78, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uqq2"]
+size = Vector2(38, 38)
+
 [node name="Cueva" type="Node2D"]
 script = ExtResource("1_t6p21")
 
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
-position = Vector2(556, 213)
+position = Vector2(191, 824)
 scale = Vector2(0.320858, 0.300417)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -40077,6 +40074,11 @@ tile_set = SubResource("TileSet_ve75j")
 [node name="Heraldo" parent="Suelo" instance=ExtResource("5_xbw54")]
 position = Vector2(106, 924)
 
+[node name="Dinamita" type="Sprite2D" parent="Suelo"]
+position = Vector2(620, 1012)
+scale = Vector2(0.0356445, 0.0356445)
+texture = ExtResource("6_0uqq2")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1328, 925)
 
@@ -40094,8 +40096,8 @@ bus = &"Efectos de sonido"
 
 [node name="FinColor" type="ColorRect" parent="."]
 visible = false
-offset_left = 596.0
-offset_top = 678.0
+offset_left = -157.0
+offset_top = 274.0
 offset_right = 1364.0
 offset_bottom = 1261.0
 color = Color(0, 0, 0, 1)
@@ -40183,7 +40185,7 @@ position = Vector2(190.5, 560)
 shape = SubResource("RectangleShape2D_d2o3c")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(156, 550)
+position = Vector2(156, 549)
 shape = SubResource("RectangleShape2D_8jtr4")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Bordes"]
@@ -40195,7 +40197,7 @@ position = Vector2(419, 604)
 shape = SubResource("RectangleShape2D_ygqnp")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(542, 604)
+position = Vector2(542, 609.5)
 shape = SubResource("RectangleShape2D_ygqnp")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Bordes"]
@@ -40427,7 +40429,7 @@ position = Vector2(675, 858)
 shape = SubResource("RectangleShape2D_exrvn")
 
 [node name="CollisionShape2D79" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(799, 566)
+position = Vector2(794, 570)
 shape = SubResource("RectangleShape2D_claik")
 
 [node name="CollisionShape2D80" type="CollisionShape2D" parent="Bordes"]
@@ -40499,20 +40501,10 @@ position = Vector2(1193, 421)
 shape = SubResource("RectangleShape2D_ukb8r")
 
 [node name="CollisionShape2D97" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(320, 803)
-shape = SubResource("SegmentShape2D_n3xil")
-
-[node name="CollisionShape2D98" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(369, 845)
-shape = SubResource("SegmentShape2D_0uqq2")
-
-[node name="CollisionShape2D99" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(393, 919)
-shape = SubResource("SegmentShape2D_d7shg")
-
-[node name="CollisionShape2D100" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(257, 884)
-shape = SubResource("SegmentShape2D_s5w5q")
+position = Vector2(319.5, 911)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6nrvc")
 
 [node name="CollisionShape2D101" type="CollisionShape2D" parent="Bordes"]
 position = Vector2(1018, 945.5)
@@ -40534,8 +40526,42 @@ shape = SubResource("RectangleShape2D_vqt3h")
 wait_time = 5.0
 one_shot = true
 
+[node name="dinamitaArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinamitaArea"]
+position = Vector2(604, 1022)
+shape = SubResource("RectangleShape2D_5xqr2")
+
+[node name="dinamitaExplotar" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dinamitaExplotar"]
+position = Vector2(620, 1009)
+shape = SubResource("RectangleShape2D_0uqq2")
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_d7shg")
+bus = &"Efectos de sonido"
+
+[node name="TimerExplosion" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="cronometroExplosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_s5w5q")
+bus = &"Efectos de sonido"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="TimerFin" to="." method="_on_timer_fin_timeout"]
 [connection signal="timeout" from="TimerSelva" to="." method="_on_timer_selva_timeout"]
 [connection signal="timeout" from="cambiarEscena" to="." method="_on_cambiar_escena_timeout"]
+[connection signal="body_entered" from="dinamitaArea" to="." method="_on_dinamita_area_body_entered"]
+[connection signal="body_exited" from="dinamitaArea" to="." method="_on_dinamita_area_body_exited"]
+[connection signal="body_entered" from="dinamitaExplotar" to="." method="_on_dinamita_explotar_body_entered"]
+[connection signal="body_exited" from="dinamitaExplotar" to="." method="_on_dinamita_explotar_body_exited"]
+[connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]
+[connection signal="timeout" from="TimerExplosion" to="." method="_on_timer_explosion_timeout"]

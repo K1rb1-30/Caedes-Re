@@ -5,9 +5,9 @@ var password = "ΚΑΗΔΗΣ"
 @onready var label: Label = $Label
 
 
-func key_press(digit):
+func key_press(letra):
 	if len(label.text) < 6:
-		label.text += str(digit)
+		label.text += str(letra)
 
 
 func _on_button_1_pressed() -> void:

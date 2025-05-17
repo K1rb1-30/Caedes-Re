@@ -94,4 +94,6 @@ func morir():
 		nieto.global_position = global_position + Vector2(randf_range(-20, 20), randf_range(-20, 20))
 		# Agrega cada hijo como hijo del padre de este enemigo
 		get_parent().add_child(nieto)
+		global.nietoVivos += 1
+		
 	queue_free()

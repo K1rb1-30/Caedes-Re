@@ -8,3 +8,8 @@ var labelOK = false
 var cerrarPad = false
 
 var puedeMoverse = true
+
+var nietoVivos = 0
+var mecheroMostrado = false
+var mecheroRecogido = false
+var labelMechero = false

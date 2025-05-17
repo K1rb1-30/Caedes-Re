@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var mecheroEscena: PackedScene
 @export var velocida = 70
 var playerChase = false
 var Andres = null
@@ -84,4 +85,11 @@ func _on_damage_cooldown_timeout() -> void:
 	canTakeDamage = true
 
 func morir():
-	queue_free()
+	print(global.nietoVivos)
+	global.nietoVivos -= 1
+	if global.nietoVivos <= 0 and not global.mecheroMostrado:
+		global.mecheroMostrado = true
+		var mechero = mecheroEscena.instantiate()
+		get_tree().current_scene.add_child(mechero)
+		mechero.global_position = self.global_position
+	self.queue_free()

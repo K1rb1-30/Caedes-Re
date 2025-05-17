@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://lcbcgucybats"]
+[gd_scene load_steps=17 format=3 uid="uid://lcbcgucybats"]
 
 [ext_resource type="Script" uid="uid://3rbpbf8wti7e" path="res://assets/enemies/Heraldo/nieto.gd" id="1_h4qm0"]
 [ext_resource type="Texture2D" uid="uid://dhwdhvclgim7q" path="res://assets/enemies/Heraldo/Slime_Spiked_Idle.png" id="1_t5t0n"]
+[ext_resource type="PackedScene" uid="uid://bahwap0hmqigt" path="res://Escenarios/Cueva/mechero.tscn" id="2_88lm8"]
 [ext_resource type="Texture2D" uid="uid://c0ynvnh8c6bls" path="res://assets/enemies/Heraldo/Slime_Spiked_Run.png" id="3_egjlu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egjlu"]
@@ -84,6 +85,7 @@ radius = 24.0832
 
 [node name="Nieto" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_h4qm0")
+mecheroEscena = ExtResource("2_88lm8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lysy")

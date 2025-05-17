@@ -10,6 +10,7 @@ var andresVivo = true
 var flash = false #Para que flashee la imagen
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 @onready var menu_pausa: Control = $MenuPausa
+@onready var presionaFmechero: Label = $PresionaFMechero
 
 
 func _physics_process(delta):	
@@ -40,6 +41,12 @@ func _physics_process(delta):
 	if Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
 		print("menu visible")
+		
+	if global.labelMechero:
+		presionaFmechero.visible = true
+	else:
+		presionaFmechero.visible = false
+		
 		
 
 	velocity = velocity.normalized() * speed

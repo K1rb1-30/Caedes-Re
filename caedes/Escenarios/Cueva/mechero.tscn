@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bahwap0hmqigt"]
+
+[ext_resource type="Script" uid="uid://bjxwy4fx1shot" path="res://Escenarios/Cueva/mechero.gd" id="1_08c12"]
+[ext_resource type="Texture2D" uid="uid://ccxm4asxl2e8w" path="res://Escenarios/Cueva/mechero.png" id="1_q7jro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7jro"]
+
+[node name="Mechero" type="Node2D"]
+script = ExtResource("1_08c12")
+
+[node name="MecheroArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MecheroArea"]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_q7jro")
+
+[node name="Mechero" type="Sprite2D" parent="."]
+position = Vector2(11.5625, 12.5625)
+scale = Vector2(0.04575, 0.04575)
+texture = ExtResource("1_q7jro")
+
+[connection signal="body_entered" from="MecheroArea" to="." method="_on_mechero_area_body_entered"]
+[connection signal="body_exited" from="MecheroArea" to="." method="_on_mechero_area_body_exited"]
