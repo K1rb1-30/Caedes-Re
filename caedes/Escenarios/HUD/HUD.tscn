@@ -257,6 +257,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="VIDA" type="CanvasLayer" parent="HBoxContainer/VBoxContainer/VidaHUD"]
+visible = false
 offset = Vector2(188, 10)
 scale = Vector2(3.5, 3.5)
 transform = Transform2D(3.5, 0, 0, 3.5, 188, 10)
@@ -274,6 +275,7 @@ texture_progress = ExtResource("3_c1417")
 layout_mode = 2
 
 [node name="CORDURA" type="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+visible = false
 offset = Vector2(229, 37)
 scale = Vector2(3.5, 3.5)
 transform = Transform2D(3.5, 0, 0, 3.5, 229, 37)
@@ -287,6 +289,7 @@ texture_over = ExtResource("4_d2qae")
 texture_progress = ExtResource("5_p00t3")
 
 [node name="Sprite" type="CanvasLayer" parent="HBoxContainer/VBoxContainer/EstadoHUD"]
+visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VBoxContainer/EstadoHUD/Sprite"]
 material = SubResource("ShaderMaterial_x08bo")
