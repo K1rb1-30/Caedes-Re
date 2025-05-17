@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=101 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -23,6 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://bixu4agk365ms" path="res://Musica/MusicaCatac.mp3" id="21_v1t8p"]
 [ext_resource type="Texture2D" uid="uid://bnmmkjuq3ugsw" path="res://Escenarios/letrasPergaminos/LetraK.png" id="22_x05nm"]
 [ext_resource type="Texture2D" uid="uid://uwneuyh2rc7r" path="res://Escenarios/letrasPergaminos/LetraA.png" id="23_wla3d"]
+[ext_resource type="Texture2D" uid="uid://47boay67e3u1" path="res://Escenarios/letrasPergaminos/letraH5.png" id="24_ti0o0"]
+[ext_resource type="Texture2D" uid="uid://dooxw1ilk7dwk" path="res://Escenarios/letrasPergaminos/letraH5Grande.png" id="25_u4oj2"]
+[ext_resource type="Texture2D" uid="uid://b2u7yb6x8ksks" path="res://Escenarios/letrasPergaminos/LetraE.png" id="26_qimlg"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -11484,6 +11487,12 @@ size = Vector2(24, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vphmf"]
 size = Vector2(30, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc8ww"]
+size = Vector2(32, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtd1k"]
+size = Vector2(16, 5)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
@@ -11496,7 +11505,7 @@ energy = 0.8
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(247, 754)
+position = Vector2(1036, 176)
 scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -12124,18 +12133,10 @@ volume_db = 24.0
 autoplay = true
 bus = &"Musica"
 
-[node name="letraK" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="letraK"]
-position = Vector2(351, 778)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_mxxix")
-
 [node name="LetraKGrande" type="Sprite2D" parent="."]
 visible = false
 top_level = true
+light_mask = 2
 position = Vector2(368, 680)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("22_x05nm")
@@ -12153,9 +12154,45 @@ texture = ExtResource("23_wla3d")
 [node name="LetraAGrande" type="Sprite2D" parent="."]
 visible = false
 top_level = true
+light_mask = 2
 position = Vector2(191, 459)
 scale = Vector2(0.303922, 0.318627)
 texture = ExtResource("23_wla3d")
+
+[node name="LetraH5" type="Sprite2D" parent="."]
+position = Vector2(780, 425)
+scale = Vector2(0.02375, 0.02375)
+texture = ExtResource("24_ti0o0")
+
+[node name="LetraH5Grande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+light_mask = 2
+position = Vector2(780, 437)
+scale = Vector2(0.118164, 0.126302)
+texture = ExtResource("25_u4oj2")
+
+[node name="LetraE" type="Sprite2D" parent="."]
+position = Vector2(1032, 136.5)
+scale = Vector2(0.0097656, 0.00976562)
+texture = ExtResource("26_qimlg")
+
+[node name="LetraEGrande" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+light_mask = 2
+position = Vector2(1034, 134)
+scale = Vector2(0.118164, 0.125651)
+texture = ExtResource("26_qimlg")
+
+[node name="letraK" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraK"]
+position = Vector2(351, 778)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_mxxix")
 
 [node name="letraA" type="Area2D" parent="."]
 position = Vector2(-256, 381)
@@ -12166,6 +12203,22 @@ collision_mask = 2
 position = Vector2(447, 73.5)
 shape = SubResource("RectangleShape2D_vphmf")
 
+[node name="letraH5" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraH5"]
+position = Vector2(781, 449)
+shape = SubResource("RectangleShape2D_uc8ww")
+
+[node name="letraE" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letraE"]
+position = Vector2(1032, 151.5)
+shape = SubResource("RectangleShape2D_xtd1k")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
@@ -12173,3 +12226,7 @@ shape = SubResource("RectangleShape2D_vphmf")
 [connection signal="body_exited" from="letraK" to="." method="_on_letra_k_body_exited"]
 [connection signal="body_entered" from="letraA" to="." method="_on_letra_a_body_entered"]
 [connection signal="body_exited" from="letraA" to="." method="_on_letra_a_body_exited"]
+[connection signal="body_entered" from="letraH5" to="." method="_on_letra_h_5_body_entered"]
+[connection signal="body_exited" from="letraH5" to="." method="_on_letra_h_5_body_exited"]
+[connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
+[connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]

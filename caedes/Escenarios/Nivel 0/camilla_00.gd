@@ -2,21 +2,35 @@ extends Node2D
 
 
 @export var enemigo_escena: PackedScene = preload("res://assets/enemies/MINIONS/enemy_minion.tscn")
-@onready var andres: CharacterBody2D = $Andres
 @export var cantidad = 5
+
+@onready var andres: CharacterBody2D = $Andres
+@onready var musica: AudioStreamPlayer = $Musica
+
 @onready var puertas: TileMapLayer = $Suelo/Puertas
 @onready var puerta_colision: StaticBody2D = $puertaColision
+
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
+
 @onready var letrakGrande: Sprite2D = $LetraKGrande
 @onready var letrak: Sprite2D = $LetraK
+
 @onready var letraAgrande: Sprite2D = $LetraAGrande
 var interactuarA = false
+
+@onready var investigar_F: Label = $Andres/InvestigarF
+@onready var letrah5grande: Sprite2D = $LetraH5Grande
+@onready var letrah5: Sprite2D = $LetraH5
+var interactuarF = false
+
+@onready var letrae: Sprite2D = $LetraE
+@onready var letraEgrande: Sprite2D = $LetraEGrande
+
 
 
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
-@onready var musica: AudioStreamPlayer = $Musica
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -46,11 +60,15 @@ func _physics_process(delta: float) -> void:
 		keypad.visible = false
 	if interactuarA and Input.is_action_pressed("attack"):
 		letraAgrande.visible = true
-		andres.visible = false
 		global.puedeMoverse = false
 	else:
 		letraAgrande.visible = false
-		andres.visible = true
+		global.puedeMoverse = true
+	if interactuarF and Input.is_action_pressed("interactuarF"):
+		letrah5grande.visible = true
+		global.puedeMoverse = false
+	else:
+		letrah5grande.visible = false
 		global.puedeMoverse = true
 
 func spawn_enemigo(posicion: Vector2):
@@ -110,3 +128,26 @@ func _on_letra_a_body_entered(body: Node2D) -> void:
 func _on_letra_a_body_exited(body: Node2D) -> void:
 	body = $Andres
 	interactuarA = false
+
+
+func _on_letra_h_5_body_entered(body: Node2D) -> void:
+	body = $Andres
+	investigar_F.visible = true
+	interactuarF = true
+
+
+func _on_letra_h_5_body_exited(body: Node2D) -> void:
+	body = $Andres
+	investigar_F.visible = false
+	interactuarF = false
+
+
+func _on_letra_e_body_entered(body: Node2D) -> void:
+	body = $Andres
+	letraEgrande.visible = true
+	
+
+
+func _on_letra_e_body_exited(body: Node2D) -> void:
+	body = $Andres
+	letraEgrande.visible = false
