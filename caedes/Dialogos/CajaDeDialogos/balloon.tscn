@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwgvihhcx4cm2"]
 
-[ext_resource type="Script" path="res://Dialogos/CajaDeDialogos/balloon.gd" id="1_36de5"]
-[ext_resource type="PackedScene" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Script" uid="uid://ctgdxdmxxedl2" path="res://Dialogos/CajaDeDialogos/balloon.gd" id="1_36de5"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://cyqi8ohu0yunx" path="res://Tipografias/Principal/guardener.ttf" id="2_pwla5"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Script" uid="uid://brkdapu5mwxx2" path="res://Dialogos/CajaDeDialogos/character.gd" id="5_pwla5"]
-[ext_resource type="Texture2D" uid="uid://bbi28dnbhpif" path="res://assets/PerDialogos/Catlos/catlos abierto.png" id="6_2x8ys"]
+[ext_resource type="Texture2D" uid="uid://bbi28dnbhpif" path="res://assets/PerDialogos/Catlos/character/0.png" id="6_2x8ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)

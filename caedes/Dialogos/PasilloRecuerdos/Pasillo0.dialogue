@@ -1,5 +1,4 @@
 ~ PasilloRecuerdos1
-
 - ¿Qué es este lugar?
 	Catlos: Ni idea parece una especie de pasillo interminable
 	Catlos: ¿Aunque no te parece un poco familiar? => END
@@ -8,15 +7,17 @@
 Catlos: Oye te encuentras bien? Te noto un poco mareado.
 - Tranquilo estoy bien.
 	Catlos: Vale, entonces sera cosa mia supongo.
-	Catlos: Continua y si te ocurre algo cuanto salgamos de aquí iremos al HoSpitAl.
+	Catlos: Continua y si te ocurre algo en cuanto salgamos de aquí iremos al "HoSpitAl".
 - No, la verdad que no me encuentro bien.
-	Catlos: Tranquilo en cuanto salgamos de aquí iremos al HoSpitAl.
+	Catlos: Tranquilo en cuanto salgamos de aquí iremos al "HoSpitAl".
 	Catlos: Tu continua siempre. => END
 
 ~ PasilloRecuerdos3
 
-
-
-
+Catlos: ...
+Catlos: Oye...
+Catlos: ...
+Catlos: Hola??
+Catlos: HOLAAA????? => END
 
 => END
