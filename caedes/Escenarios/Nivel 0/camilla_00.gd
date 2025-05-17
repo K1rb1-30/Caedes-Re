@@ -51,6 +51,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
+		#andres.position = Vector2(128, 124)
 	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
 		await get_tree().process_frame
 		await get_tree().create_timer(0.5).timeout
@@ -60,16 +61,12 @@ func _physics_process(delta: float) -> void:
 		keypad.visible = false
 	if interactuarA and Input.is_action_pressed("attack"):
 		letraAgrande.visible = true
-		global.puedeMoverse = false
 	else:
 		letraAgrande.visible = false
-		global.puedeMoverse = true
 	if interactuarF and Input.is_action_pressed("interactuarF"):
 		letrah5grande.visible = true
-		global.puedeMoverse = false
 	else:
 		letrah5grande.visible = false
-		global.puedeMoverse = true
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
