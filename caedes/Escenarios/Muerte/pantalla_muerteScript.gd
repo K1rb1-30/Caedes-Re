@@ -13,7 +13,6 @@ func _ready() -> void:
 	
 func _on_video_stream_player_finished() -> void:
 	Continuar.visible = true #Poner que el boton sea invisible
-	Salir.visible = true
 	SonidoVHS.play()
 	
 
