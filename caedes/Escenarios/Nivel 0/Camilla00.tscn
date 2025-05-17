@@ -11889,7 +11889,7 @@ tile_set = SubResource("TileSet_yahq2")
 top_level = true
 texture_filter = 1
 position = Vector2(8, -4)
-tile_map_data = PackedByteArray("AAADAAQABAAIAAIAAAAEAAQABAANAAkAAAADAAMABAAIAAEAAAA=")
+tile_map_data = PackedByteArray("AAADAAQABAAIAAIAAAAEAAQABAANAAkAAAADAAMABAAIAAEAAAASAAUABAAJAAgAAAARAAYABAAKAAsAAAASAAYABAANAAsAAAASAAcABAANAAkAAAARAAcABAAIAAYAAAASAAQABAAJAAcAAAAQAAUABAAIAAYAAAAQAAYABAALAAkAAAA=")
 tile_set = SubResource("TileSet_usl1r")
 
 [node name="Elementosdelmapa5" type="TileMapLayer" parent="Suelo"]
@@ -12199,7 +12199,7 @@ texture_filter = 1
 position = Vector2(192, 52)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"antorcha"
-frame_progress = 0.803877
+frame_progress = 0.573809
 
 [node name="PointLight2D" type="PointLight2D" parent="Antorcha2"]
 position = Vector2(9.53674e-07, -1.99998)
