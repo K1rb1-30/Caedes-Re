@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var CordureMode : bool
+@export var CordureMode : bool = true
 
 var enemyAttackRange = false
 var enemyAttackCooldown = true
-var health = 100
 var cordure = 100
+var health = 100
 var andresVivo = true
 var flash = false #Para que flashee la imagen
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
@@ -45,7 +45,7 @@ func _physics_process(delta):
 	velocity = velocity.normalized() * speed
 	move_and_slide()
 	attack()
-	update_health()
+	#update_health()
 	
 	# MODO DE CORDURA
 	if CordureMode:
@@ -55,7 +55,7 @@ func _physics_process(delta):
 			CordureMode = false
 		else:
 			update_cordure()
-			print(cordure)
+			#print(cordure)
 	
 	#Si esta muelto
 	if health <= 0:
@@ -64,7 +64,6 @@ func _physics_process(delta):
 		global.puedeMoverse = false
 		print("andres muerto")
 		mostrar_muerte()
-		
 		
 
 func mostrar_muerte():

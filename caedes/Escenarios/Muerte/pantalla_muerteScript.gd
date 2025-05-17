@@ -7,7 +7,6 @@ extends Control
 
 func _ready() -> void:
 	Continuar.visible = false #Poner que el boton sea invisible
-	Salir.visible = false
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
 	Video.play()
 	
@@ -48,3 +47,4 @@ De mi corazón roto
 func _on_button_pressed() -> void: #Boton de reiniciar
 	get_tree().paused = false
 	get_tree().reload_current_scene() #Reinicia la Escena
+	global.health = 100

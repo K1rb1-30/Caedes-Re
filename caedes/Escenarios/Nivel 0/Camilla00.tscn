@@ -1,4 +1,5 @@
 [gd_scene load_steps=106 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=93 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -27,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://47boay67e3u1" path="res://Escenarios/letrasPergaminos/letraH5.png" id="24_ti0o0"]
 [ext_resource type="Texture2D" uid="uid://dooxw1ilk7dwk" path="res://Escenarios/letrasPergaminos/letraH5Grande.png" id="25_u4oj2"]
 [ext_resource type="Texture2D" uid="uid://b2u7yb6x8ksks" path="res://Escenarios/letrasPergaminos/LetraE.png" id="26_qimlg"]
+[ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="22_x05nm"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -12788,6 +12790,11 @@ size = Vector2(16, 5)
 script = ExtResource("1_1mms0")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+position = Vector2(875, 270)
+scale = Vector2(0.3, 0.3)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
 visible = false
 position = Vector2(247, 754)
 scale = Vector2(0.3, 0.3)
@@ -13516,6 +13523,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="letraE"]
 position = Vector2(1032, 151.5)
 shape = SubResource("RectangleShape2D_xtd1k")
+[node name="HUD" parent="." instance=ExtResource("22_x05nm")]
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
