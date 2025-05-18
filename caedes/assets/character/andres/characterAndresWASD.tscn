@@ -323,7 +323,8 @@ texture_filter = 1
 scale = Vector2(4.28906, 4.26482)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
 animation = &"ataque"
-frame_progress = 0.0336681
+frame = 1
+frame_progress = 0.673205
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8j744")
@@ -356,6 +357,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="linternaLuz" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-5, 52)
 scale = Vector2(0.993598, 0.993598)
 texture = ExtResource("4_6mtlq")

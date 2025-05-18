@@ -48547,25 +48547,21 @@ shape = SubResource("RectangleShape2D_mspb3")
 [node name="CollisionShape2D108" type="CollisionShape2D" parent="Bordes"]
 position = Vector2(879.957, 1063.46)
 rotation = 1.55651
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wltfl")
 
 [node name="CollisionShape2D109" type="CollisionShape2D" parent="Bordes"]
 position = Vector2(366, 1091)
 rotation = 1.55651
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wltfl")
 
 [node name="CollisionShape2D110" type="CollisionShape2D" parent="Bordes"]
 position = Vector2(61, 821)
 rotation = 1.55651
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wltfl")
 
 [node name="CollisionShape2D111" type="CollisionShape2D" parent="Bordes"]
 position = Vector2(821, 903)
 rotation = 1.55651
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wltfl")
 
 [node name="dinamitaArea" type="Area2D" parent="."]
