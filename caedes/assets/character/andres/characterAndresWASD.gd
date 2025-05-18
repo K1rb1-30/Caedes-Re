@@ -127,7 +127,7 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 		sumar_cordura(10)
 		global.andresCurrentAttack = true
-		
+		$Ataque.play("ataque")
 		#enemyAttackCooldown = false
 		#$attackCooldown.start()
 
