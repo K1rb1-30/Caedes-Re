@@ -55,6 +55,16 @@ func dealWithDamage():
 			self.queue_free()
 			var cartel = cartelEscena.instantiate()
 			get_tree().current_scene.add_child(cartel)
+			
+			#Le sale un dialogo al jugador de la barra de vida y no permite moverse al jugador 
+			global.puedeMoverse = false
+			DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombateEnemigoEliminado")
+			
+			#Si no se han visto mas pergaminos te sale el dialogo de mas pergaminos
+			if global.segundopergamino:
+				DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "maspergaminos")
+				global.segundopergamino = false #Setea la variable en false para saber que ya se ha visto un segundo pergamino
+				
 			cartel.global_position = self.global_position
 			
 

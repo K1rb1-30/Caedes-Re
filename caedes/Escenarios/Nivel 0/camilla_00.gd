@@ -16,6 +16,8 @@ extends Node2D
 @onready var letrakGrande: Sprite2D = $LetraKGrande
 @onready var letrak: Sprite2D = $LetraK
 
+@onready var letrah3: Sprite2D = $LetraH3Grande
+
 @onready var letraAgrande: Sprite2D = $LetraAGrande
 var interactuarA = false
 
@@ -45,8 +47,9 @@ func _ready() -> void:
 	global.puedeMoverse = false
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
-	#for posicion in posicion_enemigos:
-	#	spawn_enemigo(posicion)
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat")
+	for posicion in posicion_enemigos:
+		spawn_enemigo(posicion)
 		
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
@@ -108,7 +111,7 @@ func _on_area_presionar_body_exited(body: Node2D) -> void:
 	keypad.visible = false
 
 
-
+# FUNCIONES PARA LOS PERGAMINOS DE LAS LETRAS
 
 func _on_letrak_body_entered(body: Node2D) -> void:
 	body = $Andres
@@ -118,6 +121,7 @@ func _on_letrak_body_entered(body: Node2D) -> void:
 
 func _on_letrak_body_exited(body: Node2D) -> void:
 	body = $Andres
+	maspergaminos()
 	letrakGrande.visible = false
 	letrak.visible = true
 
@@ -129,6 +133,7 @@ func _on_letra_a_body_entered(body: Node2D) -> void:
 
 func _on_letra_a_body_exited(body: Node2D) -> void:
 	body = $Andres
+	maspergaminos()
 	interactuarA = false
 
 
@@ -141,6 +146,7 @@ func _on_letrah_5_body_entered(body: Node2D) -> void:
 func _on_letrah_5_body_exited(body: Node2D) -> void:
 	body = $Andres
 	investigar_F.visible = false
+	maspergaminos()
 	interactuarF = false
 
 
@@ -151,6 +157,7 @@ func _on_letra_e_body_entered(body: Node2D) -> void:
 
 func _on_letra_e_body_exited(body: Node2D) -> void:
 	body = $Andres
+	maspergaminos()
 	letraEgrande.visible = false
 
 
@@ -160,3 +167,46 @@ func _on_linterna_area_body_entered(body: Node2D) -> void:
 
 func _on_linterna_area_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+#Esto es para pausar el personaje cuando se requiera
+func pausarPersonaje():
+	global.puedeMoverse = false
+
+#Esto es para reanudarlo cuando se pueda tambn se puede llamra la funcion en el dialogo para hacer que cuando acabe el dialogo el personaje vuelva a poder moverse
+func reanudarPersonaje():
+	global.puedeMoverse = true
+
+#AREAS CON LOS DIALOGOS
+
+func _on_dialogo_donde_estamos_body_entered(body: Node2D) -> void:
+	body = $Andres
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat2")
+	$DialogoDondeEstamos.queue_free()
+
+
+func _on_dialogo_pergamino_body_entered(body: Node2D) -> void:
+	body = $Andres
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "pergamino")
+	$DialogoPergamino.queue_free()
+
+func mostrar_letraH3():
+	letrah3.visible = true
+	ocultar_letraH3()
+	
+func ocultar_letraH3():
+	await get_tree().create_timer(4).timeout
+	letrah3.visible = false
+
+func maspergaminos():
+	if global.segundopergamino:
+		pausarPersonaje()
+		DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "maspergaminos")
+		global.segundopergamino = false
+	
+
+func _on_dialogo_tuto_enemigo_body_entered(body: Node2D) -> void:
+	body = $Andres
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombate")
+	$DialogoTutoEnemigo.queue_free()
