@@ -5,9 +5,15 @@ Catlos: Porcierto me llamo Catlos, un placer ¿Cual es tu nombre?.
 Andres: eh... Me llamo Andrés.
 Catlos: Encantado Andrés, no te preocupes, yo te ayudaré a salir.
 Catlos: Primero quítate eso del brazo (pulsa “E” para interactuar) y mueve el culo hacia aquí (Pulsa “W, A, S, D” para moverte).
+=> END
+
+~ pergamino
 Catlos: Mira he encontrado esto por el camino.
 Andres: ¿Que es esto?
-Catlos: Es un pergamino, nos sera útil despues asi que recuerda bien tanto la letra como el numero.  => END
+Catlos: Es un pergamino, nos sera útil despues asi que recuerda bien tanto la letra como el numero.
+do mostrar_letraH3()
+do reanudarPersonaje()
+=> END
 
 ~ tutocat2
 #Cuando salga y se mueva un poco le saldra este dialogo
@@ -29,7 +35,9 @@ Andres: ...
 
 Catlos: En fin, si quieres salir, puedo indicarte el camino.
 Catlos: [[A menos que tengas otra idea…|A menos que no recuerde el camino|A menos que este sitio tenga otros planes para nosotros]].
-Catlos: Oh, ¿qué decía? Ah, sí, ven por aquí. => END
+Catlos: Oh, ¿qué decía? Ah, sí, ven por aquí. 
+do reanudarPersonaje()
+=> END
 
 ~ tutocombate
 
@@ -49,12 +57,10 @@ Catlos: Si quieres seguir, tendrás que [[tener más cuidado|moverte con cuidado
 	Catlos: Y a veces, [[ese propósito desaparece|ese propósito te puede nublar|ese propósito es más duro de lo que crees]].
 	Catlos: Si fuera tú me acercaría y acabaría con él (Pulsa “Click Izquierdo” para realizar un ataque).
 	Catlos: Y para que lo sepas ,los enemigos no se dejaran atacar asi porque si tendras que moverte esquivando sus ataques.
-- Vale
-	=> END
+do reanudarPersonaje()
+=> END
 
 ~ tutocombateEnemigoEliminado
-*Andrés elimina al enemigo* *poner variable de que el enemigo ha sido eliminado* 
-
 Catlos: [[Bien.|Perfecto.|Me impresionas.]]  
 Catlos: Felicidades, Andrés. Lo has hecho bien.  
 Catlos: Tan bien que [[podrías acostumbrarte a esto|podrías dedicarte a esto]]. 
@@ -67,43 +73,44 @@ Catlos: Tan bien que [[podrías acostumbrarte a esto|podrías dedicarte a esto]]
 Catlos: Espera un momento.  
 Catlos: Ya que sabes defenderte, es hora de que entiendas cómo sobrevivir aquí.
 
-- ¿Sobrevivir?  
-	Catlos: Sí. Has notado esas dos barras, ¿verdad?  
-	Catlos: La roja es tu vida. Si baja a cero... bueno, te haces una idea.  
-	Andres: ...
+Andres: ¿Sobrevivir?  
+Catlos: Sí. Has notado esas dos barras de arriba, ¿verdad?  
+Catlos: La roja es tu vida. Si baja a cero... bueno, te haces una idea.
+  
+Andres: ¿Y la otra?  
+Catlos: Esa... es más complicada.  
+Catlos: Es tu *cordura*.  
+Catlos: Aquí, en este sitio, la mente no aguanta mucho.  
 
-	- ¿Y la otra?  
-		Catlos: Esa... es más complicada.  
-		Catlos: Es tu *cordura*.  
-		Catlos: Aquí, en este sitio, la mente no aguanta mucho.  
+Andres: ¿Qué le pasa a la gente aquí?  
+Catlos: Pierden el juicio. O peor.  
+Catlos: Este lugar *se alimenta* de tus pensamientos.  
+Catlos: Te susurra cosas. Te muestra cosas que no son reales.  
+Catlos: Si dejas que esa barra se vacíe... no sabrás si eres tú o algo más.  
 
-		- ¿Qué le pasa a la gente aquí?  
-			Catlos: Pierden el juicio. O peor.  
-			Catlos: Este lugar *se alimenta* de tus pensamientos.  
-			Catlos: Te susurra cosas. Te muestra cosas que no son reales.  
-			Catlos: Si dejas que esa barra se vacíe... no sabrás si eres tú o algo más.  
+Andres: ¿Cómo la mantengo?  
+Catlos: Hay formas.  
+Catlos: Acércate a la luz...  
+Catlos: O elimina a las criaturas que lo habitan.  
+Catlos: La violencia, por extraña que suene, te centra.  
+Catlos: Aunque solo sea por un rato...  
 
-			- ¿Cómo la mantengo?  
-				Catlos: Hay formas.  
-				Catlos: Acércate a la luz...  
-				Catlos: O elimina a las criaturas que lo habitan.  
-				Catlos: La violencia, por extraña que suene, te centra.  
-				Catlos: Aunque solo sea por un rato...  
-
-				- ¿Y si no lo hago?  
-					Catlos: Empezarás a escuchar cosas. Ver cosas.  
-					Catlos: Y al final, puede que ya no seas tú el que controla tus actos.  
-					Catlos: O puede que no haya nada que controlar.  
+Andres: ¿Y si no lo hago?  
+Catlos: Empezarás a escuchar cosas. Ver cosas.  
+Catlos: Y al final, puede que ya no seas tú el que controla tus actos.  
+Catlos: O puede que no haya nada que controlar.  
 
 Catlos: En resumen: mantente vivo, mantente lúcido.  
 Catlos: Porque aquí, perder la cabeza no es solo una metáfora.  
-Catlos: Ahora sí, sigamos antes de que algo *nos vea primero*.  
-
+Catlos: Ahora sí, encontremos la forma de salir de aquí.  
+do reanudarPersonaje()
 => END
 
+~ maspergaminos
+Catlos: Mira parece ser otro pergamino como el que te he enseñado antes.
+Catlos: Curioso... Habrá que buscar si hay más en esta zona.
+
+
+do reanudarPersonaje()
 
 => END
-
-
-
-
