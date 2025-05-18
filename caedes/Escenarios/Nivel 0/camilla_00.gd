@@ -48,8 +48,8 @@ func _ready() -> void:
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
 	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat")
-	#for posicion in posicion_enemigos:
-	#	spawn_enemigo(posicion)
+	for posicion in posicion_enemigos:
+		spawn_enemigo(posicion)
 		
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
