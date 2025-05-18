@@ -13,3 +13,5 @@ var nietoVivos = 0
 var mecheroMostrado = false
 var mecheroRecogido = false
 var labelMechero = false
+
+var segundopergamino = true

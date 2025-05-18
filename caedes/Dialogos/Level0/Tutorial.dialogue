@@ -106,6 +106,14 @@ Catlos: Ahora sí, encontremos la forma de salir de aquí.
 do reanudarPersonaje()
 => END
 
+~ maspergaminos
+Catlos: Mira parece ser otro pergamino como el que te he enseñado antes.
+Catlos: Curioso... Habrá que buscar si hay más en esta zona.
+
+
+do reanudarPersonaje()
+
+=> END
 
 
 
