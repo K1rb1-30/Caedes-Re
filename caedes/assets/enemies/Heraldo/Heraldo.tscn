@@ -337,8 +337,7 @@ radius = 40.0125
 collision_layer = 2
 script = ExtResource("1_ftorw")
 hijos_scene = ExtResource("2_2x86f")
-velocida = 50
-healthEnemy = 1
+velocida = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

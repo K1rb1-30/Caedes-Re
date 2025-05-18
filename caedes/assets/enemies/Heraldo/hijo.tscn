@@ -88,7 +88,8 @@ radius = 36.0139
 collision_layer = 2
 script = ExtResource("1_3hkxy")
 nietos_scene = ExtResource("2_iull6")
-healthEnemy = 1
+velocida = 65
+healthEnemy = 70
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
