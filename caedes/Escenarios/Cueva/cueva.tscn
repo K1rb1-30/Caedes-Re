@@ -48010,6 +48010,7 @@ script = ExtResource("1_t6p21")
 
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
+z_index = 1
 position = Vector2(191, 824)
 scale = Vector2(0.320858, 0.300417)
 
@@ -48100,7 +48101,6 @@ wait_time = 8.0
 one_shot = true
 
 [node name="Bordes" type="StaticBody2D" parent="."]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes"]
@@ -48508,12 +48508,7 @@ shape = SubResource("RectangleShape2D_c004h")
 position = Vector2(1134.5, 937)
 shape = SubResource("RectangleShape2D_vqt3h")
 
-[node name="cambiarEscena" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-
 [node name="dinamitaArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -48544,8 +48539,8 @@ bus = &"Efectos de sonido"
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="TimerFin" to="." method="_on_timer_fin_timeout"]
+[connection signal="finished" from="Selva" to="." method="_on_selva_finished"]
 [connection signal="timeout" from="TimerSelva" to="." method="_on_timer_selva_timeout"]
-[connection signal="timeout" from="cambiarEscena" to="." method="_on_cambiar_escena_timeout"]
 [connection signal="body_entered" from="dinamitaArea" to="." method="_on_dinamita_area_body_entered"]
 [connection signal="body_exited" from="dinamitaArea" to="." method="_on_dinamita_area_body_exited"]
 [connection signal="body_entered" from="dinamitaExplotar" to="." method="_on_dinamita_explotar_body_entered"]

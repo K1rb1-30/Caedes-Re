@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ciuqmxed62ye4"]
+[gd_scene load_steps=17 format=3 uid="uid://ciuqmxed62ye4"]
 
 [ext_resource type="Script" uid="uid://bf4rs8bqkauij" path="res://Menu/menu_de_inicio.gd" id="1_q3t5o"]
 [ext_resource type="AudioStream" uid="uid://b5rm8vwmt3qkc" path="res://Musica/Haunted forest.mp3" id="3_0gkyp"]
 [ext_resource type="FontFile" uid="uid://ct07ujmb7q02r" path="res://Tipografias/Keypad/Cinzel-VariableFont_wght.ttf" id="3_g5xyd"]
+[ext_resource type="Texture2D" uid="uid://4dlcl3nptl77" path="res://Menu/interroganteButton.png" id="3_gfbsy"]
 [ext_resource type="Texture2D" uid="uid://cubopdqc11ew5" path="res://Menu/Fondo.png" id="5_y74wr"]
 [ext_resource type="Texture2D" uid="uid://cjhgvhgkwxkty" path="res://Menu/menuImgaen.png" id="6_3gsmp"]
 
@@ -21,6 +22,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8bir"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_am1kx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_041i8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y74wr"]
 
@@ -96,6 +99,22 @@ stream = ExtResource("3_0gkyp")
 autoplay = true
 bus = &"Musica"
 
+[node name="InterroganteButton" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1234, 676)
+scale = Vector2(0.273999, 0.273999)
+texture = ExtResource("3_gfbsy")
+
+[node name="Interrogante" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1203.0
+offset_top = 642.0
+offset_right = 1264.0
+offset_bottom = 710.0
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_041i8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_041i8")
+
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(642, 413)
 scale = Vector2(0.83138, 0.806641)
@@ -150,6 +169,7 @@ texture = ExtResource("6_3gsmp")
 [connection signal="value_changed" from="MenuOpciones/VEfectos" to="." method="_on_v_efectos_value_changed"]
 [connection signal="toggled" from="MenuOpciones/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="MenuOpciones/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Interrogante" to="." method="_on_interrogante_pressed"]
 [connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]

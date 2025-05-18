@@ -6,12 +6,14 @@ extends Control
 @onready var Salir: Button = $CanvasLayer/Salir
 @onready var SonidoVHS: AudioStreamPlayer2D = $CanvasLayer/AudioStreamPlayer2D
 @onready var Video:VideoStreamPlayer = $CanvasLayer/VideoStreamPlayer
+@onready var fondo: Sprite2D = $CanvasLayer/Fondo
 
 
 func _ready() -> void:
 	Reintentar.visible = false #Poner que el boton sea invisible
 	botonReintenar.visible = false
 	Salir.visible = false
+	fondo.visible = false
 	botonSalir.visible = false
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
 	Video.play()
@@ -21,6 +23,7 @@ func _on_video_stream_player_finished() -> void:
 	Reintentar.visible = true #Poner que el boton sea visible
 	Salir.visible = true
 	botonSalir.visible = true
+	fondo.visible = true
 	botonReintenar.visible = true
 	SonidoVHS.play()
 	

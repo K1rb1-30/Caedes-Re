@@ -22,8 +22,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 78.0
-offset_bottom = 1123.0
+offset_top = 328.0
+offset_bottom = 3502.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_r06ri")
@@ -35,6 +35,15 @@ theme_override_font_sizes/bold_italics_font_size = 1
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,7 +70,7 @@ Gabriel Sanchez Flores
 
 
 
-[b][color=gold]Arte y Música:[/color][/b]
+[color=#c49723]Arte y Música:[/color]
 
 Jugador Andres: Szadi art.
 
@@ -92,9 +101,7 @@ Sonido reloj consulta: Kikomonzon
 
 
 
-
-
-[b][color=gold]Gracias por jugar![/color][/b]
+[color=#c49723]Agradecimientos:[/color]
 
 
 Ana María Gómez León
@@ -111,6 +118,7 @@ Ruben Aguistin Sastre
 
 
 
+Este juego se ha hecho con Godot Engine
 
 
 
@@ -118,7 +126,12 @@ Ruben Aguistin Sastre
 
 
 
-¡Gracias por jugar!
+
+
+
+
+
+[color=#c49723]¡Gracias por jugar![/color]
 "
 scroll_active = false
 horizontal_alignment = 1

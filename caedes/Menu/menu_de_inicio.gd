@@ -50,3 +50,7 @@ func _on_save_pressed() -> void:
 	
 func _on_salir_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_interrogante_pressed() -> void:
+	OS.shell_open("https://caedes-landing.vercel.app/")

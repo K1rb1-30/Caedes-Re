@@ -1,4 +1,5 @@
 extends Node2D
+
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
 @onready var advertencia: Label = $Andres/Advertencia
@@ -72,10 +73,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	puede_interactuar = false
 
 
-func _on_cambiar_escena_timeout() -> void:
-	get_tree().change_scene_to_packed(cambiarEscena)
-
-
 func _on_dinamita_area_body_entered(body: Node2D) -> void:
 	body = $Andres
 	dentroDelAreaExplosion = true
@@ -117,4 +114,9 @@ func _on_explosion_finished() -> void:
 	explosionLayer.visible = false
 	labelExplosion.visible = false
 	global.puedeMoverse = true
+	explotarF.visible = false
 	
+
+
+func _on_selva_finished() -> void:
+	get_tree().change_scene_to_packed(cambiarEscena)

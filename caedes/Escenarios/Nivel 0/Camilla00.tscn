@@ -11632,7 +11632,6 @@ size = Vector2(15, 10.5)
 script = ExtResource("1_1mms0")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
@@ -12339,14 +12338,15 @@ scale = Vector2(0.313725, 0.349673)
 texture = ExtResource("23_u4oj2")
 
 [node name="LetraA" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(160, 417)
 scale = Vector2(0.0379902, 0.0379902)
 texture = ExtResource("24_qimlg")
 
 [node name="LetraAGrande" type="Sprite2D" parent="."]
 visible = false
-top_level = true
 light_mask = 2
+z_index = 1
 position = Vector2(207, 446)
 scale = Vector2(0.32598, 0.352124)
 texture = ExtResource("24_qimlg")

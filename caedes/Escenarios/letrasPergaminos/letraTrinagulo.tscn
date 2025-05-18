@@ -15,6 +15,7 @@ scale = Vector2(0.121252, 0.121252)
 texture = ExtResource("2_6g2u0")
 
 [node name="LetraTriangulo4" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(0, -1.19209e-07)
 scale = Vector2(0.0195234, 0.0195234)
 texture = ExtResource("2_6g2u0")

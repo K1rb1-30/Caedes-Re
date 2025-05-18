@@ -357,6 +357,7 @@ text = "Presiona \"F\" para recoger el mechero"
 
 [node name="Advertencia" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = -170.0
 offset_top = 82.0
 offset_right = 195.0
@@ -366,6 +367,7 @@ text = "Primero tienes que conseguir un mechero"
 
 [node name="PresionarFExplotar" type="Label" parent="."]
 visible = false
+z_index = 1
 offset_left = -139.0
 offset_top = 85.0
 offset_right = 139.0
@@ -375,9 +377,9 @@ text = "Presiona \"F\" para explotar la dinamita"
 
 [node name="timer" type="Label" parent="."]
 visible = false
-offset_left = -37.0
+offset_left = -36.0
 offset_top = -115.0
-offset_right = 35.0
+offset_right = 36.0
 offset_bottom = -76.0
 theme_override_fonts/font = ExtResource("11_6w2lv")
 theme_override_font_sizes/font_size = 28
