@@ -16,6 +16,8 @@ extends Node2D
 @onready var letrakGrande: Sprite2D = $LetraKGrande
 @onready var letrak: Sprite2D = $LetraK
 
+@onready var letrah3: Sprite2D = $LetraH3Grande
+
 @onready var letraAgrande: Sprite2D = $LetraAGrande
 var interactuarA = false
 
@@ -154,8 +156,39 @@ func _on_letra_e_body_exited(body: Node2D) -> void:
 	body = $Andres
 	letraEgrande.visible = false
 
+#Esto es para pausar el personaje cuando se requiera
+func pausarPersonaje():
+	global.puedeMoverse = false
+
+#Esto es para reanudarlo cuando se pueda tambn se puede llamra la funcion en el dialogo para hacer que cuando acabe el dialogo el personaje vuelva a poder moverse
+func reanudarPersonaje():
+	global.puedeMoverse = true
+
 
 func _on_dialogo_donde_estamos_body_entered(body: Node2D) -> void:
 	body = $Andres
+	pausarPersonaje()
 	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat2")
 	$DialogoDondeEstamos.queue_free()
+
+
+func _on_dialogo_pergamino_body_entered(body: Node2D) -> void:
+	body = $Andres
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "pergamino")
+	$DialogoPergamino.queue_free()
+
+func mostrar_letraH3():
+	letrah3.visible = true
+	ocultar_letraH3()
+	
+func ocultar_letraH3():
+	await get_tree().create_timer(4).timeout
+	letrah3.visible = false
+
+
+func _on_dialogo_tuto_enemigo_body_entered(body: Node2D) -> void:
+	body = $Andres
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombate")
+	$DialogoTutoEnemigo.queue_free()

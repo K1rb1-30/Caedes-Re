@@ -55,6 +55,8 @@ func dealWithDamage():
 			self.queue_free()
 			var cartel = cartelEscena.instantiate()
 			get_tree().current_scene.add_child(cartel)
+			global.puedeMoverse = false
+			DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombateEnemigoEliminado")
 			cartel.global_position = self.global_position
 			
 

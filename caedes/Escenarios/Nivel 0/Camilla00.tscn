@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=108 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://47boay67e3u1" path="res://Escenarios/letrasPergaminos/letraH5.png" id="25_2pfvq"]
 [ext_resource type="Texture2D" uid="uid://b2u7yb6x8ksks" path="res://Escenarios/letrasPergaminos/LetraE.png" id="26_qimlg"]
 [ext_resource type="Texture2D" uid="uid://dooxw1ilk7dwk" path="res://Escenarios/letrasPergaminos/letraH5Grande.png" id="27_2pfvq"]
+[ext_resource type="Texture2D" uid="uid://cgcx3byheyeqy" path="res://Escenarios/letrasPergaminos/letraH3.png" id="29_0exeh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -11629,7 +11630,13 @@ size = Vector2(18, 14)
 size = Vector2(15, 10.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33db2"]
-radius = 25.0
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqmrd"]
+size = Vector2(62, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a43tt"]
+size = Vector2(57, 41)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
@@ -12419,8 +12426,32 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoDondeEstamos"]
-position = Vector2(224, 277)
+position = Vector2(225, 261)
 shape = SubResource("CircleShape2D_33db2")
+
+[node name="DialogoPergamino" type="Area2D" parent="."]
+position = Vector2(226, 305)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoPergamino"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_lqmrd")
+
+[node name="DialogoTutoEnemigo" type="Area2D" parent="."]
+position = Vector2(673, 327)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoTutoEnemigo"]
+position = Vector2(0.5, 10.5)
+shape = SubResource("RectangleShape2D_a43tt")
+
+[node name="LetraH3Grande" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(226, 305)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("29_0exeh")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
@@ -12434,3 +12465,5 @@ shape = SubResource("CircleShape2D_33db2")
 [connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
 [connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
 [connection signal="body_entered" from="DialogoDondeEstamos" to="." method="_on_dialogo_donde_estamos_body_entered"]
+[connection signal="body_entered" from="DialogoPergamino" to="." method="_on_dialogo_pergamino_body_entered"]
+[connection signal="body_entered" from="DialogoTutoEnemigo" to="." method="_on_dialogo_tuto_enemigo_body_entered"]
