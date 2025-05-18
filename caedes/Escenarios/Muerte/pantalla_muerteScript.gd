@@ -1,19 +1,27 @@
 extends Control
 
-@onready var Continuar: Button = $CanvasLayer/Button
+@onready var Reintentar: Button = $CanvasLayer/Reintentar
+@onready var botonReintenar: Sprite2D = $CanvasLayer/BotonReintenar
+@onready var botonSalir: Sprite2D = $CanvasLayer/BotonSalir
 @onready var Salir: Button = $CanvasLayer/Salir
 @onready var SonidoVHS: AudioStreamPlayer2D = $CanvasLayer/AudioStreamPlayer2D
 @onready var Video:VideoStreamPlayer = $CanvasLayer/VideoStreamPlayer
 
 
 func _ready() -> void:
-	Continuar.visible = false #Poner que el boton sea invisible
+	Reintentar.visible = false #Poner que el boton sea invisible
+	botonReintenar.visible = false
+	Salir.visible = false
+	botonSalir.visible = false
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
 	Video.play()
 	
 	
 func _on_video_stream_player_finished() -> void:
-	Continuar.visible = true #Poner que el boton sea invisible
+	Reintentar.visible = true #Poner que el boton sea visible
+	Salir.visible = true
+	botonSalir.visible = true
+	botonReintenar.visible = true
 	SonidoVHS.play()
 	
 
@@ -48,3 +56,8 @@ func _on_button_pressed() -> void: #Boton de reiniciar
 	get_tree().paused = false
 	get_tree().reload_current_scene() #Reinicia la Escena
 	global.health = 100
+	global.puedeMoverse = true
+
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()
