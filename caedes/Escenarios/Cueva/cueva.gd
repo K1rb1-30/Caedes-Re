@@ -14,6 +14,9 @@ var yaExploto = true
 var andres = null
 var dentroDelAreaExplosion = false
 @onready var explosionLayer: TileMapLayer = $Suelo/Explosion
+@onready var sinExplotar: StaticBody2D = $ColisionSinExplotar
+
+
 """
 
 Yo soy del sur
@@ -41,12 +44,15 @@ func _physics_process(delta: float) -> void:
 		audio.play()
 		global.puedeMoverse = false
 		$TimerFin.start()
+		presiona_f.visible = false
+		
 		
 
 func _process(delta) -> void:
 	if explotar and yaExploto and Input.is_action_pressed("interactuarF"): # Esta en el area de la dinamita, solo tiene una explosion, Input con la F para explotar 
 		yaExploto = false # Ya no puede explotar
 		timerExplosion.start()
+		global.mecheroRecogido = false
 		labelExplosion.visible = true
 		$cronometroExplosion.play()
 	if not timerExplosion.is_stopped() and labelExplosion.visible:
@@ -66,7 +72,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	puede_interactuar = true
 	
 
-@warning_ignore("unused_parameter")
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	body = $Andres
 	presiona_f.visible = false
@@ -104,7 +109,9 @@ func _on_timer_explosion_timeout() -> void:
 	$Andres.z_index = -1
 	$explosion.play()
 	$Dinamita.visible = false
-	explotarF.visible = false
+	$dinamitaExplotar.collision_mask = 0
+	sinExplotar.collision_layer = 0
+	sinExplotar.collision_mask = 0
 	
 
 

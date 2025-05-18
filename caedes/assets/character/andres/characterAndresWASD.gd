@@ -40,6 +40,7 @@ func _physics_process(delta):
 			sprite2d.flip_h = false
 	if Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
+		global.puedeMoverse = false
 		print("menu visible")
 		
 	if global.labelMechero:

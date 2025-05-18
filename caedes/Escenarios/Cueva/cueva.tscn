@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=91 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
@@ -47948,7 +47948,7 @@ size = Vector2(27, 25)
 size = Vector2(229, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uevp4"]
-size = Vector2(20, 149)
+size = Vector2(34, 149)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lp7kd"]
 
@@ -47999,11 +47999,26 @@ size = Vector2(20, 86)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqt3h"]
 size = Vector2(63, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk4o5"]
+size = Vector2(56, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84d3p"]
+size = Vector2(49.5, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm2sc"]
+size = Vector2(77, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mspb3"]
+size = Vector2(38, 36.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xqr2"]
 size = Vector2(92, 243)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uqq2"]
 size = Vector2(38, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iw7v"]
+size = Vector2(77, 81)
 
 [node name="Cueva" type="Node2D"]
 script = ExtResource("1_t6p21")
@@ -48059,8 +48074,6 @@ tile_set = SubResource("TileSet_ve75j")
 
 [node name="Heraldo" parent="Suelo" instance=ExtResource("5_xbw54")]
 position = Vector2(106, 924)
-velocida = 50
-healthEnemy = 1
 
 [node name="Explosion" type="TileMapLayer" parent="Suelo"]
 tile_map_data = PackedByteArray("AAAmAEAAAQAAACQAAAAnADwAAQABACAAAAAnAD0AAQABACEAAAAnAD4AAQABACIAAAAnAD8AAQABACMAAAAnAEAAAQABACQAAAAnAEEAAQABACUAAAAnAEIAAQABACYAAAAnAEMAAQABACcAAAAoADwAAQACACAAAAAoAD0AAQACACEAAAAoAD4AAQACACIAAAAoAD8AAQACACMAAAAoAEAAAQACACQAAAAoAEEAAQACACUAAAAoAEIAAQACACYAAAAoAEMAAQACACcAAAApAEEAAQADACUAAAApAEIAAQADACYAAAApAEMAAQADACcAAAApAEAAAQADACQAAAApAD8AAQADACMAAAApAD4AAQADACIAAAApAD0AAQADACEAAAApADwAAQADACAAAAAoADsAAQACAB8AAAApADsAAQADAB8AAAArADwAAQACAB8AABAqADwAAQADAB8AABAsAD0AAQABACAAABArAD0AAQACACAAABAqAD0AAQADACAAABAsAD4AAQABACEAABArAD4AAQACACEAABAqAD4AAQADACEAABAsAD8AAQABACIAABArAD8AAQACACIAABAqAD8AAQADACIAABAsAEAAAQABACMAABArAEAAAQACACMAABAqAEAAAQADACMAABAtAEEAAQAAACQAABAsAEEAAQABACQAABArAEEAAQACACQAABAqAEEAAQADACQAABAsAEIAAQABACUAABArAEIAAQACACUAABAqAEIAAQADACUAABAsAEMAAQABACYAABArAEMAAQACACYAABAqAEMAAQADACYAABAsAEQAAQABACcAABArAEQAAQACACcAABAqAEQAAQADACcAABA=")
@@ -48292,7 +48305,7 @@ position = Vector2(1227.5, 1125)
 shape = SubResource("RectangleShape2D_go1ai")
 
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="Bordes"]
-position = Vector2(1352, 1061.5)
+position = Vector2(1345, 1061.5)
 shape = SubResource("RectangleShape2D_uevp4")
 
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="Bordes"]
@@ -48508,6 +48521,26 @@ shape = SubResource("RectangleShape2D_c004h")
 position = Vector2(1134.5, 937)
 shape = SubResource("RectangleShape2D_vqt3h")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(671, 938)
+shape = SubResource("RectangleShape2D_tk4o5")
+
+[node name="CollisionShape2D98" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(637, 932.5)
+shape = SubResource("RectangleShape2D_84d3p")
+
+[node name="CollisionShape2D99" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(703.25, 933)
+shape = SubResource("RectangleShape2D_84d3p")
+
+[node name="CollisionShape2D100" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(673.5, 1101)
+shape = SubResource("RectangleShape2D_lm2sc")
+
+[node name="CollisionShape2D106" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(671, 959.75)
+shape = SubResource("RectangleShape2D_mspb3")
+
 [node name="dinamitaArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -48535,6 +48568,13 @@ one_shot = true
 [node name="cronometroExplosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_s5w5q")
 bus = &"Efectos de sonido"
+
+[node name="ColisionSinExplotar" type="StaticBody2D" parent="."]
+
+[node name="sinExplotar" type="CollisionShape2D" parent="ColisionSinExplotar"]
+z_as_relative = false
+position = Vector2(673.5, 1014)
+shape = SubResource("RectangleShape2D_0iw7v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

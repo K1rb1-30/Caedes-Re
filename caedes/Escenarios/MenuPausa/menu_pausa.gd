@@ -23,6 +23,7 @@ func _on_v_musica_value_changed(value: float) -> void:
 
 func _on_save_pressed() -> void:
 	$".".visible = false
+	global.puedeMoverse = true
 
 func _on_salir_pressed() -> void:
 	get_tree().quit()

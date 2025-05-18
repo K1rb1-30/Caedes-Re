@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var hijos_scene: PackedScene
 @export var cantidad_hijos: int = 3
-@export var velocida = 70
+@export var velocida = 40
 var playerChase = false
 var Andres = null
 @onready var enemigoSprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -78,5 +78,5 @@ func morir():
 		hijo.global_position = global_position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
 		# Agrega cada hijo como hijo del padre de este enemigo 
 		get_parent().add_child(hijo)
-	enemigoSprite.play("die")
+		enemigoSprite.play("die")
 	queue_free()

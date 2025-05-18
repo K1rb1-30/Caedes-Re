@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=106 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://47boay67e3u1" path="res://Escenarios/letrasPergaminos/letraH5.png" id="25_2pfvq"]
 [ext_resource type="Texture2D" uid="uid://b2u7yb6x8ksks" path="res://Escenarios/letrasPergaminos/LetraE.png" id="26_qimlg"]
 [ext_resource type="Texture2D" uid="uid://dooxw1ilk7dwk" path="res://Escenarios/letrasPergaminos/letraH5Grande.png" id="27_2pfvq"]
+[ext_resource type="Texture2D" uid="uid://da2jbqrfsxx0i" path="res://assets/props/linterna.png" id="29_0exeh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1j7p3"]
 a = Vector2(0, -59)
@@ -11628,6 +11629,9 @@ size = Vector2(18, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtd1k"]
 size = Vector2(15, 10.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqmrd"]
+size = Vector2(21, 30.5)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
@@ -11639,6 +11643,7 @@ energy = 0.8
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
+z_index = 1
 position = Vector2(128, 97)
 scale = Vector2(0.3, 0.3)
 
@@ -12065,7 +12070,7 @@ texture_scale = 1.47
 show_behind_parent = true
 top_level = true
 texture_filter = 1
-position = Vector2(24, 550)
+position = Vector2(144, 435)
 sprite_frames = SubResource("SpriteFrames_usl1r")
 animation = &"candelario"
 
@@ -12409,6 +12414,28 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="letraE"]
 position = Vector2(1031.5, 156.75)
 shape = SubResource("RectangleShape2D_xtd1k")
+
+[node name="Linterna" type="Sprite2D" parent="."]
+top_level = true
+texture_filter = 1
+position = Vector2(40, 550)
+scale = Vector2(0.034625, 0.034625)
+texture = ExtResource("29_0exeh")
+
+[node name="PointLight2D" type="PointLight2D" parent="Linterna"]
+position = Vector2(-6.86646e-05, 57.7594)
+scale = Vector2(1.098, 0.922524)
+color = Color(1, 0.509804, 0.109804, 1)
+texture = ExtResource("13_cmsiv")
+texture_scale = 1.47
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(40.5, 543.25)
+shape = SubResource("RectangleShape2D_lqmrd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]

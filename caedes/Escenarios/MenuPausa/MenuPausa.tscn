@@ -24,6 +24,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ja277"]
 
 [node name="MenuPausa" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_4q078")
@@ -74,6 +75,7 @@ text = "
 "
 
 [node name="save" type="Button" parent="."]
+z_index = 1
 layout_mode = 2
 offset_left = -168.0
 offset_top = 70.0
@@ -83,6 +85,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_o1yvx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_57cd1")
 
 [node name="salir" type="Button" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = -168.0
 offset_top = 137.0
