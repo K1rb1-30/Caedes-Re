@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d12vovu4d14gw"]
+[gd_scene load_steps=14 format=4 uid="uid://d12vovu4d14gw"]
 
 [ext_resource type="Texture2D" uid="uid://co60xxyfgu6qp" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-bg.png" id="1_kbohv"]
 [ext_resource type="Script" uid="uid://b3ayvviumm55h" path="res://Escenarios/PasilloRecuerdos/pasillo_recuerdos.gd" id="1_kpabu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_kq8x6"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="7_ja0md"]
 [ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="8_kpabu"]
+[ext_resource type="AudioStream" uid="uid://w1af8ct0al75" path="res://Musica/ostpasillo0.mp3" id="9_ja0md"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlrlw"]
 texture = ExtResource("5_kq8x6")
@@ -1526,6 +1527,11 @@ offset_bottom = 187.0
 Vida = NodePath("../Andres")
 Cordura = NodePath("../Andres")
 Flash = NodePath("../Andres")
+
+[node name="MusicaDeFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ja0md")
+bus = &"Musica"
+parameters/looping = true
 
 [connection signal="body_entered" from="Dialogo1" to="." method="_on_dialogo_1_body_entered"]
 [connection signal="body_entered" from="Dialogo2" to="." method="_on_dialogo_2_body_entered"]

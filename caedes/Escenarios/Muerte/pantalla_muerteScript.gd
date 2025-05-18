@@ -5,6 +5,7 @@ extends Control
 @onready var SonidoVHS: AudioStreamPlayer2D = $CanvasLayer/AudioStreamPlayer2D
 @onready var Video:VideoStreamPlayer = $CanvasLayer/VideoStreamPlayer
 
+
 func _ready() -> void:
 	Continuar.visible = false #Poner que el boton sea invisible
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED # Permitir procesamientos cuando el juego esté en pausa
