@@ -26,39 +26,43 @@
 [node name="MenuPausa" type="Control"]
 z_index = 1
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_4q078")
 
 [node name="MenuEscape" type="Sprite2D" parent="."]
-position = Vector2(1.00001, 1.25001)
+position = Vector2(611, 380)
 scale = Vector2(0.439453, 0.451497)
 texture = ExtResource("2_4q078")
 
 [node name="VMusica" type="HSlider" parent="."]
 layout_mode = 2
-offset_left = -134.0
-offset_top = -105.0
-offset_right = 61.0
-offset_bottom = -89.0
+offset_left = 473.0
+offset_top = 274.0
+offset_right = 668.0
+offset_bottom = 290.0
 max_value = 10.0
 step = 0.1
 
 [node name="VEfectos" type="HSlider" parent="."]
 layout_mode = 2
-offset_left = -133.0
-offset_top = -44.0
-offset_right = 61.0
-offset_bottom = -28.0
+offset_left = 474.0
+offset_top = 335.0
+offset_right = 668.0
+offset_bottom = 351.0
 scale = Vector2(1, 0.92001)
 max_value = 10.0
 step = 0.1
 
 [node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 2
-offset_left = -137.0
-offset_top = -4.0
-offset_right = -119.0
-offset_bottom = 21.0
+offset_left = 470.0
+offset_top = 375.0
+offset_right = 488.0
+offset_bottom = 400.0
 scale = Vector2(0.68, 0.6)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_spop6")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cbxpw")
@@ -77,20 +81,20 @@ text = "
 [node name="save" type="Button" parent="."]
 z_index = 1
 layout_mode = 2
-offset_left = -168.0
-offset_top = 70.0
-offset_right = 95.0
-offset_bottom = 131.0
+offset_left = 442.0
+offset_top = 450.0
+offset_right = 705.0
+offset_bottom = 511.0
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_o1yvx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_57cd1")
 
 [node name="salir" type="Button" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = -168.0
-offset_top = 137.0
-offset_right = 96.0
-offset_bottom = 198.0
+offset_left = 441.0
+offset_top = 516.0
+offset_right = 705.0
+offset_bottom = 577.0
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_qvruk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ja277")
 
