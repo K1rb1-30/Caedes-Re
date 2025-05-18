@@ -5,6 +5,8 @@ extends Node2D
 @export var cantidad = 5
 
 @onready var andres: CharacterBody2D = $Andres
+@onready var andresLuz: PointLight2D = $Andres/linternaLuz
+
 @onready var musica: AudioStreamPlayer = $Musica
 
 @onready var puertas: TileMapLayer = $Suelo/Puertas
@@ -27,7 +29,7 @@ var interactuarF = false
 @onready var letrae: Sprite2D = $LetraE
 @onready var letraEgrande: Sprite2D = $LetraEGrande
 
-
+var interactuarLuz = false
 
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
@@ -68,6 +70,9 @@ func _physics_process(delta: float) -> void:
 		letrah5grande.visible = true
 	else:
 		letrah5grande.visible = false
+	
+	if interactuarLuz and Input.is_action_pressed("interactuarF"):
+		andresLuz.visible = true
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -155,8 +160,8 @@ func _on_letra_e_body_exited(body: Node2D) -> void:
 
 
 func _on_linterna_area_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	interactuarLuz = true
 
 
 func _on_linterna_area_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	interactuarLuz = false

@@ -11639,7 +11639,7 @@ script = ExtResource("1_1mms0")
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
-energy = 0.8
+energy = 0.9
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
@@ -12450,3 +12450,5 @@ shape = SubResource("RectangleShape2D_lqmrd")
 [connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
 [connection signal="body_entered" from="LinternaArea" to="." method="_on_linterna_area_body_entered"]
 [connection signal="body_exited" from="LinternaArea" to="." method="_on_linterna_area_body_exited"]
+
+[editable path="Andres"]

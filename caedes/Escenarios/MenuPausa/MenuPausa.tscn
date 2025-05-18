@@ -34,11 +34,13 @@ size_flags_vertical = 4
 script = ExtResource("1_4q078")
 
 [node name="MenuEscape" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(611, 380)
 scale = Vector2(0.439453, 0.451497)
 texture = ExtResource("2_4q078")
 
 [node name="VMusica" type="HSlider" parent="."]
+z_index = 1
 layout_mode = 2
 offset_left = 473.0
 offset_top = 274.0
@@ -48,6 +50,7 @@ max_value = 10.0
 step = 0.1
 
 [node name="VEfectos" type="HSlider" parent="."]
+z_index = 1
 layout_mode = 2
 offset_left = 474.0
 offset_top = 335.0
@@ -58,6 +61,7 @@ max_value = 10.0
 step = 0.1
 
 [node name="CheckBox" type="CheckBox" parent="."]
+z_index = 1
 layout_mode = 2
 offset_left = 470.0
 offset_top = 375.0

@@ -320,9 +320,9 @@ one_shot = true
 wait_time = 5.0
 autostart = true
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(7.00002, 50)
-scale = Vector2(1.35156, 1.35156)
+[node name="linternaLuz" type="PointLight2D" parent="."]
+position = Vector2(-5, 52)
+scale = Vector2(0.993598, 0.993598)
 texture = ExtResource("4_6mtlq")
 texture_scale = 2.16
 height = 202.0
