@@ -12429,11 +12429,11 @@ color = Color(1, 0.509804, 0.109804, 1)
 texture = ExtResource("13_cmsiv")
 texture_scale = 1.47
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="LinternaArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LinternaArea"]
 position = Vector2(40.5, 543.25)
 shape = SubResource("RectangleShape2D_lqmrd")
 
@@ -12448,3 +12448,5 @@ shape = SubResource("RectangleShape2D_lqmrd")
 [connection signal="body_exited" from="letrah5" to="." method="_on_letrah_5_body_exited"]
 [connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
 [connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
+[connection signal="body_entered" from="LinternaArea" to="." method="_on_linterna_area_body_entered"]
+[connection signal="body_exited" from="LinternaArea" to="." method="_on_linterna_area_body_exited"]
