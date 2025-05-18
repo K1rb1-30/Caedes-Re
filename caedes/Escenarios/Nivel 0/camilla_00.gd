@@ -45,6 +45,7 @@ func _ready() -> void:
 	global.puedeMoverse = false
 	playAnimationCandelario("candelario")
 	playAnimationAntorcha("antorcha")
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat")
 	#for posicion in posicion_enemigos:
 	#	spawn_enemigo(posicion)
 		
@@ -152,3 +153,9 @@ func _on_letra_e_body_entered(body: Node2D) -> void:
 func _on_letra_e_body_exited(body: Node2D) -> void:
 	body = $Andres
 	letraEgrande.visible = false
+
+
+func _on_dialogo_donde_estamos_body_entered(body: Node2D) -> void:
+	body = $Andres
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocat2")
+	$DialogoDondeEstamos.queue_free()

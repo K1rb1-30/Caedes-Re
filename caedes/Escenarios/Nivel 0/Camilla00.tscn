@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=105 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -11628,6 +11628,9 @@ size = Vector2(18, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtd1k"]
 size = Vector2(15, 10.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_33db2"]
+radius = 25.0
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1mms0")
 
@@ -12410,6 +12413,15 @@ collision_mask = 2
 position = Vector2(1031.5, 156.75)
 shape = SubResource("RectangleShape2D_xtd1k")
 
+[node name="DialogoDondeEstamos" type="Area2D" parent="."]
+position = Vector2(-2, -68)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogoDondeEstamos"]
+position = Vector2(224, 277)
+shape = SubResource("CircleShape2D_33db2")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="areaPresionar" to="." method="_on_area_presionar_body_entered"]
 [connection signal="body_exited" from="areaPresionar" to="." method="_on_area_presionar_body_exited"]
@@ -12421,3 +12433,4 @@ shape = SubResource("RectangleShape2D_xtd1k")
 [connection signal="body_exited" from="letrah5" to="." method="_on_letrah_5_body_exited"]
 [connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
 [connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
+[connection signal="body_entered" from="DialogoDondeEstamos" to="." method="_on_dialogo_donde_estamos_body_entered"]

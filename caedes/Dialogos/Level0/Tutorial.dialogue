@@ -7,7 +7,9 @@ Catlos: Encantado Andrés, no te preocupes, yo te ayudaré a salir.
 Catlos: Primero quítate eso del brazo (pulsa “E” para interactuar) y mueve el culo hacia aquí (Pulsa “W, A, S, D” para moverte).
 Catlos: Mira he encontrado esto por el camino.
 Andres: ¿Que es esto?
-Catlos: Es un pergamino, nos sera útil despues asi que recuerda bien tanto la letra como el numero.  => END
+Catlos: Es un pergamino, nos sera útil despues asi que recuerda bien tanto la letra como el numero.  
+
+=> END
 
 ~ tutocat2
 #Cuando salga y se mueva un poco le saldra este dialogo
