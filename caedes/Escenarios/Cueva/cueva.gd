@@ -10,7 +10,9 @@ var explotar = false
 @onready var timerExplosion: Timer = $TimerExplosion
 var yaExploto = true
 @onready var cambiarEscena = preload("res://Escenarios/Creditos/creditos.tscn")
-
+var andres = null
+var dentroDelAreaExplosion = false
+@onready var explosionLayer: TileMapLayer = $Suelo/Explosion
 """
 
 Yo soy del sur
@@ -30,6 +32,7 @@ Y nacieron mis amores
 func _ready() -> void:
 	camera_2d.limit_bottom = 1263
 	camera_2d.limit_right = 1328
+	andres = get_node("Andres")
 
 func _physics_process(delta: float) -> void:
 	if puede_interactuar and Input.is_action_pressed("interactuarF"):
@@ -40,13 +43,14 @@ func _physics_process(delta: float) -> void:
 		
 
 func _process(delta) -> void:
-	if explotar and yaExploto and Input.is_action_pressed("interactuarF"):
-		yaExploto = false
+	if explotar and yaExploto and Input.is_action_pressed("interactuarF"): # Esta en el area de la dinamita, solo tiene una explosion, Input con la F para explotar 
+		yaExploto = false # Ya no puede explotar
 		timerExplosion.start()
 		labelExplosion.visible = true
 		$cronometroExplosion.play()
 	if not timerExplosion.is_stopped() and labelExplosion.visible:
 		labelExplosion.text = str("%.1f" % timerExplosion.time_left)	
+		
 func _on_timer_fin_timeout() -> void:
 	$FinColor.visible = true
 	$Andres.z_index = -1
@@ -74,20 +78,20 @@ func _on_cambiar_escena_timeout() -> void:
 
 func _on_dinamita_area_body_entered(body: Node2D) -> void:
 	body = $Andres
-
+	dentroDelAreaExplosion = true
 
 func _on_dinamita_area_body_exited(body: Node2D) -> void:
 	body = $Andres
+	dentroDelAreaExplosion = false
 
 
 func _on_dinamita_explotar_body_entered(body: Node2D) -> void:
 	body = $Andres
-	
 	if global.mecheroRecogido:
-		explotarF.visible = true
-		explotar = true
+		explotarF.visible = true # Label diciendo presiona F para explotar
+		explotar = true # Esta en el area y puede explotar
 	else:
-		advertencia.visible = true
+		advertencia.visible = true # Label diciendo tienes que conseguir un mechero
 
 func _on_dinamita_explotar_body_exited(body: Node2D) -> void:
 	body = $Andres
@@ -99,11 +103,18 @@ func _on_dinamita_explotar_body_exited(body: Node2D) -> void:
 
 func _on_timer_explosion_timeout() -> void:
 	$FinColor.visible = true
+	global.puedeMoverse = false
 	$Andres.z_index = -1
 	$explosion.play()
+	$Dinamita.visible = false
+	explotarF.visible = false
+	
 
 
 func _on_explosion_finished() -> void:
 	$FinColor.visible = false
 	$Andres.z_index = 1
+	explosionLayer.visible = false
+	labelExplosion.visible = false
+	global.puedeMoverse = true
 	
