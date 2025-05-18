@@ -38,9 +38,6 @@ func _physics_process(delta):
 		if velocity == Vector2(0, 0) :
 			sprite2d.play("StaticAbuelo")
 			sprite2d.flip_h = false
-	else:
-		sprite2d.play("StaticAbuelo")
-	
 	if Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
 		global.puedeMoverse = false

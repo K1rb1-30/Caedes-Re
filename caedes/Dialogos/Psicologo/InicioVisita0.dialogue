@@ -141,43 +141,49 @@ Catlos: Si aún puedes verlo. => END
 
 ~ consulta2
 
-Habitación blanca. Luz parpadeante . Kurt aparece sentado como si nunca se hubiera ido…
+*Habitación blanca. La luz parpadea suavemente. Kurt aparece sentado ya, como si nunca se hubiera ido.*
 
-Kurt: Hola de nuevo, Andrés. Me alegra que hayas vuelto... Dime, ¿has seguido viendo a Catlos?
+Kurt: Hola de nuevo, Andrés. Me alegra que hayas vuelto...
+
+Kurt: Dime, ¿has seguido viendo a Catlos?
 
 Andrés: Sí. Él me protege… creo.
 
-Kurt: Catlos no es real ¿Crees q tu mente creó esa criatura porque no puedes soportar estar solo?
+Kurt: ¿Y si no es real?  ¿Y si tu mente creó esa criatura porque no puedes soportar estar solo?
 
 Andrés: No estoy solo.
 
-Kurt: ¿No? Entonces dime... si Catlos no es real y dices no estar solo ¿Quién te está ayudando realmente Andrés?
+Kurt: ¿No? Entonces dime... Si Catlos no es real, ¿quién te está ayudando realmente?
 
 Andrés: No lo sé...
-Kurt: Quizás es alguien que conoces muy bien. Alguien que perdiste o que nunca te dejó del todo.
+Kurt: Quizás alguien que conoces muy bien. Alguien que perdiste. O alguien que nunca te dejó del todo.
+
+Kurt: ¿Te has preguntado por qué su voz es tan familiar?
 
 Andrés: A veces siento que ya lo conocía antes de llegar ahí.
 
-Kurt: Habeces las alucinaciones disfrazan a quienes amamos con rostros desconocidos.
+Kurt: Porque a veces nuestras alucinaciones se disfrazan con los rostros que amamos.  
+Kurt: Es más fácil confiar en una mentira cuando suena como el hogar.
 
-Andrés: ¿Insinúas que conozco a Catlos?
-Kurt: Insinuó que quizá Catlos es… el único que puede y que te mantiene cuerdo. 
+Andrés: ¿Está diciendo que Catlos soy yo?
+Kurt: Estoy diciendo que quizá Catlos es… lo último que queda de ti cuerdo.
+Kurt: Un eco de lo que eras… o de lo que no quieres ser.
 
-Kurt: Andrés, estás perdiendo cosas. Recuerdos. Tiempo. CORDURA.
+Kurt: Andrés, estás perdiendo cosas. Recuerdos. Tiempo.  
+Kurt: Cordura.
 
 Andrés: Él me dice cómo mantenerla. Quedarse cerca de la luz, destruir las sombras.
 
-Kurt: ¿Y porque crees que Catlos se molesta tanto en mantenerte a salvo de la locura?  
-Kurt: Quizás lo conoces mejor de lo que tú crees…
+Kurt: ¿Y si esas sombras no quieren matarte… sino mostrarte algo?  
+Kurt: ¿Qué pasa si la locura no es el enemigo?
 
-Luz roja parpadea. La habitación tiembla. Un sonido como un maullido distorsionado cruza la sala.
+*Luz roja parpadea. La habitación tiembla. Un sonido como un maullido distorsionado cruza la sala.*
 
-Kurt: Andrés, la próxima vez que veas a Catlos… quítale la máscara descubre quien es.
+Kurt: Andrés, la próxima vez que veas a Catlos… pregúntale su nombre verdadero.
 
 Andrés: ¿Qué?
 
-Kurt: Catlos no es real pero quien hay detrás si, descubre quien es esa persona q te cuida y te guía entre las sombras. Solo así entenderás el porqué no se va de tu lado.
-
+Kurt: A veces, hasta las ilusiones se cansan de mentir.
 do _on_dialogue_finished()
 
 => END
