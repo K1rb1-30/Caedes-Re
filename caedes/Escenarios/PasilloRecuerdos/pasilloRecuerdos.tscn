@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=4 uid="uid://d12vovu4d14gw"]
+[gd_scene load_steps=15 format=4 uid="uid://d12vovu4d14gw"]
 
 [ext_resource type="Texture2D" uid="uid://co60xxyfgu6qp" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-bg.png" id="1_kbohv"]
+[ext_resource type="Script" uid="uid://b3ayvviumm55h" path="res://Escenarios/PasilloRecuerdos/pasillo_recuerdos.gd" id="1_kpabu"]
 [ext_resource type="Texture2D" uid="uid://c65yf4ubimt2p" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-far-trees.png" id="2_kq8x6"]
 [ext_resource type="Texture2D" uid="uid://bi5kqh0nv5oc5" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-mid-trees.png" id="3_tlrlw"]
 [ext_resource type="Texture2D" uid="uid://bd1spm7npl25w" path="res://assets/backgrounds/parallax/daemonwoods/parallax-demon-woods-close-trees.png" id="4_kpabu"]
 [ext_resource type="Texture2D" uid="uid://bhtrbq2457dyo" path="res://assets/Decorations/Inside_C.png" id="5_kq8x6"]
 [ext_resource type="PackedScene" uid="uid://rr4fy21rdnkn" path="res://assets/character/andres/characterAndresWASD.tscn" id="7_ja0md"]
-[ext_resource type="Script" uid="uid://de8ti5nvntw50" path="res://Escenarios/PasilloRecuerdos/areaGato0.gd" id="7_kpabu"]
 [ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="8_kpabu"]
+[ext_resource type="AudioStream" uid="uid://w1af8ct0al75" path="res://Musica/ostpasillo0.mp3" id="9_ja0md"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlrlw"]
 texture = ExtResource("5_kq8x6")
@@ -1428,10 +1429,18 @@ texture = ExtResource("5_kq8x6")
 [sub_resource type="TileSet" id="TileSet_kpabu"]
 sources/0 = SubResource("TileSetAtlasSource_tlrlw")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ja0md"]
+height = 162.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpabu"]
-height = 168.0
+radius = 12.0
+height = 648.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja0md"]
+size = Vector2(1478.25, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_kpabu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(1.22, 1.22)
@@ -1483,46 +1492,70 @@ tile_set = SubResource("TileSet_kpabu")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(406, 295)
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("7_kpabu")
-ArchivoDialogo = "res://Dialogos/PasilloRecuerdos/Pasillo0.dialogue"
-DialogoRenderizar = "PasilloRecuerdos1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(431, 208)
-shape = SubResource("CapsuleShape2D_kpabu")
-
-[node name="Area2D" type="Area2D" parent="Area2D"]
-script = ExtResource("7_kpabu")
-ArchivoDialogo = "res://Dialogos/PasilloRecuerdos/Pasillo0.dialogue"
-DialogoRenderizar = "PasilloRecuerdos2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Area2D"]
-position = Vector2(902, 211)
-shape = SubResource("CapsuleShape2D_kpabu")
-
-[node name="Area2D" type="Area2D" parent="Area2D/Area2D"]
-script = ExtResource("7_kpabu")
-ArchivoDialogo = "res://Dialogos/PasilloRecuerdos/Pasillo0.dialogue"
-DialogoRenderizar = "PasilloRecuerdos3"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Area2D/Area2D"]
-position = Vector2(1363, 207)
-shape = SubResource("CapsuleShape2D_kpabu")
-
 [node name="Andres" parent="." instance=ExtResource("7_ja0md")]
-position = Vector2(216, 231)
+position = Vector2(31, 244)
 scale = Vector2(0.25, 0.25)
 CordureMode = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Dialogo1" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("8_kpabu")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogo1"]
+position = Vector2(313, 244)
+shape = SubResource("CapsuleShape2D_ja0md")
+
+[node name="Dialogo2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogo2"]
+position = Vector2(781, 177)
+shape = SubResource("CapsuleShape2D_kpabu")
+
+[node name="Dialogo3" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogo3"]
+position = Vector2(1180, 188)
+shape = SubResource("CapsuleShape2D_kpabu")
+
+[node name="HUD" parent="." instance=ExtResource("8_kpabu")]
 visible = false
-Vida = NodePath("../../Andres")
-Cordura = NodePath("../../Andres")
-Flash = NodePath("../../Andres")
+offset_left = 273.0
+offset_top = 187.0
+offset_right = 273.0
+offset_bottom = 187.0
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D/Area2D" to="Area2D/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D/Area2D/Area2D" to="Area2D/Area2D/Area2D" method="_on_body_entered"]
+[node name="MusicaDeFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ja0md")
+bus = &"Musica"
+parameters/looping = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1286, 445)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ja0md")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(737.75, 194)
+shape = SubResource("RectangleShape2D_ja0md")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, 117.875)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ja0md")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(697, 295)
+shape = SubResource("RectangleShape2D_ja0md")
+
+[connection signal="body_entered" from="Dialogo1" to="." method="_on_dialogo_1_body_entered"]
+[connection signal="body_entered" from="Dialogo2" to="." method="_on_dialogo_2_body_entered"]
+[connection signal="body_entered" from="Dialogo3" to="." method="_on_dialogo_3_body_entered"]

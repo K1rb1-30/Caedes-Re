@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c3mmq3p7bpq4y"
+path="res://.godot/imported/Final.dialogue-bc11c94e210c8cfd76a20608a437c24f.tres"
+
+[deps]
+
+source_file="res://Dialogos/Recuerdos/Final.dialogue"
+dest_files=["res://.godot/imported/Final.dialogue-bc11c94e210c8cfd76a20608a437c24f.tres"]
+
+[params]
+
+defaults=true

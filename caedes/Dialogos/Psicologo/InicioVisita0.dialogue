@@ -2,132 +2,105 @@
 
 ... 3 dias despues del desastre ...
 
-*Habitación blanca. Silencio. Silla frente a silla. Un reloj que no avanza.*
+Habitación blanca. Silencio. Silla frente a silla. Un reloj que no avanza.
 
-Kurt: Buenas tardes, Andrés.  
-Kurt: Me alegra que hoy hayas decidido hablar.  
-Kurt: Antes de empezar... ¿sabes por qué estás aquí?
+Kurt: Buenas tardes, Andrés.  Me alegro de que hoy hayas decidido hablar.  
+Kurt: Lo primero de todo... ¿sabes por qué estás aquí?
 
-Andres: ¿Dónde estoy?
+Andres: No, ¿dónde estoy?
 
-Kurt: Aquí, donde siempre has estado.  
-Kurt: Aquí, donde finalmente tienes que recordar.  
-Kurt: No te preocupes… solo quiero ayudarte.
+Kurt: Dónde siempre has estado, donde tienes que recordar.  
 
 Andres: ¿Qué quieres de mí?
 
-Kurt: Que recuerdes. Que seas honesto.  
-Kurt: Que mires de frente aquello que has estado evitando.  
-Kurt: Empecemos con algo simple… el accidente.
-
-Kurt: Andrés… ¿qué ocurrió aquel día?
+Kurt: Que recuerdes y seas honesto con aquello que evitas revivir.
+Kurt: Empecemos con algo simple… el accidente. ¿Qué ocurrió aquel día?
 
 Andres: No lo sé… fue todo tan rápido.
-Kurt: ¿Seguro?  
-Kurt: Porque los informes dicen que hubo tiempo para frenar…  
-Kurt: Pero tú seguiste avanzando.  
+Kurt: ¿Seguro? Los informen dicen que pudiste haber frenado, pero tu decidiste avanzar … 
 
 Andres: Fue un error.
 Kurt: ¿Un error?  
 Kurt: Algunos errores tienen un precio muy alto, Andrés.  
-Kurt: ¿Y si no fue un error? ¿Y si algo *quería* que ocurriera?
+Kurt: ¿Y si no fue un error, y si algo quería que ocurriese?
 
 Andres: ¿Qué estás insinuando?
-Kurt: Solo te muestro las piezas. Tú decides si forman un espejo…  
-Kurt: O una grieta.
+Kurt: Solo te muestro las piezas. Tú decides si forman un espejo…O una grieta.
 
-Kurt: Andrés… cuéntame tu historia. Desde el principio.  
-Kurt: ¿Qué viste antes de que todo se apagara?
+Kurt: Andrés… cuéntame tu historia desde el principio ¿Qué viste antes de que todo se apagara?
 
 Andres: Había algo en la carretera...
 
 Kurt: ¿Una figura? ¿Una sombra?  
-Kurt: Muchos pacientes ven *sombras*.  
-Kurt: Y a veces, esas sombras no se van.
+Kurt: Muchos pacientes ven sombras y a veces, esas sombras no se van.
 
-Andres: Yo no estoy loco.
+Andres: No estoy loco.
 
-Kurt: ¿Eso crees tú… o eso te repites para seguir cuerdo?  
-Kurt: La mente crea monstruos, Andrés.  
-Kurt: A veces, para protegernos… a veces, para castigarnos.
+Kurt: ¿Eso crees tu? ¿O… te lo repites para seguir cuerdo?  
+Kurt: La mente crea monstruos, Andrés. A veces, para protegernos… a veces, para castigarnos.
 
 Kurt: Última pregunta por hoy...  
-Kurt: Cuando despertaste después del accidente...  
-Kurt: ¿Fue este mundo el que cambió?  
-Kurt: ¿O fuiste tú?
+Kurt: Cuando despertaste después del accidente... ¿Fue este mundo el que cambió? ¿O fuiste tú?
 
-*La luz parpadea. El reloj avanza un segundo. Se escucha algo rasgar la pared detrás de Kurt.*
+La luz parpadea. El reloj avanza un segundo. Se escucha algo rasgar la pared detrás de Kurt.
 
-Kurt: Eso será todo por ahora. 
+Kurt: Eso seria todo por ahora.
+ 
 do _on_dialogue_finished()
  => END
 
 
 ~ consulta1
 
-... 1 semana despues del desastre ...
+Habitación blanca. Silencio denso. Una silla frente a otra. El reloj sigue sin avanzar.
 
-*Habitación blanca. Silencio denso. Una silla frente a otra. El reloj sigue sin avanzar.*
-
-Kurt: Buenas tardes, Andrés.  
-Kurt: ¿Puedes decirme dónde estás?
+Kurt: Buenas tardes, Andrés. ¿Puedes decirme dónde estás?
 
 Andres: No lo sé.
 
-Kurt: Está bien. A veces, no saber es el primer paso.  
-Kurt: Pero cuéntame… ¿sigues viéndolo?
+Kurt: Está bien. A veces, no saber es el primer paso. Cuéntame… ¿sigues viéndolo?
 
 Andres: ¿A quién?
 
-Kurt: Al gato. Al tal *Catlos*.  
-Kurt: ¿Te sigue hablando? ¿Te sigue guiando?
+Kurt: Al gato. Al tal Catlos. ¿Te sigue hablando, te sigue guiando?
 
 Andres: Él me ayudó.
 
 Kurt: ¿Ayudarte? ¿O distraerte?  
-Kurt: Andrés, no todo lo que parece un guía está de tu lado.  
-Kurt: A veces, la mente inventa voces... para no enfrentarse a la verdad.
-
-Kurt: ¿Recuerdas el accidente?
+Kurt: Andrés, no todo lo que parece un guía está de tu lado.A veces, la mente inventa voces... para no enfrentarse a la verdad. ¿Recuerdas el accidente?
 
 Andres: Un poco...
 
 Kurt: Andrés, lo has contado muchas veces.  
-Kurt: Primero dijiste que viste algo en la carretera.  
-Kurt: Luego, que todo se volvió oscuridad.  
-Kurt: Y ahora hablas con un gato que te da consejos.
+Kurt: Primero dijiste que viste algo en la carretera, luego todo se volvió oscuridad y ahora hablas con un gato que te aconseja.
 
 Andres: Catlos no es solo un gato.
 
-Kurt: ¿Ah, no?  
-Kurt: ¿Entonces qué es?  
-Kurt: ¿Una parte de ti que lucha por mantenerte cuerdo?
+Kurt: ¿Ah, no? ¿Entonces qué es? ¿Una parte de ti que lucha por mantenerte cuerdo?
 
 Andres: Hay algo en ese lugar...
-Kurt: Sí. Lo llamas "entre lugares".  
-Kurt: Un espacio donde se pierde la cordura si no estás cerca de la luz.  
-Kurt: Andrés, eso no es real. Es un símbolo. Una metáfora.  
-Kurt: O... tal vez lo que *crees* que no es real… te está diciendo la verdad.
+Kurt: Sí. Lo llamas “entre lugares”. Un espacio donde se pierde la cordura si no estás cerca de la luz.  
+Kurt: Andrés, eso no es real. Es un símbolo. Una metáfora. O... tal vez lo que crees que no es real… te está diciendo la verdad.
 
 Kurt: ¿Por qué crees que estás allí?
 
 Andres: Porque no puedo escapar.
-Kurt: Tal vez no tienes que escapar, Andrés.  
-Kurt: Tal vez tienes que recordar.  
+Kurt: Tal vez no tienes que escapar, Andrés. Tal vez tienes que recordar.
 
 Kurt: ¿Qué ocurrió ese día?
 
 Andres: Yo… perdí el control.
 Kurt: ¿De ti mismo o de la realidad?  
 
-Kurt: Esta será nuestra última sesión por ahora.  
-Kurt: Pero antes dime…  
-Kurt: ¿Catlos sigue diciendo la verdad?  
-Andres: ¿O solo dice lo que quieres escuchar?
+Kurt: Esta será nuestra última sesión por ahora.Pero antes dime…  
+Kurt: ¿Catlos sigue diciendo la verdad? ¿O solo te dice lo que quieres escuchar?
 
-*El reloj avanza tres segundos. Se escucha un maullido distante. Luz roja detrás de la puerta.*
+El reloj avanza tres segundos. Se escucha un maullido distante. Luz roja detrás de la puerta.
 
-Kurt: Nos vemos pronto, Andrés. => END
+Kurt: Nos vemos pronto, Andrés.
+do _on_dialogue_finished()
+=> END
+
 
 
 ~ despertarDistorsion
@@ -138,25 +111,20 @@ Kurt: Nos vemos pronto, Andrés. => END
 
 Andrés: ¿Dónde… estoy otra vez?
 
-- Esto no es como antes…
-	Catlos: [[Miau.|Ah, despertaste.|Te extrañaba.]]  
-	Catlos: ¿Tuviste una linda charla con el doctor?  
-	Catlos: ¿Te dijo que yo no era real otra vez?
+Andrés: Esto no es como antes…
+Catlos: [[Miau.|Ah, despertaste.|Te extrañaba.]]  
+Catlos: ¿Tuviste una linda charla con el doctor? ¿Te dijo que yo no era real otra vez?
 
-- ¿Estás aquí?
-	Catlos: Siempre he estado. Aunque a veces... no como crees.  
-	Catlos: Las paredes se están cayendo, Andrés.  
-	Catlos: No solo en este lugar… también en ti.
+Andrés: ¿Estás aquí?
+Catlos: Siempre he estado. Aunque a veces... no como crees.  
+Catlos: Las paredes se están cayendo, Andrés. No solo en este lugar… también en ti.
 
-- Siento que todo es distinto…
-	Catlos: Porque algo cambió.  
-	Catlos: Recordar tiene un precio.  
-	Catlos: Y ahora, las cosas que estaban dormidas… están empezando a mirar.
+Andrés: Siento que todo es distinto… 
+Catlos: Recordar tiene un precio. Y ahora, las cosas que estaban dormidas… están empezando a mirar.
 
-- ¿Qué cosas?
-	Catlos: Oh, ya las has visto.  
-	Catlos: En las esquinas. En el silencio.  
-	Catlos: Y si no las ves, pronto lo harás.
+Andrés: ¿Qué cosas?
+Catlos: Oh, ya las has visto.   
+Catlos: Y si no las ves, pronto lo harás.
 
 Catlos: Debemos seguir.  
 Catlos: Pero a partir de ahora… todo será más inestable.  
@@ -169,12 +137,54 @@ Catlos: O mantente cerca de mí.
 	Catlos: Pero lo que duele… también cura.  
 
 Catlos: Adelante. El camino cambió, pero sigue allí.  
-Catlos: Si aún puedes verlo.
+Catlos: Si aún puedes verlo. => END
 
-*Una puerta se abre sola al fondo, emitiendo un zumbido. Todo parpadea una última vez.* => END
+~ consulta2
 
+*Habitación blanca. La luz parpadea suavemente. Kurt aparece sentado ya, como si nunca se hubiera ido.*
 
+Kurt: Hola de nuevo, Andrés. Me alegra que hayas vuelto...
 
+Kurt: Dime, ¿has seguido viendo a Catlos?
+
+Andrés: Sí. Él me protege… creo.
+
+Kurt: ¿Y si no es real?  ¿Y si tu mente creó esa criatura porque no puedes soportar estar solo?
+
+Andrés: No estoy solo.
+
+Kurt: ¿No? Entonces dime... Si Catlos no es real, ¿quién te está ayudando realmente?
+
+Andrés: No lo sé...
+Kurt: Quizás alguien que conoces muy bien. Alguien que perdiste. O alguien que nunca te dejó del todo.
+
+Kurt: ¿Te has preguntado por qué su voz es tan familiar?
+
+Andrés: A veces siento que ya lo conocía antes de llegar ahí.
+
+Kurt: Porque a veces nuestras alucinaciones se disfrazan con los rostros que amamos.  
+Kurt: Es más fácil confiar en una mentira cuando suena como el hogar.
+
+Andrés: ¿Está diciendo que Catlos soy yo?
+Kurt: Estoy diciendo que quizá Catlos es… lo último que queda de ti cuerdo.
+Kurt: Un eco de lo que eras… o de lo que no quieres ser.
+
+Kurt: Andrés, estás perdiendo cosas. Recuerdos. Tiempo.  
+Kurt: Cordura.
+
+Andrés: Él me dice cómo mantenerla. Quedarse cerca de la luz, destruir las sombras.
+
+Kurt: ¿Y si esas sombras no quieren matarte… sino mostrarte algo?  
+Kurt: ¿Qué pasa si la locura no es el enemigo?
+
+*Luz roja parpadea. La habitación tiembla. Un sonido como un maullido distorsionado cruza la sala.*
+
+Kurt: Andrés, la próxima vez que veas a Catlos… pregúntale su nombre verdadero.
+
+Andrés: ¿Qué?
+
+Kurt: A veces, hasta las ilusiones se cansan de mentir.
+do _on_dialogue_finished()
 
 => END
 

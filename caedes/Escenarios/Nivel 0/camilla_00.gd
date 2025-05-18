@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
 		await get_tree().process_frame
 		await get_tree().create_timer(0.5).timeout
-		trans.cambiarEscena("res://Escenarios/Cueva/cueva.tscn")
+		trans.cambiarEscena("res://Escenarios/PasilloRecuerdos/pasilloRecuerdos.tscn")
 		musica.stop()
 	if global.labelOK == true:
 		keypad.visible = false
