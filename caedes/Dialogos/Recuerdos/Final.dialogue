@@ -1,43 +1,19 @@
 ~ hijo_confrontacion
 
 # Esta escena debería iniciarse en un entorno extraño (un cuarto infantil distorsionado, oscuro, con juguetes flotando, por ejemplo)
-
 Andrés: ¿Tú…? ¿Eres tú…?
-Hijo: No me llames así.
-Hijo: No después de lo que hiciste.
+...: No me llames así. No después de lo que hiciste.
 
-- ¿Qué quieres decir?
-	Hijo: ¿Aún finges no saberlo?
-	Hijo: Yo... yo te vi.
-	Hijo: [[Vi lo que hiciste esa noche|Estaba allí, papá|No puedes ocultarlo más]].
-
-- No era yo. Algo me obligó.
-	Hijo: ¿Eso te hace inocente?
-	Hijo: ¿Eso borra el miedo?
-	Hijo: [[A mamá no la engañaste|El espejo no miente|El silencio no olvida]].
+Andrés: ¿Qué quieres decir?
+... : Yo... yo te vi. Estaba allí.
 
 Andrés: Yo no quería… no sabía qué estaba haciendo.
 
-Hijo: Siempre hay un momento en que uno elige.
-Hijo: Pero tú lo cruzaste todo.
-Hijo: [[Y ahora esto no es un sueño|Esto es la consecuencia|Esto es tu infierno]].
+...: Siempre hay un momento en que uno elige. Pero tú lo cruzaste todo. Esto es la consecuencia.
 
-- ¿Tú estás vivo?
-	Hijo: ¿Eso importa?
-	Hijo: Aquí las respuestas [[duelen más que el silencio|son fragmentos de algo roto|se derriten como cera]].
+...: Catlos trató de advertirte, ¿verdad?
+...: Pero tú seguiste caminando.
 
-Hijo: Catlos trató de advertirte, ¿verdad?
-Hijo: Pero [[tú seguiste caminando|tú cerraste los ojos|tú hiciste lo imposible]].
-
-Andrés: ¿Puedo arreglarlo?
-
-Hijo: ¿Puedes devolver lo perdido?
-Hijo: ¿Puedes caminar sin sombra?
-Hijo: ¿Puedes mirarte al espejo sin romperlo?
-
-*El hijo se desvanece lentamente, flotando hacia atrás, mientras la habitación se deforma*
-
-Hijo: Esta es tu jaula, Andrés.
-Hijo: La construiste tú mismo.
+...: Esta es tu jaula. La construiste tú mismo... Papa
 
 => END
