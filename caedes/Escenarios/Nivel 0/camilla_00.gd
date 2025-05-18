@@ -152,3 +152,11 @@ func _on_letra_e_body_entered(body: Node2D) -> void:
 func _on_letra_e_body_exited(body: Node2D) -> void:
 	body = $Andres
 	letraEgrande.visible = false
+
+
+func _on_linterna_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_linterna_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
