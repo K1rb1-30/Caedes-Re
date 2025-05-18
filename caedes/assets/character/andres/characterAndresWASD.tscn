@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=52 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cqc17nd5w6ui3" path="res://assets/character/andres/Sprites/DeAtrasAbuelo.png" id="2_4wxxd"]
@@ -73,22 +73,6 @@ region = Rect2(32, 0, 32, 49)
 [sub_resource type="AtlasTexture" id="AtlasTexture_aik3w"]
 atlas = ExtResource("3_x3gpa")
 region = Rect2(64, 0, 32, 49)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mubkq"]
-atlas = ExtResource("5_aj3lu")
-region = Rect2(324, 64, 54, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5aush"]
-atlas = ExtResource("5_aj3lu")
-region = Rect2(324, 0, 54, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouvea"]
-atlas = ExtResource("5_aj3lu")
-region = Rect2(270, 0, 54, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lws5k"]
-atlas = ExtResource("5_aj3lu")
-region = Rect2(324, 192, 54, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wxxd"]
 atlas = ExtResource("2_mr8cp")
@@ -222,23 +206,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mubkq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5aush")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ouvea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lws5k")
-}],
-"loop": true,
-"name": &"ataque",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_4wxxd")
 }, {
 "duration": 1.0,
@@ -314,6 +281,42 @@ height = 140.0
 radius = 89.0
 height = 214.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mubkq"]
+atlas = ExtResource("5_aj3lu")
+region = Rect2(255, 64, 51, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aush"]
+atlas = ExtResource("5_aj3lu")
+region = Rect2(255, 0, 51, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouvea"]
+atlas = ExtResource("5_aj3lu")
+region = Rect2(306, 64, 51, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lws5k"]
+atlas = ExtResource("5_aj3lu")
+region = Rect2(329, 192, 47, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thtej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mubkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aush")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouvea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lws5k")
+}],
+"loop": true,
+"name": &"ataque",
+"speed": 3.0
+}]
+
 [node name="Andres" type="CharacterBody2D" groups=["andres"]]
 collision_layer = 2
 script = ExtResource("1_8oxup")
@@ -322,9 +325,8 @@ script = ExtResource("1_8oxup")
 texture_filter = 1
 scale = Vector2(4.28906, 4.26482)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
-animation = &"ataque"
-frame = 1
-frame_progress = 0.673205
+animation = &"StaticAbuelo"
+frame_progress = 0.929488
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8j744")
@@ -429,6 +431,13 @@ offset_top = -405.0
 offset_right = -639.0
 offset_bottom = -405.0
 scale = Vector2(1.08, 1.08)
+
+[node name="Ataque" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.62745, 3.62745)
+sprite_frames = SubResource("SpriteFrames_thtej")
+animation = &"ataque"
+frame = 3
+frame_progress = 0.82572
 
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]

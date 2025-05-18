@@ -3,22 +3,36 @@ extends CharacterBody2D
 @export var velocida = 70
 var playerChase = false
 var Andres = null
+@onready var enemigoSprite: AnimatedSprite2D = $enemigoSprite
 
-@export var healthEnemy = 1
+@export var healthEnemy = 100
 var canTakeDamage = true
 @export var cartelEscena: PackedScene
+var estaAtacando = false
+@onready var ataqueTimer: Timer = $ataqueTimer
 
 func _physics_process(delta):
 	dealWithDamage()
 	update_health()
 	
-	if playerChase:
+	if playerChase and !estaAtacando:
 		var direccion = (Andres.position - position).normalized()
 		velocity = direccion * velocida
 		move_and_slide()
+		
+		if !estaAtacando:
+			enemigoSprite.play("walk")
+		
+		
+		if direccion.x < 0:
+			enemigoSprite.flip_h = true
+		elif direccion.x > 0:
+			enemigoSprite.flip_h = false	
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
+		if !estaAtacando:
+			enemigoSprite.play("idle")
 func _on_detection_area_body_entered(body):
 	if body.is_in_group("andres"):
 		Andres = body
@@ -32,9 +46,13 @@ func _on_detection_area_body_exited(body):
 	print("area fuera")
 	
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("andres"):
+	if body.is_in_group("andres") and !estaAtacando:
 		global.andresInattackZone = true
-		print("Andrés entró en el rango de ataque")
+		if !estaAtacando:
+			estaAtacando = true
+			enemigoSprite.play("attack")
+			ataqueTimer.start()
+			print("Andrés entró en el rango de ataque")
 
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
@@ -47,7 +65,7 @@ func dealWithDamage():
 	if global.andresInattackZone and global.andresCurrentAttack and canTakeDamage:
 		print("CAN TAKE DAMAGE")
 		canTakeDamage = false
-		healthEnemy = healthEnemy - 20
+		healthEnemy -= 20
 		print("enemy health = ", healthEnemy)
 		global.andresCurrentAttack = false
 		$damageCooldown.start()
@@ -80,3 +98,14 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
+
+
+func _on_ataque_timer_timeout() -> void:
+	estaAtacando = false
+	playerChase = true
+	if Andres != null and Andres.is_in_group("andres") and global.andresInattackZone:
+		# Si el jugador sigue en la zona de ataque, volvemos a atacar
+		estaAtacando = true
+		enemigoSprite.play("attack")
+		ataqueTimer.start()
+		playerChase = true
