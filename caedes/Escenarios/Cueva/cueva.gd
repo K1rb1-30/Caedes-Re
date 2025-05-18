@@ -10,7 +10,7 @@ var explotar = false
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 @onready var timerExplosion: Timer = $TimerExplosion
 var yaExploto = true
-@onready var cambiarEscena = preload("res://Escenarios/Creditos/creditos.tscn")
+@onready var cambiarEscena = preload("res://Escenarios/Consultas/Consulta2.tscn")
 var andres = null
 var dentroDelAreaExplosion = false
 @onready var explosionLayer: TileMapLayer = $Suelo/Explosion
@@ -37,6 +37,18 @@ func _ready() -> void:
 	camera_2d.limit_bottom = 1263
 	camera_2d.limit_right = 1328
 	andres = get_node("Andres")
+	
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Cueva/Cueva.dialogue"), "DespertarCueva")
+	
+
+#Esto es para pausar el personaje cuando se requiera
+func pausarPersonaje():
+	global.puedeMoverse = false
+
+#Esto es para reanudarlo cuando se pueda tambn se puede llamra la funcion en el dialogo para hacer que cuando acabe el dialogo el personaje vuelva a poder moverse
+func reanudarPersonaje():
+	global.puedeMoverse = true
 
 func _physics_process(delta: float) -> void:
 	if puede_interactuar and Input.is_action_pressed("interactuarF"):

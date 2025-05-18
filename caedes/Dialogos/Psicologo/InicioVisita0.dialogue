@@ -103,12 +103,7 @@ do _on_dialogue_finished()
 => END
 
 
-
 ~ despertarDistorsion
-
-*Oscuridad. Sonido de estática. La habitación blanca ya no existe.*
-
-*Andrés despierta en el suelo, hay grietas en las paredes. La luz parpadea en rojo. Se escucha algo respirando al fondo.*
 
 Andrés: ¿Dónde… estoy otra vez?
 
@@ -118,7 +113,7 @@ Catlos: ¿Tuviste una linda charla con el doctor? ¿Te dijo que yo no era real o
 
 Andrés: ¿Estás aquí?
 Catlos: Siempre he estado. Aunque a veces... no como crees.  
-Catlos: Las paredes se están cayendo, Andrés. No solo en este lugar… también en ti.
+Catlos: Las paredes se están cayendo, Andrés. No solo en este lugar…
 
 Andrés: Siento que todo es distinto… 
 Catlos: Recordar tiene un precio. Y ahora, las cosas que estaban dormidas… están empezando a mirar.
@@ -127,18 +122,15 @@ Andrés: ¿Qué cosas?
 Catlos: Oh, ya las has visto.   
 Catlos: Y si no las ves, pronto lo harás.
 
-Catlos: Debemos seguir.  
-Catlos: Pero a partir de ahora… todo será más inestable.  
-Catlos: Mantente cerca de la luz, Andrés.  
-Catlos: O mantente cerca de mí.
+Catlos: Debemos seguir. Pero a partir de ahora… todo será más inestable. Mantente cerca de la luz, Andrés.O mantente cerca de mí.
 
-- ¿Qué está pasando conmigo?
-	Catlos: Estás recordando.  
-	Catlos: Y eso duele.  
-	Catlos: Pero lo que duele… también cura.  
+Andrés: ¿Qué está pasando conmigo?
+Catlos: Estás recordando. Y eso duele.  
+Catlos: Pero lo que duele… también cura.  
 
-Catlos: Adelante. El camino cambió, pero sigue allí.  
-Catlos: Si aún puedes verlo. => END
+Catlos: Adelante. La zona a cambiado pero podemos continuar escapando.
+
+=> END
 
 ~ consulta2
 

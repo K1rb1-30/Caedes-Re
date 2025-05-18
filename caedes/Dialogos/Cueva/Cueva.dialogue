@@ -1,0 +1,29 @@
+~ DespertarCueva
+
+Andres: ¿Dónde… estoy otra vez? Esto no es como antes…
+
+Catlos: [[Miau.|Ah, despertaste.|Te extrañaba.]]  
+Catlos: ¿Tuviste una bonita charla? ¿Te dijo que yo no era real otra vez?
+
+Andres: ¿Estás aquí?
+Catlos: Siempre he estado. Aunque a veces... no como crees.
+Catlos: Las paredes se están cayendo, Andrés. No solo en este lugar…
+
+Andres: Siento que todo es distinto… 
+Catlos: Recordar tiene un precio. Y ahora, las cosas que estaban dormidas… están empezando a mirar.
+
+Andres: ¿Qué cosas?
+Catlos: Oh, ya las has visto.   
+Catlos: Y si no las ves, pronto lo harás.
+
+Catlos: Debemos seguir. Pero a partir de ahora… todo será más inestable. Mantente cerca de la luz, Andrés.O mantente cerca de mí.
+
+Andres: ¿Qué está pasando conmigo?
+Catlos: Estás recordando. Y eso duele.  
+Catlos: Pero lo que duele… también cura.  
+
+Catlos: Adelante. La zona a cambiado pero podemos continuar escapando.
+
+do reanudarPersonaje()
+
+=> END

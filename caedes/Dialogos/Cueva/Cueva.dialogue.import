@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://qe2duhnxkwr4"
+path="res://.godot/imported/Cueva.dialogue-825f72f2ccea2f7185a24b22e2384620.tres"
+
+[deps]
+
+source_file="res://Dialogos/Cueva/Cueva.dialogue"
+dest_files=["res://.godot/imported/Cueva.dialogue-825f72f2ccea2f7185a24b22e2384620.tres"]
+
+[params]
+
+defaults=true

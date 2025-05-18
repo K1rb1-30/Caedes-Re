@@ -10,7 +10,6 @@ func _ready():
 	sonidoReloj.play()
 	start_fade_to_white()
 	await get_tree().create_timer(1).timeout
-	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Psicologo/InicioVisita0.dialogue"), "consulta0")
 	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Psicologo/InicioVisita0.dialogue"), "consulta2")
 
 func start_fade_to_white():
@@ -26,10 +25,12 @@ func set_emotion_color(color: Color):
 	tween.tween_property($CanvasModulate, "color", color, 1.5)
 
 func end_scene():
+	var rect = $CanvasLayer/ColorRect
 	var tween = create_tween()
-	tween.tween_property($CanvasLayer/ColorRect, "color:a", 1.0, 3.0) # fundido a negro
+	tween.tween_property(rect, "color:b", 1.0, 3.0) # fundido a negro
 	await tween.finished
-	get_tree().change_scene_to_file("res://Escenarios/Cueva/cueva.tscn") #Cambiar esto
+	get_tree().change_scene_to_file("res://Escenarios/Creditos/creditos.tscn") #Cambiar esto
 	
 func _on_dialogue_finished():
+	await get_tree().create_timer(1).timeout
 	end_scene()
