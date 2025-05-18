@@ -56,7 +56,7 @@ func dealWithDamage():
 			var cartel = cartelEscena.instantiate()
 			get_tree().current_scene.add_child(cartel)
 			
-			#Le sale un dialogo al jugador de la barra de vida y no permite moverse al jugador 
+			#Le sale un dialogo al jugador de la barra de vida y no permite moverse al jugador y todododododo 
 			global.puedeMoverse = false
 			DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombateEnemigoEliminado")
 			
