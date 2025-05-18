@@ -137,12 +137,54 @@ Catlos: O mantente cerca de mí.
 	Catlos: Pero lo que duele… también cura.  
 
 Catlos: Adelante. El camino cambió, pero sigue allí.  
-Catlos: Si aún puedes verlo.
+Catlos: Si aún puedes verlo. => END
 
-*Una puerta se abre sola al fondo, emitiendo un zumbido. Todo parpadea una última vez.* => END
+~ consulta2
 
+*Habitación blanca. La luz parpadea suavemente. Kurt aparece sentado ya, como si nunca se hubiera ido.*
 
+Kurt: Hola de nuevo, Andrés. Me alegra que hayas vuelto...
 
+Kurt: Dime, ¿has seguido viendo a Catlos?
+
+Andrés: Sí. Él me protege… creo.
+
+Kurt: ¿Y si no es real?  ¿Y si tu mente creó esa criatura porque no puedes soportar estar solo?
+
+Andrés: No estoy solo.
+
+Kurt: ¿No? Entonces dime... Si Catlos no es real, ¿quién te está ayudando realmente?
+
+Andrés: No lo sé...
+Kurt: Quizás alguien que conoces muy bien. Alguien que perdiste. O alguien que nunca te dejó del todo.
+
+Kurt: ¿Te has preguntado por qué su voz es tan familiar?
+
+Andrés: A veces siento que ya lo conocía antes de llegar ahí.
+
+Kurt: Porque a veces nuestras alucinaciones se disfrazan con los rostros que amamos.  
+Kurt: Es más fácil confiar en una mentira cuando suena como el hogar.
+
+Andrés: ¿Está diciendo que Catlos soy yo?
+Kurt: Estoy diciendo que quizá Catlos es… lo último que queda de ti cuerdo.
+Kurt: Un eco de lo que eras… o de lo que no quieres ser.
+
+Kurt: Andrés, estás perdiendo cosas. Recuerdos. Tiempo.  
+Kurt: Cordura.
+
+Andrés: Él me dice cómo mantenerla. Quedarse cerca de la luz, destruir las sombras.
+
+Kurt: ¿Y si esas sombras no quieren matarte… sino mostrarte algo?  
+Kurt: ¿Qué pasa si la locura no es el enemigo?
+
+*Luz roja parpadea. La habitación tiembla. Un sonido como un maullido distorsionado cruza la sala.*
+
+Kurt: Andrés, la próxima vez que veas a Catlos… pregúntale su nombre verdadero.
+
+Andrés: ¿Qué?
+
+Kurt: A veces, hasta las ilusiones se cansan de mentir.
+do _on_dialogue_finished()
 
 => END
 
