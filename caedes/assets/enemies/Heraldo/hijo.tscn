@@ -1,9 +1,54 @@
-[gd_scene load_steps=17 format=3 uid="uid://brqbxd4se7mao"]
+[gd_scene load_steps=29 format=3 uid="uid://brqbxd4se7mao"]
 
 [ext_resource type="Script" uid="uid://bepxqap7wpgv7" path="res://assets/enemies/Heraldo/hijo.gd" id="1_3hkxy"]
 [ext_resource type="Texture2D" uid="uid://ii3sc24vx06e" path="res://assets/enemies/Heraldo/Golem_Armor_Idle.png" id="1_viteg"]
 [ext_resource type="PackedScene" uid="uid://lcbcgucybats" path="res://assets/enemies/Heraldo/nieto.tscn" id="2_iull6"]
+[ext_resource type="Texture2D" uid="uid://dcf4e36n7y7ek" path="res://assets/enemies/Heraldo/Golem_Armor_AttackA.png" id="3_l6iqf"]
 [ext_resource type="Texture2D" uid="uid://bqo7mhp73p1ok" path="res://assets/enemies/Heraldo/Golem_Armor_Run.png" id="4_q5svk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieew3"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jox2q"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jpxh"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b30hi"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eokix"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm7dl"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i63b"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuui1"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1gy3"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lom5"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy1ig"]
+atlas = ExtResource("3_l6iqf")
+region = Rect2(128, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iull6"]
 atlas = ExtResource("1_viteg")
@@ -39,6 +84,44 @@ region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qtbdi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieew3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jox2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jpxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b30hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eokix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm7dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i63b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuui1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1gy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lom5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy1ig")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iull6")
@@ -91,10 +174,11 @@ nietos_scene = ExtResource("2_iull6")
 velocida = 65
 healthEnemy = 70
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="hijoHeraldo" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qtbdi")
-animation = &"walk"
+animation = &"attack"
+frame_progress = 0.963763
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3hkxy")
@@ -117,8 +201,11 @@ shape = SubResource("CircleShape2D_q5svk")
 wait_time = 2.0
 one_shot = true
 
+[node name="ataqueTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="ataqueTimer" to="." method="_on_ataque_timer_timeout"]

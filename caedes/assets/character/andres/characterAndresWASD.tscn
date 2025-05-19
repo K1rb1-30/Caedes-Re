@@ -433,6 +433,7 @@ offset_bottom = -405.0
 scale = Vector2(1.08, 1.08)
 
 [node name="Ataque" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(3.62745, 3.62745)
 sprite_frames = SubResource("SpriteFrames_thtej")
 animation = &"ataque"

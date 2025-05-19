@@ -41,7 +41,7 @@ func _physics_process(delta):
 	else:
 		sprite2d.play("StaticAbuelo")
 	
-	if Input.is_action_just_released("escape"):
+	if global.abrirOpciones and Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
 		global.puedeMoverse = false
 		print("menu visible")

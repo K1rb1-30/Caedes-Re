@@ -41,9 +41,10 @@ func _on_detection_area_body_entered(body):
 
 
 func _on_detection_area_body_exited(body):
-	Andres = null
-	playerChase = false
-	print("area fuera")
+	if body.is_in_group("andres"):
+		Andres = body
+		playerChase = false
+		print("area fuera")
 	
 func _on_enemy_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("andres") and !estaAtacando:
@@ -73,6 +74,7 @@ func dealWithDamage():
 			self.queue_free()
 			var cartel = cartelEscena.instantiate()
 			get_tree().current_scene.add_child(cartel)
+
 			
 			#Le sale un dialogo al jugador de la barra de vida y no permite moverse al jugador y todododododo 
 			global.puedeMoverse = false
@@ -104,7 +106,6 @@ func _on_ataque_timer_timeout() -> void:
 	estaAtacando = false
 	playerChase = true
 	if Andres != null and Andres.is_in_group("andres") and global.andresInattackZone:
-		# Si el jugador sigue en la zona de ataque, volvemos a atacar
 		estaAtacando = true
 		enemigoSprite.play("attack")
 		ataqueTimer.start()

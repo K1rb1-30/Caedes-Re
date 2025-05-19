@@ -5,10 +5,12 @@ extends CharacterBody2D
 @export var velocida = 70
 var playerChase = false
 var Andres = null
-@onready var enemigoSprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var enemigoSprite: AnimatedSprite2D = $hijoHeraldo
 @export var healthEnemy: int = 50
 var canTakeDamage = true
 var andresInAttackZone = false
+var estaAtacando = false
+@onready var ataqueTimer: Timer = $ataqueTimer
 
 func _physics_process(delta):
 	dealWithDamage()
@@ -28,13 +30,14 @@ func _physics_process(delta):
 				if distancia < 50:
 					separacion += (position - other.position).normalized() / distancia
 		# Calcula un vector ortogonal a la dirección del jugador.
-		var offset_angulo = (position - Andres.position).orthogonal().normalized() * 0.5
+		var anguloDesplazado = (position - Andres.position).orthogonal().normalized() * 0.5
 		direccion += separacion * 1.5  # fuerza separación
-		direccion += offset_angulo * 0.8 # fuerza para rodear al jugador
+		direccion += anguloDesplazado * 0.8 # fuerza para rodear al jugador
 
 		velocity = direccion * velocida
 		move_and_slide()
-		enemigoSprite.play("walk")
+		if !estaAtacando:
+			enemigoSprite.play("walk")
 		
 		if direccion.x < 0:
 			enemigoSprite.flip_h = true
@@ -44,7 +47,8 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
-		enemigoSprite.play("idle")
+		if !estaAtacando:
+			enemigoSprite.play("idle")
 func _on_detection_area_body_entered(body):
 	if body.is_in_group("andres"):
 		Andres = body
@@ -53,15 +57,20 @@ func _on_detection_area_body_entered(body):
 
 
 func _on_detection_area_body_exited(body: CharacterBody2D) -> void:
-	Andres = null
-	playerChase = false
-	print("area fuera")
+	if body.is_in_group("andres"):
+		Andres = body
+		playerChase = false
+		print("area fuera")
 	
 
 func _on_enemy_hitbox_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("andres"):
 		andresInAttackZone = true
-		print("Andrés entró en el rango de ataque")
+		if !estaAtacando:
+			estaAtacando = true
+			enemigoSprite.play("attack")
+			ataqueTimer.start()
+			print("Andrés entró en el rango de ataque")
 
 
 func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
@@ -97,3 +106,13 @@ func morir():
 		global.nietoVivos += 1
 		
 	queue_free()
+
+
+func _on_ataque_timer_timeout() -> void:
+	estaAtacando = false
+	playerChase = true
+	if Andres != null and Andres.is_in_group("andres") and global.andresInattackZone:
+		estaAtacando = true
+		enemigoSprite.play("attack")
+		ataqueTimer.start()
+		playerChase = true

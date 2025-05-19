@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=93 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cd0u61kjvhjpm" path="res://Musica/Sonido Selva.mp3" id="7_n3xil"]
 [ext_resource type="AudioStream" uid="uid://bbbskrf37e3ts" path="res://Musica/sonidoExplosion.mp3" id="9_d7shg"]
 [ext_resource type="AudioStream" uid="uid://xxdyc2mdixub" path="res://Musica/cronometroExplosion.mp3" id="10_s5w5q"]
+[ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="12_ywmg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -48029,7 +48030,7 @@ script = ExtResource("1_t6p21")
 [node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
 top_level = true
 z_index = 1
-position = Vector2(772, 1060)
+position = Vector2(475, 716)
 scale = Vector2(0.320858, 0.300417)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
@@ -48598,6 +48599,18 @@ bus = &"Efectos de sonido"
 z_as_relative = false
 position = Vector2(673.5, 1014)
 shape = SubResource("RectangleShape2D_0iw7v")
+
+[node name="HUD" parent="." instance=ExtResource("12_ywmg2")]
+Vida = NodePath("../Andres")
+Cordura = NodePath("../Andres")
+Flash = NodePath("../Andres")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(875, 270)
+scale = Vector2(0.3, 0.3)
+color = Color(0, 0, 0, 1)
+energy = 0.8
+blend_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

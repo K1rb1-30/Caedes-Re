@@ -105,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,11 +178,12 @@ collision_layer = 2
 script = ExtResource("1_sb4vp")
 healthEnemy = 60
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="spriteCangrejo" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_uux5i")
 animation = &"attack"
-frame_progress = 0.62206
+frame = 3
+frame_progress = 0.249699
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 top_level = true
@@ -212,8 +213,11 @@ shape = SubResource("CapsuleShape2D_cabxe")
 wait_time = 2.0
 one_shot = true
 
+[node name="ataqueTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemyHitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="damageCooldown" to="." method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="ataqueTimer" to="." method="_on_ataque_timer_timeout"]

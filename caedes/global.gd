@@ -15,3 +15,5 @@ var mecheroRecogido = false
 var labelMechero = false
 
 var segundopergamino = true
+
+var abrirOpciones = false

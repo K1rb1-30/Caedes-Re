@@ -9,9 +9,6 @@ extends Node2D
 
 @onready var musica: AudioStreamPlayer = $Musica
 
-@onready var puertas: TileMapLayer = $Suelo/Puertas
-@onready var puerta_colision: StaticBody2D = $puertaColision
-
 @onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var presiona_f: Label = $Andres/PresionaF
 
@@ -76,6 +73,7 @@ func _physics_process(delta: float) -> void:
 	
 	if interactuarLinterna and Input.is_action_pressed("interactuarF"):
 		linternaLuz.visible = true
+		$Linterna.visible = false
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
@@ -95,24 +93,20 @@ func playAnimationAntorcha(antorcha: String):
 			spriteAn.play(antorcha)
 	
 
-
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	body = $Andres
-	puertas.visible = true
-	puerta_colision.collision_mask = 1
-	puerta_colision.collision_layer = 1
-
 func _on_area_presionar_body_entered(body: Node2D) -> void:
 	body = $Andres
-	presiona_f.visible = true
-	puede_interactuar = true
+	if global.labelOK:
+		presiona_f.visible = true
+		puede_interactuar = true
 	keypad.visible = true
 	
 
 func _on_area_presionar_body_exited(body: Node2D) -> void:
 	body = $Andres
-	presiona_f.visible = false
-	puede_interactuar = false
+	if global.labelOK:
+		presiona_f.visible = false
+		puede_interactuar = false
+		
 	keypad.visible = false
 
 
@@ -219,3 +213,11 @@ func _on_dialogo_tuto_enemigo_body_entered(body: Node2D) -> void:
 	pausarPersonaje()
 	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombate")
 	$DialogoTutoEnemigo.queue_free()
+
+
+func _on_abrir_opciones_body_entered(body: Node2D) -> void:
+	global.abrirOpciones = true
+
+
+func _on_abrir_opciones_body_exited(body: Node2D) -> void:
+	pass
