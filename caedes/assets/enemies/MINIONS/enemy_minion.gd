@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocida = 70
+@export var velocida = 30
 var playerChase = false
 var Andres = null
 @onready var enemigoSprite: AnimatedSprite2D = $spriteCangrejo
