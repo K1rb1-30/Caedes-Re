@@ -81,9 +81,9 @@ func dealWithDamage():
 			DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "tutocombateEnemigoEliminado")
 			
 			#Si no se han visto mas pergaminos te sale el dialogo de mas pergaminos
-			if global.segundopergamino:
-				DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "maspergaminos")
-				global.segundopergamino = false #Setea la variable en false para saber que ya se ha visto un segundo pergamino
+			#if global.segundopergamino:
+			#	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "maspergaminos")
+			#	global.segundopergamino = false #Setea la variable en false para saber que ya se ha visto un segundo pergamino
 				
 			cartel.global_position = self.global_position
 			

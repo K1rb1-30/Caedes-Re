@@ -11,35 +11,49 @@ var flash = false #Para que flashee la imagen
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 @onready var menu_pausa: Control = $MenuPausa
 @onready var presionaFmechero: Label = $PresionaFMechero
+var estaAtacando = false
+var direccionActual = "abajo"
 
-
-func _physics_process(delta):	
+func _physics_process(delta):
+		
 	velocity = Vector2.ZERO
 	var speed:int = 100
-	if global.puedeMoverse:
-		if Input.is_action_pressed("right"):
-			velocity += Vector2(1, 0)
-			sprite2d.play("Izquierda")
-			sprite2d.flip_h = true
+	if global.puedeMoverse and !estaAtacando:
+			if Input.is_action_pressed("right"):
+				velocity += Vector2(1, 0)
+				direccionActual = "derecha"
+				sprite2d.play("Izquierda")
+				sprite2d.flip_h = true
+				global.puedeMoverse = true	
+				
+			elif Input.is_action_pressed("left"):
+				velocity += Vector2(-1, 0)
+				direccionActual = "izquierda"
+				sprite2d.play("Izquierda")
+				sprite2d.flip_h = false
+				global.puedeMoverse = true
+				
+			elif Input.is_action_pressed("up"):
+				velocity += Vector2(0, -1)
+				direccionActual = "arriba"
+				sprite2d.play("DeAtras")
+				sprite2d.flip_h = false
+			elif Input.is_action_pressed("down"):
+				direccionActual = "abajo"
+				velocity += Vector2(0, 1)
+				sprite2d.play("DeFrente")
+				sprite2d.flip_h = false
+			if velocity == Vector2(0, 0) :
+				sprite2d.play("StaticAbuelo")
+				sprite2d.flip_h = false	
 			
-		elif Input.is_action_pressed("left"):
-			velocity += Vector2(-1, 0)
-			sprite2d.play("Izquierda")
-			sprite2d.flip_h = false
-			
-		elif Input.is_action_pressed("up"):
-			velocity += Vector2(0, -1)
-			sprite2d.play("DeAtras")
-			sprite2d.flip_h = false
-		elif Input.is_action_pressed("down"):
-			velocity += Vector2(0, 1)
-			sprite2d.play("DeFrente")
-			sprite2d.flip_h = false
-		if velocity == Vector2(0, 0) :
-			sprite2d.play("StaticAbuelo")
-			sprite2d.flip_h = false
+			if estaAtacando:
+				sprite2d.play("AtaqueIzquierda")
 	else:
 		sprite2d.play("StaticAbuelo")
+	
+
+		
 	
 	if global.abrirOpciones and Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
@@ -122,16 +136,15 @@ func enemy_Attack():
 	await get_tree().create_timer(1.0).timeout  # Espera 1 segundos para qie se re
 	flash = false
 	print(health)
+	
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
 		sumar_cordura(10)
 		global.andresCurrentAttack = true
-		#if global.andresCurrentAttack:
-			#sprite2d.play("AtaqueIzquierda")
-		#enemyAttackCooldown = false
-		#$attackCooldown.start()
-
+		estaAtacando = true
+		
+		
 			
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false
