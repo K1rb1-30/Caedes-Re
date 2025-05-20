@@ -126,6 +126,15 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_pwla5")
 text = "Dialogue..."
 
+[node name="BotonSkip" type="Button" parent="Balloon"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1097.0
+offset_top = 657.0
+offset_right = 1243.0
+offset_bottom = 691.0
+text = "Saltar Escena >"
+
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
 anchors_preset = 7
@@ -188,4 +197,5 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="pressed" from="Balloon/BotonSkip" to="." method="_on_boton_skip_pressed"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
