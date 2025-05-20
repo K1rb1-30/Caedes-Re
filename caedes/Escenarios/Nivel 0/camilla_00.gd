@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	if global.labelOK == true:
 		keypad.visible = false
 
-	if interactuarA and Input.is_action_just_pressed("presionarE"):
+	if interactuarA and Input.is_action_pressed("presionarE"):
 		letraAgrande.visible = true
 	else:
 		letraAgrande.visible = false
@@ -198,10 +198,7 @@ func _on_dialogo_pergamino_body_entered(body: Node2D) -> void:
 
 func mostrar_letraH3():
 	letrah3.visible = true
-	ocultar_letraH3()
-	
-func ocultar_letraH3():
-	letrah3.visible = false
+
 
 func maspergaminos():
 	if global.segundopergamino:
@@ -219,10 +216,6 @@ func _on_dialogo_tuto_enemigo_body_entered(body: Node2D) -> void:
 
 func _on_abrir_opciones_body_entered(body: Node2D) -> void:
 	global.abrirOpciones = true
-
-
-func _on_abrir_opciones_body_exited(body: Node2D) -> void:
-	global.abrirOpciones = false
 
 
 func _on_letrah_3_body_entered(body: Node2D) -> void:

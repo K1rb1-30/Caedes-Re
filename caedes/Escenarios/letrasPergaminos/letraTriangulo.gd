@@ -5,7 +5,7 @@ var interactuarClick = false
 var Andres = null
 
 func _physics_process(delta: float) -> void:
-	if interactuarClick and Input.is_action_pressed("attack"):
+	if interactuarClick and Input.is_action_pressed("presionarE"):
 		letraGrande.visible = true
 		letraPequeño.visible = false
 		letraGrande.z_index = 1
