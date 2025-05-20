@@ -48,6 +48,9 @@ var mutation_cooldown: Timer = Timer.new()
 ## ESTO ES PARA SETEAR EL PNG DE PERSONAJE SEGUN QUIEN HABLE
 @onready var portrait: TextureRect = $Balloon/Character/TextureRect
 
+## BOTON PARA SKIPEAR LAS ESCENAS DE DIALOGO
+@onready var skipbutton: Button = $Balloon/BotonSkip
+
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 
@@ -88,6 +91,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
+
 
 
 ## Apply any changes to the balloon given a new [DialogueLine].
@@ -182,3 +186,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_boton_skip_pressed() -> void:
+	balloon.hide()
