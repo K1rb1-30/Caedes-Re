@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://rr4fy21rdnkn"]
+[gd_scene load_steps=57 format=3 uid="uid://rr4fy21rdnkn"]
 
 [ext_resource type="Script" uid="uid://cu8ghnnb2jvhj" path="res://assets/character/andres/characterAndresWASD.gd" id="1_8oxup"]
 [ext_resource type="Texture2D" uid="uid://cqc17nd5w6ui3" path="res://assets/character/andres/Sprites/DeAtrasAbuelo.png" id="2_4wxxd"]
+[ext_resource type="Texture2D" uid="uid://coahsvieb1mij" path="res://assets/character/andres/Sprites/Ataque/atacando lateral.png" id="2_b1fb2"]
 [ext_resource type="Texture2D" uid="uid://b5g2ew04ayppg" path="res://assets/character/perprueba/sprites/death.png" id="2_mr8cp"]
 [ext_resource type="Texture2D" uid="uid://sc13sc0vhrue" path="res://assets/character/perprueba/sprites/punch.png" id="3_0lqos"]
 [ext_resource type="Texture2D" uid="uid://bpilqlv8lo84n" path="res://assets/character/andres/Sprites/DeFrenteAbuelo.png" id="3_x3gpa"]
@@ -13,6 +14,22 @@
 [ext_resource type="Script" uid="uid://dbb0yuumsvtrd" path="res://assets/character/andres/camera_2d.gd" id="9_x3gpa"]
 [ext_resource type="FontFile" uid="uid://ct07ujmb7q02r" path="res://Tipografias/Keypad/Cinzel-VariableFont_wght.ttf" id="11_6w2lv"]
 [ext_resource type="PackedScene" uid="uid://b541u4g76emon" path="res://Escenarios/MenuPausa/MenuPausa.tscn" id="12_6w2lv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thtej"]
+atlas = ExtResource("2_b1fb2")
+region = Rect2(224, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40lsl"]
+atlas = ExtResource("2_b1fb2")
+region = Rect2(192, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpybq"]
+atlas = ExtResource("2_b1fb2")
+region = Rect2(160, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44vya"]
+atlas = ExtResource("2_b1fb2")
+region = Rect2(128, 0, 32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqhot"]
 atlas = ExtResource("2_4wxxd")
@@ -136,6 +153,23 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2tqkp"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thtej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40lsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpybq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44vya")
+}],
+"loop": true,
+"name": &"AtaqueIzquierda",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sqhot")
@@ -325,8 +359,8 @@ script = ExtResource("1_8oxup")
 texture_filter = 1
 scale = Vector2(4.28906, 4.26482)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
-animation = &"StaticAbuelo"
-frame_progress = 0.929488
+animation = &"AtaqueIzquierda"
+frame_progress = 0.633839
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8j744")
