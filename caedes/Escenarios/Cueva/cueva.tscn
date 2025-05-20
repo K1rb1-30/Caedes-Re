@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cjm7l4f7ihfv5" path="res://Musica/Sonido de Derrumbe.mp3" id="6_kf17q"]
 [ext_resource type="AudioStream" uid="uid://cd0u61kjvhjpm" path="res://Musica/Sonido Selva.mp3" id="7_n3xil"]
 [ext_resource type="AudioStream" uid="uid://bbbskrf37e3ts" path="res://Musica/sonidoExplosion.mp3" id="9_d7shg"]
-[ext_resource type="AudioStream" uid="uid://xxdyc2mdixub" path="res://Musica/cronometroExplosion.mp3" id="10_s5w5q"]
+[ext_resource type="AudioStream" uid="uid://cexmlamp1wu10" path="res://Musica/mechaSonido.mp3" id="11_ywmg2"]
 [ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="12_ywmg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
@@ -48027,17 +48027,19 @@ size = Vector2(77, 81)
 [node name="Cueva" type="Node2D"]
 script = ExtResource("1_t6p21")
 
-[node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
-top_level = true
-z_index = 1
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(475, 716)
 scale = Vector2(0.320858, 0.300417)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Andres"]
-visible = false
 color = Color(0, 0, 0, 1)
 energy = 0.8
 blend_mode = 2
+
+[node name="Andres" parent="." instance=ExtResource("3_i7hvv")]
+top_level = true
+z_index = 1
+position = Vector2(556, 214)
+scale = Vector2(0.320858, 0.300417)
 
 [node name="Dinamita" type="Sprite2D" parent="."]
 top_level = true
@@ -48586,11 +48588,11 @@ stream = ExtResource("9_d7shg")
 bus = &"Efectos de sonido"
 
 [node name="TimerExplosion" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 
 [node name="cronometroExplosion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_s5w5q")
+stream = ExtResource("11_ywmg2")
 bus = &"Efectos de sonido"
 
 [node name="ColisionSinExplotar" type="StaticBody2D" parent="."]
@@ -48623,3 +48625,5 @@ blend_mode = 2
 [connection signal="body_exited" from="dinamitaExplotar" to="." method="_on_dinamita_explotar_body_exited"]
 [connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]
 [connection signal="timeout" from="TimerExplosion" to="." method="_on_timer_explosion_timeout"]
+
+[editable path="Andres"]

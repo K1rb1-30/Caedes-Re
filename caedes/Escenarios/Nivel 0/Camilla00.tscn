@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=117 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -10618,6 +10618,9 @@ size = Vector2(18, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtd1k"]
 size = Vector2(15, 10.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2444"]
+size = Vector2(27, 38)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqmrd"]
 size = Vector2(21, 30.5)
 
@@ -10638,6 +10641,7 @@ script = ExtResource("1_1mms0")
 cantidad = 4
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
@@ -10645,7 +10649,7 @@ energy = 0.8
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(128, 97)
+position = Vector2(339, 320)
 scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -11448,11 +11452,17 @@ position = Vector2(1041.5, 138.223)
 scale = Vector2(0.132389, 0.140335)
 texture = ExtResource("26_qimlg")
 
+[node name="LetraH3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(226.541, 325.312)
+scale = Vector2(0.0223808, 0.0223808)
+texture = ExtResource("30_lywoy")
+
 [node name="LetraH3Grande" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
-position = Vector2(223, 311)
-scale = Vector2(0.0651855, 0.0651855)
+position = Vector2(223, 314)
+scale = Vector2(0.127441, 0.140137)
 texture = ExtResource("30_lywoy")
 
 [node name="letrak" type="Area2D" parent="."]
@@ -11486,6 +11496,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="letraE"]
 position = Vector2(1031.5, 156.75)
 shape = SubResource("RectangleShape2D_xtd1k")
+
+[node name="letrah3" type="Area2D" parent="."]
+position = Vector2(220, 315)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letrah3"]
+position = Vector2(6.5, 10)
+shape = SubResource("RectangleShape2D_b2444")
 
 [node name="Linterna" type="Sprite2D" parent="."]
 top_level = true
@@ -11551,6 +11570,8 @@ shape = SubResource("RectangleShape2D_l0nj0")
 [connection signal="body_exited" from="letrah5" to="." method="_on_letrah_5_body_exited"]
 [connection signal="body_entered" from="letraE" to="." method="_on_letra_e_body_entered"]
 [connection signal="body_exited" from="letraE" to="." method="_on_letra_e_body_exited"]
+[connection signal="body_entered" from="letrah3" to="." method="_on_letrah_3_body_entered"]
+[connection signal="body_exited" from="letrah3" to="." method="_on_letrah_3_body_exited"]
 [connection signal="body_entered" from="LinternaArea" to="." method="_on_linterna_area_body_entered"]
 [connection signal="body_exited" from="LinternaArea" to="." method="_on_linterna_area_body_exited"]
 [connection signal="body_entered" from="DialogoDondeEstamos" to="." method="_on_dialogo_donde_estamos_body_entered"]

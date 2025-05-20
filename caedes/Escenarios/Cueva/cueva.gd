@@ -4,6 +4,8 @@ extends Node2D
 @onready var presiona_f: Label = $Andres/PresionaF
 @onready var advertencia: Label = $Andres/Advertencia
 @onready var explotarF: Label = $Andres/PresionarFExplotar
+@onready var linternaLuz: PointLight2D = $Andres/linternaLuz
+
 @onready var labelExplosion: Label = $Andres/timer
 var puede_interactuar = false
 var explotar = false
@@ -37,7 +39,8 @@ func _ready() -> void:
 	camera_2d.limit_bottom = 1263
 	camera_2d.limit_right = 1328
 	andres = get_node("Andres")
-	
+	if global.tieneLinterna:
+		linternaLuz.visible = true
 	pausarPersonaje()
 	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Cueva/Cueva.dialogue"), "DespertarCueva")
 	
@@ -65,8 +68,10 @@ func _process(delta) -> void:
 		yaExploto = false # Ya no puede explotar
 		timerExplosion.start()
 		global.mecheroRecogido = false
-		labelExplosion.visible = true
 		$cronometroExplosion.play()
+		labelExplosion.visible = true
+		explotarF.visible = false
+
 	if not timerExplosion.is_stopped() and labelExplosion.visible:
 		labelExplosion.text = str("%.1f" % timerExplosion.time_left)	
 		
@@ -125,16 +130,20 @@ func _on_timer_explosion_timeout() -> void:
 	sinExplotar.collision_layer = 0
 	sinExplotar.collision_mask = 0
 	
+	
+	
 
 
 func _on_explosion_finished() -> void:
-	$FinColor.visible = false
-	$Andres.z_index = 1
-	explosionLayer.visible = false
-	labelExplosion.visible = false
-	global.puedeMoverse = true
-	explotarF.visible = false
-	
+	if dentroDelAreaExplosion:
+		andres.health = 0
+	else:
+		$FinColor.visible = false
+		$Andres.z_index = 1
+		explosionLayer.visible = false
+		global.puedeMoverse = true
+		explotarF.visible = false
+		labelExplosion.visible = false
 
 
 func _on_selva_finished() -> void:

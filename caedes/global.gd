@@ -17,3 +17,5 @@ var labelMechero = false
 var segundopergamino = true
 
 var abrirOpciones = false
+
+var tieneLinterna = false

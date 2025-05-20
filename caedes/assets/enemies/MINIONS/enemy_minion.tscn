@@ -176,7 +176,8 @@ height = 94.0
 [node name="EnemyMinion" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
 script = ExtResource("1_sb4vp")
-healthEnemy = 60
+velocida = 60
+healthEnemy = 30
 
 [node name="spriteCangrejo" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)

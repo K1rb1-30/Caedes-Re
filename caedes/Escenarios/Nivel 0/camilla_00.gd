@@ -15,7 +15,9 @@ extends Node2D
 @onready var letrakGrande: Sprite2D = $LetraKGrande
 @onready var letrak: Sprite2D = $LetraK
 
-@onready var letrah3: Sprite2D = $LetraH3Grande
+@onready var letrah3: Sprite2D = $LetraH3
+@onready var letrah3Grande: Sprite2D = $LetraH3Grande
+
 
 @onready var letraAgrande: Sprite2D = $LetraAGrande
 var interactuarA = false
@@ -27,8 +29,8 @@ var interactuarF = false
 
 @onready var letrae: Sprite2D = $LetraE
 @onready var letraEgrande: Sprite2D = $LetraEGrande
-var interactuarLinterna = false
 
+var interactuarLinterna = false
 
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
@@ -53,7 +55,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
-		#andres.position = Vector2(128, 124)
+	if puede_interactuar and global.labelOK:
+		presiona_f.visible = true
+	else:
+		presiona_f.visible = false
 	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
 		await get_tree().process_frame
 		await get_tree().create_timer(0.5).timeout
@@ -62,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	if global.labelOK == true:
 		keypad.visible = false
 
-	if interactuarA and Input.is_action_pressed("attack"):
+	if interactuarA and Input.is_action_just_pressed("presionarE"):
 		letraAgrande.visible = true
 	else:
 		letraAgrande.visible = false
@@ -73,6 +78,7 @@ func _physics_process(delta: float) -> void:
 	
 	if interactuarLinterna and Input.is_action_pressed("interactuarF"):
 		linternaLuz.visible = true
+		global.tieneLinterna = true
 		$Linterna.visible = false
 
 func spawn_enemigo(posicion: Vector2):
@@ -96,7 +102,6 @@ func playAnimationAntorcha(antorcha: String):
 func _on_area_presionar_body_entered(body: Node2D) -> void:
 	body = $Andres
 	if global.labelOK:
-		presiona_f.visible = true
 		puede_interactuar = true
 	keypad.visible = true
 	
@@ -104,9 +109,7 @@ func _on_area_presionar_body_entered(body: Node2D) -> void:
 func _on_area_presionar_body_exited(body: Node2D) -> void:
 	body = $Andres
 	if global.labelOK:
-		presiona_f.visible = false
 		puede_interactuar = false
-		
 	keypad.visible = false
 
 
@@ -198,7 +201,6 @@ func mostrar_letraH3():
 	ocultar_letraH3()
 	
 func ocultar_letraH3():
-	await get_tree().create_timer(4).timeout
 	letrah3.visible = false
 
 func maspergaminos():
@@ -220,4 +222,12 @@ func _on_abrir_opciones_body_entered(body: Node2D) -> void:
 
 
 func _on_abrir_opciones_body_exited(body: Node2D) -> void:
-	pass
+	global.abrirOpciones = false
+
+
+func _on_letrah_3_body_entered(body: Node2D) -> void:
+	letrah3Grande.visible = true
+
+
+func _on_letrah_3_body_exited(body: Node2D) -> void:
+	letrah3Grande.visible = false
