@@ -147,7 +147,7 @@ func _on_letrah_5_body_entered(body: Node2D) -> void:
 
 func _on_letrah_5_body_exited(body: Node2D) -> void:
 	body = $Andres
-	investigar_F.visible = false
+	investigar_E.visible = false
 	maspergaminos()
 	interactuarE = false
 

@@ -1,10 +1,13 @@
 extends Node2D
 
 @onready var andres: CharacterBody2D = $Andres
+@onready var camera_2d: Camera2D = $Andres/Camera2D
 @onready var musicaFondo: AudioStreamPlayer = $MusicaDeFondo
 
 func _ready() -> void:
 	musicaFondo.play()
+	camera_2d.limit_bottom = 303
+	camera_2d.limit_right = 2889
 
 func _on_dialogo_1_body_entered(body: Node2D) -> void:
 	body = andres

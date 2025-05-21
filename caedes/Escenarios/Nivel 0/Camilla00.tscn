@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://cpa8sm4lq4ncx"]
+[gd_scene load_steps=121 format=4 uid="uid://cpa8sm4lq4ncx"]
 
 [ext_resource type="Script" uid="uid://c65o2lig514rj" path="res://Escenarios/Nivel 0/camilla_00.gd" id="1_1mms0"]
 [ext_resource type="Texture2D" uid="uid://dmhbvkh3210ea" path="res://assets/Decorations/mainlevbuild.png" id="5_2n6ll"]
@@ -190,6 +190,15 @@ size = Vector2(14, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tbtr"]
 size = Vector2(32, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q48lw"]
+size = Vector2(19, 44.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc260"]
+size = Vector2(12, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mnjn"]
+size = Vector2(17, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5p3b"]
 texture = ExtResource("5_ps0kv")
@@ -10651,7 +10660,7 @@ energy = 0.8
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
-position = Vector2(129, 95)
+position = Vector2(584, 501)
 scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -10945,6 +10954,26 @@ shape = SubResource("RectangleShape2D_qhavk")
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="ObjetosCollision"]
 position = Vector2(16, 66)
 shape = SubResource("RectangleShape2D_5tbtr")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="ObjetosCollision"]
+position = Vector2(775.5, 595.25)
+shape = SubResource("RectangleShape2D_q48lw")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="ObjetosCollision"]
+position = Vector2(648, 438.5)
+shape = SubResource("RectangleShape2D_xc260")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="ObjetosCollision"]
+position = Vector2(896.5, 445.5)
+shape = SubResource("RectangleShape2D_3mnjn")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="ObjetosCollision"]
+position = Vector2(921, 445)
+shape = SubResource("RectangleShape2D_3mnjn")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="ObjetosCollision"]
+position = Vector2(912, 482)
+shape = SubResource("RectangleShape2D_3mnjn")
 
 [node name="Suelo" type="TileMapLayer" parent="."]
 show_behind_parent = true
