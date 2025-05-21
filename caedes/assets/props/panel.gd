@@ -1,7 +1,6 @@
 extends Control
 
 var password = "ΚΑΗΔΗΣ"
-
 @onready var label: Label = $Label
 
 
@@ -50,7 +49,6 @@ func _on_button_9_pressed() -> void:
 		global.labelOK = true
 	else:
 		print("Contraseña incorrecta")
-
 
 func _on_cerrar_pad_pressed() -> void:
 	$".".visible = false

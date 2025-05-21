@@ -22,10 +22,10 @@ extends Node2D
 @onready var letraAgrande: Sprite2D = $LetraAGrande
 var interactuarA = false
 
-@onready var investigar_F: Label = $Andres/InvestigarF
+@onready var investigar_E: Label = $Andres/InvestigarE
 @onready var letrah5grande: Sprite2D = $LetraH5Grande
 @onready var letrah5: Sprite2D = $LetraH5
-var interactuarF = false
+var interactuarE = false
 
 @onready var letrae: Sprite2D = $LetraE
 @onready var letraEgrande: Sprite2D = $LetraEGrande
@@ -71,12 +71,12 @@ func _physics_process(delta: float) -> void:
 		letraAgrande.visible = true
 	else:
 		letraAgrande.visible = false
-	if interactuarF and Input.is_action_pressed("interactuarF"):
+	if interactuarE and Input.is_action_pressed("presionarE"):
 		letrah5grande.visible = true
 	else:
 		letrah5grande.visible = false
 	
-	if interactuarLinterna and Input.is_action_pressed("interactuarF"):
+	if interactuarLinterna and Input.is_action_pressed("presionarE"):
 		linternaLuz.visible = true
 		global.tieneLinterna = true
 		$Linterna.visible = false
@@ -141,15 +141,15 @@ func _on_letra_a_body_exited(body: Node2D) -> void:
 
 func _on_letrah_5_body_entered(body: Node2D) -> void:
 	body = $Andres
-	investigar_F.visible = true
-	interactuarF = true
+	investigar_E.visible = true
+	interactuarE = true
 
 
 func _on_letrah_5_body_exited(body: Node2D) -> void:
 	body = $Andres
 	investigar_F.visible = false
 	maspergaminos()
-	interactuarF = false
+	interactuarE = false
 
 
 func _on_letra_e_body_entered(body: Node2D) -> void:

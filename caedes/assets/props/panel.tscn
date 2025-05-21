@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dta0t061akuuo"]
+[gd_scene load_steps=7 format=3 uid="uid://dta0t061akuuo"]
 
 [ext_resource type="Script" uid="uid://dxehlmq1mehpt" path="res://assets/props/panel.gd" id="1_rsbe3"]
-[ext_resource type="Texture2D" uid="uid://cb7t5ovbndop6" path="res://assets/props/keypad.png" id="2_hq6e7"]
 [ext_resource type="FontFile" uid="uid://ct07ujmb7q02r" path="res://Tipografias/Keypad/Cinzel-VariableFont_wght.ttf" id="2_x2gay"]
 [ext_resource type="Texture2D" uid="uid://b1tnv1beu3u43" path="res://assets/props/keypad2.png" id="3_6i1wa"]
 
@@ -190,13 +189,6 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6i1wa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_6i1wa")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6i1wa")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6i1wa")
-
-[node name="Keypad" type="Sprite2D" parent="."]
-visible = false
-show_behind_parent = true
-position = Vector2(95, 94)
-scale = Vector2(0.183594, 0.183594)
-texture = ExtResource("2_hq6e7")
 
 [node name="Keypad2" type="Sprite2D" parent="."]
 show_behind_parent = true

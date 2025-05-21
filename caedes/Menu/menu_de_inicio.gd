@@ -5,7 +5,6 @@ var cambiarEscena = preload("res://Escenarios/Consultas/Consulta0.tscn")
 @onready var menu: MenuBar = $Menu
 @onready var volumenMusica: HSlider = $MenuOpciones/VMusica
 @onready var vefectos: HSlider = $MenuOpciones/VEfectos
-
 @onready var audioMenu: AudioStreamPlayer = $AudioMenu
 
 var busIndexM : int
@@ -34,7 +33,6 @@ func _on_play_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
-
 func _on_options_pressed() -> void:
 	settings.visible = true
 	menu.visible = false
@@ -47,10 +45,6 @@ func _on_save_pressed() -> void:
 	settings.visible = false
 	menu.visible = true
 	$Opciones.visible = false
-	
-func _on_salir_pressed() -> void:
-	get_tree().quit()
-
 
 func _on_interrogante_pressed() -> void:
 	OS.shell_open("https://caedes-landing.vercel.app/")
