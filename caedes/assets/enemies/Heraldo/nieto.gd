@@ -96,7 +96,7 @@ func _on_damage_cooldown_timeout() -> void:
 func morir():
 	print(global.nietoVivos)
 	global.nietoVivos -= 1
-	if global.nietoVivos <= 0 and not global.mecheroMostrado:
+	if global.nietoVivos <= 0 and !global.mecheroMostrado:
 		global.mecheroMostrado = true
 		var mechero = mecheroEscena.instantiate()
 		get_tree().current_scene.add_child(mechero)

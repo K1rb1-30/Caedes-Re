@@ -48,14 +48,14 @@ func _on_detection_area_body_entered(body):
 		print("area dentro")
 
 
-func _on_detection_area_body_exited(body: CharacterBody2D) -> void:
+func _on_detection_area_body_exited(body) -> void:
 	if body.is_in_group("andres"):
 		Andres = body
 		playerChase = false
 		print("area fuera")
 	
 
-func _on_enemy_hitbox_body_entered(body: CharacterBody2D) -> void:
+func _on_enemy_hitbox_body_entered(body) -> void:
 	if body.is_in_group("andres") and !estaAtacando:
 		andresInAttackZone = true
 		if !estaAtacando:
@@ -66,7 +66,7 @@ func _on_enemy_hitbox_body_entered(body: CharacterBody2D) -> void:
 		
 
 
-func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
+func _on_enemy_hitbox_body_exited(body) -> void:
 	if body.is_in_group("andres"):
 		andresInAttackZone = false
 		print("Andrés salió del rango de ataque")

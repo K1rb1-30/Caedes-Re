@@ -18,7 +18,7 @@ func _physics_process(delta):
 		
 	velocity = Vector2.ZERO
 	var speed:int = 100
-	if global.puedeMoverse and !estaAtacando:
+	if global.puedeMoverse:
 			if Input.is_action_pressed("right"):
 				velocity += Vector2(1, 0)
 				direccionActual = "derecha"
@@ -47,8 +47,8 @@ func _physics_process(delta):
 				sprite2d.play("StaticAbuelo")
 				sprite2d.flip_h = false	
 			
-			if estaAtacando:
-				sprite2d.play("AtaqueIzquierda")
+			#if estaAtacando:
+				#sprite2d.play("AtaqueIzquierda")
 	else:
 		sprite2d.play("StaticAbuelo")
 	
@@ -143,8 +143,6 @@ func attack():
 		sumar_cordura(10)
 		global.andresCurrentAttack = true
 		estaAtacando = true
-		
-		
-			
+				
 func _on_deal_attack_timer_timeout() -> void:
 	global.andresCurrentAttack = false

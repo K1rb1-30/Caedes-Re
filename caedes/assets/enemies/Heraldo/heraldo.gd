@@ -85,7 +85,6 @@ func morir():
 		hijo.global_position = global_position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
 		# Agrega cada hijo como hijo del padre de este enemigo 
 		get_parent().add_child(hijo)
-		enemigoSprite.play("die")
 	queue_free()
 
 

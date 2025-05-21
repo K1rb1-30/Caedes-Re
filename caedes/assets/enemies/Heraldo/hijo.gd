@@ -104,7 +104,6 @@ func morir():
 		# Agrega cada hijo como hijo del padre de este enemigo
 		get_parent().add_child(nieto)
 		global.nietoVivos += 1
-		
 	queue_free()
 
 
