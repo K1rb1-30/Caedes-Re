@@ -190,3 +190,5 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 func _on_boton_skip_pressed() -> void:
 	balloon.hide()
+	global.skipdialogue = true
+	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cejai8p3w4yr"]
 
-[ext_resource type="Script" path="res://Escenarios/Consultas/consulta_1.gd" id="1_g3c8u"]
+[ext_resource type="Script" uid="uid://blb41xbeehlu7" path="res://Escenarios/Consultas/consulta_1.gd" id="1_g3c8u"]
 [ext_resource type="AudioStream" uid="uid://du53wof4i35tp" path="res://assets/sounds/SoundsConsultas/237993__janhgm__beep_1000hz_200ms_mono_jahoma_generated.wav" id="2_tmqep"]
 [ext_resource type="AudioStream" uid="uid://dn21x4ma85foe" path="res://assets/sounds/SoundsConsultas/545943__helsiph__tictac.wav" id="3_tfcyj"]
 

@@ -4,6 +4,10 @@ extends Node2D
 @onready var beep: AudioStreamPlayer = $beep
 @onready var sonidoReloj: AudioStreamPlayer = $"Sonido del reloj"
 
+func _physics_process(delta: float) -> void:
+	if global.skipdialogue:
+		_on_dialogue_finished()
+		global.skipdialogue = false
 
 func _ready():
 	beep.play()
@@ -27,10 +31,8 @@ func set_emotion_color(color: Color):
 	tween.tween_property($CanvasModulate, "color", color, 1.5)
 
 func end_scene():
-	var tween = create_tween()
-	tween.tween_property($CanvasLayer/ColorRect, "color:a", 1.0, 3.0) # fundido a negro
-	await tween.finished
 	get_tree().change_scene_to_file("res://Escenarios/Cueva/cueva.tscn")
 	
 func _on_dialogue_finished():
+	await get_tree().create_timer(0.3).timeout
 	end_scene()
