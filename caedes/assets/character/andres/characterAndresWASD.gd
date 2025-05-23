@@ -61,7 +61,9 @@ func _physics_process(delta):
 						sprite2d.play()
 			if Input.is_action_just_pressed("attack") and global.andresCurrentAttack:
 				sumar_cordura(10)
-	
+	else:
+		sprite2d.play("StaticAbuelo")
+		
 	
 	if global.abrirOpciones and Input.is_action_just_released("escape"):
 		menu_pausa.visible = true

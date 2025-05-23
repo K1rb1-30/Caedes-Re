@@ -43,6 +43,7 @@ var posicion_enemigos = [
 	Vector2(688, 587)
 ]
 
+
 func _ready() -> void:
 	keypad.visible = false
 	global.puedeMoverse = false
@@ -80,6 +81,10 @@ func _physics_process(delta: float) -> void:
 		linternaLuz.visible = true
 		global.tieneLinterna = true
 		$Linterna.visible = false
+	
+	if global.skipdialogue:
+		reanudarPersonaje()
+		global.skipdialogue = false
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()
