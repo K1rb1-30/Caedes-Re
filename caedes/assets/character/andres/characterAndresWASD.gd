@@ -11,6 +11,7 @@ var flash = false #Para que flashee la imagen
 @onready var sprite2d: AnimatedSprite2D = $Sprite2D
 @onready var menu_pausa: Control = $MenuPausa
 @onready var presionaFmechero: Label = $PresionaFMechero
+@onready var attackTimer: Timer = $attackTimer
 var estaAtacando = false
 var direccionActual = "abajo"
 
@@ -19,6 +20,7 @@ func _physics_process(delta):
 	velocity = Vector2.ZERO
 	var speed:int = 100
 	if global.puedeMoverse:
+		if !estaAtacando:
 			if Input.is_action_pressed("right"):
 				velocity += Vector2(1, 0)
 				direccionActual = "derecha"
@@ -46,14 +48,20 @@ func _physics_process(delta):
 			if velocity == Vector2(0, 0) :
 				sprite2d.play("StaticAbuelo")
 				sprite2d.flip_h = false	
-			
-			#if estaAtacando:
-				#sprite2d.play("AtaqueIzquierda")
-	else:
-		sprite2d.play("StaticAbuelo")
+		else:
+			if estaAtacando:
+				match direccionActual:
+					"izquierda":
+						sprite2d.play("AtaqueIzquierda")
+						sprite2d.flip_h = false
+					"derecha":
+						sprite2d.play("AtaqueIzquierda")
+						sprite2d.flip_h = true
+					"arriba":
+						sprite2d.play()
+			if Input.is_action_just_pressed("attack") and global.andresCurrentAttack:
+				sumar_cordura(10)
 	
-
-		
 	
 	if global.abrirOpciones and Input.is_action_just_released("escape"):
 		menu_pausa.visible = true
@@ -140,9 +148,15 @@ func enemy_Attack():
 
 func attack():
 	if Input.is_action_just_pressed("attack"):
-		sumar_cordura(10)
 		global.andresCurrentAttack = true
+		velocity = Vector2.ZERO
 		estaAtacando = true
+		attackTimer.start()
 				
 func _on_deal_attack_timer_timeout() -> void:
+	global.andresCurrentAttack = false
+
+
+func _on_attack_timer_timeout() -> void:
+	estaAtacando = false
 	global.andresCurrentAttack = false

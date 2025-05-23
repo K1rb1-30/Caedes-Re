@@ -322,7 +322,7 @@ script = ExtResource("1_8oxup")
 texture_filter = 1
 scale = Vector2(4.28906, 4.26482)
 sprite_frames = SubResource("SpriteFrames_2tqkp")
-animation = &"StaticAbuelo"
+animation = &"AtaqueIzquierda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8j744")
@@ -424,7 +424,11 @@ offset_right = -639.0
 offset_bottom = -405.0
 scale = Vector2(1.08, 1.08)
 
+[node name="attackTimer" type="Timer" parent="."]
+wait_time = 0.4
+
 [connection signal="body_entered" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_entered"]
 [connection signal="body_exited" from="andres_Hitbox" to="." method="_on_andres_hitbox_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="dealAttackTimer" to="." method="_on_dealt_attack_timer_timeout"]
+[connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
