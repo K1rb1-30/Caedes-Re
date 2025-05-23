@@ -1,7 +1,6 @@
 extends Camera2D
 
 var shaking := false
-
 func start_shake(duration := 1.0, strength := 10.0):
 	if shaking:
 		return

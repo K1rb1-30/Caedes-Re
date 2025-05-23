@@ -48027,10 +48027,10 @@ size = Vector2(77, 81)
 [node name="Cueva" type="Node2D"]
 script = ExtResource("1_t6p21")
 
-[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
-position = Vector2(475, 716)
-scale = Vector2(0.320858, 0.300417)
+position = Vector2(875, 270)
+scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
 energy = 0.8
 blend_mode = 2
@@ -48606,13 +48606,6 @@ shape = SubResource("RectangleShape2D_0iw7v")
 Vida = NodePath("../Andres")
 Cordura = NodePath("../Andres")
 Flash = NodePath("../Andres")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-position = Vector2(875, 270)
-scale = Vector2(0.3, 0.3)
-color = Color(0, 0, 0, 1)
-energy = 0.8
-blend_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

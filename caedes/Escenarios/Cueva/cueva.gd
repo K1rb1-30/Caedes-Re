@@ -5,35 +5,18 @@ extends Node2D
 @onready var advertencia: Label = $Andres/Advertencia
 @onready var explotarF: Label = $Andres/PresionarFExplotar
 @onready var linternaLuz: PointLight2D = $Andres/linternaLuz
-
 @onready var labelExplosion: Label = $Andres/timer
-var puede_interactuar = false
-var explotar = false
-@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audioDerrumbamiento: AudioStreamPlayer = $AudioStreamPlayer
 @onready var timerExplosion: Timer = $TimerExplosion
-var yaExploto = true
 @onready var cambiarEscena = preload("res://Escenarios/Consultas/Consulta2.tscn")
-var andres = null
-var dentroDelAreaExplosion = false
 @onready var explosionLayer: TileMapLayer = $Suelo/Explosion
 @onready var sinExplotar: StaticBody2D = $ColisionSinExplotar
 
-
-"""
-
-Yo soy del sur
-
-Andalucía es mi tierra
-Yo soy del sur
-Yo soy del sur, Andalucía es mi tierra
-Soy del sur, soy andaluz
-Me gusta el mosto en noviembre y mirar al cielo azul
-Y mirar al cielo azul
-De aquí fueron mis abuelos
-Se formaron mis mayores
-Aquí nacieron mis padres
-Y nacieron mis amores
-"""
+var puede_interactuar = false
+var puedeExplotar = false
+var yaExploto = true
+var andres = null
+var dentroDelAreaExplosion = false
 
 func _ready() -> void:
 	camera_2d.limit_bottom = 1263
@@ -56,7 +39,7 @@ func reanudarPersonaje():
 func _physics_process(delta: float) -> void:
 	if puede_interactuar and Input.is_action_pressed("interactuarF"):
 		camera_2d.start_shake(10, 8)
-		audio.play()
+		audioDerrumbamiento.play()
 		global.puedeMoverse = false
 		$TimerFin.start()
 		presiona_f.visible = false
@@ -64,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		
 
 func _process(delta) -> void:
-	if explotar and yaExploto and Input.is_action_pressed("interactuarF"): # Esta en el area de la dinamita, solo tiene una explosion, Input con la F para explotar 
+	if puedeExplotar and yaExploto and Input.is_action_pressed("interactuarF"): # Esta en el area de la dinamita, solo tiene una explosion, Input con la F para explotar 
 		yaExploto = false # Ya no puede explotar
 		timerExplosion.start()
 		global.mecheroRecogido = false
@@ -72,7 +55,7 @@ func _process(delta) -> void:
 		labelExplosion.visible = true
 		explotarF.visible = false
 
-	if not timerExplosion.is_stopped() and labelExplosion.visible:
+	if !timerExplosion.is_stopped() and labelExplosion.visible:
 		labelExplosion.text = str("%.1f" % timerExplosion.time_left)	
 		
 func _on_timer_fin_timeout() -> void:
@@ -108,7 +91,7 @@ func _on_dinamita_explotar_body_entered(body: Node2D) -> void:
 	body = $Andres
 	if global.mecheroRecogido:
 		explotarF.visible = true # Label diciendo presiona F para explotar
-		explotar = true # Esta en el area y puede explotar
+		puedeExplotar = true # Esta en el area y puede explotar
 	else:
 		advertencia.visible = true # Label diciendo tienes que conseguir un mechero
 
@@ -118,6 +101,7 @@ func _on_dinamita_explotar_body_exited(body: Node2D) -> void:
 		explotarF.visible = false
 	else:
 		advertencia.visible = false
+	puedeExplotar = false
 
 
 func _on_timer_explosion_timeout() -> void:
@@ -127,8 +111,6 @@ func _on_timer_explosion_timeout() -> void:
 	$explosion.play()
 	$Dinamita.visible = false
 	$dinamitaExplotar.collision_mask = 0
-	sinExplotar.collision_layer = 0
-	sinExplotar.collision_mask = 0
 	
 	
 	
@@ -144,6 +126,8 @@ func _on_explosion_finished() -> void:
 		global.puedeMoverse = true
 		explotarF.visible = false
 		labelExplosion.visible = false
+		sinExplotar.collision_layer = 0
+		sinExplotar.collision_mask = 0
 
 
 func _on_selva_finished() -> void:

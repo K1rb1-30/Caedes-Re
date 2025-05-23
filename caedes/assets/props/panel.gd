@@ -52,4 +52,3 @@ func _on_button_9_pressed() -> void:
 
 func _on_cerrar_pad_pressed() -> void:
 	$".".visible = false
-	global.cerrarPad = true
