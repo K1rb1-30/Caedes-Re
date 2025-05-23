@@ -36,25 +36,6 @@ func mostrar():
 	Video.set_process(true)  # Hacer que el video siga reproduciéndose mientras el juego está en pausa
 	Video.set_process_input(true)  # Asegurarse de que el video siga recibiendo input si es necesario
 
-"""
-En mi vida fuistes turista
-Tú solo vistes lo mejor de mí
-Y no lo que yo sufría
-Te fuiste sin saber el porqué
-El porqué de mis herida'
-Y no te tocaba a ti curarla'
-Vinistes a pasarla bien
-Y la pasamos bien
-Una foto bonita
-Un atardecer hermoso
-Una bailaíta
-Tu cadenita de oro
-Estuvimos tan cerquita
-Mirándono a los ojo'
-Dime si vistes la pena
-De mi corazón roto
-"""
-
 func _on_button_pressed() -> void: #Boton de reiniciar
 	get_tree().paused = false
 	get_tree().reload_current_scene() #Reinicia la Escena
