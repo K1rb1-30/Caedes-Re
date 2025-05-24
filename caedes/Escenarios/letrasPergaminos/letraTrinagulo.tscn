@@ -12,7 +12,8 @@ script = ExtResource("1_l5grr")
 [node name="LetraTrianguloGrande" type="Sprite2D" parent="."]
 visible = false
 light_mask = 2
-z_index = 1
+visibility_layer = 2
+z_index = 4
 scale = Vector2(0.121252, 0.121252)
 texture = ExtResource("2_6g2u0")
 

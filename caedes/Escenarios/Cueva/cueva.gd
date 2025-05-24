@@ -48,6 +48,9 @@ func _physics_process(delta: float) -> void:
 		reanudarPersonaje()
 		global.skipdialogue = false
 		
+	if global.skipdialogue:
+		reanudarPersonaje()
+		global.skipdialogue = false
 		
 
 func _process(delta) -> void:

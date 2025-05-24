@@ -59,8 +59,6 @@ func _physics_process(delta):
 						sprite2d.flip_h = true
 					"arriba":
 						sprite2d.play()
-			if Input.is_action_just_pressed("attack") and global.andresCurrentAttack:
-				sumar_cordura(10)
 	else:
 		sprite2d.play("StaticAbuelo")
 		
