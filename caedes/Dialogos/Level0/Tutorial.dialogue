@@ -34,7 +34,7 @@ Andres: ...
 
 Catlos: En fin, si quieres salir, puedo indicarte el camino.
 Catlos: [[A menos que tengas otra idea…|A menos que no recuerde el camino|A menos que este sitio tenga otros planes para nosotros]].
-Catlos: Oh, ¿qué decía? Ah, sí, en alguna de estas salas deberia de haber una linterna, busquemosla.
+Catlos: Oh, ¿qué decía? Ah, sí, en alguna de estas salas deberia de haber un farolillo con luz, busquemoslo.
 do reanudarPersonaje()
 => END
 
@@ -106,12 +106,12 @@ do reanudarPersonaje()
 => END 
 
 ~ linternazona
-Catlos: Hey, Andres creo que la linterna podria estar por aquí, buscala y cuando la encuentres recogela con "E".
+Catlos: Hey, Andres creo que el farolillo podria estar por aquí, buscalo y cuando lo encuentres recogelo con "E".
 do reanudarPersonaje()
 => END 
 
 ~ linteraencontrada
-Catlos: Mira, aquí esta la linterna, no te olvides de recogerla pulsando "E"
+Catlos: Mira, aquí esta el farolillo, no te olvides de recogerlo pulsando "E".
 do reanudarPersonaje()
 
 => END
