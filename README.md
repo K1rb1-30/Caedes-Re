@@ -14,6 +14,16 @@ Este juego fue creado como proyecto final de la asignatura de Síntesis en el Ci
 
 👉 [Jugar en itch.io](https://k1rb1-30.itch.io/caedesre)
 
+## 🎮Capturas del juego
+
+![Caedesnivel1](https://github.com/user-attachments/assets/dd3f3e5a-579e-418f-93ca-8e7aa14a037b) 
+![CaedesCatlos](https://github.com/user-attachments/assets/08efa187-98e7-4aba-87f6-999cbb1ea865) 
+![CaedesPasillorecuerdos](https://github.com/user-attachments/assets/4346f3e0-2f69-45df-bb8b-84b334b7725d)
+![CaedesCueva](https://github.com/user-attachments/assets/c5bfb570-577f-41aa-ad03-1bcf4d3b2454)
+
+
+
+
 ## 🧠 Sinopsis
 
 Después de un accidente del que apenas recuerda los detalles, **Andrés** despierta en un lugar imposible: un espacio suspendido entre realidades, donde el tiempo se retuerce, las sombras susurran y la cordura es una moneda que se gasta rápido. Guiado por **Catlos**, un enigmático gato parlante, Andrés debe explorar este mundo distorsionado y enfrentarse a ecos de su pasado mientras la línea entre lo real y lo imaginado se vuelve cada vez más delgada.
@@ -47,7 +57,6 @@ Después de un accidente del que apenas recuerda los detalles, **Andrés** despi
 3. Ejecuta el juego desde el editor o exporta una versión ejecutable.
 
 👥 Autores
-Gabriel Sánchez Flores (K1rb1-30)
 
 [Gabriel Sánchez Flores (K1rb1-30)](https://github.com/K1rb1-30)
 
