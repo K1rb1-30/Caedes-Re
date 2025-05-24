@@ -10653,6 +10653,7 @@ script = ExtResource("1_1mms0")
 cantidad = 4
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
