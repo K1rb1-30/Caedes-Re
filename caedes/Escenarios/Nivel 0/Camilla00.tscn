@@ -10661,7 +10661,7 @@ cantidad = 4
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
-energy = 0.8
+energy = 0.9
 blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]

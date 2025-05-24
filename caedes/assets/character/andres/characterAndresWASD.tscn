@@ -354,6 +354,7 @@ one_shot = true
 visible = false
 position = Vector2(-5, 52)
 scale = Vector2(0.993598, 0.993598)
+color = Color(1, 0.627703, 0.326001, 1)
 texture = ExtResource("4_6mtlq")
 texture_scale = 2.16
 height = 202.0

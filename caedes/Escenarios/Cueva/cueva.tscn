@@ -48029,7 +48029,6 @@ size = Vector2(77, 81)
 script = ExtResource("1_t6p21")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
