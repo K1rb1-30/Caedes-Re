@@ -35,7 +35,7 @@ var interactuarLinterna = false
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
 
-var labelAnterior = false
+var andresEnArea = false
 
 var posicion_enemigos = [
 	Vector2(831,511),
@@ -58,10 +58,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("presionarE"): 
 		global.puedeMoverse = true
-	if puede_interactuar and global.labelOK:
+	
+	if puede_interactuar and global.labelOK and andresEnArea:
 		presiona_f.visible = true
 	else:
 		presiona_f.visible = false
+	
 	if puede_interactuar and global.labelOK == true and Input.is_action_just_pressed("interactuarF"):
 		await get_tree().process_frame
 		await get_tree().create_timer(0.5).timeout
@@ -107,17 +109,20 @@ func playAnimationAntorcha(antorcha: String):
 	
 
 func _on_area_presionar_body_entered(body: Node2D) -> void:
-	body = $Andres
-	if global.labelOK:
-		puede_interactuar = true
-	keypad.visible = true
+	if body == $Andres:
+		andresEnArea = true
+		if global.labelOK:
+			puede_interactuar = true
+			presiona_f.visible = true
+		keypad.visible = true
 	
 
 func _on_area_presionar_body_exited(body: Node2D) -> void:
-	body = $Andres
-	if global.labelOK:
+	if body == $Andres:
+		andresEnArea = false
+		presiona_f.visible = false
 		puede_interactuar = false
-	keypad.visible = false
+		keypad.visible = false
 
 
 #FUNCIONES PARA LOS PERGAMINOS DE LAS LETRAS

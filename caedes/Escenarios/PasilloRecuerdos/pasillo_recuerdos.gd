@@ -9,6 +9,11 @@ func _ready() -> void:
 	camera_2d.limit_bottom = 303
 	camera_2d.limit_right = 2889
 
+func _physics_process(delta: float) -> void:
+	if global.skipdialogue:
+		consultorio1()
+		global.skipdialogue = false
+
 func _on_dialogo_1_body_entered(body: Node2D) -> void:
 	body = andres
 	print("deberia salir aqui el dialogo")

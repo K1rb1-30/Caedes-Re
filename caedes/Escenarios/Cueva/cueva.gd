@@ -44,6 +44,9 @@ func _physics_process(delta: float) -> void:
 		$TimerFin.start()
 		presiona_f.visible = false
 		
+	if global.skipdialogue:
+		reanudarPersonaje()
+		global.skipdialogue = false
 		
 
 func _process(delta) -> void:

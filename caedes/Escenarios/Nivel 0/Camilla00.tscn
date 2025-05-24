@@ -10661,7 +10661,7 @@ blend_mode = 2
 
 [node name="Andres" parent="." instance=ExtResource("10_ps0kv")]
 z_index = 2
-position = Vector2(128, 97)
+position = Vector2(1083, 582)
 scale = Vector2(0.3, 0.3)
 
 [node name="Marker2D" type="Marker2D" parent="."]
