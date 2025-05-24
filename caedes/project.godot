@@ -10,9 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Caedes"
+config/name="Caedes:RE"
+config/description="Caedes: RE es un juego de horror psicológico con exploración y combate simbólico, donde la realidad y las alucinaciones se confunden. Controlas a Andrés, un hombre atormentado por traumas, cuya mente se desmorona mientras una siniestra catacumba sin salida lo atrapa.
+
+Aquí, la luz es tu refugio, la oscuridad cobra vida, y criaturas reflejan tus culpas. ¿Estás en un purgatorio real o en una prisión mental? Cada decisión afecta el destino de Andrés… pero cuidado: la verdad puede ser tu perdición.
+
+¿Quién te ayuda a no enloquecer… o te empuja al abismo?"
 run/main_scene="uid://ciuqmxed62ye4"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://cgtduerue4mru"
+config/icon="uid://truqw3aywsj3"
 <<<<<<<HEADrun/main_scene="uid://ddq2b7cwhifa6"
 
 [autoload]

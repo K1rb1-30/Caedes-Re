@@ -97,6 +97,7 @@ Catlos: Y al final, puede que ya no seas tú el que controla tus actos.
 Catlos: En resumen: mantente vivo, mantente lúcido.
 Catlos: Ahora sí, encontremos la forma de salir de aquí.
 do reanudarPersonaje()
+do Andres.empezarCordura()
 => END
 
 ~ maspergaminos

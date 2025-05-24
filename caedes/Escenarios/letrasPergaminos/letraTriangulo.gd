@@ -9,9 +9,9 @@ func _physics_process(delta: float) -> void:
 		Andres.z_index = 0
 		letraGrande.visible = true
 		letraPequeño.visible = false
-		letraGrande.z_index = 1
+		letraGrande.z_index = 4
 	else:
-		Andres.z_index = 3
+		Andres.z_index = 2
 		letraGrande.visible = false
 		letraPequeño.visible = true
 

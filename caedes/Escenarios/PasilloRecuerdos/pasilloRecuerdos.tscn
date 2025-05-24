@@ -1514,7 +1514,6 @@ position = Vector2(2804, 308)
 [node name="Andres" parent="." instance=ExtResource("7_ja0md")]
 position = Vector2(31, 244)
 scale = Vector2(0.25, 0.25)
-CordureMode = false
 
 [node name="Dialogo1" type="Area2D" parent="."]
 collision_layer = 2
