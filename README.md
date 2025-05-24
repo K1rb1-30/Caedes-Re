@@ -2,13 +2,15 @@
 
 **Caedes:RE** es una aventura narrativa en pixel art con mecánicas psicológicas, exploración y combate ligero, donde cada paso puede ser un recuerdo... o una alucinación. Este proyecto ha sido desarrollado como trabajo final de la asignatura de *Síntesis* del Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes (SMR).
 
+![PortadaTitulo](https://github.com/user-attachments/assets/6d0b4f9d-578e-4ffd-a96a-0cd114f73d79)
+
 ## 🎓 Proyecto académico
 
 Este juego fue creado como proyecto final de la asignatura de Síntesis en el Ciclo Formativo de Grado Medio de FP en **Sistemas Microinformáticos y Redes (SMR)**, combinando creatividad, programación y narrativa en un entorno interactivo.
 
-## 🎮 Demo disponible
+## 🎮 Ya Disponible en Itchi.io
 
-¡Prueba la demo ahora en itch.io!
+¡Prueba el juego ahora en itch.io!
 
 👉 [Jugar en itch.io](https://k1rb1-30.itch.io/caedesre)
 
