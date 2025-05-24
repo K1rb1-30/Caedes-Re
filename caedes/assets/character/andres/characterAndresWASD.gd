@@ -56,7 +56,9 @@ func _physics_process(delta):
 						sprite2d.play("AtaqueIzquierda")
 						sprite2d.flip_h = true
 					"arriba":
-						sprite2d.play()
+						sprite2d.play("ataqueDeAtras")
+					"abajo":
+						sprite2d.play("ataqueDeFrente")
 	else:
 		sprite2d.play("StaticAbuelo")
 		
