@@ -4071,8 +4071,7 @@ autoplay = "walk"
 curve = SubResource("Curve2D_qsgiw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(375, 213)
-progress = 262.0
+position = Vector2(113, 213)
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
 position = Vector2(27.0183, 0.105696)
