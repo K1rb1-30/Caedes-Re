@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var beep: AudioStreamPlayer = $beep
 @onready var sonidoReloj: AudioStreamPlayer = $"Sonido del reloj"
+@onready var entradaconsultas: AudioStreamPlayer = $entradaconsultas
+@onready var musica_fondo: AudioStreamPlayer = $MusicaFondo
+
 
 func _physics_process(delta: float) -> void:
 	if global.skipdialogue:
@@ -10,7 +13,9 @@ func _physics_process(delta: float) -> void:
 
 func _ready():
 	beep.play()
-	await get_tree().create_timer(2).timeout
+	entradaconsultas.play()
+	await get_tree().create_timer(5).timeout
+	musica_fondo.play()
 	sonidoReloj.play()
 	start_fade_to_white()
 	await get_tree().create_timer(1).timeout

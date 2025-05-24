@@ -73,8 +73,7 @@ Catlos: Tan bien que [[podrías acostumbrarte a esto|podrías dedicarte a esto]]
 Catlos: Espera un momento.  
 Catlos: Ya que sabes defenderte, es hora de que entiendas cómo sobrevivir aquí.
 
-Andres: ¿Sobrevivir?  
-Catlos: Sí. Has notado esas dos barras de arriba, ¿verdad?  
+Catlos: Has notado esas dos barras de arriba, ¿verdad?  
 Catlos: La roja es tu vida. Si baja a cero... bueno, te haces una idea.
   
 Andres: ¿Y la otra?  
@@ -97,11 +96,9 @@ Catlos: Aunque solo sea por un rato...
 
 Andres: ¿Y si no lo hago?  
 Catlos: Empezarás a escuchar cosas. Ver cosas.  
-Catlos: Y al final, puede que ya no seas tú el que controla tus actos.  
-Catlos: O puede que no haya nada que controlar.  
+Catlos: Y al final, puede que ya no seas tú el que controla tus actos.   
 
 Catlos: En resumen: mantente vivo, mantente lúcido.  
-Catlos: Porque aquí, perder la cabeza no es solo una metáfora.  
 Catlos: Ahora sí, encontremos la forma de salir de aquí.  
 do reanudarPersonaje()
 => END

@@ -9,6 +9,7 @@ extends Control
 @onready var fondo: Sprite2D = $CanvasLayer/Fondo
 
 
+
 func _ready() -> void:
 	Reintentar.visible = false #Poner que el boton sea invisible
 	botonReintenar.visible = false

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ui6xkjxb3s12"]
+[gd_scene load_steps=6 format=3 uid="uid://ui6xkjxb3s12"]
 
 [ext_resource type="AudioStream" uid="uid://du53wof4i35tp" path="res://assets/sounds/SoundsConsultas/237993__janhgm__beep_1000hz_200ms_mono_jahoma_generated.wav" id="1_c811e"]
 [ext_resource type="Script" uid="uid://btghana5nwadd" path="res://Escenarios/Consultas/consulta_0.gd" id="1_tdbq4"]
 [ext_resource type="AudioStream" uid="uid://dn21x4ma85foe" path="res://assets/sounds/SoundsConsultas/545943__helsiph__tictac.wav" id="3_mlils"]
+[ext_resource type="AudioStream" uid="uid://b66pnwnejr00j" path="res://Musica/entradaconsultas.mp3" id="4_dt60h"]
+[ext_resource type="AudioStream" uid="uid://dqhxmeoyiuf6l" path="res://Musica/birdnoisesConsulta0.mp3" id="4_n5jbx"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tdbq4")
@@ -18,6 +20,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="beep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_c811e")
+volume_db = -15.0
 bus = &"Efectos de sonido"
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -25,3 +28,13 @@ bus = &"Efectos de sonido"
 [node name="Sonido del reloj" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_mlils")
 bus = &"Efectos de sonido"
+
+[node name="entradaconsultas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dt60h")
+volume_db = -15.0
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n5jbx")
+volume_db = -15.0
+bus = &"Musica"
+parameters/looping = true
