@@ -35,6 +35,8 @@ var interactuarLinterna = false
 @onready var keypad: Control = $Keypad
 var puede_interactuar = false
 
+var labelAnterior = false
+
 var posicion_enemigos = [
 	Vector2(831,511),
 	Vector2(661, 688),

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://bnsdhmeam2m8c"]
+[gd_scene load_steps=94 format=4 uid="uid://bnsdhmeam2m8c"]
 
 [ext_resource type="Script" uid="uid://cumcgbu0ob7ls" path="res://Escenarios/Cueva/cueva.gd" id="1_t6p21"]
 [ext_resource type="Texture2D" uid="uid://7abyyssgrxh3" path="res://assets/Decorations/Cueva/decorative.png" id="1_tpc23"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bbbskrf37e3ts" path="res://Musica/sonidoExplosion.mp3" id="9_d7shg"]
 [ext_resource type="AudioStream" uid="uid://cexmlamp1wu10" path="res://Musica/mechaSonido.mp3" id="11_ywmg2"]
 [ext_resource type="PackedScene" uid="uid://ccdrxspa8n2o2" path="res://Escenarios/HUD/HUD.tscn" id="12_ywmg2"]
+[ext_resource type="AudioStream" uid="uid://lfsucf2mvrlh" path="res://Musica/musicaCueva.mp3" id="13_mr5ug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6p21"]
 texture = ExtResource("1_tpc23")
@@ -48585,6 +48586,7 @@ shape = SubResource("RectangleShape2D_0uqq2")
 
 [node name="explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_d7shg")
+volume_db = -24.0
 bus = &"Efectos de sonido"
 
 [node name="TimerExplosion" type="Timer" parent="."]
@@ -48593,6 +48595,7 @@ one_shot = true
 
 [node name="cronometroExplosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ywmg2")
+volume_db = -24.0
 bus = &"Efectos de sonido"
 
 [node name="ColisionSinExplotar" type="StaticBody2D" parent="."]
@@ -48606,6 +48609,12 @@ shape = SubResource("RectangleShape2D_0iw7v")
 Vida = NodePath("../Andres")
 Cordura = NodePath("../Andres")
 Flash = NodePath("../Andres")
+
+[node name="Música" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_mr5ug")
+volume_db = -24.0
+autoplay = true
+bus = &"Musica"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

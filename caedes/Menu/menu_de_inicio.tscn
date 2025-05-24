@@ -96,6 +96,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_am1kx")
 
 [node name="AudioMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0gkyp")
+volume_db = -24.0
 autoplay = true
 bus = &"Musica"
 

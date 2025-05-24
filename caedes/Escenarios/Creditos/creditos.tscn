@@ -18,7 +18,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 328.0
-offset_bottom = 3854.0
+offset_bottom = 3895.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_r06ri")
@@ -85,6 +85,8 @@ Musica jungla: Sonorizante
 
 Musica Creditos: Music FY
 
+Música cueva: The Guild of Ambience
+
 Sondio beep consulta: janhgm
 
 Sonido reloj consulta: Kikomonzon
@@ -144,5 +146,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_b32c8")
+volume_db = -15.0
 autoplay = true
 bus = &"Musica"

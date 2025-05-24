@@ -84,6 +84,7 @@ func dealWithDamage():
 		print("CAN TAKE DAMAGE")
 		canTakeDamage = false
 		healthEnemy -= 20
+		Andres.sumar_cordura(10)
 		print("enemy health = ", healthEnemy)
 		global.andresCurrentAttack = false
 		$damageCooldown.start()

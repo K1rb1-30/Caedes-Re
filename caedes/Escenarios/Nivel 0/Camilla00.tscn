@@ -10653,7 +10653,6 @@ script = ExtResource("1_1mms0")
 cantidad = 4
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 position = Vector2(875, 270)
 scale = Vector2(0.3, 0.3)
 color = Color(0, 0, 0, 1)
@@ -11429,6 +11428,7 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_v1t8p")
+volume_db = -24.0
 autoplay = true
 bus = &"Musica"
 
