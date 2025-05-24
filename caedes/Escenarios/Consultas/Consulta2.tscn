@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b66pnwnejr00j" path="res://Musica/entradaconsultas.mp3" id="4_86i0l"]
 [ext_resource type="AudioStream" uid="uid://cgt5ics8nf3fr" path="res://Musica/basementConsulta2.mp3" id="5_ypx0w"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_sg6x3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
