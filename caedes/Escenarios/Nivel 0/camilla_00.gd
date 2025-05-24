@@ -89,6 +89,10 @@ func _physics_process(delta: float) -> void:
 	if global.skipdialogue:
 		reanudarPersonaje()
 		global.skipdialogue = false
+		
+		if global.esqueletoMuerto:
+			global.empezarCordura()
+		
 
 func spawn_enemigo(posicion: Vector2):
 	var enemigo = enemigo_escena.instantiate()

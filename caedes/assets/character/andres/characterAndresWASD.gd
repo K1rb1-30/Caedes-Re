@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var CordureMode : bool = false
-
 var enemyAttackRange = false
 var enemyAttackCooldown = true
 var cordure = 100
@@ -80,11 +78,11 @@ func _physics_process(delta):
 	attack()
 	
 	# MODO DE CORDURA
-	if CordureMode:
+	if global.CordureMode:
 		cordure -= delta
 		if cordure <= 0:
 			cordure = 0
-			CordureMode = false
+			global.CordureMode = false
 		else:
 			update_cordure()
 			#print(cordure)
@@ -119,9 +117,6 @@ func sumar_cordura(extra: float):
 func restar_cordura(extra: float):
 	cordure -= extra
 	update_cordure()
-
-func empezarCordura():
-	CordureMode = true
 
 func _on_andres_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):

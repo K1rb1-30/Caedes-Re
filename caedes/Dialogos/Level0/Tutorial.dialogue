@@ -68,7 +68,6 @@ Catlos: Tan bien que [[podrías acostumbrarte a esto|podrías dedicarte a esto]]
 	Catlos: Nada. Sigamos. => tutobarras  
 
 ~ tutobarras
-
 Catlos: Espera un momento.  
 Catlos: Ya que sabes defenderte, es hora de que entiendas cómo sobrevivir aquí.
 
@@ -97,7 +96,7 @@ Catlos: Y al final, puede que ya no seas tú el que controla tus actos.
 Catlos: En resumen: mantente vivo, mantente lúcido.
 Catlos: Ahora sí, encontremos la forma de salir de aquí.
 do reanudarPersonaje()
-do Andres.empezarCordura()
+do global.empezarCordura()
 => END
 
 ~ maspergaminos

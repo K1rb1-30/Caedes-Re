@@ -11617,8 +11617,9 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_e7vdb")
 
 [node name="DialogolinternaEncontrada" type="Area2D" parent="."]
-visible = false
 position = Vector2(41, 539)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogolinternaEncontrada"]
 shape = SubResource("RectangleShape2D_pjuy4")

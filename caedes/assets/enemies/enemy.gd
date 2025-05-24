@@ -69,11 +69,11 @@ func dealWithDamage():
 		global.andresCurrentAttack = false
 		$damageCooldown.start()
 		if healthEnemy <= 0:
+			global.esqueletoMuerto = true
 			self.queue_free()
 			var cartel = cartelEscena.instantiate()
 			get_tree().current_scene.add_child(cartel)
 			cartel.global_position = self.global_position
-
 	
 			#Le sale un dialogo al jugador de la barra de vida y no permite moverse al jugador y todododododo 
 			global.puedeMoverse = false

@@ -21,3 +21,11 @@ var abrirOpciones = false
 var tieneLinterna = false
 
 var skipdialogue = false
+
+
+# Cordura
+
+var CordureMode : bool = false
+var esqueletoMuerto = false	
+func empezarCordura():
+	CordureMode = true
