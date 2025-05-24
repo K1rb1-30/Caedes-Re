@@ -167,10 +167,13 @@ func _on_letra_e_body_exited(body: Node2D) -> void:
 	maspergaminos()
 	letraEgrande.visible = false
 
-
+var yadialogo = true
 func _on_linterna_area_body_entered(body: Node2D) -> void:
 	interactuarLinterna = true
-
+	if yadialogo:
+		pausarPersonaje()
+		DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "linteraencontrada")
+		yadialogo = false
 
 func _on_linterna_area_body_exited(body: Node2D) -> void:
 	interactuarLinterna = false
@@ -229,3 +232,9 @@ func _on_letrah_3_body_entered(body: Node2D) -> void:
 
 func _on_letrah_3_body_exited(body: Node2D) -> void:
 	letrah3Grande.visible = false
+
+
+func _on_dialogolinterna_zona_body_entered(body: Node2D) -> void:
+	pausarPersonaje()
+	DialogueManager.show_dialogue_balloon(load("res://Dialogos/Level0/Tutorial.dialogue"), "linternazona")
+	$DialogolinternaZona.queue_free()

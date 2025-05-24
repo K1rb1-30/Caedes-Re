@@ -19,8 +19,7 @@ do reanudarPersonaje()
 #Cuando salga y se mueva un poco le saldra este dialogo
 
 Andres: ¿Dónde estoy?
-Catlos: Bueno… yo tampoco lo sé.
-Catlos: Un lugar entre lugares.
+Catlos: Bueno… yo tampoco lo sé. Un lugar entre lugares.
 Catlos: No es tan malo si no piensas mucho en ello.
 Andres: ...
 - ¿Cuánto tiempo llevas aquí?
@@ -35,7 +34,7 @@ Andres: ...
 
 Catlos: En fin, si quieres salir, puedo indicarte el camino.
 Catlos: [[A menos que tengas otra idea…|A menos que no recuerde el camino|A menos que este sitio tenga otros planes para nosotros]].
-Catlos: Oh, ¿qué decía? Ah, sí, ven por aquí. 
+Catlos: Oh, ¿qué decía? Ah, sí, en alguna de estas salas deberia de haber una linterna, busquemosla.
 do reanudarPersonaje()
 => END
 
@@ -81,33 +80,38 @@ Catlos: Esa... es más complicada.
 Catlos: Es tu *cordura*.  
 Catlos: Aquí, en este sitio, la mente no aguanta mucho.  
 
-Andres: ¿Qué le pasa a la gente aquí?  
-Catlos: Pierden el juicio. O peor.  
+Andres: ¿Qué le pasa a la gente aquí?   
 Catlos: Este lugar *se alimenta* de tus pensamientos.  
-Catlos: Te susurra cosas. Te muestra cosas que no son reales.  
-Catlos: Si dejas que esa barra se vacíe... no sabrás si eres tú o algo más.  
+Catlos: Te susurra cosas. Te muestra cosas que no son reales.
+Catlos: Si dejas que esa barra se vacíe... no sabrás si eres tú o algo más. 
 
 Andres: ¿Cómo la mantengo?  
-Catlos: Hay formas.  
-Catlos: Acércate a la luz...  
-Catlos: O elimina a las criaturas que lo habitan.  
-Catlos: La violencia, por extraña que suene, te centra.  
-Catlos: Aunque solo sea por un rato...  
+Catlos: Acércate a la luz... O elimina a las criaturas que lo habitan.
+Catlos: La violencia, por extraña que suene, te centra.
+Catlos: Aunque solo sea por un rato...
 
-Andres: ¿Y si no lo hago?  
-Catlos: Empezarás a escuchar cosas. Ver cosas.  
-Catlos: Y al final, puede que ya no seas tú el que controla tus actos.   
+Andres: ¿Y si no lo hago?
+Catlos: Empezarás a escuchar cosas. Ver cosas.
+Catlos: Y al final, puede que ya no seas tú el que controla tus actos.
 
-Catlos: En resumen: mantente vivo, mantente lúcido.  
-Catlos: Ahora sí, encontremos la forma de salir de aquí.  
+Catlos: En resumen: mantente vivo, mantente lúcido.
+Catlos: Ahora sí, encontremos la forma de salir de aquí.
 do reanudarPersonaje()
 => END
 
 ~ maspergaminos
 Catlos: Mira parece ser otro pergamino como el que te he enseñado antes.
 Catlos: Curioso... Habrá que buscar si hay más en esta zona.
+do reanudarPersonaje()
+=> END 
 
+~ linternazona
+Catlos: Hey, Andres creo que la linterna podria estar por aquí, buscala y cuando la encuentres recogela con "E".
+do reanudarPersonaje()
+=> END 
 
+~ linteraencontrada
+Catlos: Mira, aquí esta la linterna, no te olvides de recogerla pulsando "E"
 do reanudarPersonaje()
 
 => END
