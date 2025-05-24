@@ -6,10 +6,12 @@ var Andres = null
 
 func _physics_process(delta: float) -> void:
 	if interactuarClick and Input.is_action_pressed("presionarE"):
+		Andres.z_index = 0
 		letraGrande.visible = true
 		letraPequeño.visible = false
 		letraGrande.z_index = 1
 	else:
+		Andres.z_index = 3
 		letraGrande.visible = false
 		letraPequeño.visible = true
 
